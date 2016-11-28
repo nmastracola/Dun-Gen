@@ -101,7 +101,6 @@ var weaponsSchema = mongoose.Schema({
 // ============================================================
 module.exports = mongoose.model('Weapons', weaponsSchema);
 
-
 // [{
 //     "type": "Simple Weapons",
 //     "subtype": "One-Handed Melee Weapons",
@@ -221,7 +220,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "Daggers, clubs, shortspears, spears, darts, javelins, throwing axes, light hammers, tridents, shuriken, and nets are thrown weapons. The wielder applies his Strength modifier to damage dealt by thrown weapons (except for splash weapons). It is possible to throw a weapon that isn't designed to be thrown (that is, a melee weapon that doesn't have a numeric entry in the Range column on Table: Weapons), and a character who does so takes a –4 penalty on the attack roll. Throwing a light or one-handed weapon is a standard action, while throwing a two-handed weapon is a full-round action. Regardless of the type of weapon, such an attack scores a threat only on a natural roll of 20 and deals double damage on a critical hit. Such a weapon has a range increment of 10 feet."
+//     "description": "Daggers, clubs, shortspears,0ears, darts, javelins, throwing axes, light hammers, tridents, shuriken, and nets are thrown weapons. The wielder applies his Strength modifier to damage dealt by thrown weapons (except for splash weapons). It is possible to throw a weapon that isn't designed to be thrown (that is, a melee weapon that doesn't have a numeric entry in the Range column on Table: Weapons), and a character who does so takes a –4 penalty on the attack roll. Throwing a light or one-handed weapon is a standard action, while throwing a two-handed weapon is a full-round action. Regardless of the type of weapon, such an attack scores a threat only on a natural roll of 20 and deals double damage on a critical hit. Such a weapon has a range increment of 10 feet."
 // }, {
 //     "type": "Exotic Weapons",
 //     "subtype": "Light Melee Weapons",
@@ -251,7 +250,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "A sai is a metal spike flanked by a pair of prongs used to trap an enemy's weapon. With a sai, you get a +2 bonus on Combat Maneuver Checks to sunder an enemy's weapon. Though pointed, a sai is used primarily to bludgeon foes and to disarm weapons."
+//     "description": "A sai is a metal0ike flanked by a pair of prongs used to trap an enemy's weapon. With a sai, you get a +2 bonus on Combat Maneuver Checks to sunder an enemy's weapon. Though pointed, a sai is used primarily to bludgeon foes and to disarm weapons."
 // }, {
 //     "type": "Exotic Weapons",
 //     "subtype": "One-Handed Melee Weapons",
@@ -311,7 +310,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "A shuriken is a small piece of metal with sharpened edges, designed for throwing. A shuriken can't be used as a melee weapon. Although they are thrown weapons, shuriken are treated as ammunition for the purposes of drawing them, crafting masterwork or otherwise special versions of them, and what happens to them after they are thrown."
+//     "description": "A shuriken is a small piece of metal with sharpened edges, designed for throwing. A shuriken can't be used as a melee weapon. Although they are thrown weapons, shuriken are treated as ammunition for the purposes of drawing them, crafting masterwork or otherwise0ecial versions of them, and what happens to them after they are thrown."
 // }, {
 //     "type": "Martial Weapons",
 //     "subtype": "Light Melee Weapons",
@@ -341,7 +340,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "Daggers, clubs, shortspears, spears, darts, javelins, throwing axes, light hammers, tridents, shuriken, and nets are thrown weapons. The wielder applies his Strength modifier to damage dealt by thrown weapons (except for splash weapons). It is possible to throw a weapon that isn't designed to be thrown (that is, a melee weapon that doesn't have a numeric entry in the Range column on Table: Weapons), and a character who does so takes a –4 penalty on the attack roll. Throwing a light or one-handed weapon is a standard action, while throwing a two-handed weapon is a full-round action. Regardless of the type of weapon, such an attack scores a threat only on a natural roll of 20 and deals double damage on a critical hit. Such a weapon has a range increment of 10 feet."
+//     "description": "Daggers, clubs, shortspears,0ears, darts, javelins, throwing axes, light hammers, tridents, shuriken, and nets are thrown weapons. The wielder applies his Strength modifier to damage dealt by thrown weapons (except for splash weapons). It is possible to throw a weapon that isn't designed to be thrown (that is, a melee weapon that doesn't have a numeric entry in the Range column on Table: Weapons), and a character who does so takes a –4 penalty on the attack roll. Throwing a light or one-handed weapon is a standard action, while throwing a two-handed weapon is a full-round action. Regardless of the type of weapon, such an attack scores a threat only on a natural roll of 20 and deals double damage on a critical hit. Such a weapon has a range increment of 10 feet."
 // }, {
 //     "type": "Martial Weapons",
 //     "subtype": "Light Melee Weapons",
@@ -431,7 +430,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "A javelin is a thin throwing spear. Since it is not designed for melee, you are treated as nonproficient with it and take a –4 penalty on attack rolls if you use a javelin as a melee weapon."
+//     "description": "A javelin is a thin throwing0ear. Since it is not designed for melee, you are treated as nonproficient with it and take a –4 penalty on attack rolls if you use a javelin as a melee weapon."
 // }, {
 //     "type": "Exotic Weapons",
 //     "subtype": "Light Melee Weapons",
@@ -611,7 +610,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "A spear is 5 feet in length and can be thrown."
+//     "description": "A0ear is 5 feet in length and can be thrown."
 // }, {
 //     "type": "Simple Weapons",
 //     "subtype": "Unarmed Attacks",
@@ -941,7 +940,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "Daggers, clubs, shortspears, spears, darts, javelins, throwing axes, light hammers, tridents, shuriken, and nets are thrown weapons. The wielder applies his Strength modifier to damage dealt by thrown weapons (except for splash weapons). It is possible to throw a weapon that isn't designed to be thrown (that is, a melee weapon that doesn't have a numeric entry in the Range column on Table: Weapons), and a character who does so takes a –4 penalty on the attack roll. Throwing a light or one-handed weapon is a standard action, while throwing a two-handed weapon is a full-round action. Regardless of the type of weapon, such an attack scores a threat only on a natural roll of 20 and deals double damage on a critical hit. Such a weapon has a range increment of 10 feet."
+//     "description": "Daggers, clubs, shortspears,0ears, darts, javelins, throwing axes, light hammers, tridents, shuriken, and nets are thrown weapons. The wielder applies his Strength modifier to damage dealt by thrown weapons (except for splash weapons). It is possible to throw a weapon that isn't designed to be thrown (that is, a melee weapon that doesn't have a numeric entry in the Range column on Table: Weapons), and a character who does so takes a –4 penalty on the attack roll. Throwing a light or one-handed weapon is a standard action, while throwing a two-handed weapon is a full-round action. Regardless of the type of weapon, such an attack scores a threat only on a natural roll of 20 and deals double damage on a critical hit. Such a weapon has a range increment of 10 feet."
 // }, {
 //     "type": "Martial Weapons",
 //     "subtype": "Light Melee Weapons",
@@ -1571,7 +1570,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "TRUE"
 //     },
-//     "description": "A gnome hooked hammer is a double weaponan ingenious tool with a hammer head at one end of its haft and a long, curved pick at the other. The hammer's blunt head is a bludgeoning weapon that deals 1d6 points of damage (crit ×3). Its hook is a piercing weapon that deals 1d4 points of damage (crit ×4). You can use either head as the primary weapon. Gnomes treat hooked hammers as martial weapons."
+//     "description": "A gnome hooked hammer is a double weapon an ingenious tool with a hammer head at one end of its haft and a long, curved pick at the other. The hammer's blunt head is a bludgeoning weapon that deals 1d6 points of damage (crit ×3). Its hook is a piercing weapon that deals 1d4 points of damage (crit ×4). You can use either head as the primary weapon. Gnomes treat hooked hammers as martial weapons."
 // }, {
 //     "type": "Martial Weapons",
 //     "subtype": "One-Handed Melee Weapons",
@@ -1691,7 +1690,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "TRUE"
 //     },
-//     "description": "A spiked chain is about 4 feet in length, covered in wicked barbs. You can use the Weapon Finesse feat to apply your Dexterity modifier instead of your Strength modifier to attack rolls with a spiked chain sized for you, even though it isn't a light weapon."
+//     "description": "a spiked chain is about 4 feet in length, covered in wicked barbs. You can use the Weapon Finesse feat to apply your Dexterity modifier instead of your Strength modifier to attack rolls with a spiked chain sized for you, even though it isn't a light weapon."
 // }, {
 //     "type": "Exotic Weapons",
 //     "subtype": "One-Handed Melee Weapons",
@@ -1841,7 +1840,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "A dwarven urgrosh is a double weaponan axe head and a spear point on opposite ends of a long haft. The urgrosh's axe head is a slashing weapon that deals 1d8 points of damage. Its spear head is a piercing weapon that deals 1d6 points of damage. You can use either head as the primary weapon. The other becomes the off-hand weapon. If you use an urgrosh against a charging character, the spear head is the part of the weapon that deals damage. Dwarves treat dwarven urgroshes as martial weapons."
+//     "description": "A dwarven urgrosh is a double weapon an axe head and a0ear point on opposite ends of a long haft. The urgrosh's axe head is a slashing weapon that deals 1d8 points of damage. Its0ear head is a piercing weapon that deals 1d6 points of damage. You can use either head as the primary weapon. The other becomes the off-hand weapon. If you use an urgrosh against a charging character, the0ear head is the part of the weapon that deals damage. Dwarves treat dwarven urgroshes as martial weapons."
 // }, {
 //     "type": "Martial Weapons",
 //     "subtype": "Two-Handed Melee Weapons",
@@ -1991,7 +1990,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "You need at least two hands to use a bow, regardless of its size. You can use a composite shortbow while mounted. All composite bows are made with a particular strength rating (that is, each requires a minimum Strength modifier to use with proficiency). If your Strength bonus is lower than the strength rating of the composite bow, you can't effectively use it, so you take a –2 penalty on attacks with it. The default composite shortbow requires a Strength modifier of +0 or higher to use with proficiency. A composite shortbow can be made with a high strength rating to take advantage of an above-average Strength score; this feature allows you to add your Strength bonus to damage, up to the maximum bonus indicated for the bow. Each point of Strength bonus granted by the bow adds 75 gp to its cost. If you have a penalty for low Strength, apply it to damage rolls when you use a composite shortbow. For purposes of Weapon Proficiency, Weapon Focus, and similar feats, a composite shortbow is treated as if it were a shortbow."
+//     "description": "You need at least two hands to use a bow, regardless of its size. You can use a composite shortbow while mounted. All composite bows are made with a particular strength rating (that is, each requires a minimum Strength modifier to use with proficiency). If your Strength bonus is lower than the strength rating of the composite bow, you can't effectively use it, so you take a –2 penalty on attacks with it. The default composite shortbow requires a Strength modifier of +0 or higher to use with proficiency. A composite shortbow can be made with a high strength rating to take advantage of an above-average Strength score; this feature allows you to add your Strength bonus to damage, up to the maximum bonus indicated for the bow. Each point of Strength bonus granted by the bow adds 7500 to its cost. If you have a penalty for low Strength, apply it to damage rolls when you use a composite shortbow. For purposes of Weapon Proficiency, Weapon Focus, and similar feats, a composite shortbow is treated as if it were a shortbow."
 // }, {
 //     "type": "Martial Weapons",
 //     "subtype": "Two-Handed Melee Weapons",
@@ -2141,7 +2140,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "A two-bladed sword is a double weapontwin blades extend from either side of a central, short haft, allowing the wielder to attack with graceful but deadly flourishes."
+//     "description": "A two-bladed sword is a double weapon twin blades extend from either side of a central, short haft, allowing the wielder to attack with graceful but deadly flourishes."
 // }, {
 //     "type": "Martial Weapons",
 //     "subtype": "Ranged Weapons",
@@ -2171,7 +2170,7 @@ module.exports = mongoose.model('Weapons', weaponsSchema);
 //         "reach": "FALSE",
 //         "trip": "FALSE"
 //     },
-//     "description": "You need at least two hands to use a bow, regardless of its size. You can use a composite longbow while mounted. All composite bows are made with a particular strength rating (that is, each requires a minimum Strength modifier to use with proficiency). If your Strength bonus is less than the strength rating of the composite bow, you can't effectively use it, so you take a –2 penalty on attacks with it. The default composite longbow requires a Strength modifier of +0 or higher to use with proficiency. A composite longbow can be made with a high strength rating to take advantage of an above-average Strength score; this feature allows you to add your Strength bonus to damage, up to the maximum bonus indicated for the bow. Each point of Strength bonus granted by the bow adds 100 gp to its cost. If you have a penalty for low Strength, apply it to damage rolls when you use a composite longbow. For purposes of Weapon Proficiency and similar feats, a composite longbow is treated as if it were a longbow."
+//     "description": "You need at least two hands to use a bow, regardless of its size. You can use a composite longbow while mounted. All composite bows are made with a particular strength rating (that is, each requires a minimum Strength modifier to use with proficiency). If your Strength bonus is less than the strength rating of the composite bow, you can't effectively use it, so you take a –2 penalty on attacks with it. The default composite longbow requires a Strength modifier of +0 or higher to use with proficiency. A composite longbow can be made with a high strength rating to take advantage of an above-average Strength score; this feature allows you to add your Strength bonus to damage, up to the maximum bonus indicated for the bow. Each point of Strength bonus granted by the bow adds 10000 to its cost. If you have a penalty for low Strength, apply it to damage rolls when you use a composite longbow. For purposes of Weapon Proficiency and similar feats, a composite longbow is treated as if it were a longbow."
 // }, {
 //     "type": "Exotic Weapons",
 //     "subtype": "Ranged Weapons",
