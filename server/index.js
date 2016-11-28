@@ -21,24 +21,22 @@ var mongoose = require('mongoose');
 var app = express();
 app.use(bodyParser.json());
 app.use(cors());
+// app.use(express.static(__dirname + './../public'));
 
 // CONTROLLERS
-var serverExampleCtrl = require('./controllers/serverExampleCtrl');
-// var serverMessageCtrl = require('./controllers/serverMessageCtrl');
+// var serverExampleCtrl = require('./controllers/serverExampleCtrl');
+var serverMFPopulateCtrl = require('./controllers/serverMFPopulateCtrl');
 
 // 'end' snippet
 // EXAMPLE ENDPOINTS
-app.get('/api/example', serverExampleCtrl.read);
-app.post('/api/example', serverExampleCtrl.create);
-app.put('/api/example/:id', serverExampleCtrl.update);
-app.delete('/api/example/:id', serverExampleCtrl.delete);
+// app.get('/api/example', serverExampleCtrl.read);
+// app.post('/api/example', serverExampleCtrl.create);
+// app.put('/api/example/:id', serverExampleCtrl.update);
+// app.delete('/api/example/:id', serverExampleCtrl.delete);
 
-// // MESSAGE ENDPOINTS
-// app.get('/api/message', serverMessageCtrl.read);
-// app.post('/api/message', serverMessageCtrl.create);
-// app.put('/api/message/:id', serverMessageCtrl.update);
-// app.delete('/api/message/:id', serverMessageCtrl.delete);
-
+// MFRENCH TABLE POPULATION ENDPOINTS
+app.post('/api/feats', serverMFPopulateCtrl.addFeat);
+app.post('/api/classes', serverMFPopulateCtrl.addClass);
 
 
 var port = 3000;
