@@ -21,10 +21,8 @@ var mongoose = require('mongoose');
 var app = express();
 app.use(bodyParser.json());
 app.use(cors());
-// app.use(express.static(__dirname + './../public'));
-
-
 app.use(express.static(__dirname + './../public'));
+
 // CONTROLLERS
 // var serverExampleCtrl = require('./controllers/serverExampleCtrl');
 var serverMFPopulateCtrl = require('./controllers/serverMFPopulateCtrl');
