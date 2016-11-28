@@ -86,6 +86,44 @@ $scope.chosenClass= "MONK";
 $scope.classPicker = function(x){
 $scope.chosenClass = $scope.classList[x];
   };
+// ==============================   CHARSCTER GENERATOR LOGIC  ==========================
+$scope.standardRolls = [0,0,0,0,0,0];
+$scope.hybridRolls = [0,0,0,0,0,0];
+$scope.pointBuyRolls = [0,0,0,0,0,0];
+$scope.attributeSummedPlaceholder = 0;
+$scope.tempAttribute = 0;
+$scope.attributes = [0,0,0,0,0,0];
+$scope.addNums = function(total, currentVal){
+  return total + currentVal;
+};
 
+$scope.attributeSummed = function (attArrs) {
+  $scope.attributeSummedPlaceholder = attArrs.reduce($scope.addNums);
+};
+
+$scope.rollStats = function (numberOfDieToRoll) {
+  var tempArr = [];
+  $scope.standardRolls = [0,0,0,0,0,0];
+  $scope.attributes = [0,0,0,0,0,0];
+      for(let i = 0; i <= 5; i++){
+      for(let j = 0; j <= numberOfDieToRoll-1; j++){
+        tempArr.push(Math.floor((Math.random() * 6) + 0));
+      }
+      if (numberOfDieToRoll === 4) {
+        tempArr.sort().splice(1,0);
+      };
+      var attribVal = tempArr.reduce($scope.addNums);
+      $scope.standardRolls[i] = attribVal;
+      tempArr = [];
+  };
+  $scope.attributeSummed($scope.standardRolls)
+}
+  $scope.moveStat = function (number) {
+    $scope.tempAttribute = $scope.standardRolls[number];
+    $scope.standardRolls[number] = 0;
+  };
+  $scope.dropStat = function (number) {
+    $scope.attributes[number] = $scope.tempAttribute;
+  };
 
 });
