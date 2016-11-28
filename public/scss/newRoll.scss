@@ -116,3 +116,34 @@
   color: grey;
   line-height: 1.5em;
 }
+
+.pickerHolder{
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 0 0;
+}
+
+.diePicker{
+  width:30px;
+  height:45px;
+  padding: 4px 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.chosenDie{
+  width: 20px;
+  height: 20px;
+  background-color: $f7;
+  margin: 5px auto;
+}
+
+.dpLeft{
+  margin-right: 5px;
+}
+
+.diePickerTxt{
+  color: $wht;
+  font-size: .6em;
+}
+

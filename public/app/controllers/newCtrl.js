@@ -25,6 +25,9 @@ $scope.roll1 = true;
 $scope.roll2 = false;
 $scope.roll3 = false;
 
+$scope.d3Picker = false;
+$scope.d4Picker = true;
+
 //race togglers
 $scope.raceToggler = [false, false, false, true, false, false, false];
 $scope.raceSwitcher = function(x){
@@ -57,6 +60,13 @@ $scope.classSwitcher = function(x){
 };
 
 // ==============================   CONTENT PICKERS  ==========================
+//rolls
+$scope.standardRoll = 4;
+
+$scope.diceType = function(x){
+  $scope.standardRoll = x;
+}
+
 
 //RACE
 $scope.raceList = ['DWARF','ELF','GNOME','HALF-ELF','HALF-ORC','HALFLING','HUMAN']
