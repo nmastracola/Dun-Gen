@@ -1,14 +1,53 @@
 <div class="fixedBkgrd whtBkg">
   <div class="homeBox whtBkg">
-    <div class="mainLogo"> <h2>logo <br> goes <br> here</h2> </div>
+    <div class="mainLogo">
+      <img src="./images/dgLogo.svg" alt="Dun-Gen Logo">
+    </div>
     <form class="login" >
-      <h6 class="newUser" >New User?</h6>
-      <input class="loginInput" type="text" name="username" value="{{tester}}">
+      <h6 class="newUser" ng-click="toggler=!toggler">NEW USER?</h6>
+      <input class="loginInput" type="text" name="username" value="user name">
       <input class="loginInput" type="password" name="username" value="password">
       <div class="loginSubmit">
         <p class="loginSubmitTxt">submit</p>
       </div>
     </form>
   </div>
+  
+  <!-- ==================== new user modal ==================== -->
+  
+  <div class="backgroundCover"  ng-show="toggler" ng-click="toggler=!toggler"></div>
+
+    <div class="modal" ng-show="toggler">
+  
+      <h5 class="modalWelcome">WELCOME TO DUN-GEN</h5>
+        
+      <div class="newUserInputRow">
+        <p class="newUserInputLabel">USER NAME</p>
+        <input class="newUserInput" type="text"></input>
+      </div>
+      
+      <div class="newUserInputRow">
+        <p class="newUserInputLabel">E-MAIL</p>
+        <input class="newUserInput" type="text"></input>
+      </div>
+      
+      <div class="newUserInputRow">
+        <p class="newUserInputLabel">PASSWORD</p>
+        <input class="newUserInput" type="password"></input>
+      </div>
+      
+      <div class="newUserInputRow">
+        <p class="newUserInputLabel">RE-ENTER PASSWORD</p>
+        <input class="newUserInput" type="password"></input>
+      </div>
+
+  <!-- ==================== sumbit Button ==================== -->
+
+      <div class="newUserSubmit"  ng-click="toggler=!toggler">
+        <div class="littleLogo">
+        <img src="./images/dgLogo.svg" alt="Dun-Gen Logo">
+        </div>
+        <h5 class="submitLabel">Begin</h5>
+      </div>
   
 </div>
