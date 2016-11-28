@@ -1,5 +1,5 @@
 var Feats = require('./../models/Feats');
-var Classes = require('./../models/Classes');
+var Class = require('./../models/Class');
 
 module.exports = {
 
@@ -13,7 +13,7 @@ module.exports = {
   },
   
   addClass: function(req, res, next){
-    Classes.create(req.body, function(err, user){
+    Class.create(req.body, function(err, user){
       if(err){
         res.status(500).send(err);
       }
