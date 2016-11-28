@@ -22,7 +22,7 @@ var classesSchema = mongoose.Schema({
               type: String,
               required: true
           }
-      }]
+      }],
       hitDie: {
           type: String,
           required: true
@@ -31,7 +31,7 @@ var classesSchema = mongoose.Schema({
           type: Number,
           required: true
       },
-      levels[{
+      levels:[{
           level: {
               type: Number,
               required: true
@@ -96,7 +96,8 @@ var classesSchema = mongoose.Schema({
           }]
       }]
 
-  });
+  }
+});
 // EXPORT SCHEMA
 // ============================================================
 module.exports = mongoose.model('Classes', classesSchema);
