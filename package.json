@@ -1,5 +1,5 @@
 {
-  "name": "Untitled_Saga",
+  "name": "Dun-Gen",
   "version": "1.0.0",
   "main": "server/index.js",
   "scripts": {
@@ -7,15 +7,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Basement-Boss/Untitled_Saga.git"
+    "url": "git+https://github.com/Basement-Boss/Dun-Gen.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Basement-Boss/Untitled_Saga/issues"
+    "url": "https://github.com/Basement-Boss/Dun-Gen/issues"
   },
-  "homepage": "https://github.com/Basement-Boss/Untitled_Saga#readme",
+  "homepage": "https://github.com/Basement-Boss/Dun-Gen#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
