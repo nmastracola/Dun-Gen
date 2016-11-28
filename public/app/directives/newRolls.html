@@ -77,7 +77,16 @@
                 </div>
                 <!-- TOTAL -->
                 <div class="rollRow">
-                    <div class="rollBox"></div>
+                    <div class="rollBox pickerHolder">
+                      <div class="diePicker blkBkg dpLeft" ng-click="d3Picker = !d3Picker; d4Picker = !d4Picker; diceType(3)">
+                        <p class="diePickerTxt">3d6</p>
+                        <div class="chosenDie" ng-show="d3Picker"></div>
+                      </div>
+                      <div class="diePicker blkBkg" ng-click="d3Picker = !d3Picker; d4Picker = !d4Picker; diceType(4)">
+                        <p class="diePickerTxt">4d6-1</p>
+                        <div class="chosenDie" ng-show="d4Picker"></div>
+                      </div>
+                    </div>
                     <div class="rollBox dieBox"> 
                     <img class="newD20" src="images/D20-BLK-NEW.svg" alt="roll Standard"></div>
                     <div class="rollBox totalBox">
