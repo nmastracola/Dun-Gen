@@ -1,0 +1,62 @@
+.homeBox{
+  height: 400px;
+  width: 250px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+   box-shadow: 5px 5px 5px lightgrey;
+}
+
+.mainLogo{
+  height: 200px;
+  width:150px;
+  background-color: $f6;
+  margin: auto;
+}
+
+.login{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.newUser{
+  text-align: center;
+  color: lightgrey;
+  &:hover{
+    color: $blk;
+  }
+}
+
+.loginInput{
+  border: none;
+  background-color: $blk;
+  color: $wht;
+  height: 30px;
+  width: 200px;
+  text-align: center;
+  margin: 5px 0 5px;
+  &:focus{
+    outline: none;
+    box-shadow: 5px 5px 5px lightgrey;
+  }
+}
+
+.loginSubmit{
+  background-color: $blk;
+  width: 75px;
+  height: 30px;
+  text-align: center;
+  padding: 7px;
+  margin: 10px auto;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.loginSubmitTxt{
+  color: $wht;
+
+}

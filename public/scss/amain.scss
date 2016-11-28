@@ -1,0 +1,240 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+  
+  
+// =================================  END RESET  =================================
+
+// =========  MASTER COLORS =========
+
+//Base colors
+$blk: #292331;
+$wht: white;
+//Bard
+$bd1: #A51E36;
+$bd2: #C22032;
+$bd3: #430C4F;
+$bd4: #821F96;
+$bd5: #E27C00;
+$bd6: #FFC656;
+$bd7: #00783E;
+$bd8: #4C9462;
+$bd9: #6ECB98;
+//Barbarian
+$bb1: #290D09;
+$bb2: #501C0F;
+$bb3: #A84F2F;
+$bb4: #DF9357;
+$bb5: #FFF0A5;
+$bb6: #CAC1A2;
+$bb7: #7B776C;
+$bb8: #41423C;
+$bb9: #121A0F;
+//Cleric
+$cl1: #393951;
+$cl2: #5D4265;
+$cl3: #8287C1;
+$cl4: #A8A9DF;
+$cl5: #A0BBEE;
+$cl6: #D1D1B5;
+$cl7: #A39FB0;
+$cl8: #848891;
+$cl9: #696C72;
+//Druid
+$dr1: #45B5CA;
+$dr2: #124D50;
+$dr3: #324335;
+$dr4: #324335;
+$dr5: #6A813B;
+$dr6: #7A9C49;
+$dr7: #998C87; 
+$dr8: #766661;
+$dr9: #392F2C;
+//Fighter
+$f1: #343E48;
+$f2: #5D6770;
+$f3: #7D868C;
+$f4: #A4AAAD;
+$f5: #C22032;
+$f6: #A51E36;
+$f7: #8C2332;
+$f8: #713332;
+$f9: #5A2E2C;
+// //Monk
+// $m1: #;
+// $m2: #;
+// $m3: #;
+// $m4: #;
+// $m5: #;
+// $m6: #;
+// $m7: #;
+// $m8: #;
+// $m9: #;
+//Paladin
+$p1: #3E403F;
+$p2: #7E8387;
+$p3: #A7B2B6;
+$p4: #B88400;
+$p5: #FFD756;
+$p6: #B1C3D7; 
+$p7: #516B82;
+$p8: #14446A;
+$p9: #011B34;
+//Ranger
+$ra1: #475137;
+$ra2: #5B7954;
+$ra3: #C2C76C;
+$ra4: #FFCA5F;
+$ra5: #D87F27;
+$ra6: #BB5327;
+$ra7: #841618;
+$ra8: #5F3D1D;
+$ra9: #4E2805;
+// //Rogue
+// $ro1: #;
+// $ro2: #;
+// $ro3: #;
+// $ro4: #;
+// $ro5: #;
+// $ro6: #;
+// $ro7: #;
+// $ro8: #;
+// $ro9: #;
+//Sorceror
+$s1: #30FDFF;
+$s2: #AAE9FE;
+$s3: #57A2F1;
+$s4: #163673;
+$s5: #062345;
+$s6: #A00000;
+$s7: #C35711;
+$s8: #FEAE2D;
+$s9: #F9E285;
+//Wizard
+$w1: #B6862D;
+$w2: #ECAA20;
+$w3: #FFC530;
+$w4: #FFDA64;
+$w5: #F2DAEA;
+$w6: #DBB8E3;
+$w7: #BB80D1;
+$w8: #752F8A;
+$w9: #2F1A45;
+
+.blkBkg{
+    background-color: $blk;
+}
+
+.whtBkg{
+  background: $wht;
+}
+
+.greyBkg{
+  background: grey;
+}
+
+.ltgreyBkg{
+  background: lightgrey;
+}
+
+// =========  MASTER TEXT =========
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Merriweather', serif;
+  color: $blk;
+  letter-spacing: .1em;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  color: $blk;
+}
+
+h1{
+  font-size: 3em;
+}
+
+h2{
+  font-size: 2.5em;
+}
+
+h3{
+  font-size: 2em;
+}
+
+h4{
+  font-size: 1.7em;
+}
+
+h5{
+  font-size: 1.5em;
+}
+
+h6{
+  font-size: 1.25em;
+}
+
+// =========  COMMON ELEMENTS =========
+
+.fixedBkgrd{
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.scrollBkgrd{
+  min-height: 100vh;
+}
+

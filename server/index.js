@@ -22,6 +22,8 @@ var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+
+app.use(express.static(__dirname + './../public'));
 // CONTROLLERS
 var serverExampleCtrl = require('./controllers/serverExampleCtrl');
 // var serverMessageCtrl = require('./controllers/serverMessageCtrl');

@@ -1,0 +1,53 @@
+.classHolder{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px 0 0 0;
+}
+
+.singleClass{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.classImg{
+  height:150px;
+  width: 100px;
+  background-color: $blk;
+  margin: 0 auto;
+}
+
+.classDescription{
+  text-align: center;
+  margin: 10px 0 0 0;
+  font-size: .8em;
+}
+
+.classEnabler{
+  background-color: $wht;
+  opacity: .9;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.classTitle{
+  padding: 10px 0 0 0;
+  height: 45px;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#292331+2,ffffff+40,ffffff+60,292331+100 */
+background: #292331; /* Old browsers */
+background: -moz-linear-gradient(left,  #292331 2%, #ffffff 40%, #ffffff 60%, #292331 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #292331 2%,#ffffff 40%,#ffffff 60%,#292331 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #292331 2%,#ffffff 40%,#ffffff 60%,#292331 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#292331', endColorstr='#292331',GradientType=1 ); /* IE6-9 */
+}

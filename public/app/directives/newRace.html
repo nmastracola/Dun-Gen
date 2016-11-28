@@ -1,0 +1,97 @@
+<section class="newSection" id="race"> 
+<h5 class="newSubheader">CLICK TO CHOOSE A RACE</h5>
+
+<div class="raceSelectorContainer">
+  
+  <div class="raceSelector">
+    <div class="characterEnabler" ng-hide="raceToggler[0]" ng-click="raceSwitcher(0); racePicker(0)"></div>
+    <div class="raceImage greyBkg"></div>
+    <h5 class="raceLabel">DWARF</h5>
+  </div>
+
+  <div class="raceSelector">
+    <div class="characterEnabler" ng-hide="raceToggler[1]" ng-click="raceSwitcher(1); racePicker(1)"></div>
+    <div class="raceImage"><img src="./images/elfIcon.svg" alt="Elf"></div>
+    <h5 class="raceLabel">ELF</h5>
+  </div>
+
+  <div class="raceSelector">
+    <div class="characterEnabler" ng-hide="raceToggler[2]" ng-click="raceSwitcher(2); racePicker(2)"></div>
+    <div class="raceImage"><img src="./images/gnomeIcon.svg" alt="Elf"></div>
+    <h5 class="raceLabel">GNOME</h5>
+  </div>
+
+  <div class="raceSelector">
+    <div class="characterEnabler" ng-hide="raceToggler[3]" ng-click="raceSwitcher(3); racePicker(3)"></div>
+    <div class="raceImage greyBkg"></div>
+    <h5 class="raceLabel " >HALF-ELF</h5>
+  </div>
+
+  <div class="raceSelector">
+    <div class="characterEnabler" ng-hide="raceToggler[4]" ng-click="raceSwitcher(4); racePicker(4)"></div>
+    <div class="raceImage"><img src="./images/orcIcon.svg" alt="Elf"></div>
+    <h5 class="raceLabel">HALF-ORC</h5>
+  </div>
+
+  <div class="raceSelector">
+    <div class="characterEnabler" ng-hide="raceToggler[5]" ng-click="raceSwitcher(5); racePicker(5)"></div>
+    <div class="raceImage greyBkg"></div>
+    <h5 class="raceLabel">HALFLING</h5>
+  </div>
+
+  <div class="raceSelector">
+    <div class="characterEnabler" ng-hide="raceToggler[6]" ng-click="raceSwitcher(6); racePicker(6)"></div>
+    <div class="raceImage greyBkg"></div>
+    <h5 class="raceLabel">HUMAN</h5>
+  </div>
+</div>
+
+<div class="genderPicker">
+
+        <h5 class="txtButton">MALE</h5>
+        <div class="buttonBase" ng-click="male = true; female = false">
+            <div class="buttonSelected" ng-show="male"></div>
+        </div>
+        <div class="buttonBase" ng-click="female = true; male = false">
+            <div class="buttonSelected" ng-show="female"></div>
+        </div>
+        <h5 class="txtButton">FEMALE</h5>
+
+</div>
+<!-- ===============================  PLACEHOLDER  ================================== -->
+<div class="raceStats">
+  <p class="rParagraph">+2 to One Ability Score: Half-orc characters get a +2 bonus to one ability score of their choice at creation to represent their varied nature.</p>
+  <div class="raceStatChanger"></div>
+  <p class="rParagraph">Medium: Half-orcs are Medium creatures and have no bonuses or penalties due to their size.<br><br>
+Normal Speed: Half-orcs have a base speed of 30 feet.<br><br>
+Darkvision: Half-orcs can see in the dark up to 60 feet.<br><br>
+Intimidating: Half-orcs receive a +2 racial bonus on Intimidate skill checks due to their fearsome nature.<br><br>
+Orc Blood: Half-orcs count as both humans and orcs for any effect related to race.<br><br>
+Orc Ferocity: Once per day, when a half-orc is brought below 0 hit points but not killed, he can fight on for one more round as if disabled. At the end of his next turn, unless brought to above 0 hit points, he immediately falls unconscious and begins dying.<br><br>
+Weapon Familiarity: Half-orcs are proficient with greataxes and falchions and treat any weapon with the word "orc" in its name as a martial weapon.<br><br>
+Languages: Half-orcs begin play speaking Common and Orc. Half-orcs with high Intelligence scores can choose from the following: Abyssal, Draconic, Giant, Gnoll, and Goblin.
+</p>
+</div>
+
+<!-- ===============================  END PLACEHOLDER  ================================== -->
+
+
+<!-- ==================  CLASS BUTTON  ===================== -->
+<div class="buttonHolder">
+  <div class="txtAndButton">
+    <h5 class="txtButton">CONFIRM</h5>
+    <div class="buttonBase" ng-click="raceBtn = true">
+      <div class="buttonSelected" ng-show="raceBtn"></div>
+    </div>
+  </div>
+  <div class="txtAndButton">
+    <div class="buttonBase" ng-click="raceBtn = false">
+      <div class="buttonSelected" ng-hide="raceBtn"></div>
+    </div>
+      <h5 class="txtButton">CANCEL</h5>
+  </div>
+
+
+
+
+</section>
