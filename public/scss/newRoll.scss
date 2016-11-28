@@ -1,0 +1,118 @@
+
+.firstSection{;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.enabler{
+  background-color: $wht;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: .9;
+}
+
+.rollContainer{
+  padding: 20px 0 50px 0;
+  text-align: center;
+  position: relative;
+}
+
+.rollHolder{
+  display: flex;
+  flex-direction: column;
+}
+
+.rollRow{
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0 5px 0;
+}
+
+.rollBox{
+  height: 45px;
+  width: 70px;
+  margin: 0 5px 0 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.rollContent{
+  color: $wht;
+}
+
+.totalBox{
+  padding-left: 0;
+  text-align: right;
+}
+
+.newD20{
+  height: 45px;
+}
+
+.dieBox{
+  padding: 0;
+}
+
+.statBox{
+  padding: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.topRow{
+  margin: 0;
+}
+
+.topBox{
+  width: 70px;
+  margin: 0 5px 0 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid $blk;
+  &:hover{
+    border-bottom:15px solid $f7;
+  }
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid $blk;
+  margin-top: 5px;
+  &:hover{
+    border-top:15px solid $f7;
+  }
+}
+
+.rollDetails{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.rollDetailHeader{
+  color: grey;
+  text-align: center;
+}
+
+.rollDetailsP{
+  width: 70%;
+  text-align: left;
+  margin: 20px auto;
+  color: grey;
+  line-height: 1.5em;
+}

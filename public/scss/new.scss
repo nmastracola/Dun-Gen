@@ -1,0 +1,102 @@
+.newHeader{
+  text-align: center;
+  padding: 3px 0 3px 0;
+}
+
+.verticalSpacer{
+    border-right: 2px solid $blk;
+    height: 350px;
+    margin-top: 150px;
+}
+
+#firstHeader{
+  background-color: $blk;
+  &:hover{
+    opacity: .9;
+  }
+}
+#raceHeader{
+  background-color: $f9;
+  &:hover{
+    opacity: .9;
+  }
+}
+#classHeader{
+  background-color: $f8;
+  &:hover{
+    opacity: .9;
+  }
+}
+#abilitiesHeader{
+  background-color: $f7;
+  &:hover{
+    opacity: .9;
+  }
+}
+#spellsHeader{
+  background-color: $f6;
+  &:hover{
+    opacity: .9;
+  }
+}
+#customizationHeader{
+  background-color: $f5;
+  &:hover{
+    opacity: .9;
+  }
+}
+
+.newSubheader{
+  text-align: center;
+  color: lightgrey;
+  padding: 20px 0 20px 0;
+  letter-spacing: .1em;
+}
+
+.newHeaderTxt{
+    color: $wht;
+}
+
+
+// =============   CHARACTER GENERATOR BUTOTNS    ===========
+
+.buttonHolder{
+  margin: 0 auto 20px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.txtAndButton{
+  display: flex;
+  flex-direction: row;
+  margin: 0 5px 0 5px;
+}
+
+.buttonBase{
+  width: 30px;
+  height: 30px;
+  background-color: $wht;
+  border: 2px solid $blk;
+  position: relative;
+  margin: 0 5px 0 5px;
+}
+
+.buttonSelected{
+  width: 20px;
+  height: 20px;
+  background-color: $f7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.txtButton{
+  padding: 2px 0 0 0;
+}
+
+
+
+

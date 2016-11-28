@@ -1,0 +1,315 @@
+<form ng-submit="characterRolls">
+  
+
+<h5 class="newSubheader">CLICK TO CHOOSE A SYSTEM</h5>
+<section class="firstSection" id="roll">  
+        <!-- STANDARD -->
+        
+        <div class="rollContainer">
+          <div class="enabler" ng-hide="roll1" ng-click="roll1=!roll1; roll2 = false; roll3 = false"></div>
+            <h3>STANDARD</h3>
+            <p class="newSubheader">CLICK DIE, STAT, THEN ROLL</p>
+            <!-- TABLE -->
+            <div class="rollHolder">
+                <!-- DESCRIPTIONS -->
+                <div class="rollRow topRow">
+                    <div class="topBox "></div>
+                    <div class="topBox statBox">
+                        <p>base</p>
+                    </div>
+                    <div class="topBox statBox">
+                        <p>modifier</p>
+                    </div>
+                    <div class="topBox statBox">
+                        <p>roll</p>
+                    </div>
+                </div>
+                <!-- STR -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>STR</h4></div>
+                    <div class="rollBox greyBkg ">
+                        <h5 class="rollContent">12</h5></div>
+                    <div class="rollBox ltgreyBkg">
+                        <h5 class="rollContent">+2</h5></div>
+                    <div class="rollBox blkBkg">
+                        <h5 class="rollContent">-</h5></div>
+                </div>
+                <!-- CON -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>CON</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox blkBkg"></div>
+                </div>
+                <!-- DEX -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>DEX</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox blkBkg"></div>
+                </div>
+                <!-- INT -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>INT</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox blkBkg"></div>
+                </div>
+                <!-- WIS -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>WIS</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox blkBkg"></div>
+                </div>
+                <!-- CHA -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>CHA</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox blkBkg"></div>
+                </div>
+                <!-- TOTAL -->
+                <div class="rollRow">
+                    <div class="rollBox"></div>
+                    <div class="rollBox dieBox"> 
+                    <img class="newD20" src="images/D20-BLK-NEW.svg" alt="roll Standard"></div>
+                    <div class="rollBox totalBox">
+                        <h6>TOTAL</h6></div>
+                    <div class="rollBox blkBkg">
+                        <h5 class="rollContent">83</h5></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="verticalSpacer"></div>
+        <!-- HYBRID -->
+        <div  class="rollContainer">
+          <div class="enabler" ng-hide="roll2"  ng-click="roll2=!roll2; roll1 = false; roll3= false"></div>
+            <h3>HYBRID</h3>
+            <p class="newSubheader">CLICK DIE, THEN REASSIGN</p>
+            <div class="rollHolder">
+                <!-- DESCRIPTIONS -->
+                <div class="rollRow topRow">
+                    <div class="topBox "></div>
+                    <div class="topBox statBox">
+                        <p>base</p>
+                    </div>
+                    <div class="topBox statBox">
+                        <p>modifier</p>
+                    </div>
+                    <div class="topBox"></div>
+                </div>
+                <!-- STR -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>STR</h4></div>
+                    <div class="rollBox greyBkg ">
+                        <h5 class="rollContent">12</h5></div>
+                    <div class="rollBox ltgreyBkg">
+                        <h5 class="rollContent">+2</h5></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- CON -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>CON</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- DEX -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>DEX</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- INT -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>INT</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- WIS -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>WIS</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- CHA -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>CHA</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- TOTAL -->
+                <div class="rollRow">
+                    <div class="rollBox"></div>
+                    <div class="rollBox totalBox"><h6>TOTAL</h6></div>
+                    <div class="rollBox blkBkg">
+                        <h5 class="rollContent">16</h5></div>
+                    <div class="rollBox dieBox"><img class="newD20" src="images/D20-BLK-NEW.svg" alt="roll Standard"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="verticalSpacer"></div>
+        <!-- POINT BUY -->
+        <div class="rollContainer">
+          <div class="enabler" ng-hide="roll3"  ng-click="roll3=!roll3; roll1 = false; roll2= false"></div>
+            <h3>POINT BUY</h3>
+            <p class="newSubheader">ADD OR REMOVE FROM TOTAL</p>
+            <div class="rollHolder">
+                <!-- DESCRIPTIONS -->
+                <div class="rollRow topRow">
+                    <div class="topBox "></div>
+                    <div class="topBox statBox">
+                        <p>base</p>
+                    </div>
+                    <div class="topBox statBox">
+                        <p>modifier</p>
+                    </div>
+                    <div class="topBox"></div>
+                </div>
+                <!-- STR -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>STR</h4></div>
+                    <div class="rollBox greyBkg ">
+                        <h5 class="rollContent">12</h5></div>
+                    <div class="rollBox ltgreyBkg">
+                        <h5 class="rollContent">+2</h5></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- CON -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>CON</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- DEX -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>DEX</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- INT -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>INT</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- WIS -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>WIS</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- CHA -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>CHA</h4></div>
+                    <div class="rollBox greyBkg "></div>
+                    <div class="rollBox ltgreyBkg"></div>
+                    <div class="rollBox">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <!-- TOTAL -->
+                <div class="rollRow">
+                    <div class="rollBox">
+                        </div>
+                    <div class="rollBox totalBox">
+                        <h6>TOTAL</h6></div>
+                    <div class="rollBox blkBkg">
+                        <h5 class="rollContent">16</h5></div>
+                    <div class="rollBox"></div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<div class="rollDetails">
+  <h4 class="rollDetailHeader">STRENGTH</h4>
+  <p class="rollDetailsP">Strength measures muscle and physical power. This ability is important for those who engage in hand-to-hand (or "melee") combat, such as fighters, monks, paladins, and some rangers. Strength also sets the maximum amount of weight your character can carry. A character with a Strength score of 0 is too weak to move in any way and is unconscious. Some creatures do not possess a Strength score and have no modifier at all to Strength-based skills or checks.
+</p>
+</div>
+
+<div class="buttonHolder">
+  <div class="txtAndButton">
+    <h5 class="txtButton">CONFIRM</h5>
+    <div class="buttonBase" ng-click="rollBtn = true">
+      <div class="buttonSelected" ng-show="rollBtn"></div>
+    </div>
+  </div>
+  <div class="txtAndButton">
+    <div class="buttonBase" ng-click="rollBtn = false">
+      <div class="buttonSelected" ng-hide="rollBtn"></div>
+    </div>
+      <h5 class="txtButton">CANCEL</h5>
+  </div>
+  
+</div>
+
+</form>
+
+
+
