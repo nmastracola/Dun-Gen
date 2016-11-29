@@ -33,6 +33,8 @@ $scope.rolling3d6 = function(){
 
 //--------------------------------------------------------
 
+// This is a 4d6 Drop 1 dice roller.  
+
 $scope.addNums = function(total, currentVal){
   return total + currentVal;
 }
