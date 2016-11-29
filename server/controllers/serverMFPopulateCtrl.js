@@ -6,6 +6,7 @@ var Skills = require('./../models/skills');
 var Weapons = require('./../models/weapons');
 var DamagingArmor = require('./../models/damagingArmor');
 // var Class = require('./../models/class');
+var Class = require('./../models/class');
 
 
 module.exports = {
@@ -65,6 +66,14 @@ module.exports = {
       }
       res.status(200).send(user);
     })
+  },
+  addClass: function(req, res, next){
+    Class.create(req.body, function(err, user){
+      if(err){
+        res.status(500).send(err);
+      }
+      res.status(200).send(user);
+    })
   }
 
 
@@ -76,5 +85,4 @@ module.exports = {
   //     res.status(200).send(user);
   //   })
   // }
-
 }
