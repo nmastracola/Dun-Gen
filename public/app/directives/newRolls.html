@@ -1,10 +1,10 @@
 <form ng-submit="characterRolls">
-  
+
 
 <h5 class="newSubheader">CLICK TO CHOOSE A SYSTEM</h5>
-<section class="firstSection" id="roll">  
+<section class="firstSection" id="roll">
         <!-- STANDARD -->
-        
+
         <div class="rollContainer">
           <div class="enabler" ng-hide="roll1" ng-click="roll1=!roll1; roll2 = false; roll3 = false"></div>
             <h3>STANDARD</h3>
@@ -29,51 +29,51 @@
                     <div class="rollBox whtBkg">
                         <h4>STR</h4></div>
                     <div class="rollBox greyBkg ">
-                        <h5 class="rollContent">12</h5></div>
+                        <h5 class="rollContent" ng-click="dropStat(0)">{{attributes[0]}}</h5></div>
                     <div class="rollBox ltgreyBkg">
-                        <h5 class="rollContent">+2</h5></div>
+                        <h5 class="rollContent"></h5></div>
                     <div class="rollBox blkBkg">
-                        <h5 class="rollContent">-</h5></div>
+                        <h5 class="rollContent" ng-click="moveStat(0)">{{standardRolls[0]}}</h5></div>
                 </div>
                 <!-- CON -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>CON</h4></div>
-                    <div class="rollBox greyBkg "></div>
-                    <div class="rollBox ltgreyBkg"></div>
-                    <div class="rollBox blkBkg"></div>
+                    <div class="rollBox greyBkg " ng-click="dropStat(1)"><h5 class="rollContent" >{{attributes[1]}}</h5></div>
+                    <div class="rollBox ltgreyBkg"><h5 class="rollContent" ></h5></div>
+                    <div class="rollBox blkBkg" ng-click="moveStat(1)"><h5 class="rollContent" >{{standardRolls[1]}}</h5></div>
                 </div>
                 <!-- DEX -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>DEX</h4></div>
-                    <div class="rollBox greyBkg "></div>
-                    <div class="rollBox ltgreyBkg"></div>
-                    <div class="rollBox blkBkg"></div>
+                    <div class="rollBox greyBkg " ng-click="dropStat(2)"><h5 class="rollContent" >{{attributes[2]}}</h5></div>
+                    <div class="rollBox ltgreyBkg"><h5 class="rollContent" ></h5></div>
+                    <div class="rollBox blkBkg" ng-click="moveStat(2)" ><h5 class="rollContent"  >{{standardRolls[2]}}</h5></div>
                 </div>
                 <!-- INT -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>INT</h4></div>
-                    <div class="rollBox greyBkg "></div>
-                    <div class="rollBox ltgreyBkg"></div>
-                    <div class="rollBox blkBkg"></div>
+                    <div class="rollBox greyBkg " ng-click="dropStat(3)"><h5 class="rollContent" >{{attributes[3]}}</h5></div>
+                    <div class="rollBox ltgreyBkg"><h5 class="rollContent" ></h5></div>
+                    <div class="rollBox blkBkg" ng-click="moveStat(3)" ><h5 class="rollContent" >{{standardRolls[3]}}</h5></div>
                 </div>
                 <!-- WIS -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>WIS</h4></div>
-                    <div class="rollBox greyBkg "></div>
-                    <div class="rollBox ltgreyBkg"></div>
-                    <div class="rollBox blkBkg"></div>
+                    <div class="rollBox greyBkg " ng-click="dropStat(4)"><h5 class="rollContent" >{{attributes[4]}}</h5></div>
+                    <div class="rollBox ltgreyBkg"><h5 class="rollContent" ></h5></div>
+                    <div class="rollBox blkBkg" ng-click="moveStat(4)" ><h5 class="rollContent" >{{standardRolls[4]}}</h5></div>
                 </div>
                 <!-- CHA -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>CHA</h4></div>
-                    <div class="rollBox greyBkg "></div>
-                    <div class="rollBox ltgreyBkg"></div>
-                    <div class="rollBox blkBkg"></div>
+                    <div class="rollBox greyBkg "><h5 class="rollContent" ng-click="dropStat(5)" >{{attributes[5]}}</h5></div>
+                    <div class="rollBox ltgreyBkg"><h5 class="rollContent" ></h5></div>
+                    <div class="rollBox blkBkg" ng-click="moveStat(5)" ><h5 class="rollContent">{{standardRolls[5]}}</h5></div>
                 </div>
                 <!-- TOTAL -->
                 <div class="rollRow">
@@ -87,17 +87,17 @@
                         <div class="chosenDie" ng-show="d4Picker"></div>
                       </div>
                     </div>
-                    <div class="rollBox dieBox"> 
+                    <div class="rollBox dieBox" ng-click="rollStats(standardRoll)">
                     <img class="newD20" src="images/D20-BLK-NEW.svg" alt="roll Standard"></div>
                     <div class="rollBox totalBox">
                         <h6>TOTAL</h6></div>
                     <div class="rollBox blkBkg">
-                        <h5 class="rollContent">83</h5></div>
+                        <h5 class="rollContent" placeholder="0">{{attributeSummedPlaceholder}}</h5></div>
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div class="verticalSpacer"></div>
         <!-- HYBRID -->
         <div  class="rollContainer">
@@ -194,8 +194,8 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div class="verticalSpacer"></div>
         <!-- POINT BUY -->
         <div class="rollContainer">
@@ -315,10 +315,7 @@
     </div>
       <h5 class="txtButton">CANCEL</h5>
   </div>
-  
+
 </div>
 
 </form>
-
-
-
