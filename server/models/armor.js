@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 // DEFINE SCHEMA
 // ============================================================
-var weaponsSchema = mongoose.Schema({
+var armorSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -51,7 +51,7 @@ var weaponsSchema = mongoose.Schema({
 });
 // EXPORT SCHEMA
 // ============================================================
-module.exports = mongoose.model('Weapons', weaponsSchema);
+module.exports = mongoose.model('Armor', armorSchema);
 
 // [
 //   {

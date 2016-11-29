@@ -1,45 +1,68 @@
 // 'server' snippet
 
-// To upload tables to our remote server, you first need to create a server controller, like the example provided.
-// This will give postman endpoints to allow you to enter information there.
-// You will also need to create a schema which will control the types of data that go into your tables
-// That schema will be found in the models folder, and will be in a format similar to example.js
-// The names will obviously change, depending on what your table is.
-// Remember to require your controllers, and to make sure your endpoint URLs match up.
-
-// Also don't forget to    npm init -y    and    npm install     when you first clone the repo
-// All the dependencies we need should already be listed in the package.json, so you dont need to specify.
-
-// Let me know if you have any problems.
-// <3<3 Matty Poo
-
+// EXTERNAL MODULES //
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var session = require('express-session');
 
+// CONFIG //
+var config = require('./config');
+
+// CONTROLLERS //
+var serverMFPopulateCtrl = require('./controllers/serverMFPopulateCtrl');
+var serverUserCtrl = require('./controllers/serverUserCtrl');
+
+// SERVICES //
+var passport = require('./services/passport');
+
+// POLICIES //
+var isAuthed = function(req, res, next) {
+  if (!req.isAuthenticated()) return res.status(401).send();
+  return next();
+};
+
+// EXPRESS //
 var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(__dirname + './../public'));
 
-// CONTROLLERS
-// var serverExampleCtrl = require('./controllers/serverExampleCtrl');
-var serverMFPopulateCtrl = require('./controllers/serverMFPopulateCtrl');
+// SESSION AND PASSPORT //
+app.use(session({
+  secret: config.SESSION_SECRET,
+  saveUninitialized: false,
+  resave: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-// 'end' snippet
-// EXAMPLE ENDPOINTS
-// app.get('/api/example', serverExampleCtrl.read);
-// app.post('/api/example', serverExampleCtrl.create);
-// app.put('/api/example/:id', serverExampleCtrl.update);
-// app.delete('/api/example/:id', serverExampleCtrl.delete);
+// PASSPORT ENDPOINTS //
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/me'
+}));
+app.get('/logout', function(req, res, next) {
+  req.logout();
+  return res.status(200).send('logged out');
+});
 
-// MFRENCH TABLE POPULATION ENDPOINTS
+// USER ENDPOINTS //
+app.post('/register', serverUserCtrl.register);
+app.get('/user', serverUserCtrl.read);
+app.get('/me', isAuthed, serverUserCtrl.me);
+app.put('/user/:_id', isAuthed, serverUserCtrl.update);
+
+
+// TABLE POPULATION ENDPOINTS
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
 app.post('/api/spells', serverMFPopulateCtrl.addSpells);
+app.post('/api/armor', serverMFPopulateCtrl.addArmor);
 
-var port = 3000;
-var mongoURI = 'mongodb://basementboss:imdabes@ds157667.mlab.com:57667/basementboss';
+// CONNECTIONS //
+var mongoURI = config.MONGO_URI;
+var port = config.PORT;
+
 mongoose.set('debug', true);
 mongoose.connect(mongoURI);
 mongoose.connection.once('open', function(){
@@ -48,7 +71,3 @@ mongoose.connection.once('open', function(){
     console.log('Server listening on port: ' + port);
   });
 })
-
-// app.listen(port, function(){
-//   console.log('Server listening on port: ' + port);
-// });

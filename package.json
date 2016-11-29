@@ -17,14 +17,20 @@
   },
   "homepage": "https://github.com/Basement-Boss/Dun-Gen#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
+    "express-session": "^1.14.2",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-ng-annotate": "^2.0.0",
+    "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^2.3.2",
-    "mongoose": "^4.6.8"
+    "mongoose": "^4.6.8",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   },
   "description": ""
 }
