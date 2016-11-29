@@ -65,6 +65,7 @@ app.post('/api/skills', serverMFPopulateCtrl.addSkills);
 app.post('/api/weapons', serverMFPopulateCtrl.addWeapons);
 app.post('/api/damagingArmor', serverMFPopulateCtrl.addDamagingArmor);
 app.post('/api/goodsAndServices', serverMFPopulateCtrl.addGoodsAndServices);
+app.post('/api/bonusSpells', serverMFPopulateCtrl.addBonusSpells);
 
 // CONNECTIONS //
 var mongoURI = config.MONGO_URI;
