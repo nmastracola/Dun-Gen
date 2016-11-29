@@ -58,6 +58,7 @@ app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
 app.post('/api/spells', serverMFPopulateCtrl.addSpells);
 app.post('/api/armor', serverMFPopulateCtrl.addArmor);
+app.post('/api/races', serverMFPopulateCtrl.addRaces);
 
 // CONNECTIONS //
 var mongoURI = config.MONGO_URI;
