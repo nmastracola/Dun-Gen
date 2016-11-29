@@ -4,10 +4,9 @@ var mongoose = require('mongoose');
 // DEFINE SCHEMA
 // ============================================================
 var classSchema = mongoose.Schema({
-  class: {
       class: {
           type: String,
-              required: true
+          required: true
       },
       classDescription: {
           type: String,
@@ -17,14 +16,37 @@ var classSchema = mongoose.Schema({
           type: String,
           required: true
       },
-      preReqs: [{
-          preReq: {
-              type: String,
-              required: true
-          }
-      }],
+      alignmentRestriction: {
+          lawfulGood: {
+              type: Boolean
+          },
+          lawfulNeutral: {
+              type: Boolean
+          },
+          lawfulEvil: {
+              type: Boolean
+          },
+          neutralGood: {
+              type: Boolean
+          },
+          neutralNeutral: {
+              type: Boolean
+          },
+          neutralEvil: {
+              type: Boolean
+          },
+          chaoticGood: {
+              type: Boolean
+          },
+          chaoticNeutral: {
+              type: Boolean
+          },
+          chaoticEvil: {
+              type: Boolean
+          },
+      },
       hitDie: {
-          type: String,
+          type: Number,
           required: true
       },
       skillsPerLevel: {
@@ -36,10 +58,10 @@ var classSchema = mongoose.Schema({
               type: Number,
               required: true
           },
-          baseAttackBonus: [{
+          baseAttackBonus: {
               type: Number,
               required: true
-          }],
+          },
           fortSave: {
               type: Number,
               required: true
@@ -53,51 +75,38 @@ var classSchema = mongoose.Schema({
               required: true
           },
           special: [{
-              specialAbility: {
-                  type: String,
-                  required: true
-              }
+              type: String    
           }],
       }],
       specialAbilities: [{
           specialAbility: {
-              type: String,
-              required: true
+              type: String
           },
           specialDescription: {
-              type: String,
-              required: true
+              type: String
           },
-          specialShortDescription: {
-              type: String,
-              required: true
+          specialLevelReq: {
+              type: Number
           },
-          specialPreReqs: [{
-              type: String,
-              required: true
-          }]
+          specialOtherReq: {
+              type: String
+          }
       }],
       variations: [{
           variationsAbility: {
-              type: String,
-              required: true
+              type: String
           },
           variationsDescription: {
-              type: String,
-              required: true
+              type: String
           },
-          variationsShortDescription: {
-              type: String,
-              required: true
+          variationsLevelReq: {
+              type: Number
           },
-          variationsPreReqs: [{
-              type: String,
-              required: true
-          }]
+          variationsOtherReq: {
+              type: String
+          }
       }]
-
-  }
 });
 // EXPORT SCHEMA
 // ============================================================
-module.exports = mongoose.model('Class', classSchema);
+module.exports = mongoose.model('Classes', classSchema);
