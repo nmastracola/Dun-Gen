@@ -217,7 +217,7 @@ var spellsSchema = mongoose.Schema({
   linkText: {
     type: String
   },
-  id:: {
+  id: {
     type: Number
   },
   materialCosts: {
@@ -242,4 +242,4 @@ var spellsSchema = mongoose.Schema({
 
 // EXPORT SCHEMA
 // ============================================================
-module.exports = mongoose.model('Model', spellsSchema);
+module.exports = mongoose.model('Spells', spellsSchema);

@@ -1,4 +1,6 @@
 var Feats = require('./../models/Feats');
+var spells = require('./../models/spells');
+var races = require('./../models/Races');
 var Armor = require('./../models/armor');
 var Chat = require('./../models/chat');
 var GoodsAndServices = require('./../models/goodsAndServices');
@@ -8,11 +10,18 @@ var DamagingArmor = require('./../models/damagingArmor');
 // var Class = require('./../models/class');
 var Class = require('./../models/class');
 
-
 module.exports = {
 
   addFeat: function(req, res, next){
     Feats.create(req.body, function(err, user){
+      if(err){
+        res.status(500).send(err);
+      }
+      res.status(200).send(user);
+    })
+  },
+  addSpells: function(req, res, next){
+    spells.create(req.body, function(err, user){
       if(err){
         res.status(500).send(err);
       }
@@ -69,6 +78,14 @@ module.exports = {
   },
   addClass: function(req, res, next){
     Class.create(req.body, function(err, user){
+      if(err){
+        res.status(500).send(err);
+      }
+      res.status(200).send(user);
+    })
+  },
+  addRaces: function(req, res, next){
+    races.create(req.body, function(err, user){
       if(err){
         res.status(500).send(err);
       }

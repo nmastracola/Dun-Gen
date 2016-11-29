@@ -56,8 +56,10 @@ app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 
 // TABLE POPULATION ENDPOINTS
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
+app.post('/api/spells', serverMFPopulateCtrl.addSpells);
 app.post('/api/class', serverMFPopulateCtrl.addClass);
 app.post('/api/armor', serverMFPopulateCtrl.addArmor);
+app.post('/api/races', serverMFPopulateCtrl.addRaces);
 app.post('/api/chat', serverMFPopulateCtrl.addChat);
 app.post('/api/skills', serverMFPopulateCtrl.addSkills);
 app.post('/api/weapons', serverMFPopulateCtrl.addWeapons);
