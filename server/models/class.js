@@ -8,6 +8,10 @@ var classSchema = mongoose.Schema({
           type: String,
           required: true
       },
+      shortClassDescription: {
+          type: String,
+          required: true
+      },
       classDescription: {
           type: String,
           required: true
@@ -53,7 +57,14 @@ var classSchema = mongoose.Schema({
           type: Number,
           required: true
       },
-      levels:[{
+      hasSpells: {
+          type: Boolean,
+          required: true
+      },
+      classCastingAttribute: {
+        type: String,
+      },
+      genericLevelGain:[{
           level: {
               type: Number,
               required: true
@@ -73,37 +84,71 @@ var classSchema = mongoose.Schema({
           willSave: {
               type: Number,
               required: true
-          },
-          special: [{
-              type: String    
-          }],
-      }],
-      specialAbilities: [{
-          specialAbility: {
-              type: String
-          },
-          specialDescription: {
-              type: String
-          },
-          specialLevelReq: {
-              type: Number
-          },
-          specialOtherReq: {
-              type: String
           }
       }],
-      variations: [{
-          variationsAbility: {
+      classLevelGain:[{
+          level: {
+            type: Number,
+          }
+          specialAbility: [{
+            type: String
+          }],
+          spellsKnown: [{
+            type: Number
+          }],
+          spellsPerDay: [{
+            type: Number
+          }],
+          evolvingAbility: [{
+            name: {
               type: String
+            },
+            math: {
+              dieType: {
+                type: Number
+              },
+              numberOfDice: {
+                type: Number
+              },
+              value: {
+                type: String
+              }
+            }
+          }]
+      }],
+      classSpecificAbilities: [{
+          name: {
+            type: String
           },
-          variationsDescription: {
+          description: {
+            type: String
+          },
+          specialType: {
+            type: String
+          },
+          chosen: {
+            type: Boolean
+          },
+          levelReq: {
+            type: Number
+          },
+          otherReq: [
+            type: {
               type: String
-          },
-          variationsLevelReq: {
+            },
+            value: {
+              type: String
+          }],
+          math: {
+            dieType: {
               type: Number
-          },
-          variationsOtherReq: {
+            },
+            numberOfDice: {
+              type: Number
+            },
+            value: {
               type: String
+            }
           }
       }]
 });

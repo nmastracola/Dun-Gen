@@ -1,6 +1,7 @@
 
   {
       "class": "Barbarian",
+      "shortClassDescription": "The barbarian is a brutal berserker from beyond the edge of civilized lands.",
       "classDescription": "For some, there is only rage. In the ways of their people, in the fury of their passion, in the howl of battle, conflict is all these brutal souls know. Savages, hired muscle, masters of vicious martial techniques, they are not soldiers or professional warriors—they are the battle possessed, creatures of slaughter and spirits of war. Known as barbarians, these warmongers know little of training, preparation, or the rules of warfare; for them, only the moment exists, with the foes that stand before them and the knowledge that the next moment might hold their death. They possess a sixth sense in regard to danger and the endurance to weather all that might entail. These brutal warriors might rise from all walks of life, both civilized and savage, though whole societies embracing such philosophies roam the wild places of the world. Within barbarians storms the primal spirit of battle, and woe to those who face their rage.",
       "role": "Barbarians excel in combat, possessing the martial prowess and fortitude to take on foes seemingly far superior to themselves. With rage granting them boldness and daring beyond that of most other warriors, barbarians charge furiously into battle and ruin all who would stand in their way.",
       "alignmentRestriction": {
@@ -16,146 +17,363 @@
       },
       "hitDie": 12,
       "skillsPerLevel": 4, 
-      "levels": [{
+      "hasSpells": false,
+      "classCastingAttribute": null,
+      "genericLevelGain": [{
           "level": 1,
           "baseAttackBonus": 1,
           "fortSave": 2,
           "refSave": 0,
           "willSave": 0,
-          "special": ["fast movement", "rage"]
       }, {
           "level": 2,
           "baseAttackBonus": 2,
           "fortSave": 3,
           "refSave": 0,
           "willSave": 0,
-          "special": ["rage power 1", "uncanny dodge"]
       }, {
           "level": 3,
           "baseAttackBonus": 3,
           "fortSave": 3,
           "refSave": 1,
           "willSave": 1,
-          "special": ["trap sense 1"]
       }, {
           "level": 4,
           "baseAttackBonus": 4,
           "fortSave": 4,
           "refSave": 1,
           "willSave": 1,
-          "special": ["rage power 2"]
       }, {
           "level": 5,
           "baseAttackBonus": 5,
           "fortSave": 4,
           "refSave": 1,
           "willSave": 1,
-          "special": ["Improved uncanny dodge"]
       }, {
           "level": 6,
           "baseAttackBonus": 6,
           "fortSave": 5,
           "refSave": 2,
           "willSave": 2,
-          "special": ["rage power 3", "trap sense 2"]
       }, {
           "level": 7,
           "baseAttackBonus": 7,
           "fortSave": 5,
           "refSave": 2,
           "willSave": 2,
-          "special": ["damage reduction 1"]
       }, {
           "level": 8,
           "baseAttackBonus": 8,
           "fortSave": 6,
           "refSave": 2,
           "willSave": 2,
-          "special": ["rage power 4"]
       }, {
           "level": 9,
           "baseAttackBonus": 9,
           "fortSave": 6,
           "refSave": 3,
           "willSave": 3,
-          "special": ["trap sense 3"]
       }, {
           "level": 10,
           "baseAttackBonus": 10,
           "fortSave": 7,
           "refSave": 3,
           "willSave": 3,
-          "special": ["damage reduction 2", "rage power 5"]
       }, {
           "level": 11,
           "baseAttackBonus": 11,
           "fortSave": 7,
           "refSave": 3,
           "willSave": 3,
-          "special": ["greater rage"]
       }, {
           "level": 12,
           "baseAttackBonus": 12,
           "fortSave": 8,
           "refSave": 4,
           "willSave": 4,
-          "special": ["rage power 6", "trap sense 4"]
       }, {
           "level": 13,
           "baseAttackBonus": 13,
           "fortSave": 8,
           "refSave": 4,
           "willSave": 4,
-          "special": ["damage reduction 3"]
       }, {
           "level": 14,
           "baseAttackBonus": 14,
           "fortSave": 9,
           "refSave": 4,
           "willSave": 4,
-          "special": ["indomitable will", "rage power 7"]
       }, {
           "level": 15,
           "baseAttackBonus": 15,
           "fortSave": 9,
           "refSave": 5,
           "willSave": 5,
-          "special": ["trap sense 5"]
       }, {
           "level": 16,
           "baseAttackBonus": 16,
           "fortSave": 10,
           "refSave": 5,
           "willSave": 5,
-          "special": ["damage reduction 4", "rage power 8"]
       }, {
           "level": 17,
           "baseAttackBonus": 17,
           "fortSave": 10,
           "refSave": 5,
           "willSave": 5,
-          "special": ["tireless rage"]
       }, {
           "level": 18,
           "baseAttackBonus": 18,
           "fortSave": 11,
           "refSave": 6,
           "willSave": 6,
-          "special": ["rage power 9", "trap sense 6"]
       }, {
           "level": 19,
           "baseAttackBonus": 19,
           "fortSave": 11,
           "refSave": 6,
           "willSave": 6,
-          "special": ["damage reduction 5"]
       }, {
           "level": 20,
           "baseAttackBonus": 20,
           "fortSave": 12,
           "refSave": 6,
           "willSave": 6,
-          "special": ["mighty rage", "rage power 10"]
+      }],
+      "classLevelGain": [{
+          "level": 1,
+          "specialAbility": ["fast movement", "rage"],
+          "spellsKnown": null,
+          "spellsPerDay": null,
+          "evolvingAbility": null,
+      }, {
+          "level": 2,
+          "specialAbility": ["rage power 1", ],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 3,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 4,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 5,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 6,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 7,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 8,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 9,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 10,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 11,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 12,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 13,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 14,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 15,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 16,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 17,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 18,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 19,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
+      }, {
+          "level": 20,
+          "specialAbility": [""],
+          "spellsKnown": [],
+          "spellsPerDay": [],
+          "evolvingAbility": [{
+            "name": "",
+            "math": {
+              "dieType": ,
+              "numberOfDice": ,
+              "value": ,
+          }]
       }],
       "specialAbilities": [{
           "specialAbility": "Fast Movement",
