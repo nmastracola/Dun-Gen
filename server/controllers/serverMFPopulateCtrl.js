@@ -7,7 +7,6 @@ var GoodsAndServices = require('./../models/goodsAndServices');
 var Skills = require('./../models/skills');
 var Weapons = require('./../models/weapons');
 var DamagingArmor = require('./../models/damagingArmor');
->>>>>>> master
 // var Class = require('./../models/class');
 var Class = require('./../models/class');
 
