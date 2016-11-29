@@ -56,6 +56,7 @@ app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 
 // TABLE POPULATION ENDPOINTS
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
+app.post('/api/armor', serverMFPopulateCtrl.addArmor);
 
 // CONNECTIONS //
 var mongoURI = config.MONGO_URI;
