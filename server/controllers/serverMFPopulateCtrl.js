@@ -9,6 +9,7 @@ var Weapons = require('./../models/weapons');
 var DamagingArmor = require('./../models/damagingArmor');
 // var Class = require('./../models/class');
 var Class = require('./../models/class');
+var BonusSpells = require('./../models/bonusSpells');
 
 module.exports = {
 
@@ -86,6 +87,14 @@ module.exports = {
   },
   addRaces: function(req, res, next){
     races.create(req.body, function(err, user){
+      if(err){
+        res.status(500).send(err);
+      }
+      res.status(200).send(user);
+    })
+  },
+  addBonusSpells: function(req, res, next){
+    BonusSpells.create(req.body, function(err, user){
       if(err){
         res.status(500).send(err);
       }
