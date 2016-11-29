@@ -88,8 +88,8 @@ var classSchema = mongoose.Schema({
       }],
       classLevelGain:[{
           level: {
-            type: Number,
-          }
+            type: Number
+          },
           specialAbility: [{
             type: String
           }],
@@ -132,12 +132,13 @@ var classSchema = mongoose.Schema({
           levelReq: {
             type: Number
           },
-          otherReq: [
+          otherReq: [{
             type: {
               type: String
             },
             value: {
               type: String
+            }
           }],
           math: {
             dieType: {
