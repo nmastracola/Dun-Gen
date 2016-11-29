@@ -36,6 +36,7 @@ var serverMFPopulateCtrl = require('./controllers/serverMFPopulateCtrl');
 
 // MFRENCH TABLE POPULATION ENDPOINTS
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
+app.post('/api/spells', serverMFPopulateCtrl.addSpells);
 
 var port = 3000;
 var mongoURI = 'mongodb://basementboss:imdabes@ds157667.mlab.com:57667/basementboss';

@@ -1,4 +1,5 @@
 var Feats = require('./../models/Feats');
+var spells = require('./../models/spells');
 // var Classes = require('./../models/Classes');
 
 module.exports = {
@@ -9,9 +10,16 @@ module.exports = {
         res.status(500).send(err);
       }
       res.status(200).send(user);
-    })  
+    })
   },
-  
+  addSpells: function(req, res, next){
+    spells.create(req.body, function(err, user){
+      if(err){
+        res.status(500).send(err);
+      }
+      res.status(200).send(user);
+    })
+  }
   // addClass: function(req, res, next){
   //   Classes.create(req.body, function(err, user){
   //     if(err){
@@ -20,5 +28,5 @@ module.exports = {
   //     res.status(200).send(user);
   //   })
   // }
-  
+
 }
