@@ -3,22 +3,54 @@
 var mongoose = require('mongoose');
 // DEFINE SCHEMA
 // ============================================================
-var weaponsSchema = mongoose.Schema({
-    type: {
+var damagingArmorSchema = mongoose.Schema({
+    Type: {
         type: String,
         required: true
     },
-    subtype: {
+    SubType: {
         type: String,
         required: true
     },
-    name: {
+    Name: {
         type: String,
         required: true
     },
-    cost: {
+    Cost: {
         type: Number,
         required: false
+    },
+    ArmorShieldBonus: {
+        type: Number,
+        required: false
+    },
+    MaximumDexBonus: {
+        type: Number,
+        required: false
+    },
+    ArmorCheckPenalty: {
+        type: Number,
+        required: false
+    },
+    ArcanespellFailureChance: {
+        type: Number,
+        required: false
+    },
+    EquiptSpeed30: {
+        type: Number,
+        required: false
+    },
+    EquiptSpeed20: {
+        type: Number,
+        required: false
+    },
+    Weight: {
+        type: Number,
+        required: false
+    },
+    ArmorType: {
+        type: String,
+        required: true
     },
     damage: {
         die: [{
@@ -39,14 +71,6 @@ var weaponsSchema = mongoose.Schema({
             type: Number,
             required: false
         }
-    },
-    range: {
-        type: Number,
-        required: false
-    },
-    weight: {
-        type: Number,
-        required: false
     },
     damagetype: {
         blunt: {
@@ -91,12 +115,8 @@ var weaponsSchema = mongoose.Schema({
             type: Boolean,
             required: true
         }
-    },
-    description: {
-        type: String,
-        required: false
     }
 });
 // EXPORT SCHEMA
 // ============================================================
-module.exports = mongoose.model('Weapons', weaponsSchema);
+module.exports = mongoose.model('DamagingArmor', damagingArmorSchema);

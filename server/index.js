@@ -58,6 +58,11 @@ app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
 app.post('/api/class', serverMFPopulateCtrl.addClass);
 app.post('/api/armor', serverMFPopulateCtrl.addArmor);
+app.post('/api/chat', serverMFPopulateCtrl.addChat);
+app.post('/api/skills', serverMFPopulateCtrl.addSkills);
+app.post('/api/weapons', serverMFPopulateCtrl.addWeapons);
+app.post('/api/damagingArmor', serverMFPopulateCtrl.addDamagingArmor);
+app.post('/api/goodsAndServices', serverMFPopulateCtrl.addGoodsAndServices);
 
 // CONNECTIONS //
 var mongoURI = config.MONGO_URI;
