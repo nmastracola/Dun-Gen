@@ -24,61 +24,61 @@
           "baseAttackBonus": 1,
           "fortSave": 2,
           "refSave": 0,
-          "willSave": 0,
+          "willSave": 0
       }, {
           "level": 2,
           "baseAttackBonus": 2,
           "fortSave": 3,
           "refSave": 0,
-          "willSave": 0,
+          "willSave": 0
       }, {
           "level": 3,
           "baseAttackBonus": 3,
           "fortSave": 3,
           "refSave": 1,
-          "willSave": 1,
+          "willSave": 1
       }, {
           "level": 4,
           "baseAttackBonus": 4,
           "fortSave": 4,
           "refSave": 1,
-          "willSave": 1,
+          "willSave": 1
       }, {
           "level": 5,
           "baseAttackBonus": 5,
           "fortSave": 4,
           "refSave": 1,
-          "willSave": 1,
+          "willSave": 1
       }, {
           "level": 6,
           "baseAttackBonus": 6,
           "fortSave": 5,
           "refSave": 2,
-          "willSave": 2,
+          "willSave": 2
       }, {
           "level": 7,
           "baseAttackBonus": 7,
           "fortSave": 5,
           "refSave": 2,
-          "willSave": 2,
+          "willSave": 2
       }, {
           "level": 8,
           "baseAttackBonus": 8,
           "fortSave": 6,
           "refSave": 2,
-          "willSave": 2,
+          "willSave": 2
       }, {
           "level": 9,
           "baseAttackBonus": 9,
           "fortSave": 6,
           "refSave": 3,
-          "willSave": 3,
+          "willSave": 3
       }, {
           "level": 10,
           "baseAttackBonus": 10,
           "fortSave": 7,
           "refSave": 3,
-          "willSave": 3,
+          "willSave": 3
       }, {
           "level": 11,
           "baseAttackBonus": 11,
