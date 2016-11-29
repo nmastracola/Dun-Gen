@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 // DEFINE SCHEMA
 // ============================================================
-var weaponsSchema = mongoose.Schema({
+var chatSchema = mongoose.Schema({
     user_id: {
         type: String,
         required: true
@@ -23,4 +23,4 @@ var weaponsSchema = mongoose.Schema({
 });
 // EXPORT SCHEMA
 // ============================================================
-module.exports = mongoose.model('Weapons', weaponsSchema);
+module.exports = mongoose.model('Chat', chatSchema);
