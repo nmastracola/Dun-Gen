@@ -86,13 +86,18 @@ $scope.chosenClass= "MONK";
 $scope.classPicker = function(x){
 $scope.chosenClass = $scope.classList[x];
   };
+
+
 // ==============================   CHARSCTER GENERATOR LOGIC  ==========================
 $scope.standardRolls = [0,0,0,0,0,0];
 $scope.hybridRolls = [0,0,0,0,0,0];
 $scope.pointBuyRolls = [0,0,0,0,0,0];
+$scope.attributeModifier=[-5,-5,-5,-5,-5,-5]
 $scope.attributeSummedPlaceholder = 0;
 $scope.tempAttribute = 0;
 $scope.attributes = [0,0,0,0,0,0];
+var numberPositionPlaceholder = 0;
+
 $scope.addNums = function(total, currentVal){
   return total + currentVal;
 };
@@ -100,17 +105,31 @@ $scope.addNums = function(total, currentVal){
 $scope.attributeSummed = function (attArrs) {
   $scope.attributeSummedPlaceholder = attArrs.reduce($scope.addNums);
 };
-
+$scope.setAttributeModifier = function (number) {
+  console.log(number, "number");
+  var attribute = $scope.attributes[number];
+  console.log(attribute, "attr");
+  var modifier = (attribute - 10) / 2;
+  console.log(modifier, "mod");
+  if (modifier >= 0) {
+    modifier = Math.floor(modifier)
+  } else {
+    modifier = Math.ceil(modifier)
+  }
+  $scope.attributeModifier[number] = modifier
+};
 $scope.rollStats = function (numberOfDieToRoll) {
   var tempArr = [];
   $scope.standardRolls = [0,0,0,0,0,0];
   $scope.attributes = [0,0,0,0,0,0];
+  $scope.attributeModifier=[-5,-5,-5,-5,-5,-5]
+
       for(let i = 0; i <= 5; i++){
       for(let j = 0; j <= numberOfDieToRoll-1; j++){
-        tempArr.push(Math.floor((Math.random() * 6) + 0));
+        tempArr.push(Math.floor((Math.random() * 6) + 1));
       }
       if (numberOfDieToRoll === 4) {
-        tempArr.sort().splice(1,0);
+        tempArr.sort().splice(0,1);
       };
       var attribVal = tempArr.reduce($scope.addNums);
       $scope.standardRolls[i] = attribVal;
@@ -119,13 +138,32 @@ $scope.rollStats = function (numberOfDieToRoll) {
   $scope.attributeSummed($scope.standardRolls)
 }
   $scope.moveStat = function (number) {
+    if (!$scope.standardRolls[number]) {
+      return
+    }
     $scope.tempAttribute = $scope.standardRolls[number];
-    $scope.standardRolls[number] = 0;
+    // $scope.standardRolls[number] = 0;
+    numberPositionPlaceholder = number;
   };
   $scope.dropStat = function (number) {
-    $scope.attributes[number] = $scope.tempAttribute;
-  };
+    if ($scope.attributes[number]) {
+      $scope.tempAttribute = $scope.attributes[number];
+      for (var i = 0; i < $scope.standardRolls.length; i++) {
+        if (!$scope.standardRolls[i]) {
+          $scope.standardRolls[i] = $scope.tempAttribute;
+          break
+        }
+      }
+      $scope.attributes[number] = 0;
+      $scope.setAttributeModifier(number);
 
+      return
+    }
+    $scope.attributes[number] = $scope.tempAttribute;
+    $scope.tempAttribute = 0;
+    $scope.setAttributeModifier(number);
+    $scope.standardRolls[numberPositionPlaceholder] = 0;
+  };
 
 
 
