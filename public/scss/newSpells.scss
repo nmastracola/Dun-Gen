@@ -1,0 +1,212 @@
+.spellsHolder{
+  display: flex;
+  flex-direction: row;
+}
+
+.availableSpells{
+  height: 500px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.spellsVerticalDivider{
+  height: 400px;
+  border-right: 2px solid $blk;
+  margin:50px 20px 0 20px;
+}
+
+
+
+.spellHeader{
+  text-align: center;
+}
+
+.spellSubHeader{
+  color: grey;
+  margin: 2px 0 0 20px;
+}
+
+.spellSelectorLabelContainer{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.spellHeaderHolder{
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 20px 0;
+  justify-content: center;
+}
+
+.spellChooser{
+  margin: 20px 0 0 0;
+  width: 100%;
+  height: 370px;
+  overflow-y: scroll;
+}
+.spellScrollIndicatorUp{
+  width: 0; 
+height: 0; 
+border-left: 20px solid transparent;
+border-right: 20px solid transparent;
+border-bottom: 20px solid $blk;
+margin: 0 auto 20px;
+}
+
+.spellScrollIndicatorDown{
+  width: 0; 
+height: 0; 
+border-left: 20px solid transparent;
+border-right: 20px solid transparent;
+border-top: 20px solid $blk;
+margin: 20px auto 20px;
+}
+
+.spellChooserRow{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  height: 40px;
+}
+
+.spellName{
+  width: 230px;
+  margin: 2px 0 0 0;
+  text-align: right;
+}
+
+.spellSelection{
+  border-radius: 50%;
+  width: 20px;
+  height: 20px; 
+  background-color: lightgrey;
+  position: relative;
+  margin: 0 10px 0 10px;
+  display: flex;
+  padding: 2px 2px 2px 2px;
+}
+
+.spellSelectionIndicator{
+  border-radius: 50%;
+	width: 16px;
+	height: 16px; 
+  background-color: $blk;
+}
+
+.spellSelectionVertibar{
+  height: 100%;
+  border-right: 2px solid $blk;
+  margin:0px 10px 0 0;
+}
+
+.spellDescriptionHolder{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.spellDescShort{
+  width: 280px;
+  text-align: left;
+}
+.spellDescDetailsRequest{
+  font-size: .6em;
+  margin-top: 4px;
+  color: grey;
+}
+
+.spellDescLong{
+  width: 280px;
+  text-align: left;
+}
+
+.spellDescriptionOpener{
+  cursor: pointer;
+  &:hover{
+      color: crimson;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+// ========================   RIGHT COLUMN OF PAGE  ==========================
+
+.selectedSpells{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+    overflow-y: scroll;
+}
+
+.selectedHeader{
+  text-align: center;
+  margin: 20px auto;
+}
+
+.actualSpellsHolder{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.selectedSpellBar{
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 5px 0 5px;
+}
+
+.selectedSpellName{
+  text-align: left;
+  color: $wht;
+}
+
+.spellLevelHeader{
+  margin: 0 0 10px 0;
+}
+
+.selectedSpellSmallDesc{
+  text-align: right;
+  color: $blk;
+}
+
+// ========================   SPELLS BREAKDOWN  ==========================
+
+.spellBreakdown{
+  height: 150px;
+  width: 495px;
+  margin: 20px 0 0 0;
+}
+
+.spellBreadownRow{
+  height: 30px;
+  with: 595px;
+  display: flex;
+  flex-direction: row;
+}
+
+.spellBreakdownHeader{
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.spellBreakdownBox{
+  height: 30px;
+  width: 45px;
+  text-align: center;
+  padding: 10px 0 0 0;
+  
+}
+
+.spellLabelTxt{
+  font-size: .6em;
+}
+
+

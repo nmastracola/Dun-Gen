@@ -126,4 +126,7 @@ $scope.rollStats = function (numberOfDieToRoll) {
     $scope.attributes[number] = $scope.tempAttribute;
   };
 
+
+
+
 });
