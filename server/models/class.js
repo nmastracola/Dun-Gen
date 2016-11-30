@@ -47,7 +47,7 @@ var classSchema = mongoose.Schema({
           },
           chaoticEvil: {
               type: Boolean
-          },
+          }
       },
       hitDie: {
           type: Number,
