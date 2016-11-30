@@ -19,6 +19,8 @@
       "skillsPerLevel": 4, 
       "hasSpells": false,
       "classCastingAttribute": null,
+      "weaponProficiencies": "Simple and Martial",
+      "armorProficiencies": "Light armor, medium armor, and shields (except tower shields)."
       "genericLevelGain": [{
           "level": 1,
           "baseAttackBonus": 1,

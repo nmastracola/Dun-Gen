@@ -19,126 +19,147 @@
       "skillsPerLevel": 4, 
       "hasSpells": false,
       "classCastingAttribute": null,
+      "weaponProficiencies": "Simple and Martial",
+      "armorProficiencies": "Light armor, medium armor, and shields (except tower shields)."
       "genericLevelGain": [{
-          "level": 1,
-          "baseAttackBonus": 1,
-          "fortSave": 2,
-          "refSave": 0,
-          "willSave": 0
-      }, {
-          "level": 2,
-          "baseAttackBonus": 2,
-          "fortSave": 3,
-          "refSave": 0,
-          "willSave": 0
-      }, {
-          "level": 3,
-          "baseAttackBonus": 3,
-          "fortSave": 3,
-          "refSave": 1,
-          "willSave": 1
-      }, {
-          "level": 4,
-          "baseAttackBonus": 4,
-          "fortSave": 4,
-          "refSave": 1,
-          "willSave": 1
-      }, {
-          "level": 5,
-          "baseAttackBonus": 5,
-          "fortSave": 4,
-          "refSave": 1,
-          "willSave": 1
-      }, {
-          "level": 6,
-          "baseAttackBonus": 6,
-          "fortSave": 5,
-          "refSave": 2,
-          "willSave": 2
-      }, {
-          "level": 7,
-          "baseAttackBonus": 7,
-          "fortSave": 5,
-          "refSave": 2,
-          "willSave": 2
-      }, {
-          "level": 8,
-          "baseAttackBonus": 8,
-          "fortSave": 6,
-          "refSave": 2,
-          "willSave": 2
-      }, {
-          "level": 9,
-          "baseAttackBonus": 9,
-          "fortSave": 6,
-          "refSave": 3,
-          "willSave": 3
-      }, {
-          "level": 10,
-          "baseAttackBonus": 10,
-          "fortSave": 7,
-          "refSave": 3,
-          "willSave": 3
-      }, {
-          "level": 11,
-          "baseAttackBonus": 11,
-          "fortSave": 7,
-          "refSave": 3,
-          "willSave": 3
-      }, {
-          "level": 12,
-          "baseAttackBonus": 12,
-          "fortSave": 8,
-          "refSave": 4,
-          "willSave": 4
-      }, {
-          "level": 13,
-          "baseAttackBonus": 13,
-          "fortSave": 8,
-          "refSave": 4,
-          "willSave": 4
-      }, {
-          "level": 14,
-          "baseAttackBonus": 14,
-          "fortSave": 9,
-          "refSave": 4,
-          "willSave": 4
-      }, {
-          "level": 15,
-          "baseAttackBonus": 15,
-          "fortSave": 9,
-          "refSave": 5,
-          "willSave": 5
-      }, {
-          "level": 16,
-          "baseAttackBonus": 16,
-          "fortSave": 10,
-          "refSave": 5,
-          "willSave": 5
-      }, {
-          "level": 17,
-          "baseAttackBonus": 17,
-          "fortSave": 10,
-          "refSave": 5,
-          "willSave": 5
-      }, {
-          "level": 18,
-          "baseAttackBonus": 18,
-          "fortSave": 11,
-          "refSave": 6,
-          "willSave": 6
-      }, {
-          "level": 19,
-          "baseAttackBonus": 19,
-          "fortSave": 11,
-          "refSave": 6,
-          "willSave": 6
-      }, {
-          "level": 20,
-          "baseAttackBonus": 20,
-          "fortSave": 12,
-          "refSave": 6,
-          "willSave": 6
+        "level": 1,
+        "baseAttackBonus": 1,
+        "fortSave": 2,
+        "refSave": 0,
+        "willSave": 0
+        },
+        {
+        "level": 2,
+        "baseAttackBonus": 2,
+        "fortSave": 3,
+        "refSave": 0,
+        "willSave": 0
+        },
+        {
+        "level": 3,
+        "baseAttackBonus": 3,
+        "fortSave": 3,
+        "refSave": 1,
+        "willSave": 1
+        },
+        {
+        "level": 4,
+        "baseAttackBonus": 4,
+        "fortSave": 4,
+        "refSave": 1,
+        "willSave": 1
+        },
+        {
+        "level": 5,
+        "baseAttackBonus": 5,
+        "fortSave": 4,
+        "refSave": 1,
+        "willSave": 1
+        },
+        {
+        "level": 6,
+        "baseAttackBonus": 6,
+        "fortSave": 5,
+        "refSave": 2,
+        "willSave": 2
+        },
+        {
+        "level": 7,
+        "baseAttackBonus": 7,
+        "fortSave": 5,
+        "refSave": 2,
+        "willSave": 2
+        },
+        {
+        "level": 8,
+        "baseAttackBonus": 8,
+        "fortSave": 6,
+        "refSave": 2,
+        "willSave": 2
+        },
+        {
+        "level": 9,
+        "baseAttackBonus": 9,
+        "fortSave": 6,
+        "refSave": 3,
+        "willSave": 3
+        },
+        {
+        "level": 10,
+        "baseAttackBonus": 10,
+        "fortSave": 7,
+        "refSave": 3,
+        "willSave": 3
+        },
+        {
+        "level": 11,
+        "baseAttackBonus": 11,
+        "fortSave": 7,
+        "refSave": 3,
+        "willSave": 3
+        },
+        {
+        "level": 12,
+        "baseAttackBonus": 12,
+        "fortSave": 8,
+        "refSave": 4,
+        "willSave": 4
+        },
+        {
+        "level": 13,
+        "baseAttackBonus": 13,
+        "fortSave": 8,
+        "refSave": 4,
+        "willSave": 4
+        },
+        {
+        "level": 14,
+        "baseAttackBonus": 14,
+        "fortSave": 9,
+        "refSave": 4,
+        "willSave": 4
+        },
+        {
+        "level": 15,
+        "baseAttackBonus": 15,
+        "fortSave": 9,
+        "refSave": 5,
+        "willSave": 5
+        },
+        {
+        "level": 16,
+        "baseAttackBonus": 16,
+        "fortSave": 10,
+        "refSave": 5,
+        "willSave": 5
+        },
+        {
+        "level": 17,
+        "baseAttackBonus": 17,
+        "fortSave": 10,
+        "refSave": 5,
+        "willSave": 5
+        },
+        {
+        "level": 18,
+        "baseAttackBonus": 18,
+        "fortSave": 11,
+        "refSave": 6,
+        "willSave": 6
+        },
+        {
+        "level": 19,
+        "baseAttackBonus": 19,
+        "fortSave": 11,
+        "refSave": 6,
+        "willSave": 6
+        },
+        {
+        "level": 20,
+        "baseAttackBonus": 20,
+        "fortSave": 12,
+        "refSave": 6,
+        "willSave": 6
       }],
       "classLevelGain": [{
           "level": 1,
@@ -148,7 +169,7 @@
           "evolvingAbility": null
       }, {
           "level": 2,
-          "specialAbility": ["uncanny dodge"],
+          "specialAbility": "uncanny dodge",
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
@@ -184,7 +205,7 @@
           }]
       }, {
           "level": 5,
-          "specialAbility": ["improved uncanny dodge"],
+          "specialAbility": "improved uncanny dodge",
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": null
@@ -196,8 +217,8 @@
           "evolvingAbility": [{
             "name": "trap sense",
             "math": {
-              "dieType": ,
-              "numberOfDice": ,
+              "dieType": null,
+              "numberOfDice": null,
               "value": 2
           },
           {
@@ -264,7 +285,7 @@
           }]
       }, {
           "level": 11,
-          "specialAbility": ["greater rage"],
+          "specialAbility": "greater rage",
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
@@ -276,35 +297,42 @@
           }]
       }, {
           "level": 12,
-          "specialAbility": [""],
+          "specialAbility": null,
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
-            "name": "",
+            "name": "rage power 6",
             "math": {
               "dieType": null,
               "numberOfDice": null,
               "value": null
+          },
+          {
+            "name": "trap sense",
+            "math": {
+              "dieType": null,
+              "numberOfDice": null,
+              "value": 4
           }]
       }, {
           "level": 13,
-          "specialAbility": [""],
+          "specialAbility": null,
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
-            "name": "",
+            "name": "damage reduction",
             "math": {
               "dieType": null,
               "numberOfDice": null,
-              "value": null
+              "value": 3
           }]
       }, {
           "level": 14,
-          "specialAbility": [""],
+          "specialAbility": "indomitable will",
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
-            "name": "",
+            "name": "rage power 7",
             "math": {
               "dieType": null,
               "numberOfDice": null,
@@ -312,51 +340,59 @@
           }]
       }, {
           "level": 15,
-          "specialAbility": [""],
+          "specialAbility": null,
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
-            "name": "",
+            "name": "trap sense",
             "math": {
               "dieType": null,
               "numberOfDice": null,
-              "value": null
+              "value": 5
           }]
       }, {
           "level": 16,
-          "specialAbility": [""],
+          "specialAbility": null,
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
-            "name": "",
+            "name": "rage power 8",
             "math": {
               "dieType": null,
               "numberOfDice": null,
               "value": null
+          },
+          {
+            "name": "damage reduction",
+            "math": {
+              "dieType": null,
+              "numberOfDice": null,
+              "value": 4
           }]
       }, {
           "level": 17,
-          "specialAbility": [""],
+          "specialAbility": "tireless rage",
           "spellsKnown": null,
           "spellsPerDay": null,
-          "evolvingAbility": [{
-            "name": "",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
-          }]
+          "evolvingAbility": null
       }, {
           "level": 18,
-          "specialAbility": [""],
+          "specialAbility": null,
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
-            "name": "",
+            "name": "rage power 9",
             "math": {
               "dieType": null,
               "numberOfDice": null,
               "value": null
+          },
+          {
+            "name": "trap sense",
+            "math": {
+              "dieType": null,
+              "numberOfDice": null,
+              "value": 6
           }]
       }, {
           "level": 19,
@@ -364,19 +400,19 @@
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
-            "name": "",
+            "name": "damage reduction",
             "math": {
               "dieType": null,
               "numberOfDice": null,
-              "value": null
+              "value": 5
           }]
       }, {
           "level": 20,
-          "specialAbility": [""],
+          "specialAbility": "mighty rage",
           "spellsKnown": null,
           "spellsPerDay": null,
           "evolvingAbility": [{
-            "name": "",
+            "name": "rage power 10",
             "math": {
               "dieType": null,
               "numberOfDice": null,

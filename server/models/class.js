@@ -62,7 +62,13 @@ var classSchema = mongoose.Schema({
           required: true
       },
       classCastingAttribute: {
-        type: String,
+        type: String
+      },
+      weaponProficiencies: {
+        type: String
+      },
+      armorProficiencies: {
+        type: String
       },
       genericLevelGain:[{
           level: {
