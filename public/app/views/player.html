@@ -1,0 +1,82 @@
+<div class="playerHeader">
+    <!-- =============================  PLAYER CORE =============================  -->
+  <div class="playerCore borderRight">
+    <div class="portraitHolder">
+      <img src="/images/sir_roland.jpg" alt="">
+    </div>
+    <div class="playerCoreContentHolder">
+      <h3>Sir Roland Smackhammer</h3>
+      <div class="playerCoreContentHeader">
+        <h5 class="playerCoreContentTxt">HUMAN </h5>
+        <h5 class="playerCoreContentTxt">- level 1 -</h5>
+        <h5 class="playerCoreContentTxt"> Lawful Good</h5>
+      </div>
+      <div class="playerCoreContentSubheader">
+        <h6 class="playerCoreContentSubTxt">Paladin 4</h6>
+      </div>
+      <div class="playerCoreNumberStatHolder">
+        
+        <div class="coreStatboxHolder">
+          <div class="coreHPup" ng-click="playerHP(1)"></div>
+        <div class="coreStatbox">
+          <div class="coreStatboxLabel">
+            <p class="coreStatTxt">HP</p>
+          </div>
+          <div class="coreStatBox">
+            <h3 class="coreStat">{{HP}}</h3>
+          </div>
+        </div>
+        <div class="coreHPdown" ng-click="playerHP(-1)"></div>
+        </div>
+        
+        <div class="coreStatboxHolder">
+        <div class="coreStatbox">
+          <div class="coreStatboxLabel">
+            <p class="coreStatTxt">AC</p>
+          </div>
+          <div class="coreStatBox">
+            <h3 class="coreStat">18</h3>
+          </div>
+        </div>
+        </div>
+        
+        <div class="coreStatboxHolder">
+        <div class="coreStatbox">
+          <div class="coreStatboxLabel">
+            <p class="coreStatTxt">INIT</p>
+          </div>
+          <div class="coreStatBox">
+            <h3 class="coreStat">3</h3>
+          </div>
+        </div>
+        </div>
+        
+        <div class="coreStatboxHolder">
+        <div class="bigStatbox">
+          <div class="coreStatboxLabel">
+            <p class="coreStatTxt">XP</p>
+          </div>
+          <div class="bigCoreStatBox">
+            <h3 class="coreStat">18369</h3>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  <!-- =============================  PLAYER HUD =============================  -->
+  <div class="playerHUD">
+    
+  </div>
+  <!-- =============================  END PLAYER HEADER =============================  -->
+</div>
+<!-- ==============================================================  PLAYER NAV ==============================================================  -->
+<player-nav></player-nav>
+
+<!-- ==============================================================  PLAYER BODY ==============================================================  -->
+<div class="playerBody">
+  <div class="playerSpacer"></div>
+  <p>stuff goes here</p>
+</div>

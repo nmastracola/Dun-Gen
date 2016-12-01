@@ -18,6 +18,7 @@ $scope.raceBtn = false;
 $scope.classBtn = false;
 $scope.abilitiesBtn = false;
 $scope.customizationBtn = false;
+$scope.spellsBtn = false;
 $scope.finalSubmitBtn = false;
 
 // roll togglers
@@ -179,5 +180,6 @@ $scope.rollStats = function (numberOfDieToRoll) {
       charCre.wisdomModifier = $scope.attribureModifier[4]
       charCre.charismaModifier = $scope.attribureModifier[5]
     }
+
 
 });
