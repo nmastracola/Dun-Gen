@@ -38,6 +38,9 @@ var racesSchema = mongoose.Schema({
       type: String
     }
   }],
+  modText: {
+    type: String
+  },
   mod: {
     str: {
       type: Number
