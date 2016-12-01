@@ -19,7 +19,7 @@ var armorSchema = mongoose.Schema({
     MaximumDexBonus: {
             type: Number,
             required: false
-        },
+    },
     ArmorCheckPenalty: {
         type: Number,
         required: false
