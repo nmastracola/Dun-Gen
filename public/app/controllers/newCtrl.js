@@ -18,6 +18,7 @@ $scope.raceBtn = false;
 $scope.classBtn = false;
 $scope.abilitiesBtn = false;
 $scope.customizationBtn = false;
+$scope.spellsBtn = false;
 $scope.finalSubmitBtn = false;
 
 // roll togglers
@@ -164,6 +165,7 @@ $scope.rollStats = function (numberOfDieToRoll) {
     $scope.setAttributeModifier(number);
     $scope.standardRolls[numberPositionPlaceholder] = 0;
   };
+
 
 
 });

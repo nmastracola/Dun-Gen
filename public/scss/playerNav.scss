@@ -1,0 +1,133 @@
+// =============================  PLAYER NAV =============================
+.playerNav{
+  position: fixed;
+  top: 200px;
+  height: 80px;
+  width: 100%;
+}
+
+.bttnRow{
+  height: 40px;
+  width: 100%;
+  background-color: lightgray ; 
+  display: flex;
+  flex-direction: row;
+}
+
+.playerBttn{
+  height: 40px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  &:hover{
+    flex-grow: 2;
+  }
+}
+.bttnPoint{
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#bttn1{
+  background-color: $p1;
+}
+#bttnPoint1 {
+
+  border-left: 20px solid $p1;
+}
+.subHeadColor1{
+  background-color: $p1;
+}
+#bttn2{
+  background-color: $p2;
+}
+#bttnPoint2 {
+
+  border-left: 20px solid $p2;
+}
+.subHeadColor2{
+  background-color: $p2;
+}
+#bttn3{
+  background-color: $p3;
+}
+#bttnPoint3 {
+
+  border-left: 20px solid $p3;
+}
+.subHeadColor3{
+  background-color: $p3;
+}
+#bttn4{
+  background-color: $p4;
+}
+#bttnPoint4 {
+
+  border-left: 20px solid $p4;
+}
+.subHeadColor4{
+  background-color: $p4;
+}
+#bttn5{
+  background-color: $p5;
+}
+#bttnPoint5 {
+
+  border-left: 20px solid $p5;
+}
+.subHeadColor5{
+  background-color: $p5;
+}
+#bttn6{
+  background-color: $p6;
+}
+#bttnPoint6 {
+
+  border-left: 20px solid $p6;
+}
+.subHeadColor6{
+  background-color: $p6;
+}
+#bttn7{
+  background-color: $p7;
+}
+#bttnPoint7 {
+
+  border-left: 20px solid $p7;
+}
+.subHeadColor7{
+  background-color: $p7;
+}
+#bttn8{
+  background-color: $p8;
+}
+#bttnPoint8 {
+
+  border-left: 20px solid $p8;
+}
+.subHeadColor8{
+  background-color: $p8;
+}
+#bttn9{
+  background-color: $p9;
+}
+.subHeadColor9{
+  background-color: $p9;
+}
+
+.PlayerNavTxt{
+  width: 69px;
+  color:$wht;
+  margin: 14px 0 0 15px;
+  font-size: .8em;
+}
+
+.bttnSubRow{
+  height: 40px;
+  width: 100%;
+  background-color: $p1  ; 
+}
+
