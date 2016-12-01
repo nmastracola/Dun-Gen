@@ -1,3 +1,49 @@
+RACE ABILITIES:
+
+  GENERAL:
+    Racial ability mods
+    Racial Size
+    Racial Move Speed
+    *Racial Languages?
+  
+  DWARVES:
+    Darkvision
+    
+  ELVES:
+    Low-Light Vision
+    Keen Senses
+    
+  GNOMES:
+    Low-Light Vision
+    Keen Senses
+    *Obsessive (Unsure, would need a modal to select a specific skill)
+    
+  HALF-ELVES:
+    RACIAL ABILITY SELECTION MODAL NEEDED
+    Low-Light Vision
+    *Skill Focus (Implement if we include the Skill Focus Feat, otherwise MVP+)
+    Keen Senses
+    *Multitalented (Two favored classes, however we're implementing those.)
+    
+  HALF-ORCS:
+    RACIAL ABILITY SELECTION MODAL NEEDED
+    Darkvision
+    Intimidating
+  
+  HALFLINGS:
+    Halfling Luck
+    Keen Senses
+    Sure-Footed
+    
+  HUMANS:
+    RACIAL ABILITY SELECTION MODAL NEEDED
+    Bonus Feat
+    Skilled
+    
+  
+
+//================================================================================
+
 CLASS ABILITIES:
 
   BARBARIAN:
@@ -24,7 +70,7 @@ CLASS ABILITIES:
     
   DRUID:
     Nature Sense
-    Wild Shape (Uses)
+    Wild Shape (# of Uses)
   
   FIGHTER:
     Armor Training
@@ -39,11 +85,11 @@ CLASS ABILITIES:
     Perfect Self (Damage Reduction)
   
   PALADIN:
-    Smite Evil (Uses)
+    Smite Evil (# of Uses)
     Divine Grace
-    Lay on Hands (Uses, Amt Healed)
-    Channel Positive Energy (Uses)
-    Divine Bond (Uses)
+    Lay on Hands (# of Uses, Amt Healed)
+    Channel Positive Energy (# of Uses)
+    Divine Bond (# of Uses)
     Aura of Rightenousness (Damage Reduction)
     Holy Champion (Damage Reduction)
     
@@ -66,38 +112,38 @@ FEATS:
   Deceitful
   Deft Hands
   Dodge
-  Double Slice (unsure on implementation)
-  Empower Spell (Are we doing spell damage?)
+  *Double Slice (unsure on implementation)
+  *Empower Spell (Are we doing spell damage?)
   Extra Channel
   Extra Ki
   Extra Lay On Hands
   Extra Mercy
   Extra Performance
   Extra Rage
-  Fleet? (Not sure we want this one)
+  *Fleet? (Not sure we want this one)
   Great Fortitude
   Greater Shield Focus
   Greater Weapon Specialization
   Improved Critical
   Improved Initiative
-  Intimidating Prowess (Unsure)
+  *Intimidating Prowess (Unsure)
   Iron Will
   Lightning Reflexes
   Magical Aptitude
-  Master Craftsman (Unsure, would need a modal to select a specific skill)
-  Maximize Spell (Again, are we worried about spell damage?)
+  *Master Craftsman (Unsure, would need a modal to select a specific skill)
+  *Maximize Spell (Again, are we worried about spell damage?)
   Persuasive
   Power Attack
   Run
   Self-Sufficient
   Shield Focus
-  Skill Focus (Again Unsure, would need a selection modal)
-  Spell focus (unsure need selection modal)
+  *Skill Focus (Again Unsure, would need a selection modal)
+  *Spell focus (unsure need selection modal)
   Stealthy
   Toughness
-  Two-Weapon Defense (unsure Potentially very complicated)
-  Weapon Focus (need selection modal)
-  Weapon Specialization (need selection modal)
+  *Two-Weapon Defense (unsure Potentially very complicated)
+  *Weapon Focus (need selection modal)
+  *Weapon Specialization (need selection modal)
   
   
   
