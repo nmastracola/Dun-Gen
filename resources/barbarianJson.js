@@ -174,11 +174,7 @@
           "spellsPerDay": null,
           "evolvingAbility": {
             "name": "rage power 1",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null,
-            }
+            "math": null
           }
       }, {
           "level": 3,
@@ -187,10 +183,7 @@
           "spellsPerDay": null,
           "evolvingAbility": {
             "name": "trap sense",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 1
+            "tier": 1
             }
           }
       }, {
@@ -200,11 +193,7 @@
           "spellsPerDay": null,
           "evolvingAbility": {
             "name": "rage power 2",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
-            }
+            "math": null
           }
       }, {
           "level": 5,
@@ -219,19 +208,12 @@
           "spellsPerDay": null,
           "evolvingAbility": [{
             "name": "trap sense",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 2
-          },
-          {
+            "tier": 2
+            },
+            {
             "name": "rage power 3",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
+            "math": null
             }
-          }
           }]
       }, {
           "level": 7,
@@ -241,9 +223,10 @@
           "evolvingAbility": {
             "name": "damage reduction",
             "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 1
+              "modifiers": {
+                "modifierType": "damageReduxMod",
+                "modifierValue": "1"
+              }
             }
           }
       }, {
@@ -253,11 +236,7 @@
           "spellsPerDay": null,
           "evolvingAbility": {
             "name": "rage power 4",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
-            }
+            "math": null
           }
       }, {
           "level": 9,
@@ -266,11 +245,7 @@
           "spellsPerDay": null,
           "evolvingAbility": {
             "name": "trap sense",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 3
-            }
+            "tier": 3
           }
       }, {
           "level": 10,
@@ -280,17 +255,14 @@
           "evolvingAbility": [{
             "name": "damage reduction",
             "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 2
-          },
+              "modifiers": {
+                "modifierType": "damageReduxMod",
+                "modifierValue": "2"
+              }
+            },
           {
             "name": "rage power 5",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
-            }
+            "math": null
           }
           }]
       }, {
@@ -306,18 +278,10 @@
           "spellsPerDay": null,
           "evolvingAbility": [{
             "name": "rage power 6",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
-          },
+            "math": null
           {
             "name": "trap sense",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 4
-            }
+            "tier": 4
           }
           }]
       }, {
@@ -328,9 +292,10 @@
           "evolvingAbility": {
             "name": "damage reduction",
             "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 3
+              "modifiers": {
+                "modifierType": "damageReduxMod",
+                "type": "classAbility" 3
+              }
             }
           }
       }, {
@@ -340,11 +305,7 @@
           "spellsPerDay": null,
           "evolvingAbility": {
             "name": "rage power 7",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
-            }
+            "math": null
           }
       }, {
           "level": 15,
@@ -353,11 +314,7 @@
           "spellsPerDay": null,
           "evolvingAbility": {
             "name": "trap sense",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 5
-            }
+            "tier": 5
           }
       }, {
           "level": 16,
@@ -366,20 +323,17 @@
           "spellsPerDay": null,
           "evolvingAbility": [{
             "name": "rage power 8",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
+            "math": null
           },
           {
             "name": "damage reduction",
             "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 4
+              "modifiers": {
+                "modifierType": "damageReduxMod",
+                "modifierValue": "4"
+              }
             }
-          }
-        }]
+          }]
       }, {
           "level": 17,
           "specialAbility": "tireless rage",
@@ -393,19 +347,11 @@
           "spellsPerDay": null,
           "evolvingAbility": [{
             "name": "rage power 9",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
+            "math": null
           },
           {
             "name": "trap sense",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 6
-            }
-          }
+            "tier": 6
           }]
       }, {
           "level": 19,
@@ -415,9 +361,10 @@
           "evolvingAbility": {
             "name": "damage reduction",
             "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": 5
+              "modifiers": {
+                "modifierType": "damageReduxMod",
+                "type": "classAbility" 5
+              }
             }
           }
       }, {
@@ -427,11 +374,7 @@
           "spellsPerDay": null,
           "evolvingAbility": {
             "name": "rage power 10",
-            "math": {
-              "dieType": null,
-              "numberOfDice": null,
-              "value": null
-            }
+            "math": null
           }
       }],
       "classSpecificAbilities": [{
@@ -442,9 +385,10 @@
           "levelReq": 1,
           "otherReq": null,
           "math": {
-            "dieType": null,
-            "numberOfDice": null,
-            "value": 10
+            "modifiers": {
+              "modifierType": "moveSpeedMod",
+              "modifierValue": "10"
+            }
           }
       }, {
           "name": "rage",
@@ -453,7 +397,24 @@
           "chosen": false,
           "levelReq": 1,
           "otherReq": null,
-          "math": null
+          "math": {
+            "modifiers": [{
+              "modifierType": "strMod",
+              "modifierValue": "4"
+            },
+            {
+              "modifierType": "conMod",
+              "modifierValue": "4"
+            },
+            {
+              "modifierType": "willSaveMod",
+              "modifierValue": "2"
+            },
+            {
+              "modifierType": "ACMod",
+              "modifierValue": "-2"
+            }]
+          }
       },
       {
           "name": "rage powers",
@@ -462,7 +423,7 @@
           "chosen": false,
           "levelReq": 2,
           "otherReq": null,
-          "math": null,
+          "math": null
       },
       {
           "name": "uncanny dodge",
@@ -471,7 +432,7 @@
           "chosen": false,
           "levelReq": 2,
           "otherReq": null,
-          "math": null,
+          "math": null
       },
       {
           "name": "animal fury",
@@ -481,10 +442,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "clear mind",
@@ -494,10 +455,10 @@
           "chosen": true,
           "levelReq": 8,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "fearless rage",
@@ -507,10 +468,10 @@
           "chosen": true,
           "levelReq": 12,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "guarded stance",
@@ -520,10 +481,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "increased damage reduction",
@@ -533,10 +494,59 @@
           "chosen": true,
           "levelReq": 8,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": {
+            "modifiers": {
+              "modifierType": "damageReduxMod",
+              "modifierValue": "1"
+            }  
+          }
+      },
+      {
+          "name": "increased damage reduction 2",
+          "description": "The barbarian's damage reduction increases by 2/—. This increase is always active while the barbarian is raging. A barbarian can select this rage power up to three times. Its effects stack. A barbarian must be at least 8th level before selecting this rage power.",
+          "specialType": "ex",
+          "relatesTo": "rage power",
+          "chosen": true,
+          "levelReq": 8,
+          "otherReq": [{
+            "type": "classAbility",
+            "value": "rage"
+          },
+          {
+            "type": "classAbility",
+            "value": "increased damage reduction"
+          }],
+          "math": {
+            "modifiers": {
+              "modifierType": "damageReduxMod",
+              "modifierValue": "2"
+            }  
+          }
+      },
+      {
+          "name": "increased damage reduction 3",
+          "description": "The barbarian's damage reduction increases by 3/—. This increase is always active while the barbarian is raging. A barbarian can select this rage power up to three times. Its effects stack. A barbarian must be at least 8th level before selecting this rage power.",
+          "specialType": "ex",
+          "relatesTo": "rage power",
+          "chosen": true,
+          "levelReq": 8,
+          "otherReq": [{
+            "type": "classAbility",
+            "value": "rage"
+          },
+          {
+            "type": "classAbility",
+            "value": "increased damage reduction 2"
+          }],
+          "math": {
+            "modifiers": {
+              "modifierType": "damageReduxMod",
+              "modifierValue": "3"
+            }
+          }
       },
       {
           "name": "internal fortitude",
@@ -546,10 +556,10 @@
           "chosen": true,
           "levelReq": 8,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "intimidating glare",
@@ -559,10 +569,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "knockback",
@@ -572,10 +582,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "low-light vision",
@@ -585,10 +595,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "mighty swing",
@@ -598,10 +608,10 @@
           "chosen": true,
           "levelReq": 12,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "moment of clarity",
@@ -611,10 +621,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "night vision",
@@ -624,18 +634,13 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": [{
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          {
-            "type": "racialTrait",
-            "value": "low-light vision"
-          },
-          {
-            "type": "rage power",
+          "or": {
             "value": "low-light vision"
           }],
-          "math": null,
+          "math": null
       },
       {
           "name": "no escape",
@@ -645,10 +650,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "powerful blow",
@@ -658,10 +663,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "quick reflexes",
@@ -671,10 +676,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "raging climber",
@@ -684,10 +689,15 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": {
+            "modifiers": {
+              "modifierType": "climbMod",
+              "modifierValue": "currentBarbarianLvl"
+            }  
+          }
       },
       {
           "name": "raging leaper",
@@ -697,10 +707,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "raging swimmer",
@@ -710,10 +720,15 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": {
+            "modifiers": {
+              "modifierType": "swimMod",
+              "modifierValue": "currentBarbarianLvl"
+            }  
+          }
       },
       {
           "name": "renewed vigor",
@@ -723,10 +738,10 @@
           "chosen": true,
           "levelReq": 4,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "rolling dodge",
@@ -736,10 +751,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "roused anger",
@@ -749,10 +764,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "scent",
@@ -762,10 +777,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "strength surge",
@@ -775,10 +790,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "superstition",
@@ -788,10 +803,10 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "suprise accuracy",
@@ -801,23 +816,72 @@
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
-          "name": "swift foot",
+          "name": "swift foot 1",
           "description": "The barbarian gains a 5-foot enhancement bonus to her speed. This increase is always active while the barbarian is raging. A barbarian can select this rage power up to three times. Its effects stack.",
           "specialType": "ex",
           "relatesTo": "rage power",
           "chosen": true,
           "levelReq": 2,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": {
+            "modifiers": {
+              "modifierType": "moveSpeedMod",
+              "modifierValue": "5"
+            }  
+          }
+      },
+      {
+          "name": "swift foot 2",
+          "description": "The barbarian gains a 5-foot enhancement bonus to her speed. This increase is always active while the barbarian is raging. A barbarian can select this rage power up to three times. Its effects stack.",
+          "specialType": "ex",
+          "relatesTo": "rage power",
+          "chosen": true,
+          "levelReq": 2,
+          "otherReq": [{
+                "type": "classAbility",
+                "value": "rage"
+              },
+              {
+                "type": "classAbility",
+                "value": "swift foot 1"
+              }],
+          "math": {
+            "modifiers": {
+              "modifierType": "moveSpeedMod",
+              "modifierValue": "5"
+            }  
+          }
+      },
+      {
+          "name": "swift foot 3",
+          "description": "The barbarian gains a 5-foot enhancement bonus to her speed. This increase is always active while the barbarian is raging. A barbarian can select this rage power up to three times. Its effects stack.",
+          "specialType": "ex",
+          "relatesTo": "rage power",
+          "chosen": true,
+          "levelReq": 2,
+          "otherReq": [{
+            "type": "classAbility",
+            "value": "rage"
+            },
+            {
+            "type": "classAbility",
+            "value": "swift foot 2"
+            }],
+          "math": {
+            "modifiers": {
+              "modifierType": "moveSpeedMod",
+              "modifierValue": "5"
+            }  
+          }
       },
       {
           "name": "terrifying howl",
@@ -827,10 +891,10 @@
           "chosen": true,
           "levelReq": 8,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
           "name": "unexpected strike",
@@ -840,24 +904,126 @@
           "chosen": true,
           "levelReq": 8,
           "otherReq": {
-            "type": "feat",
+            "type": "classAbility",
             "value": "rage"
           },
-          "math": null,
+          "math": null
       },
       {
-          "name": "fast movement",
-          "description": "A barbarian's land speed is faster than the norm for her race by +10 feet. This benefit applies only when she is wearing no armor, light armor, or medium armor, and not carrying a heavy load. Apply this bonus before modifying the barbarian's speed because of any load carried or armor worn. This bonus stacks with any other bonuses to the barbarian's land speed.",
+          "name": "trap sense",
+          "description": "At 3rd level, a barbarian gains a +1 bonus on Reflex saves made to avoid traps and a +1 dodge bonus to AC against attacks made by traps. These bonuses increase by +1 every three barbarian levels thereafter (6th, 9th, 12th, 15th, and 18th level). Trap sense bonuses gained from multiple classes stack.",
           "specialType": "ex",
           "chosen": false,
-          "levelReq": 1,
+          "levelReq": 3,
+          "otherReq": null,
+          "math": null
+      },
+      {
+          "name": "improved uncanny dodge",
+          "description": "At 5th level and higher, a barbarian can no longer be flanked. This defense denies a rogue the ability to sneak attack the barbarian by flanking her, unless the attacker has at least four more rogue levels than the target has barbarian levels.",
+          "specialType": "ex",
+          "chosen": false,
+          "levelReq": 5,
+          "otherReq": null,
+          "math": null
+      },
+      {
+          "name": "improved uncanny dodge",
+          "description": "At 5th level and higher, a barbarian can no longer be flanked. This defense denies a rogue the ability to sneak attack the barbarian by flanking her, unless the attacker has at least four more rogue levels than the target has barbarian levels. \n If a character already has uncanny dodge (see above) from another class, the levels from the classes that grant uncanny dodge stack to determine the minimum rogue level required to flank the character.",
+          "specialType": "ex",
+          "chosen": false,
+          "levelReq": 5,
+          "otherReq": null,
+          "math": null
+      },
+      {
+          "name": "damage reduction",
+          "description": "At 7th level, a barbarian gains damage reduction. Subtract 1 from the damage the barbarian takes each time she is dealt damage from a weapon or a natural attack. At 10th level, and every three barbarian levels thereafter (13th, 16th, and 19th level), this damage reduction rises by 1 point. Damage reduction can reduce damage to 0 but not below 0.",
+          "specialType": "ex",
+          "chosen": false,
+          "levelReq": 7,
           "otherReq": null,
           "math": {
-            "dieType": null,
-            "numberOfDice": null,
-            "value": 10
+            "modifiers": {
+              "modifierType": "damageReduxMod",
+              "modifierValue": "((currentBarbarianLvl - 4) / 3)"
+            }
+          }
+      },
+      {
+          "name": "greater rage",
+          "description": "At 11th level, when a barbarian enters rage, the morale bonus to her Strength and Constitution increases to +6 and the morale bonus on her Will saves increases to +3.",
+          "specialType": "ex",
+          "chosen": false,
+          "levelReq": 11,
+          "otherReq": {
+            "type": "classAbility",
+            "value": "rage"
+          },
+          "math": {
+            "modifiers": [{
+              "modifierType": "strMod",
+              "modifierValue": "6"
+            },
+            {
+              "modifierType": "conMod",
+              "modifierValue": "6"
+            },
+            {
+              "modifierType": "willSaveMod",
+              "modifierValue": "3"
+            },
+            {
+              "modifierType": "ACMod",
+              "modifierValue": "-2"
+            }]
+          }
+      },
+      {
+          "name": "indomitable will",
+          "description": "While in rage, a barbarian of 14th level or higher gains a +4 bonus on Will saves to resist enchantment spells. This bonus stacks with all other modifiers, including the morale bonus on Will saves she also receives during her rage.",
+          "specialType": "ex",
+          "chosen": false,
+          "levelReq": 14,
+          "otherReq": null,
+          "math": null
+      },
+      {
+          "name": "tireless rage",
+          "description": "Starting at 17th level, a barbarian no longer becomes fatigued at the end of her rage.",
+          "specialType": "ex",
+          "chosen": false,
+          "levelReq": 17,
+          "otherReq": null,
+          "math": null
+      },
+      {
+          "name": "mighty rage",
+          "description": "Starting at 17th level, a barbarian no longer becomes fatigued at the end of her rage.",
+          "specialType": "ex",
+          "chosen": false,
+          "levelReq": 20,
+          "otherReq": {
+            "type": "classAbility",
+            "value": "rage"
+          },
+          "math": {
+            "modifiers": [{
+              "modifierType": "strMod",
+              "modifierValue": "8"
+            },
+            {
+              "modifierType": "conMod",
+              "modifierValue": "8"
+            },
+            {
+              "modifierType": "willSaveMod",
+              "modifierValue": "4"
+            },
+            {
+              "modifierType": "ACMod",
+              "modifierValue": "-2"
+            }]
           }
       }
-      
-      ]
   }
