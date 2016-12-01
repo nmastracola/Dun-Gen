@@ -1,8 +1,11 @@
 // INITILIZE SERVICE
 // ============================================================
-angular.module("scribe").service("characterCreationService", function($http) {
+angular.module("scribe").service("characterService", function($http) {
   // CRUD FUNCTIONS
   // ============================================================
+
+
+
   this.getCharacter = function(id) {
     var query = "";
     if (id) query = '?_id=' + id;
@@ -14,6 +17,34 @@ angular.module("scribe").service("characterCreationService", function($http) {
       return response.data;
     });
   };
+  this.createCharacter = function(characterData) {
+    return $http({
+      method: 'POST',
+      url: '/character',
+      data: characterData
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.editCharacter = function(id, characterData) {
+    return $http({
+      method: 'PUT',
+      url: "/character/" + id,
+      data: characterData
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.deleteCharacter = function(id) {
+    return $http({
+      method: 'DELETE',
+      url: '/character/' + id
+    }).then(function(response) {
+      return response;
+    });
+  };
+  // OTHER FUNCTIONS
+  // ============================================================
   this.characterCreationObject = {
     static: {
         userId: "",
@@ -30,17 +61,11 @@ angular.module("scribe").service("characterCreationService", function($http) {
     },
     core: {
         strength: "",
-        strengthModifier: "",
         dexterity: "",
-        dexterityModifier: "",
         constitution: "",
-        constitutionModifier: "",
         intelligence: "",
-        intelligenceModifier: "",
         wisdom: "",
-        wisdomModifier: "",
         charisma: "",
-        charismaModifier: "",
         armorClassModifier: "",
         initiativeModifier: "",
         speedModifier: "",
@@ -55,10 +80,10 @@ angular.module("scribe").service("characterCreationService", function($http) {
         maxHitPoints: "",
         HitPointsModifier: "",
         wounds: "",
-        speeds: {
+        speeds: [{
             movementType: "",
             movementSpeed: ""
-        }
+        }]
     },
     weapons: [{
         name: "",
@@ -77,23 +102,23 @@ angular.module("scribe").service("characterCreationService", function($http) {
         range: null,
         weight: null,
         damagetype: {
-          blunt: FALSE,
-          piercing: FALSE,
-          slashing: FALSE
+            blunt: false,
+            piercing: false,
+            slashing: false
         },
         special: {
-            brace: FALSE,
-            disarm: FALSE,
-            double: FALSE,
-            monk: FALSE,
-            nonlethal: FALSE,
-            reach: FALSE,
-            trip: FALSE
+            brace: false,
+            disarm: false,
+            double: false,
+            monk: false,
+            nonlethal: false,
+            reach: false,
+            trip: false
         },
         description: "",
-        equiped: FALSE,
-        primary: FALSE,
-        offhand: FALSE,
+        equiped: false,
+        primary: false,
+        offhand: false,
         ammunition: null,
         weaponAttackBonus: null,
         damageAttackBonus: null,
@@ -101,7 +126,7 @@ angular.module("scribe").service("characterCreationService", function($http) {
     }],
     skills: [{
         name: "",
-        classSkill: FALSE,
+        classSkill: false,
         ranks: null,
         abilityModifier: null,
         miscellaneousModifier: null,
@@ -115,11 +140,11 @@ angular.module("scribe").service("characterCreationService", function($http) {
     }],
     feats: [{
         name: "",
-        known: FALSE
+        known: false
     }],
     abilities: [{
         name: "",
-        known: FALSE
+        known: false
     }],
     equipment: [{
         armorClassItems: [{
@@ -142,7 +167,7 @@ angular.module("scribe").service("characterCreationService", function($http) {
             category: "",
             description: ""
         },
-        wealth: {            type: number        }
+        wealth: null
     }],
     customization: [{
         description: ""
@@ -152,34 +177,7 @@ angular.module("scribe").service("characterCreationService", function($http) {
         colorScheme: null,
         portrait: ""
     }
+
   }
-  this.createCharacter = function(data) {
-    return $http({
-      method: 'POST',
-      url: '/character',
-      data: data
-    }).then(function(response) {
-      return response;
-    });
-  };
-  this.editCharacter = function(id, data) {
-    return $http({
-      method: 'PUT',
-      url: "/character/" + id,
-      data: data
-    }).then(function(response) {
-      return response;
-    });
-  };
-  this.deleteCharacter = function(id) {
-    return $http({
-      method: 'DELETE',
-      url: '/character/' + id
-    }).then(function(response) {
-      return response;
-    });
-  };
-  // OTHER FUNCTIONS
-  // ============================================================
 
 });

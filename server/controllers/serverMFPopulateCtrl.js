@@ -106,7 +106,7 @@ module.exports = {
     })
   },
   addUser: function(req, res, next){
-    User.create(req.body, function(err, user){
+    TempUser.create(req.body, function(err, user){
       if(err){
         res.status(500).send(err);
       }
