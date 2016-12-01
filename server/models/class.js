@@ -163,13 +163,13 @@ var classSchema = mongoose.Schema({
             },
             value: {
               type: String
-            },
-            or: [{
-              value: {
-                type: String  
-              }
-            }]
+            }
           }],
+          orReqs: [{
+            value: {
+              type: String  
+              }
+            }],
           math: {
             dieType: {
               type: Number
