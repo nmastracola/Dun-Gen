@@ -109,6 +109,13 @@ var classSchema = mongoose.Schema({
             name: {
               type: String
             },
+            tier: {
+              type: Number
+            },
+            abilityType: {
+              type: String,
+              default: "classAbility"
+            },
             math: {
               dieType: {
                 type: Number
@@ -116,9 +123,14 @@ var classSchema = mongoose.Schema({
               numberOfDice: {
                 type: Number
               },
-              value: {
-                type: String
-              }
+              modifiers: [{
+                modifierType: {
+                  type: String
+                },
+                modifierValue: {
+                  type: Number
+                }
+              }]
             }
           }]
       }],
@@ -131,6 +143,10 @@ var classSchema = mongoose.Schema({
           },
           specialType: {
             type: String
+          },
+          abilityType: {
+            type: String,
+            default: "classAbility"
           },
           relatesTo: {
             type: String
@@ -149,6 +165,11 @@ var classSchema = mongoose.Schema({
               type: String
             }
           }],
+          orReqs: [{
+            value: {
+              type: String  
+              }
+            }],
           math: {
             dieType: {
               type: Number
@@ -156,9 +177,14 @@ var classSchema = mongoose.Schema({
             numberOfDice: {
               type: Number
             },
-            value: {
-              type: String
-            }
+            modifiers: [{
+              modifierType: {
+                type: String
+              },
+              modifierValue: {
+                type: String
+              }
+            }]
           }
       }]
 });

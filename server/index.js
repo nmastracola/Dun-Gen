@@ -55,6 +55,10 @@ app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 
 // TEMP USER ENDPOINT
 app.post('/api/user', serverMFPopulateCtrl.addUser);
+app.post('/api/character', serverMFPopulateCtrl.addCharacter);
+app.get('/api/character', serverMFPopulateCtrl.getCharacter);
+
+
 
 
 
