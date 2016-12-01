@@ -53,6 +53,10 @@ app.get('/user', serverUserCtrl.read);
 app.get('/me', isAuthed, serverUserCtrl.me);
 app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 
+// TEMP USER ENDPOINT
+app.post('/api/user', serverMFPopulateCtrl.addUser);
+
+
 
 // TABLE POPULATION ENDPOINTS
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
@@ -66,6 +70,19 @@ app.post('/api/weapons', serverMFPopulateCtrl.addWeapons);
 app.post('/api/damagingArmor', serverMFPopulateCtrl.addDamagingArmor);
 app.post('/api/goodsAndServices', serverMFPopulateCtrl.addGoodsAndServices);
 app.post('/api/bonusSpells', serverMFPopulateCtrl.addBonusSpells);
+
+// GETS //
+app.get('/api/feats', serverMFPopulateCtrl.getFeat);
+app.get('/api/spells', serverMFPopulateCtrl.getSpells);
+app.get('/api/class', serverMFPopulateCtrl.getClass);
+app.get('/api/armor', serverMFPopulateCtrl.getArmor);
+app.get('/api/races', serverMFPopulateCtrl.getRaces);
+app.get('/api/chat', serverMFPopulateCtrl.getChat);
+app.get('/api/skills', serverMFPopulateCtrl.getSkills);
+app.get('/api/weapons', serverMFPopulateCtrl.getWeapons);
+app.get('/api/damagingArmor', serverMFPopulateCtrl.getDamagingArmor);
+app.get('/api/goodsAndServices', serverMFPopulateCtrl.getGoodsAndServices);
+app.get('/api/bonusSpells', serverMFPopulateCtrl.getBonusSpells);
 
 // CONNECTIONS //
 var mongoURI = config.MONGO_URI;

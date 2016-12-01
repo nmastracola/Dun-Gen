@@ -16,7 +16,7 @@
         "chaoticEvil": true
       },
       "hitDie": 12,
-      "skillsPerLevel": 4, 
+      "skillsPerLevel": 4,
       "hasSpells": false,
       "classCastingAttribute": null,
       "weaponProficiencies": "Simple and Martial",

@@ -1,0 +1,26 @@
+//MOST CSS IS THE SAME AS NEWSPELLS
+
+.abilityName{
+  margin: 0 10px 0 0;
+}
+
+.newSelectedFeats{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.newSelectedFeatsHeader{
+  margin-bottom: 20px;
+}
+
+.newSelectedFeatName{
+}
+
+.newSelectedFeatDescription{
+  width: 70%;
+  line-height: 1.2em;
+  margin: 10px auto;
+  text-align: left;
+}

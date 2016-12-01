@@ -1,0 +1,141 @@
+.playerHeader{
+  height: 200px;
+  width: 100%;
+display: flex;
+flex-direction: row;
+position: fixed;
+top: 0;
+left: 0;
+}
+// =============================  PLAYER CORE =============================
+.playerCore{
+  height:200px;
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+}
+
+.portraitHolder{
+  height: 175px;
+  width: 120px;
+  margin: 12px 0 0 15px;
+  background-color: $blk;
+}
+
+.playerCoreContentHolder{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 15px 0 0 15px;
+}
+
+.playerCoreContentHeader{
+  display: flex;
+  flex-direction: row;
+}
+
+.playerCoreContentTxt{
+  margin: 8px 0 0 0;
+  color: grey;
+}
+
+.playerCoreContentSubTxt{
+  margin: 8px 0 0 0;
+  color: lightgrey;
+}
+
+.playerCoreNumberStatHolder{
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 0 0;
+}
+
+.coreStatboxHolder{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.coreStatbox{
+  height: 60px;
+  width: 80px;
+  background-color: $blk;
+  margin: 0 15px 0 0;
+
+
+}
+.bigStatbox{
+  height: 60px;
+  width: 100px;
+  background-color: $blk;
+  margin: 0 0 0 0;
+}
+
+.coreStatboxLabel{
+  width: 80px;
+  height: 20px;
+  text-align: left;
+  padding: 2px 0 0 2px;
+}
+
+.coreStatTxt{
+  color: $wht;
+
+}
+
+.coreStatBox{
+  height: 40px;
+  width: 80px;
+}
+
+.bigCoreStatBox{
+  height: 40px;
+  width: 100px;
+}
+
+.coreStat{
+  color: $wht;
+  text-align: center;
+}
+
+.coreHPup{
+  width: 0; 
+  height: 0; 
+  margin: 0 0 0 28px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid $blk;
+  &:hover{
+    border-bottom: 12px solid grey;
+  }
+}
+
+.coreHPdown{
+  width: 0; 
+  height: 0; 
+  margin: 0 0 0 28px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid $blk;
+  &:hover{
+    border-top: 12px solid grey;
+  }
+}
+
+
+// =============================  PLAYER HUD =============================
+.playerHUD{
+  height:200px;
+  width: 55%;
+  background-color: darkgray  ;
+}
+
+
+// =============================  PLAYER BODY =============================
+.playerBody{
+  overflow-y: scroll;
+}
+
+.playerSpacer{
+  height: 280px;
+}

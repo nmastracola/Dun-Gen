@@ -8,7 +8,7 @@ var characterSchema = mongoose.Schema({
       userId: {
           type: objectID,
           ref: 'Users',
-          required: true  
+          required: true
       },
       playerName: {
           type: String

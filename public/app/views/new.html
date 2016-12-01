@@ -28,19 +28,24 @@
     <div class="newHeader" id="abilitiesHeader" ng-click="abilitiesShower = !abilitiesShower">
         <h4 class="newHeaderTxt">ABILITIES</h4>
     </div>
-    <!-- race section -->
-    <section class="newSection" id="abilities"> </section>
+    <!-- abilities section -->
+    
+      <abilities ng-show="abilitiesShower"></abilities>
+
     <!-- =============  spells header   =============-->
     <div class="newHeader" id="spellsHeader" ng-click="spellsShower = !spellsShower">
         <h4 class="newHeaderTxt">SPELLS</h4>
     </div>
-    <!-- race section -->
-    <section class="newSection" id="spells"> </section>
+    <!-- spells section -->
+    
+      <spells ng-show="spellsShower"></spells>
+    
+
     <!-- =============  customization header   =============-->
     <div class="newHeader" id="customizationHeader" ng-click="customizationShower = !customizationShower">
         <h4 class="newHeaderTxt">CUSTOMIZATION</h4>
     </div>
-    <!-- race section -->
+    <!-- customization section -->
     <customization ng-show="customizationShower"></customization>
     
 </div>
