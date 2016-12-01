@@ -4,19 +4,6 @@ angular.module("scribe").service("characterService", function($http) {
   // CRUD FUNCTIONS
   // ============================================================
 
-
-
-  this.getCharacter = function(id) {
-    var query = "";
-    if (id) query = '?_id=' + id;
-    return $http({
-      method: 'GET',
-      url: '/character' + query
-    }).then(function(response) {
-      if (response.data.length < 2) return response.data[0];
-      return response.data;
-    });
-  };
   this.createCharacter = function(characterData) {
     return $http({
       method: 'POST',
@@ -69,7 +56,6 @@ angular.module("scribe").service("characterService", function($http) {
         armorClassModifier: "",
         initiativeModifier: "",
         speedModifier: "",
-        charismaModifier: "",
         fortitudeMacigModifier: "",
         fortitudeMiscellaneousModifier: "",
         reflexMacigModifier: "",

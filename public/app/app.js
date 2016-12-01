@@ -15,19 +15,19 @@ angular.module('scribe', ['ui.router'])
         //       return response.data;
         //     });
         //   },
-        //   races: function (sService) {
-        //     return sService.races().then(function(response) {
-        //       // console.log(response);
-        //       return response.data;
-        //     });
-        //   }
         // }
+
 
       })
       .state('new', {
         url: '/new',
         templateUrl: './app/views/new.html',
-        controller: 'newCtrl'
+        controller: 'newCtrl',
+        resolve: {
+          races: function (sService) {
+            return sService.races();
+          }
+        }
       })
       .state('player', {
         url: '/player',
