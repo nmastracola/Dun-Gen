@@ -10,6 +10,8 @@ var DamagingArmor = require('./../models/damagingArmor');
 // var Class = require('./../models/class');
 var Class = require('./../models/class');
 var BonusSpells = require('./../models/bonusSpells');
+var TempUser = require('./../models/tempUser');
+
 
 module.exports = {
 
@@ -103,7 +105,14 @@ module.exports = {
       res.status(200).send(user);
     })
   },
-
+  addUser: function(req, res, next){
+    User.create(req.body, function(err, user){
+      if(err){
+        res.status(500).send(err);
+      }
+      res.status(200).send(user);
+    })
+  },
 
  // GET //
 
@@ -196,12 +205,5 @@ module.exports = {
    })
  }
 
-  // addClass: function(req, res, next){
-  //   Classes.create(req.body, function(err, user){
-  //     if(err){
-  //       res.status(500).send(err);
-  //     }
-  //     res.status(200).send(user);
-  //   })
-  // }
+
 }

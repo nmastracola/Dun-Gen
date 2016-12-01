@@ -53,6 +53,10 @@ app.get('/user', serverUserCtrl.read);
 app.get('/me', isAuthed, serverUserCtrl.me);
 app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 
+// TEMP USER ENDPOINT
+app.post('/api/user', serverMFPopulateCtrl.addUser);
+
+
 
 // TABLE POPULATION ENDPOINTS
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
