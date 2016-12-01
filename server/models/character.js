@@ -263,6 +263,10 @@ var characterSchema = mongoose.Schema({
       },
       active: {
           type: Boolean
+      },
+      available: {
+        type: Number,
+        default: 1
       }
   }],
   abilities: [{

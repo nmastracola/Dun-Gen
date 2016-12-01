@@ -64,11 +64,28 @@ willSaveMod               --Will Save
 ACMod                     --Armor Class
 damageReduxMod            --Generic Damage Reduction (5/-)
 spellDamageMod            --Spell damage
-SpellDamageMult           --Spell damage multiplier
+SpellDamageMultMod        --Spell damage multiplier
+
+CHARACTER:
+additionalFeatsMod        --Extra Feats
+skillRanksMod             --Extra Skill Points
+currentCharLvl            --VALUE: Current Character Level
 
 CLASSES:
-rageUsesMod    
-channelEnergyUsesMod
+rageUsesMod               --Rage Uses 
+channelEnergyUsesMod      --Channel Energy Uses
+currentBarbarianLvl       --VALUE: Current Barbarian Level
+currentBardLvl            --VALUE: Current Bard Level
+currentClericLvl          --VALUE: Current Cleric Level
+currentDruidLvl           --VALUE: Current Druid Level
+currentFighterLvl         --VALUE: Current Fighter Level
+currentMonkLvl            --VALUE: Current Monk Level
+currentPaladinLvl         --VALUE: Current Paladin Level
+currentRangerLvl          --VALUE: Current Ranger Level
+currentRogueLvl           --VALUE: Current Rogue Level
+currentSorcererLvl        --VALUE: Current Sorcerer Level
+currentWizardLvl          --VALUE: Current Wizard Level
+
 
 FEATS:
 
