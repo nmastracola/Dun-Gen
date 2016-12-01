@@ -73,7 +73,18 @@ var racesSchema = mongoose.Schema({
     },
     desc: {
       type: String
-    }
+    },
+    type: {
+      type: String
+    },
+    math: [{
+      modifierType: {
+        type: String
+        },
+      modifierValue: {
+        type: String
+        }
+     }]
   }]
 });
 
