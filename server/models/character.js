@@ -3,7 +3,6 @@
 var mongoose = require('mongoose');
 // DEFINE SCHEMA
 // ============================================================
-<<<<<<< HEAD
 var armorSchema = mongoose.Schema({
     static: [{
         userId: {
@@ -346,7 +345,7 @@ var characterSchema = mongoose.Schema({
       userId: {
           type: objectID,
           ref: 'Users',
-          required: true  
+          required: true
       },
       playerName: {
           type: String
@@ -686,7 +685,6 @@ var characterSchema = mongoose.Schema({
           type: String
       }
   }
->>>>>>> master
 });
 // EXPORT SCHEMA
 // ============================================================
