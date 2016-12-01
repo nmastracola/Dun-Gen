@@ -13,6 +13,8 @@ var BonusSpells = require('./../models/bonusSpells');
 
 module.exports = {
 
+// POST //
+
   addFeat: function(req, res, next){
     Feats.create(req.body, function(err, user){
       if(err){
@@ -100,7 +102,27 @@ module.exports = {
       }
       res.status(200).send(user);
     })
-  }
+  },
+
+
+ // GET //
+
+ getFeat: function(req, res, next){
+   Feats.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getSpells: function(req, res, next){
+   spells.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ }
 
 
   // addClass: function(req, res, next){
