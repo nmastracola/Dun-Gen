@@ -18,6 +18,7 @@ $scope.raceBtn = false;
 $scope.classBtn = false;
 $scope.abilitiesBtn = false;
 $scope.customizationBtn = false;
+$scope.spellsBtn = false;
 $scope.finalSubmitBtn = false;
 
 // roll togglers
