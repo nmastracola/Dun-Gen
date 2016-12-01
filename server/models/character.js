@@ -3,22 +3,22 @@
 var mongoose = require('mongoose');
 // DEFINE SCHEMA
 // ============================================================
-var armorSchema = mongoose.Schema({
+var characterSchema = mongoose.Schema({
   static: [{
       userId: {
-          type: String
+          type: objectID,
+          ref: 'Users',
+          required: true  
       },
       playerName: {
-          type: String,
-          required: true
+          type: String
       },
       characterName: {
           type: String,
           required: true
       },
       campaign: {
-          type: String,
-          required: true
+          type: String
       },
       race: {
           type: String,
@@ -38,7 +38,7 @@ var armorSchema = mongoose.Schema({
           type: String,
           required: true
       },
-      experiance: {
+      experience: {
           type: String,
           required: true
       }
@@ -48,15 +48,7 @@ var armorSchema = mongoose.Schema({
           type: String,
           required: true
       },
-      strengthModifier: {
-          type: String,
-          required: true
-      },
       dexterity: {
-          type: String,
-          required: true
-      },
-      dexterityModifier: {
           type: String,
           required: true
       },
@@ -64,15 +56,7 @@ var armorSchema = mongoose.Schema({
           type: String,
           required: true
       },
-      constitutionModifier: {
-          type: String,
-          required: true
-      },
       intelligence: {
-          type: String,
-          required: true
-      },
-      intelligenceModifier: {
           type: String,
           required: true
       },
@@ -80,57 +64,35 @@ var armorSchema = mongoose.Schema({
           type: String,
           required: true
       },
-      wisdomModifier: {
-          type: String,
-          required: true
-      },
       charisma: {
           type: String,
           required: true
       },
-      charismaModifier: {
+      armorClass: {
           type: String,
           required: true
       },
-      armorClassModifier: {
+      initiative: {
           type: String,
           required: true
       },
-      initiativeModifier: {
-          type: String,
-          required: true
-      },
-      speedModifier: {
-          type: String,
-          required: true
-      },
-      charismaModifier: {
-          type: String,
-          required: true
-      },
-      fortitudeMacigModifier: {
-          type: String,
-          required: true
+      fortitudeMagicModifier: {
+          type: String
       },
       fortitudeMiscellaneousModifier: {
-          type: String,
-          required: true
+          type: String
       },
-      reflexMacigModifier: {
-          type: String,
-          required: true
+      reflexMagicodifier: {
+          type: String
       },
       reflexMiscellaneousModifier: {
-          type: String,
-          required: true
+          type: String
       },
-      willMacigModifier: {
-          type: String,
-          required: true
+      willMagicModifier: {
+          type: String
       },
       willMiscellaneousModifier: {
-          type: String,
-          required: true
+          type: String
       },
       currentHitPoints: {
           type: String,
@@ -140,7 +102,7 @@ var armorSchema = mongoose.Schema({
           type: String,
           required: true
       },
-      HitPointsModifier: {
+      hitPointsModifier: {
           type: String,
           required: true
       },
@@ -169,9 +131,6 @@ var armorSchema = mongoose.Schema({
       subtype: {
           type: String
       },
-      name: {
-          type: String
-      },
       cost: {
           type: Number
       },
@@ -197,7 +156,7 @@ var armorSchema = mongoose.Schema({
       weight: {
           type: Number
       },
-      damagetype: {
+      damageType: {
           blunt: {
               type: Boolean
           },
@@ -206,6 +165,9 @@ var armorSchema = mongoose.Schema({
           },
           slashing: {
               type: Boolean
+          },
+          other: {
+              type: String
           }
       },
       special: {
@@ -234,7 +196,7 @@ var armorSchema = mongoose.Schema({
       description: {
           type: String
       },
-      equiped: {
+      equipped: {
           type: Boolean
       },
       primary: {
@@ -249,7 +211,7 @@ var armorSchema = mongoose.Schema({
       weaponAttackBonus: {
           type: Number
       },
-      damageAttackBonus: {
+      weaponDamageBonus: {
           type: Number
       },
       notes: {
@@ -269,7 +231,11 @@ var armorSchema = mongoose.Schema({
           type: Number,
           required: true
       },
-      abilityModifier: {
+      primaryAttribute:{
+          type: String,
+          required: true
+      },
+      attributeModifier: {
           type: Number,
           required: true
       },
@@ -282,21 +248,19 @@ var armorSchema = mongoose.Schema({
           required: true
       }
   }],
-  spells: [{
-      knownSpells: [{
-          name: {
-              type: String,
-          },
-          spellTracker: {
-              type: Number
-          }
-      }],
+  spellsKnown: [{
+      name: {
+          type: String
+      },
+      spellTracker: {
+          type: Number
+      }
   }],
   feats: [{
       name: {
           type: String
       },
-      known: {
+      active: {
           type: Boolean
       }
   }],
@@ -304,69 +268,57 @@ var armorSchema = mongoose.Schema({
       name: {
           type: String
       },
-      known: {
+      active: {
           type: Boolean
       }
   }],
   equipment: [{
       armorClassItems: [{
-          Name: {
-              type: String,
-              required: true
+          name: {
+              type: String
           },
-          Cost: {
-              type: Number,
-              required: false
+          cost: {
+              type: Number
           },
-          ArmorShieldBonus: {
-              type: Number,
-              required: false
+          armorShieldBonus: {
+              type: Number
           },
-          MaximumDexBonus: {
-              type: Number,
-              required: false
+          maxDexBonus: {
+              type: Number
           },
-          ArmorCheckPenalty: {
-              type: Number,
-              required: false
+          armorCheckPenalty: {
+              type: Number
           },
-          ArcanespellFailureChance: {
-              type: Number,
-              required: false
+          arcaneSpellFailureChance: {
+              type: Number
           },
-          EquiptSpeed30: {
-              type: Number,
-              required: false
+          equipSpeed30: {
+              type: Number
           },
-          EquiptSpeed20: {
-              type: Number,
-              required: false
+          equipSpeed20: {
+              type: Number
           },
-          Weight: {
-              type: Number,
-              required: false
+          weight: {
+              type: Number
           },
           type: {
               type: String,
               required: true
           },
           description: {
-              type: String,
-              required: false
+              type: String
           }
       }],
       gear: {
-          Item: {
+          item: {
               type: String,
               required: true
           },
-          Cost: {
-              type: Number,
-              required: false
+          cost: {
+              type: Number
           },
-          Weight: {
-              type: Number,
-              required: false
+          weight: {
+              type: Number
           },
           category: {
               type: String,
@@ -374,11 +326,10 @@ var armorSchema = mongoose.Schema({
           },
           description: {
               type: String,
-              required: false
           }
       },
       wealth: {
-          type: number
+          type: Number
       }
   }],
   customization: [{
@@ -400,4 +351,4 @@ var armorSchema = mongoose.Schema({
 });
 // EXPORT SCHEMA
 // ============================================================
-module.exports = mongoose.model('Armor', armorSchema);
+module.exports = mongoose.model('Characters', characterSchema);
