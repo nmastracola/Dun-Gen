@@ -1,4 +1,4 @@
-angular.module('scribe').controller('newCtrl', function($scope, sService){
+angular.module('scribe').controller('newCtrl', function($scope, sService, characterService){
 
 $scope.test = sService.test;
 
@@ -164,6 +164,20 @@ $scope.rollStats = function (numberOfDieToRoll) {
     $scope.setAttributeModifier(number);
     $scope.standardRolls[numberPositionPlaceholder] = 0;
   };
-
+    $scope.setAttributes(){
+      var charCre = characterService.characterCreationObject.core
+      charCre.strength = $scope.attributes[0]
+      charCre.dexterity = $scope.attributes[1]
+      charCre.constitution = $scope.attributes[2]
+      charCre.intelligence = $scope.attributes[3]
+      charCre.wisdom = $scope.attributes[4]
+      charCre.charisma = $scope.attributes[5]
+      charCre.strengthModifier = $scope.attribureModifier[0]
+      charCre.dexterityModifier = $scope.attribureModifier[1]
+      charCre.constitutionModifier = $scope.attribureModifier[2]
+      charCre.intelligenceModifier = $scope.attribureModifier[3]
+      charCre.wisdomModifier = $scope.attribureModifier[4]
+      charCre.charismaModifier = $scope.attribureModifier[5]
+    }
 
 });
