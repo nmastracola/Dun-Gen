@@ -1,0 +1,106 @@
+CLASS ABILITIES:
+
+  BARBARIAN:
+    Fast Movement
+    Rage
+    Rage Powers:
+      Increased Damage Reduction
+      Raging Climber
+      Raging Swimmer
+      Swift Foot 1
+      Swift Foot 2
+      Swift Foot 3 (Feat can be taken 3 times and stacks)
+    Damage Reduction
+    Greater Rage (replaces Rage)
+    Mighty Rage (replaces Greater Rage)
+
+  BARD:
+    Bardic Knowledge
+    Bardic Performance (# of Rounds)
+    Jack-of-all-Trades
+  
+  CLERIC:
+    Channel Energy (# of Uses)
+    
+  DRUID:
+    Nature Sense
+    Wild Shape (Uses)
+  
+  FIGHTER:
+    Armor Training
+    Armor Mastery
+    
+  MONK:
+    AC Bonus
+    Unarmed Damage
+    Fast Movement
+    Ki Pool (Value)
+    Diamond Soul
+    Perfect Self (Damage Reduction)
+  
+  PALADIN:
+    Smite Evil (Uses)
+    Divine Grace
+    Lay on Hands (Uses, Amt Healed)
+    Channel Positive Energy (Uses)
+    Divine Bond (Uses)
+    Aura of Rightenousness (Damage Reduction)
+    Holy Champion (Damage Reduction)
+    
+  RANGER:
+    None
+    
+  ROGUE:
+    Sneak Attack
+
+//====================================================================
+
+FEATS:
+
+  Acrobatics
+  Alertness
+  Animal Affinity
+  Athletic
+  Combat Expertise (Toggle)
+  Deadly Aim (Toggle)
+  Deceitful
+  Deft Hands
+  Dodge
+  Double Slice (unsure on implementation)
+  Empower Spell (Are we doing spell damage?)
+  Extra Channel
+  Extra Ki
+  Extra Lay On Hands
+  Extra Mercy
+  Extra Performance
+  Extra Rage
+  Fleet? (Not sure we want this one)
+  Great Fortitude
+  Greater Shield Focus
+  Greater Weapon Specialization
+  Improved Critical
+  Improved Initiative
+  Intimidating Prowess (Unsure)
+  Iron Will
+  Lightning Reflexes
+  Magical Aptitude
+  Master Craftsman (Unsure, would need a modal to select a specific skill)
+  Maximize Spell (Again, are we worried about spell damage?)
+  Persuasive
+  Power Attack
+  Run
+  Self-Sufficient
+  Shield Focus
+  Skill Focus (Again Unsure, would need a selection modal)
+  Spell focus (unsure need selection modal)
+  Stealthy
+  Toughness
+  Two-Weapon Defense (unsure Potentially very complicated)
+  Weapon Focus (need selection modal)
+  Weapon Specialization (need selection modal)
+  
+  
+  
+
+  
+  
