@@ -122,8 +122,79 @@ module.exports = {
      }
      res.status(200).send(user);
    })
+ },
+ getClass: function(req, res, next){
+   Class.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getArmor: function(req, res, next){
+   Armor.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getRaces: function(req, res, next){
+   races.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getChat: function(req, res, next){
+   Chat.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getSkills: function(req, res, next){
+   Skills.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getWeapons: function(req, res, next){
+   Weapons.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getDamagingArmor: function(req, res, next){
+   DamagingArmor.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getGoodsAndServices: function(req, res, next){
+   GoodsAndServices.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
+ },
+ getBonusSpells: function(req, res, next){
+   BonusSpells.find(req.query, function(err, user){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(user);
+   })
  }
-
 
   // addClass: function(req, res, next){
   //   Classes.create(req.body, function(err, user){

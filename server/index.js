@@ -70,15 +70,15 @@ app.post('/api/bonusSpells', serverMFPopulateCtrl.addBonusSpells);
 // GETS //
 app.get('/api/feats', serverMFPopulateCtrl.getFeat);
 app.get('/api/spells', serverMFPopulateCtrl.getSpells);
-// app.get('/api/class', serverMFPopulateCtrl.getClass);
-// app.get('/api/armor', serverMFPopulateCtrl.getArmor);
-// app.get('/api/races', serverMFPopulateCtrl.getRaces);
-// app.get('/api/chat', serverMFPopulateCtrl.getChat);
-// app.get('/api/skills', serverMFPopulateCtrl.getSkills);
-// app.get('/api/weapons', serverMFPopulateCtrl.getWeapons);
-// app.get('/api/damagingArmor', serverMFPopulateCtrl.getDamagingArmor);
-// app.get('/api/goodsAndServices', serverMFPopulateCtrl.getGoodsAndServices);
-// app.get('/api/bonusSpells', serverMFPopulateCtrl.getBonusSpells);
+app.get('/api/class', serverMFPopulateCtrl.getClass);
+app.get('/api/armor', serverMFPopulateCtrl.getArmor);
+app.get('/api/races', serverMFPopulateCtrl.getRaces);
+app.get('/api/chat', serverMFPopulateCtrl.getChat);
+app.get('/api/skills', serverMFPopulateCtrl.getSkills);
+app.get('/api/weapons', serverMFPopulateCtrl.getWeapons);
+app.get('/api/damagingArmor', serverMFPopulateCtrl.getDamagingArmor);
+app.get('/api/goodsAndServices', serverMFPopulateCtrl.getGoodsAndServices);
+app.get('/api/bonusSpells', serverMFPopulateCtrl.getBonusSpells);
 
 // CONNECTIONS //
 var mongoURI = config.MONGO_URI;
