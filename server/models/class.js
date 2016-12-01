@@ -132,6 +132,9 @@ var classSchema = mongoose.Schema({
           specialType: {
             type: String
           },
+          relatesTo: {
+            type: String
+          },
           chosen: {
             type: Boolean
           },

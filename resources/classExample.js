@@ -20,7 +20,7 @@
       "hasSpells": false,
       "classCastingAttribute": null,
       "weaponProficiencies": "Simple and Martial",
-      "armorProficiencies": "Light armor, medium armor, and shields (except tower shields)."
+      "armorProficiencies": "Light armor, medium armor, and shields (except tower shields).",
       "genericLevelGain": [{
           "level": 1,
           "baseAttackBonus": 1,
@@ -153,6 +153,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 2,
@@ -165,6 +166,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 3,
@@ -177,6 +179,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 4,
@@ -189,6 +192,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 5,
@@ -201,6 +205,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 6,
@@ -213,6 +218,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 7,
@@ -225,6 +231,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 8,
@@ -237,6 +244,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 9,
@@ -249,6 +257,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 10,
@@ -261,6 +270,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 11,
@@ -273,6 +283,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 12,
@@ -285,6 +296,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 13,
@@ -297,6 +309,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 14,
@@ -309,6 +322,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 15,
@@ -321,6 +335,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 16,
@@ -333,6 +348,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 17,
@@ -345,6 +361,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 18,
@@ -357,6 +374,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 19,
@@ -369,6 +387,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }, {
           "level": 20,
@@ -381,6 +400,7 @@
               "dieType": null,
               "numberOfDice": null,
               "value": null
+            }
           }]
       }],
       "specialAbilities": [{

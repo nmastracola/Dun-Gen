@@ -1,0 +1,80 @@
+ATTRIBUTES:
+strMod      --Strength
+dexMod      --Dexterity
+conMod      --Constitution
+intMod      --Intelligence
+wisMod      --Wisdom
+chrMod      --Charisma
+
+SKILLS:
+acrobaticsMod             --Acrobatics
+appraiseMod               --Appraise
+bluffMod                  --Bluff
+climbMod                  --Climb
+craftMod                  --Craft
+diplomacyMod              --Diplomacy
+disableDeviceMod          --Disable Device
+disguiseMod               --Disguise
+escapeArtistMod           --Escape Artist
+flyMod                    --Fly
+handleAnimalMod           --Handle Animal
+healMod                   --Heal
+intimidateMod             --Intimidate
+knowAllMod                --Knowledge (Generic, adds to all fields)
+knowArcanaMod             --Knowledge (arcana)
+knowDungeoneeringMod      --Knowledge (dungeoneering)
+knowEngineeringMod        --Knowledge (engineering)
+knowGeogragphyMod         --Knowledge (geography)
+knowHistoryMod            --Knowledge (history)
+knowLocalMod              --Knowledge (local)
+knowNatureMod             --Knowledge (nature)
+knowNobilityMod           --Knowledge (nobility)
+knowPlanesMod             --Knowledge (planes)
+knowReligionMod           --Knowledge (religion)
+linguisticsMod            --Linguistics
+perceptionMod             --Perception
+performMod                --Perform
+professionMod             --Profession (NOT TRACKED, CUSTOM ENTRIES)
+rideMod                   --Ride
+senseMotiveMod            --Sense Motive
+sleightOfHandMod          --Sleight of Hand
+spellcraftMod             --Spellcraft
+stealthMod                --Stealth
+survivalMod               --Survival
+swimMod                   --Swim
+useMagicDeviceMod         --Use Magic Device
+
+MOVEMENT:
+moveSpeedMod              --Normal Move Speed
+moveSpeedDiffMod          --Difficult Terrain Move Speed
+runSpeedMod               --Running Move Speed (Usually a multiplier)
+jumpSpeedMod              --Jump Distance
+climbSpeedMod             --Climb Speed
+flySpeedMod               --Flying Speed
+burrowSpeedMod            --Burrowing Speed
+
+COMBAT:
+babMod                    --Base Attack Bonus
+toHitMod                  --To Hit
+damageMod                 --Damage
+initiativeMod             --Initiative
+fortitudeSaveMod          --Fortitude Save
+reflexSaveMod             --Reflex Save
+willSaveMod               --Will Save
+ACMod                     --Armor Class
+damageReduxMod            --Generic Damage Reduction (5/-)
+spellDamageMod            --Spell damage
+SpellDamageMult           --Spell damage multiplier
+
+CLASSES:
+rageUsesMod    
+channelEnergyUsesMod
+
+FEATS:
+
+EQUIPMENT:
+armorCheckPenaltyMod      --Armor Check Penalty
+armorMaxDexBonusMod       --Armor Max Dexterity Bonus
+shieldACMod               --Shield AC
+threatRangeMod            --Weapon critical threat range
+
