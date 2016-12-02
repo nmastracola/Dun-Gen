@@ -35,18 +35,18 @@
                     <div class="rollBox blkBkg">
                         <h5 class="rollContent" ng-click="moveStat(0)">{{standardRolls[0]}}</h5></div>
                 </div>
-                <!-- CON -->
-                <div class="rollRow">
-                    <div class="rollBox whtBkg">
-                        <h4>CON</h4></div>
-                    <div class="rollBox greyBkg " ng-click="dropStat(1)"><h5 class="rollContent" >{{attributes[1]}}</h5></div>
-                    <div class="rollBox ltgreyBkg"><h5 class="rollContent" >{{attributeModifier[1]}}</h5></div>
-                    <div class="rollBox blkBkg" ng-click="moveStat(1)"><h5 class="rollContent" >{{standardRolls[1]}}</h5></div>
-                </div>
                 <!-- DEX -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>DEX</h4></div>
+                    <div class="rollBox greyBkg " ng-click="dropStat(1)"><h5 class="rollContent" >{{attributes[1]}}</h5></div>
+                    <div class="rollBox ltgreyBkg"><h5 class="rollContent" >{{attributeModifier[1]}}</h5></div>
+                    <div class="rollBox blkBkg" ng-click="moveStat(1)"><h5 class="rollContent" >{{standardRolls[1]}}</h5></div>
+                </div>
+                <!-- CON -->
+                <div class="rollRow">
+                    <div class="rollBox whtBkg">
+                        <h4>CON</h4></div>
                     <div class="rollBox greyBkg " ng-click="dropStat(2)"><h5 class="rollContent" >{{attributes[2]}}</h5></div>
                     <div class="rollBox ltgreyBkg"><h5 class="rollContent" >{{attributeModifier[2]}}</h5></div>
                     <div class="rollBox blkBkg" ng-click="moveStat(2)" ><h5 class="rollContent"  >{{standardRolls[2]}}</h5></div>
@@ -129,10 +129,10 @@
                         <div class="arrow-down"></div>
                     </div>
                 </div>
-                <!-- CON -->
+                <!-- DEX -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
-                        <h4>CON</h4></div>
+                        <h4>DEX</h4></div>
                     <div class="rollBox greyBkg "></div>
                     <div class="rollBox ltgreyBkg"></div>
                     <div class="rollBox">
@@ -140,10 +140,10 @@
                         <div class="arrow-down"></div>
                     </div>
                 </div>
-                <!-- DEX -->
+                <!-- CON -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
-                        <h4>DEX</h4></div>
+                        <h4>CON</h4></div>
                     <div class="rollBox greyBkg "></div>
                     <div class="rollBox ltgreyBkg"></div>
                     <div class="rollBox">
@@ -227,10 +227,10 @@
                         <div class="arrow-down"></div>
                     </div>
                 </div>
-                <!-- CON -->
+                <!-- DEX -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
-                        <h4>CON</h4></div>
+                        <h4>DEX</h4></div>
                     <div class="rollBox greyBkg "></div>
                     <div class="rollBox ltgreyBkg"></div>
                     <div class="rollBox">
@@ -238,10 +238,10 @@
                         <div class="arrow-down"></div>
                     </div>
                 </div>
-                <!-- DEX -->
+                <!-- CON -->
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
-                        <h4>DEX</h4></div>
+                        <h4>CON</h4></div>
                     <div class="rollBox greyBkg "></div>
                     <div class="rollBox ltgreyBkg"></div>
                     <div class="rollBox">
@@ -305,7 +305,7 @@
 <div class="buttonHolder">
   <div class="txtAndButton">
     <h5 class="txtButton">CONFIRM</h5>
-    <div class="buttonBase" ng-click="rollBtn = true">
+    <div class="buttonBase" ng-click="rollBtn = true; setAttributes()">
       <div class="buttonSelected" ng-show="rollBtn"></div>
     </div>
   </div>

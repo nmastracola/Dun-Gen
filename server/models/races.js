@@ -38,6 +38,9 @@ var racesSchema = mongoose.Schema({
       type: String
     }
   }],
+  modText: {
+    type: String
+  },
   mod: {
     str: {
       type: Number
@@ -73,7 +76,18 @@ var racesSchema = mongoose.Schema({
     },
     desc: {
       type: String
-    }
+    },
+    type: {
+      type: String
+    },
+    math: [{
+      modifierType: {
+        type: String
+        },
+      modifierValue: {
+        type: String
+        }
+     }]
   }]
 });
 

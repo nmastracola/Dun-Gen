@@ -6,9 +6,10 @@ var mongoose = require('mongoose');
 var characterSchema = mongoose.Schema({
   static: [{
       userId: {
-          type: objectID,
-          ref: 'Users',
-          required: true  
+          // type: objectID,
+          // ref: 'Users',
+          // required: true
+          type: String,
       },
       playerName: {
           type: String
@@ -30,7 +31,7 @@ var characterSchema = mongoose.Schema({
                   required: true
           },
           level: {
-              type: String,
+              type: Number,
               required: true
           }
       }],
@@ -39,71 +40,71 @@ var characterSchema = mongoose.Schema({
           required: true
       },
       experience: {
-          type: String,
+          type: Number,
           required: true
       }
   }],
   core: [{
       strength: {
-          type: String,
+          type: Number,
           required: true
       },
       dexterity: {
-          type: String,
+          type: Number,
           required: true
       },
       constitution: {
-          type: String,
+          type: Number,
           required: true
       },
       intelligence: {
-          type: String,
+          type: Number,
           required: true
       },
       wisdom: {
-          type: String,
+          type: Number,
           required: true
       },
       charisma: {
-          type: String,
+          type: Number,
           required: true
       },
       armorClass: {
-          type: String,
+          type: Number,
           required: true
       },
       initiative: {
-          type: String,
+          type: Number,
           required: true
       },
       fortitudeMagicModifier: {
-          type: String
+          type: Number
       },
       fortitudeMiscellaneousModifier: {
-          type: String
+          type: Number
       },
-      reflexMagicodifier: {
-          type: String
+      reflexMagicModifier: {
+          type: Number
       },
       reflexMiscellaneousModifier: {
-          type: String
+          type: Number
       },
       willMagicModifier: {
-          type: String
+          type: Number
       },
       willMiscellaneousModifier: {
-          type: String
+          type: Number
       },
       currentHitPoints: {
-          type: String,
+          type: Number,
           required: true
       },
       maxHitPoints: {
-          type: String,
+          type: Number,
           required: true
       },
       hitPointsModifier: {
-          type: String,
+          type: Number,
           required: true
       },
       wounds: {
@@ -116,7 +117,7 @@ var characterSchema = mongoose.Schema({
               required: true
           },
           movementSpeed: {
-              type: String,
+              type: Number,
               required: true
           }
       }]
@@ -262,6 +263,10 @@ var characterSchema = mongoose.Schema({
       },
       active: {
           type: Boolean
+      },
+      available: {
+        type: Number,
+        default: 1
       }
   }],
   abilities: [{
@@ -321,11 +326,10 @@ var characterSchema = mongoose.Schema({
               type: Number
           },
           category: {
-              type: String,
-              required: true
+              type: String
           },
           description: {
-              type: String,
+              type: String
           }
       },
       wealth: {

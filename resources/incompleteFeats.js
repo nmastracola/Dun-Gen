@@ -47,3 +47,5 @@ hasFamiliar
 characterLevel
 hasSkillRanks
 hasCriticalFeats
+
+GRATUITOUS CHANGE
