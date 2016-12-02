@@ -7,7 +7,6 @@ var GoodsAndServices = require('./../models/goodsAndServices');
 var Skills = require('./../models/skills');
 var Weapons = require('./../models/weapons');
 var DamagingArmor = require('./../models/damagingArmor');
-// var Class = require('./../models/class');
 var Class = require('./../models/class');
 var BonusSpells = require('./../models/bonusSpells');
 var TempUser = require('./../models/tempUser');
@@ -15,6 +14,18 @@ var Character = require('./../models/character');
 
 
 module.exports = {
+
+// UPDATE //
+  editFeat: function(req, res,next){
+    console.log(req.query);
+    console.log(req.query.name);
+    Feats.update(req.query, req.body, function(err,user){
+      if(err){
+        res.status(500).send(err);
+      }
+      res.status(200).send(user);
+    })
+  },
 
 // POST //
 

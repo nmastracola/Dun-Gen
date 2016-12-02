@@ -6,6 +6,23 @@ math: {
     type: Number
     }
  }
+ 
+ math: {
+   dieType: {
+     type: Number
+   },
+   numberOfDice: {
+     type: Number
+   },
+   modifiers: [{
+     modifierType: {
+       type: String
+     },
+     modifierValue: {
+       type: String
+     }
+   }]
+ }
 
 RACE ABILITIES:
 
@@ -51,21 +68,21 @@ RACE ABILITIES:
 
 CLASS ABILITIES:
 
-  BARBARIAN:
-    Fast Movement
-    Rage
-    Rage Powers:
-      Increased Damage Reduction 1
-      Increased Damage Reduction 2
-      Increased Damage Reduction 3 (Feat can be taken 3 times and is overwritten)
-      Raging Climber
-      Raging Swimmer
-      Swift Foot 1
-      Swift Foot 2
-      Swift Foot 3 (Feat can be taken 3 times and stacks)
-    Damage Reduction
-    Greater Rage (replaces Rage)
-    Mighty Rage (replaces Greater Rage)
+  √ BARBARIAN:
+    √ Fast Movement
+    √ Rage
+    √ Rage Powers:
+      √ Increased Damage Reduction 1
+      √ Increased Damage Reduction 2
+      √ Increased Damage Reduction 3 (Feat can be taken 3 times and is overwritten)
+      √ Raging Climber
+      √ Raging Swimmer
+      √ Swift Foot 1
+      √ Swift Foot 2
+      √ Swift Foot 3 (Feat can be taken 3 times and stacks)
+    √ Damage Reduction
+    √ Greater Rage (replaces Rage)
+    √ Mighty Rage (replaces Greater Rage)
 
   BARD:
     Bardic Knowledge
@@ -110,34 +127,33 @@ CLASS ABILITIES:
 
 FEATS:
 
-  Acrobatics
-  Alertness
-  Animal Affinity
-  Athletic
-  Combat Expertise (Toggle)
-  Deadly Aim (Toggle)
-  Deceitful
-  Deft Hands
-  Dodge
-  Extra Channel
-  Extra Ki
-  Extra Lay On Hands
-  Extra Mercy
-  Extra Performance
-  Extra Rage
-  Great Fortitude
-  Greater Shield Focus
-  Improved Initiative
-  Iron Will
-  Lightning Reflexes
-  Magical Aptitude
-  Persuasive
-  Power Attack
-  Run
-  Self-Sufficient
-  Shield Focus
-  Stealthy
-  Toughness
+  √ Acrobatic
+  √ Alertness
+  √ Animal Affinity
+  √ Athletic
+  √ Combat Expertise (Toggle)
+  √ Deadly Aim (Toggle)
+  √ Deceitful
+  √ Deft Hands
+  √ Dodge
+  √ Extra Channel
+  √ Extra Ki
+  √ Extra Lay On Hands
+  √ Extra Mercy
+  √ Extra Performance
+  √ Extra Rage
+  √ Great Fortitude
+  √ Greater Shield Focus
+  √ Improved Initiative
+  √ Iron Will
+  √ Lightning Reflexes
+  √ Magical Aptitude
+  √ Persuasive
+  √ Power Attack
+  √ Self-Sufficient
+  √ Shield Focus
+  √ Stealthy
+  √ Toughness
   
   
   
