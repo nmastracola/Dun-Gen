@@ -24,13 +24,25 @@ return{
 
     $scope.chosenFeats = [];
     // console.log($scope.feats);
+
     $scope.selectedFeat = function (feat) {
+      for (var i = 0; i < $scope.chosenFeats.length; i++) {
+        if ($scope.chosenFeats[i] === feat) {
+          $scope.chosenFeats.splice(i, 1);
+          return
+        }
+      }
         $scope.chosenFeats.push(feat);
-        // console.log(feat);
+        console.log($scope.chosenFeats);
     }
 
-    //temp field
-    
+    $scope.newCharFeats = function() {
+      for (var i = 0; i < $scope.chosenFeats.length; i++) {
+        characterService.characterCreationObject.feats.push({name: $scope.chosenFeats[i].name, known: true})
+      }
+      console.log(characterService.characterCreationObject);
+    }
+
 
 
   },

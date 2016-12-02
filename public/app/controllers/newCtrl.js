@@ -32,6 +32,8 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     $scope.d3Picker = false;
     $scope.d4Picker = true;
 
+    $scope.featToggler=false;
+
     //class togglers
     $scope.classToggler = [false, false, false, false, false, true, false, false, false, false, false];
 

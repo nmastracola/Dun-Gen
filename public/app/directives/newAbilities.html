@@ -74,10 +74,10 @@
               class="spellSelectionIndicator" ng-show"selectedFeatIndicator"
               ng-click="selectedFeat(feat); selectedFeatIndicator = !selectedFeatIndicator
             -->
-        <div class="spellSelection" ng-click="selectedFeat(feat)">
-          <div class="spellSelectionIndicator" ng-show"selectedFeatIndicator = !selectedFeatIndicator"></div>
+        <div class="spellSelection" ng-click="selectedFeat(feat); featToggler = !featToggler">
+          <div class="spellSelectionIndicator" ng-show="featToggler"></div>
         </div>
-        <div class="spellSelectionVertibar" ></div>
+        <div class="spellSelectionVertibar"></div>
         <div class="spellDescriptionHolder">
           <div class="spellDescShort" ng-hide="">
             <p>{{feat.description}}</p>
@@ -102,7 +102,7 @@
 
 <div class="newSelectedFeats">
   <h4 class="newSelectedFeatsHeader">CHOSEN FEATS</h4>
-  <div class="newSelectedFeatList" ng-repeat='feat in chosenFeats'>
+  <div class="newSelectedFeatList" ng-repeat='feat in chosenFeats track by $index'>
     <!-- ng-repeat in newSelectedFeatList -->
     <h5 class="newSelectedFeatName">{{feat.name}}</h5>
     <!-- when selecting feats from above, display selected feat info down here -->
@@ -114,14 +114,14 @@
 
 <!-- ==================  SPELLS BUTTON  ===================== -->
 <div class="buttonHolder">
-  <div class="txtAndButton">
+  <div class="txtAndButton" ng-click="abilitiesBtn = true; newCharFeats()" >
     <h5 class="txtButton">CONFIRM</h5>
-    <div class="buttonBase" ng-click="abilitiesBtn = true">
+    <div class="buttonBase">
       <div class="buttonSelected" ng-show="abilitiesBtn"></div>
     </div>
   </div>
-  <div class="txtAndButton">
-    <div class="buttonBase" ng-click="abilitiesBtn = false">
+  <div class="txtAndButton" ng-click="abilitiesBtn = false">
+    <div class="buttonBase">
       <div class="buttonSelected" ng-hide="abilitiesBtn"></div>
     </div>
       <h5 class="txtButton">CANCEL</h5>

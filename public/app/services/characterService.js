@@ -124,10 +124,7 @@ angular.module("scribe").service("characterService", function($http) {
             spellTracker: null
         }]
     }],
-    feats: [{
-        name: "",
-        known: false
-    }],
+    feats: [],
     abilities: [{
         name: "",
         known: false

@@ -53,7 +53,7 @@ angular.module('scribe')
                         if ($scope.races[i].name === $scope.chosenRace) {
                             $scope.raceInfo = $scope.races[i].traits;
                             $scope.modText = $scope.races[i].modText;
-                            console.log($scope.races);
+                            // console.log($scope.races);
                             $scope.raceCounter = i;
                         };
                     };
@@ -65,7 +65,7 @@ angular.module('scribe')
                           $scope.raceCounter = null;
 
                         }
-                        console.log($scope.races[$scope.raceCounter].mod.bon);
+                        // console.log($scope.races[$scope.raceCounter].mod.bon);
                     }else {
                       $scope.staticRace = false;
 
@@ -77,7 +77,7 @@ angular.module('scribe')
                 $scope.raceToggler = [false, false, false, true, false, false, false];
                 $scope.raceSwitcher = function(x) {
 
-                  console.log(characterService.characterCreationObject);
+                  // console.log(characterService.characterCreationObject);
 
               }
 
