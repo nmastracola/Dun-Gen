@@ -1,3 +1,9 @@
+CURRENT VALUES FOR MOST FIELDS ARE JUST THE FIELD MINUS "Mod" UNLESS OTHERWISE INDICATED
+
+E.G. CURRENT STRENGTH IS "str"
+     CURRENT FLY SKILL IS "fly"
+
+
 ATTRIBUTES:
 strMod      --Strength
 dexMod      --Dexterity
@@ -55,25 +61,37 @@ burrowSpeedMod            --Burrowing Speed
 
 COMBAT:
 babMod                    --Base Attack Bonus
-toHitMod                  --To Hit
-damageMod                 --Damage
+rangedToHitMod            --Ranged To Hit
+rangedDamageMod           --Ranged Damage
+meleeToHitMod             --Melee To Hit
+meleeDamageMod            --Melee Damage
+meleeDamageMult           --Melee Damage Multiplier
 initiativeMod             --Initiative
 fortitudeSaveMod          --Fortitude Save
 reflexSaveMod             --Reflex Save
 willSaveMod               --Will Save
 ACMod                     --Armor Class
-damageReduxMod            --Generic Damage Reduction (5/-)
+dodgeACMod                --Dodge Armor Class
+damageReduxMod            --Generic Damage Reduction (Will be a number, then transformed on front end to proper format, E.G. 5/-)
 spellDamageMod            --Spell damage
 SpellDamageMultMod        --Spell damage multiplier
+combatManeuverBonusMod    --Combat Maneuver Bonus
+combatManeuverDefenseMod  --Combat Maneuver Defense
 
 CHARACTER:
 additionalFeatsMod        --Extra Feats
 skillRanksMod             --Extra Skill Points
 currentCharLvl            --VALUE: Current Character Level
+maxHPMod                  --Max HP
+charHD                    --VALUE: Character Hit Dice
 
 CLASSES:
-rageUsesMod               --Rage Uses 
-channelEnergyUsesMod      --Channel Energy Uses
+kiPoolMod                 --Ki Pool Max Value
+layOnHandsUsesMod         --Lay on Hands Max Uses
+rageRndsPerDayMod         --Rage Max rounds per day
+channelEnergyUsesMod      --Channel Energy Max Uses
+mercyKnownMod             --Max Mercies Known
+bardicPerfRndsPerDayMod   --Max number of bardic performance rounds per day
 currentBarbarianLvl       --VALUE: Current Barbarian Level
 currentBardLvl            --VALUE: Current Bard Level
 currentClericLvl          --VALUE: Current Cleric Level
@@ -94,4 +112,5 @@ armorCheckPenaltyMod      --Armor Check Penalty
 armorMaxDexBonusMod       --Armor Max Dexterity Bonus
 shieldACMod               --Shield AC
 threatRangeMod            --Weapon critical threat range
+weaponType                --Weapon Type
 

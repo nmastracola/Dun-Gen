@@ -60,8 +60,45 @@
 </div>
 <!-- ===============================  PLACEHOLDER  ================================== -->
 <div class="raceStats">
-  <p class="rParagraph">{{attributeBonuses}}</p>
-  <div class="raceStatChanger"></div>
+  <p class="rParagraph">{{modText}}</p>
+  <div class="raceStatChanger" ng-hide="staticRace">
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">STR</h5>
+    <div class="buttonBase" ng-click="abilitySwitcher(0)">
+      <div class="buttonSelected" ng-show="abilityToggler[0]"></div>
+    </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">DEX</h5>
+    <div class="buttonBase" ng-click="abilitySwitcher(1)">
+      <div class="buttonSelected" ng-show="abilityToggler[1]"></div>
+    </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">CON</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(2)">
+      <div class="buttonSelected" ng-show="abilityToggler[2]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">INT</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(3)">
+      <div class="buttonSelected" ng-show="abilityToggler[3]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">WIS</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(4)">
+      <div class="buttonSelected" ng-show="abilityToggler[4]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">CHA</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(5)">
+      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      </div>
+    </div>
+</div>
   <div class="rParagraph" ng-repeat="trait in raceInfo">{{trait.desc}}<br><br></div>
 </div>
 
@@ -70,9 +107,9 @@
 
 <!-- ==================  RACE BUTTON  ===================== -->
 <div class="buttonHolder">
-  <div class="txtAndButton">
-    <h5 class="txtButton" ng-click="confirmRace()">CONFIRM</h5>
-    <div class="buttonBase" ng-click="raceBtn = true">
+  <div class="txtAndButton" ng-click="raceBtn = true; confirmRace()">
+    <h5 class="txtButton" ng-click="">CONFIRM</h5>
+    <div class="buttonBase" >
       <div class="buttonSelected" ng-show="raceBtn"></div>
     </div>
   </div>

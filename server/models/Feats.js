@@ -29,6 +29,39 @@ var featsSchema = mongoose.Schema({
   },
   special: {
     type: String,
+  },
+  math: {
+    dieType: {
+      type: Number
+    },
+    numberOfDice: {
+      type: Number
+    },
+    modifiers: [{
+      modifierType: {
+        type: String
+      },
+      modifierValue: {
+        type: String
+      }
+    }],
+    evolvingModifiers: [{
+      trigger: [{
+        triggerAbility: {
+          type: String
+        },
+        triggerThreshold: [{
+          type: String
+        }],
+        bonusAbility: {
+          type: String
+        },
+        bonusValue: [{
+          type: String
+        }]
+        
+      }]
+    }]
   }
 
 
