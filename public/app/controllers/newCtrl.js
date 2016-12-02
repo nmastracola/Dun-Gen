@@ -1,6 +1,8 @@
-angular.module('scribe').controller('newCtrl', function($scope, sService, characterService) {
+angular.module('scribe').controller('newCtrl', function($scope, sService, characterService, races) {
 
     $scope.test = sService.test;
+    $scope.races = races;
+
 
 
     // ==============================   VIEW TOGGLERS  ==========================
@@ -29,26 +31,8 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     $scope.d3Picker = false;
     $scope.d4Picker = true;
 
-    //race togglers
-    $scope.raceToggler = [false, false, false, true, false, false, false];
-    $scope.raceSwitcher = function(x) {
-        for (var i = 0; i < $scope.raceToggler.length; i++) {
-            if (i == x) {
-                $scope.raceToggler[i] = true;
-            } else {
-                $scope.raceToggler[i] = false;
-            }
-        }
-    };
-
-    //gender togglers
-    $scope.male = false;
-    $scope.female = false;
-
     //class togglers
     $scope.classToggler = [false, false, false, false, false, true, false, false, false, false, false];
-
-
 
     $scope.classSwitcher = function(x) {
         for (var i = 0; i < $scope.classToggler.length; i++) {
@@ -63,21 +47,10 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     // ==============================   CONTENT PICKERS  ==========================
     //rolls
     $scope.standardRoll = 4;
-
+    scope.chosenRace = "Half-Elves";
     $scope.diceType = function(x) {
         $scope.standardRoll = x;
     }
-
-
-    //RACE
-    $scope.raceList = ['DWARF', 'ELF', 'GNOME', 'HALF-ELF', 'HALF-ORC', 'HALFLING', 'HUMAN']
-
-    $scope.chosenRace = "HALF-ELF";
-
-    $scope.classPicker = function(x) {
-        $scope.chosenRace = $scope.raceList[x];
-    };
-
 
     //CLASS
     $scope.classList = ['BARBARIAN', 'BARD', 'CLERIC', 'DRUID', 'FIGHTER', 'MONK', 'PALADIN', 'RANGER', 'ROGUE', 'SORCEROR', 'WIZARD']
@@ -89,7 +62,7 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     };
 
 
-    // ==============================   CHARSCTER GENERATOR LOGIC  ==========================
+    // ==============================   ROLL LOGIC  ==========================
     $scope.standardRolls = [0, 0, 0, 0, 0, 0];
     $scope.hybridRolls = [0, 0, 0, 0, 0, 0];
     $scope.pointBuyRolls = [0, 0, 0, 0, 0, 0];
@@ -170,6 +143,7 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
         charCre.intelligence = $scope.attributes[3]
         charCre.wisdom = $scope.attributes[4]
         charCre.charisma = $scope.attributes[5]
+        console.log(charCre);
     }
 
 

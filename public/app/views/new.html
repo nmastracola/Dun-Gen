@@ -4,32 +4,32 @@
         <h4 class="newHeaderTxt">ROLLS</h4>
     </div>
     <!-- first section -->
-    
+
       <rolls ng-show="rollShower"></rolls>
-    
+
     <!-- =============  race header   =============-->
     <div class="newHeader" id="raceHeader" ng-click="raceShower = !raceShower">
         <h4 class="newHeaderTxt">RACE</h4>
     </div>
     <!-- race section -->
-    
-    <race ng-show="raceShower"></race>
-    
-    
+
+    <race ng-show="raceShower" races="races" chosenRace="chosenRace" attributes="attributes"></race>
+
+
     <!-- =============  class header   =============-->
     <div class="newHeader" id="classHeader" ng-click="classShower = !classShower">
         <h4 class="newHeaderTxt">CLASS</h4>
     </div>
     <!-- class section -->
-    
+
     <class ng-show="classShower"></class>
-    
+
     <!-- =============  abilities header   =============-->
     <div class="newHeader" id="abilitiesHeader" ng-click="abilitiesShower = !abilitiesShower">
         <h4 class="newHeaderTxt">ABILITIES</h4>
     </div>
     <!-- abilities section -->
-    
+
       <abilities ng-show="abilitiesShower"></abilities>
 
     <!-- =============  spells header   =============-->
@@ -37,9 +37,9 @@
         <h4 class="newHeaderTxt">SPELLS</h4>
     </div>
     <!-- spells section -->
-    
+
       <spells ng-show="spellsShower"></spells>
-    
+
 
     <!-- =============  customization header   =============-->
     <div class="newHeader" id="customizationHeader" ng-click="customizationShower = !customizationShower">
@@ -47,5 +47,5 @@
     </div>
     <!-- customization section -->
     <customization ng-show="customizationShower"></customization>
-    
+
 </div>

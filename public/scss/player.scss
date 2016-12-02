@@ -6,6 +6,8 @@ flex-direction: row;
 position: fixed;
 top: 0;
 left: 0;
+background-color: $wht;
+z-index: 2;
 }
 // =============================  PLAYER CORE =============================
 .playerCore{
@@ -107,6 +109,7 @@ left: 0;
   border-bottom: 12px solid $blk;
   &:hover{
     border-bottom: 12px solid grey;
+    cursor: pointer;
   }
 }
 
@@ -119,6 +122,26 @@ left: 0;
   border-top: 12px solid $blk;
   &:hover{
     border-top: 12px solid grey;
+    cursor: pointer;
+  }
+}
+
+.xpInput{
+  width: 100px;
+  height: 40px;
+  background-color: $blk;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  color: $wht;
+  letter-spacing: .1em;
+  font-size: 1.5em;
+  border: 0;
+  &:hover{
+    color: lightgrey;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 5px 5px 5px lightgrey;
   }
 }
 
@@ -127,13 +150,12 @@ left: 0;
 .playerHUD{
   height:200px;
   width: 55%;
-  background-color: darkgray  ;
 }
 
 
 // =============================  PLAYER BODY =============================
 .playerBody{
-  overflow-y: scroll;
+
 }
 
 .playerSpacer{

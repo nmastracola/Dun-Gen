@@ -65,5 +65,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#292331', end
   height: 40px;
   width: 100%;
   background-color: lightgray;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
 }
-
+.raceStatChangerOptions{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  border: solid transparent 5px;
+}
