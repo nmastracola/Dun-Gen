@@ -1,0 +1,243 @@
+.playerCoreHolder{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.playerAttributeHolder{
+  width: 40%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerAttributeRow{
+  width: 90%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto 0;
+}
+
+.playerAttributeCell{
+  height: 50px;
+  width: 60px;
+  margin: 0 10px 0 0;
+  position: relative;
+}
+
+.playerAttributeMainContentCell{
+  background-color: $blk;
+}
+
+.playerAttributeSubContentCell1{
+  background-color: LightGrey ;
+}
+
+.playerAttributeSubContentCell2{
+  background-color: DarkGrey ;
+}
+
+.playerAttirbuteContentTxt{
+  color:$wht;
+  text-align: center;
+  margin: 15px;
+}
+
+.playerAttirbuteContentSubTxt{
+  color:$blk;
+  text-align: center;
+  margin: 15px;
+}
+
+.playerAttributeTopLabel{
+  text-align: center;
+  font-size: .7em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.playerAttributeSideLabel{
+  text-align: right;
+  margin: 15px;
+}
+
+.playerAttributeArrowHolder{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.playerAttributeUpArrow{
+  width: 0; 
+  height: 0; 
+  margin: 0 0 0 28px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid $blk;
+  &:hover{
+    border-bottom: 20px solid grey;
+    cursor: pointer;
+  }
+}
+
+.playerAttributeDownArrow{
+  width: 0; 
+  height: 0; 
+  margin: 0 0 0 28px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid $blk;
+  &:hover{
+    border-top: 20px solid grey;
+    cursor: pointer;
+  }
+}
+
+// ========================  DIVIDER   ========================
+.playerCoreDivider{
+  height:500px;
+  margin: 50px 10px 0 10px;
+}
+// ========================  RIGHT SIDE OF THE DIVIDE  ========================
+
+.playerCoreStatsHolder{
+  width: 59%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background: green; 
+}
+
+.playerCoreArmorClassHolder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+}
+
+
+
+.playerCoreArmorClassRow {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.playerCoreStatBox {
+  height: 40px;
+  width: 60px;
+  margin: 0 2px 0 2px;
+  position: relative;
+}
+
+.statBoxBlue {
+  background: $blk;
+}
+
+.playerCoreArmorText {
+  margin-top: 10px;
+
+}
+
+.playerCoreArmorText1 {
+  margin-top: 10px;
+
+}
+
+.playerCoreHeader {
+  text-align: right;
+  margin: 10px 0 0 0;
+  
+}
+
+.playerCoreSpacerDiv{
+  width:12px;
+}
+
+.playerStatLabel{
+  font-size: .8em;
+  text-align: center;
+}
+
+.playerStatTotal{
+  padding: 23px 0 0 0;
+}
+
+.playerStatPadding{
+  padding: 12px 0 0 0;
+}
+
+.playerCoreTotalTxt{
+  color: $wht;
+  text-align: center;
+  margin: 9px 0 0 0;
+}
+
+.playerCoreBoxContentTxt{
+  text-align: center;
+  margin: 9px 0 0 0;
+}
+
+// =============  SECOND ROW  =============
+
+.playerCoreHorizontalDivider{
+  width:100%;
+  height: 20px;
+}
+
+.playerCoreFurtherACRow{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.playerCoreSubHeader{
+  text-align: right;
+  margin: 12px 5px 0 5px;
+}
+.playerCoreInitMargin{
+  margin: -20px 0 0 0;
+}
+
+// =============  THIRD ROW  =============
+
+
+.playerCoreInitiaveBox{
+  width: 150px;
+}
+
+.playerCoreSpeedBox{
+  width: 80px;
+  margin: 0 0 0 20px; 
+}
+
+
+// =============  SAVES ROW  =============
+
+.playerCoreSavesHolder{
+  height:160px;
+  width:100%;
+  background: orange; 
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
