@@ -20,11 +20,11 @@ angular.module('scribe')
                             $scope.raceInfo = $scope.races[i].traits;
                         };
                     };
-                    console.log($scope.races);
-                    console.log($scope.raceInfo);
+                    // console.log($scope.races);
+                    // console.log($scope.raceInfo);
                 };
                 $scope.info();
-                console.log($scope.races);
+                // console.log($scope.races);
 
                 //race togglers
                 $scope.raceToggler = [false, false, false, true, false, false, false];

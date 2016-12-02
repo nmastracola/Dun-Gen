@@ -38,7 +38,7 @@ angular.module("scribe").service("characterService", function($http) {
         playerName: "",
         characterName: "",
         campaign: "",
-        race: "",
+        race: "Elves", //CHANGE THIS TO EMPTY STRING!!!!!!!!!!
         classes: [{
             class: "",
             level: ""
@@ -122,7 +122,7 @@ angular.module("scribe").service("characterService", function($http) {
         knownSpells: [{
             name: "",
             spellTracker: null
-        }],
+        }]
     }],
     feats: [{
         name: "",
@@ -164,6 +164,6 @@ angular.module("scribe").service("characterService", function($http) {
         portrait: ""
     }
 
-  }
+  };
 
 });

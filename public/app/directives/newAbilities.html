@@ -5,7 +5,7 @@
 <!-- ======================  available spells  ======================== -->
 
         <div class="availableSpells">
-          
+
           <div class="spellHeaderHolder">
             <h4 class="spellHeader">CLASS / RACIAL ABILITIES</h4>
           </div>
@@ -20,15 +20,15 @@
               <!-- NG REPEAT ABILITIES spellChooser -->
               <div class="spellScrollIndicatorUp"></div>
             <!-- ========  SINGLE ROW   ========== -->
-              <div class="spellChooserRow">
+              <div class="spellChooserRow" ng-repeat='trait in chosenRaceTraits'>
                 <div class="spellName">
-                  <p class="abilityName">Power Attack</p>
+                  <p class="abilityName">{{trait.name}}</p>
                 </div>
-              
+
                 <div class="spellSelectionVertibar" ></div>
                 <div class="spellDescriptionHolder">
                   <div class="spellDescShort" ng-hide="">
-                    <p>Allows a more powerful blow at the-</p>
+                    <p>{{trait.desc}}</p>
                   </div>
                   <div class="spellDescDetailsRequest">
                     <p class="spellDescriptionOpener"  ng-click="" ng-hide="">Details</p>
@@ -38,19 +38,19 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="spellScrollIndicatorDown"></div>
-              
+
             </div>
           </div>
-          
-            
+
+
         </div>
 <!-- ======================      divider      ======================== -->
         <div class="spellsVerticalDivider"></div>
 <!-- ======================  assigned spells  ======================== -->
 <div class="availableSpells">
-  
+
   <div class="spellHeaderHolder">
     <h4 class="spellHeader">AVAILABLE FEATS</h4>
   </div>
@@ -66,17 +66,21 @@
       <!-- NG REPEAT FEATS IN  spellChooser -->
       <div class="spellScrollIndicatorUp"></div>
     <!-- ========  SINGLE ROW   ========== -->
-      <div class="spellChooserRow">
+      <div class="spellChooserRow" ng-repeat='feat in feats'>
         <div class="spellName">
-          <p>Power Attack</p>
+          <p>{{feat.name}}</p>
         </div>
-        <div class="spellSelection" ng-click="">
-          <div class="spellSelectionIndicator" ng-show""></div>
+        <!-- Potential code for changing the button color when clicked on spellSelection
+              class="spellSelectionIndicator" ng-show"selectedFeatIndicator"
+              ng-click="selectedFeat(feat); selectedFeatIndicator = !selectedFeatIndicator
+            -->
+        <div class="spellSelection" ng-click="selectedFeat(feat)">
+          <div class="spellSelectionIndicator" ng-show"selectedFeatIndicator = !selectedFeatIndicator"></div>
         </div>
         <div class="spellSelectionVertibar" ></div>
         <div class="spellDescriptionHolder">
           <div class="spellDescShort" ng-hide="">
-            <p>Allows a more powerful blow at the-</p>
+            <p>{{feat.description}}</p>
           </div>
           <div class="spellDescDetailsRequest">
             <p class="spellDescriptionOpener"  ng-click="" ng-hide="">Details</p>
@@ -88,7 +92,7 @@
       </div>
 
       <div class="spellScrollIndicatorDown"></div>
-      
+
     </div>
   </div>
 </div>
@@ -98,10 +102,11 @@
 
 <div class="newSelectedFeats">
   <h4 class="newSelectedFeatsHeader">CHOSEN FEATS</h4>
-  <div class="newSelectedFeatList">
+  <div class="newSelectedFeatList" ng-repeat='feat in chosenFeats'>
     <!-- ng-repeat in newSelectedFeatList -->
-    <h5 class="newSelectedFeatName">Power Attack</h5>
-    <p class="newSelectedFeatDescription">You can choose to take a –1 penalty on all melee attack rolls and combat maneuver checks to gain a +2 bonus on all melee damage rolls. This bonus to damage is increased by half (+50%) if you are making an attack with a two-handed weapon, a one handed weapon using two hands, or a primary natural weapon that adds 1-1/2 times your Strength modifier on damage rolls. This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon or secondary natural weapon. When your base attack bonus reaches +4, and every 4 points thereafter, the penalty increases by –1 and the bonus to damage increases by +2. You must choose to use this feat before making an attack roll, and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.</p>
+    <h5 class="newSelectedFeatName">{{feat.name}}</h5>
+    <!-- when selecting feats from above, display selected feat info down here -->
+    <p class="newSelectedFeatDescription">{{feat.benefits}}</p>
   </div>
 </div>
 
