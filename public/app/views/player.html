@@ -5,28 +5,28 @@
       <img src="/images/sir_roland.jpg" alt="">
     </div>
     <div class="playerCoreContentHolder">
-      <h3>Sir Roland Smackhammer</h3>
+      <h3>{{playerName}}</h3>
       <div class="playerCoreContentHeader">
-        <h5 class="playerCoreContentTxt">HUMAN </h5>
-        <h5 class="playerCoreContentTxt">- level 1 -</h5>
-        <h5 class="playerCoreContentTxt"> Lawful Good</h5>
+        <h5 class="playerCoreContentTxt">{{playerRace}} </h5>
+        <h5 class="playerCoreContentTxt">- level {{playerLevel}} -</h5>
+        <h5 class="playerCoreContentTxt"> {{playerAlignment}}</h5>
       </div>
       <div class="playerCoreContentSubheader">
-        <h6 class="playerCoreContentSubTxt">Paladin 4</h6>
+        <h6 class="playerCoreContentSubTxt">{{playerClass[0]}} {{playerClassLevel[0]}} {{playerClass[1]}} {{playerClassLevel[1]}} {{playerClass[2]}} {{playerClassLevel[2]}} {{playerClass[3]}} {{playerClassLevel[3]}}</h6>
       </div>
       <div class="playerCoreNumberStatHolder">
         
         <div class="coreStatboxHolder">
-          <div class="coreHPup" ng-click="playerHP(1)"></div>
+          <div class="coreHPup" ng-click="playerChangeHP(1)"></div>
         <div class="coreStatbox">
           <div class="coreStatboxLabel">
             <p class="coreStatTxt">HP</p>
           </div>
           <div class="coreStatBox">
-            <h3 class="coreStat">{{HP}}</h3>
+            <h3 class="coreStat">{{playerHP}}</h3>
           </div>
         </div>
-        <div class="coreHPdown" ng-click="playerHP(-1)"></div>
+        <div class="coreHPdown" ng-click="playerChangeHP(-1)"></div>
         </div>
         
         <div class="coreStatboxHolder">
@@ -35,7 +35,7 @@
             <p class="coreStatTxt">AC</p>
           </div>
           <div class="coreStatBox">
-            <h3 class="coreStat">18</h3>
+            <h3 class="coreStat">{{playerAC}}</h3>
           </div>
         </div>
         </div>
@@ -46,7 +46,7 @@
             <p class="coreStatTxt">INIT</p>
           </div>
           <div class="coreStatBox">
-            <h3 class="coreStat">3</h3>
+            <h3 class="coreStat">{{playerINIT}}</h3>
           </div>
         </div>
         </div>
@@ -57,7 +57,8 @@
             <p class="coreStatTxt">XP</p>
           </div>
           <div class="bigCoreStatBox">
-            <h3 class="coreStat">18369</h3>
+            <!-- <h3 class="coreStat">{{playerXP}}</h3> -->
+            <input class="xpInput" type="text" name="XP" value="{{playerXP}}">
           </div>
         </div>
         </div>
@@ -68,7 +69,15 @@
   </div>
   <!-- =============================  PLAYER HUD =============================  -->
   <div class="playerHUD">
-    
+    <player-core-hud ng-show="playerMenuToggler[0]"></player-core-hud>
+    <player-combat-hud ng-show="playerMenuToggler[1]"></player-combat-hud>
+    <player-skills-hud ng-show="playerMenuToggler[2]"></player-skills-hud>
+    <player-spells-hud ng-show="playerMenuToggler[3]"></player-spells-hud>
+    <player-feats-hud ng-show="playerMenuToggler[4]"></player-feats-hud>
+    <player-equipment-hud ng-show="playerMenuToggler[5]"></player-equipment-hud>
+    <player-customization-hud ng-show="playerMenuToggler[6]"></player-customization-hud>
+    <player-journal-hud ng-show="playerMenuToggler[7]"></player-journal-hud>
+    <player-menu-hud ng-show="playerMenuToggler[8]"></player-menu-hud>
   </div>
   <!-- =============================  END PLAYER HEADER =============================  -->
 </div>
@@ -78,5 +87,13 @@
 <!-- ==============================================================  PLAYER BODY ==============================================================  -->
 <div class="playerBody">
   <div class="playerSpacer"></div>
-  <p>stuff goes here</p>
+  <player-core ng-show="playerMenuToggler[0]"></player-core>
+  <player-combat ng-show="playerMenuToggler[1]"></player-combat>
+  <player-skills ng-show="playerMenuToggler[2]"></player-skills>
+  <player-spells ng-show="playerMenuToggler[3]"></player-spells>
+  <player-feats ng-show="playerMenuToggler[4]"></player-feats>
+  <player-equipment ng-show="playerMenuToggler[5]"></player-equipment>
+  <player-customization ng-show="playerMenuToggler[6]"></player-customization>
+  <player-journal ng-show="playerMenuToggler[7]"></player-journal>
+  <player-menu ng-show="playerMenuToggler[8]"></player-menu>
 </div>

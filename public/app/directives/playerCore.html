@@ -1,0 +1,337 @@
+<div class="playerCoreHolder">
+     <!-- ========================  STUFF HOLDER HOLDER ======================== -->
+
+  <div class="playerAttributeHolder">
+    <!-- ========================  STUFF HOLDER  ======================== -->
+
+<!-- ==========  TOP ROW  ========== -->
+    <div class="playerAttributeRow">
+
+        <div class="playerAttributeCell"></div>
+        <div class="playerAttributeCell">
+          <p class="playerAttributeTopLabel">base</p>
+        </div>
+        <div class="playerAttributeCell">
+          <p class="playerAttributeTopLabel">ability<br>modifier</p>
+        </div>
+        <div class="playerAttributeCell">
+          <p class="playerAttributeTopLabel">temp<br>adjustment</p>
+        </div>
+        <div class="playerAttributeCell">
+          <p class="playerAttributeTopLabel">temp<br>modifier</p>
+        </div>
+        <div class="playerAttributeCell"></div>
+
+    </div>
+<!-- ==========  STR  ========== -->
+    <div class="playerAttributeRow">
+
+        <div class="playerAttributeCell">
+          <h4 class="playerAttributeSideLabel">STR</h4>
+        </div>
+        <div class="playerAttributeCell playerAttributeMainContentCell">
+          <h3 class="playerAttirbuteContentTxt">{{playerAtt.STR}}</h3>
+        </div>
+        <div class="playerAttributeCell playerAttributeSubContentCell2">
+          <h3 class="playerAttirbuteContentSubTxt">{{playerAttMod.mSTR}}</h3>
+        </div>
+        <div class="playerAttributeCell playerAttributeSubContentCell1">
+          <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpAdj.taSTR}}</h3>
+        </div>
+        <div class="playerAttributeCell playerAttributeSubContentCell2">
+          <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpMod.tmSTR}}</h3>
+        </div>
+        <div class="playerAttributeCell playerAttributeArrowHolder">
+          <div class="playerAttributeUpArrow" ng-click="playerChangeATT((1), 'STR')"></div>
+          <div class="playerAttributeDownArrow" ng-click="playerChangeATT((-1), 'STR')"></div>
+        </div>
+
+    </div>
+  <!-- ==========  DEX  ========== -->
+      <div class="playerAttributeRow">
+
+          <div class="playerAttributeCell">
+            <h4 class="playerAttributeSideLabel">DEX</h4>
+          </div>
+          <div class="playerAttributeCell playerAttributeMainContentCell">
+            <h3 class="playerAttirbuteContentTxt">{{playerAtt.DEX}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell2">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttMod.mDEX}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell1">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpAdj.taDEX}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell2">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpMod.tmDEX}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeArrowHolder">
+            <div class="playerAttributeUpArrow" ng-click="playerChangeATT((1), 'DEX')"></div>
+            <div class="playerAttributeDownArrow" ng-click="playerChangeATT((-1), 'DEX')"></div>
+          </div>
+
+      </div>
+  <!-- ==========  CON  ========== -->
+      <div class="playerAttributeRow">
+
+          <div class="playerAttributeCell">
+            <h4 class="playerAttributeSideLabel">CON</h4>
+          </div>
+          <div class="playerAttributeCell playerAttributeMainContentCell">
+            <h3 class="playerAttirbuteContentTxt">{{playerAtt.CON}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell2">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttMod.mCON}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell1">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpAdj.taCON}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell2">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpMod.tmCON}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeArrowHolder">
+            <div class="playerAttributeUpArrow" ng-click="playerChangeATT((1), 'CON')"></div>
+            <div class="playerAttributeDownArrow" ng-click="playerChangeATT((-1), 'CON')"></div>
+          </div>
+
+      </div>
+  <!-- ==========  WIS  ========== -->
+      <div class="playerAttributeRow">
+
+          <div class="playerAttributeCell">
+            <h4 class="playerAttributeSideLabel">WIS</h4>
+          </div>
+          <div class="playerAttributeCell playerAttributeMainContentCell">
+            <h3 class="playerAttirbuteContentTxt">{{playerAtt.WIS}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell2">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttMod.mWIS}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell1">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpAdj.taWIS}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeSubContentCell2">
+            <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpMod.tmWIS}}</h3>
+          </div>
+          <div class="playerAttributeCell playerAttributeArrowHolder">
+            <div class="playerAttributeUpArrow" ng-click="playerChangeATT((1), 'WIS')"></div>
+            <div class="playerAttributeDownArrow" ng-click="playerChangeATT((-1), 'WIS')"></div>
+          </div>
+
+    </div>
+    <!-- ==========  INT  ========== -->
+        <div class="playerAttributeRow">
+
+            <div class="playerAttributeCell">
+              <h4 class="playerAttributeSideLabel">INT</h4>
+            </div>
+            <div class="playerAttributeCell playerAttributeMainContentCell">
+              <h3 class="playerAttirbuteContentTxt">{{playerAtt.INT}}</h3>
+            </div>
+            <div class="playerAttributeCell playerAttributeSubContentCell2">
+              <h3 class="playerAttirbuteContentSubTxt">{{playerAttMod.mINT}}</h3>
+            </div>
+            <div class="playerAttributeCell playerAttributeSubContentCell1">
+              <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpAdj.taINT}}</h3>
+            </div>
+            <div class="playerAttributeCell playerAttributeSubContentCell2">
+              <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpMod.tmINT}}</h3>
+            </div>
+            <div class="playerAttributeCell playerAttributeArrowHolder">
+              <div class="playerAttributeUpArrow" ng-click="playerChangeATT((1), 'INT')"></div>
+              <div class="playerAttributeDownArrow" ng-click="playerChangeATT((-1), 'INT')"></div>
+            </div>
+
+        </div>
+    <!-- ==========  CHA  ========== -->
+        <div class="playerAttributeRow">
+
+            <div class="playerAttributeCell">
+              <h4 class="playerAttributeSideLabel">CHA</h4>
+            </div>
+            <div class="playerAttributeCell playerAttributeMainContentCell">
+              <h3 class="playerAttirbuteContentTxt">{{playerAtt.CHA}}</h3>
+            </div>
+            <div class="playerAttributeCell playerAttributeSubContentCell2">
+              <h3 class="playerAttirbuteContentSubTxt">{{playerAttMod.mCHA}}</h3>
+            </div>
+            <div class="playerAttributeCell playerAttributeSubContentCell1">
+              <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpAdj.taCHA}}</h3>
+            </div>
+            <div class="playerAttributeCell playerAttributeSubContentCell2">
+              <h3 class="playerAttirbuteContentSubTxt">{{playerAttTmpMod.tmCHA}}</h3>
+            </div>
+            <div class="playerAttributeCell playerAttributeArrowHolder">
+              <div class="playerAttributeUpArrow" ng-click="playerChangeATT((1), 'CHA')"></div>
+              <div class="playerAttributeDownArrow" ng-click="playerChangeATT((-1), 'CHA')"></div>
+            </div>
+
+        </div>
+    
+    
+    
+  </div>
+  
+  
+   <!-- ========================  DIVIDER  ======================== -->
+  <div class="playerCoreDivider borderRight "></div>
+   <!-- ========================  RIGHT SIDE OF THE DIVIDE  ======================== -->
+  <div class="playerCoreStatsHolder">
+  
+    <div class="playerCoreArmorClassHolder">
+      <!-- single row -->
+      <div class="playerCoreArmorClassRow ">
+        <div class="playerCoreStatBox"></div>
+        <div class="playerCoreStatBox playerStatTotal">
+          <p class="playerStatLabel  ">TOTAL</p>
+        </div>
+        <div class="playerCoreStatBox "></div>
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">ARMOR<BR>BONUS</p>
+        </div>
+        <div class="playerCoreSpacerDiv"></div>
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">SHIELD<BR>BONUS</p>
+        </div>
+                <div class="playerCoreSpacerDiv"></div>  
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">DEX<BR>MOD</p>
+        </div>
+                <div class="playerCoreSpacerDiv"></div>    
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">SIZE<BR>MOD</p>
+        </div>
+                <div class="playerCoreSpacerDiv"></div>
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">NAT.<BR>ARMOR</p>
+        </div>
+                <div class="playerCoreSpacerDiv"></div>
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">DEFL.<BR>BONUS</p>
+        </div>
+                <div class="playerCoreSpacerDiv"></div>
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">MISC<BR>MOD</p>
+        </div>
+      </div>
+      
+      <!-- content -->
+      <div class="playerCoreArmorClassRow ">
+        <div class="playerCoreStatBox">
+          <h4 class='playerCoreHeader'>AC</h4>
+        </div>
+        <div class="playerCoreStatBox statBoxBlue">
+          <h3 class="playerCoreTotalTxt">18</h3>
+        </div>
+        <div class="playerCoreStatBox ">
+          <h5 class='playerCoreArmorText1'>= 10 +</h5>
+        </div>
+        <div class="playerCoreStatBox ltgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">0</h3>
+        </div>
+        <h5 class='playerCoreArmorText'>+</h5>
+        <div class="playerCoreStatBox dkgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">0</h3>
+        </div>
+        <h5 class='playerCoreArmorText'>+</h5>
+        <div class="playerCoreStatBox ltgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">0</h3>
+        </div>
+        <h5 class='playerCoreArmorText'>+</h5>
+        <div class="playerCoreStatBox dkgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">0</h3>
+        </div>
+        <h5 class='playerCoreArmorText'>+</h5>
+        <div class="playerCoreStatBox ltgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">0</h3>
+        </div>
+        <h5 class='playerCoreArmorText'>+</h5>
+        <div class="playerCoreStatBox dkgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">0</h3>
+        </div>
+        <h5 class='playerCoreArmorText'>+</h5>
+        <div class="playerCoreStatBox ltgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">0</h3>
+        </div>
+      </div>
+
+    </div>
+    <!-- DIVIDER -->
+      <div class="playerCoreHorizontalDivider borderBottom"></div>
+    <!-- FURTHER AC  SECOND ROW-->
+    <div class="playerCoreFurtherACRow ">
+      <h5 class='playerCoreSubHeader'>TOUCH AC</h5>
+      <div class="playerCoreStatBox ltgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">0</h3></div>
+      <h5 class='playerCoreSubHeader'>FLAT-FOOTED AC</h5>
+      <div class="playerCoreStatBox dkgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">0</h3>
+      </div>
+      <h5 class='playerCoreSubHeader'>DAMAGE-REDUCTION</h5>
+      <div class="playerCoreStatBox ltgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">0</h3>
+      </div>
+    </div>
+    <!-- DIVIDER -->
+      <div class="playerCoreHorizontalDivider borderBottom"></div>
+    <!-- FURTHER AC  THIRD ROW-->
+  <div class="playerCoreArmorClassHolder">
+      <!-- row 3 subrow 1 -->
+      <div class="playerCoreArmorClassRow">
+        <div class="playerCoreInitiaveBox"></div>
+        <div class="playerCoreStatBox playerStatTotal">
+          <p class="playerStatLabel">TOTAL</p>
+        </div>
+          <div class="playerCoreSpacerDiv"></div>
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">DEX<BR>MOD</p>
+        </div>
+          <div class="playerCoreSpacerDiv"></div>
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">MISC<BR>MOD</p>
+        </div>
+        <div class="playerCoreSpeedBox"> </div>
+        <div class="playerCoreStatBox">
+          <p class="playerStatLabel playerStatTotal">NORMAL</p>
+        </div>
+        <div class="playerCoreSpacerDiv"></div>
+        <div class="playerCoreStatBox playerStatPadding">
+          <p class="playerStatLabel">WITH<BR>ARMOR</p>
+        </div>
+      
+      </div>
+      <!-- row 3 subrow 2 -->
+      <div class="playerCoreArmorClassRow">
+        <div class="playerCoreInitiaveBox">
+            <h4 class='playerCoreSubHeader'>INITIATIVE</h4>
+        </div>
+        <div class="playerCoreStatBox statBoxBlue"></div>
+        <h5 class='playerCoreArmorText'>=</h5>
+        <div class="playerCoreStatBox dkgreyBkg"></div>
+        <h5 class='playerCoreArmorText'>+</h5>
+        <div class="playerCoreStatBox ltgreyBkg"></div>
+        <div class="playerCoreSpeedBox">
+            <h4 class='playerCoreSubHeader'>SPEED</h4>
+        </div>
+        <div class="playerCoreStatBox dkgreyBkg"></div>
+        <div class="playerCoreSpacerDiv"></div>
+        <div class="playerCoreStatBox ltgreyBkg"></div>
+      
+      </div>
+
+</div>
+<!-- Horizontal Spacer -->
+<div class="playerCoreHorizontalDivider borderBottom"></div>
+<!-- row 3 subrow 1 -->
+
+    <!-- SAVES-->
+<div class="playerCoreSavesHolder">
+</div>
+
+    
+    
+  </div>
+  <!-- END OF RIGHT SIDE -->
+  
+  
+</div>
