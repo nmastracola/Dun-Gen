@@ -1,7 +1,8 @@
-angular.module('scribe').controller('newCtrl', function($scope, sService, characterService, races) {
+angular.module('scribe').controller('newCtrl', function($scope, sService, characterService, races, feats) {
 
     $scope.test = sService.test;
     $scope.races = races;
+    $scope.feats = feats;
 
 
 
@@ -30,6 +31,8 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
 
     $scope.d3Picker = false;
     $scope.d4Picker = true;
+
+    $scope.featToggler=false;
 
     //class togglers
     $scope.classToggler = [false, false, false, false, false, true, false, false, false, false, false];
@@ -142,7 +145,7 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
         charCre.intelligence = $scope.attributes[3]
         charCre.wisdom = $scope.attributes[4]
         charCre.charisma = $scope.attributes[5]
-        console.log(charCre);
+        // console.log(charCre);
     }
 
 

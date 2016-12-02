@@ -46,9 +46,41 @@ angular.module('scribe')
                   charCre.intelligence = $scope.attributes[3]
                   charCre.wisdom = $scope.attributes[4]
                   charCre.charisma = $scope.attributes[5]
-                  console.log(characterService.characterCreationObject);
+
+                }
+                $scope.info = function() {
+                    for (var i = 0; i < $scope.races.length; i++) {
+                        if ($scope.races[i].name === $scope.chosenRace) {
+                            $scope.raceInfo = $scope.races[i].traits;
+                            $scope.modText = $scope.races[i].modText;
+                            // console.log($scope.races);
+                            $scope.raceCounter = i;
+                        };
+                    };
+
+                    if (!$scope.races[$scope.raceCounter].mod.bon) {
+                        $scope.staticRace = true;
+                        for (var i = 0; i < $scope.abilityToggler.length; i++) {
+                          $scope.abilityToggler[i] = false;
+                          $scope.raceCounter = null;
+
+                        }
+                        // console.log($scope.races[$scope.raceCounter].mod.bon);
+                    }else {
+                      $scope.staticRace = false;
+
+                    }
+                };
+                $scope.info();
+
+                //race togglers
+                $scope.raceToggler = [false, false, false, true, false, false, false];
+                $scope.raceSwitcher = function(x) {
+
+                  // console.log(characterService.characterCreationObject);
 
               }
+
 
               $scope.info = function() {
                   for (var i = 0; i < $scope.races.length; i++) {

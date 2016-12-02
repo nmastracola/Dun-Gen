@@ -27,6 +27,9 @@ angular.module('scribe', ['ui.router'])
           races: function (sService) {
 
             return sService.races();
+          },
+          feats: function (sService) {
+            return sService.feats();
           }
         }
       })
