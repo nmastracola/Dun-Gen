@@ -47,7 +47,6 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     // ==============================   CONTENT PICKERS  ==========================
     //rolls
     $scope.standardRoll = 4;
-    scope.chosenRace = "Half-Elves";
     $scope.diceType = function(x) {
         $scope.standardRoll = x;
     }
