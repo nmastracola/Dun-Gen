@@ -25,6 +25,7 @@ angular.module('scribe', ['ui.router'])
         controller: 'newCtrl',
         resolve: {
           races: function (sService) {
+
             return sService.races();
           },
           feats: function (sService) {
