@@ -74,6 +74,7 @@ app.post('/api/weapons', serverMFPopulateCtrl.addWeapons);
 app.post('/api/damagingArmor', serverMFPopulateCtrl.addDamagingArmor);
 app.post('/api/goodsAndServices', serverMFPopulateCtrl.addGoodsAndServices);
 app.post('/api/bonusSpells', serverMFPopulateCtrl.addBonusSpells);
+app.put('/api/feats', serverMFPopulateCtrl.editFeat);
 
 // GETS //
 app.get('/api/feats', serverMFPopulateCtrl.getFeat);
