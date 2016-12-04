@@ -1,8 +1,9 @@
-angular.module('scribe').controller('newCtrl', function($scope, sService, characterService, races, feats) {
+angular.module('scribe').controller('newCtrl', function($scope, sService, characterService, races, feats, classes) {
 
     $scope.test = sService.test;
     $scope.races = races;
     $scope.feats = feats;
+    $scope.classes = classes;
 
 
 
@@ -13,6 +14,24 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     $scope.classShower = false;
     $scope.abilitiesShower = false;
     $scope.spellsShower = false;
+    $scope.classHasSpellsChecker = function() {
+        console.log(characterService.characterCreationObject.static);
+
+        var pickedClass = characterService.characterCreationObject.static.classes[0].class
+        console.log(pickedClass);
+        for (var i = 0; i < classes.length; i++) {
+            if (classes[i].class === pickedClass) {
+                if (!classes[i].hasSpells) {
+                    $scope.spellsShower = !$scope.spellsShower;
+                    alert("Your class does not have spells, I am moving you on to customization.")
+                    $scope.customizationShower = !$scope.customizationShower;
+                    console.log(classes[i]);
+
+                }
+            }
+
+        }
+    }
     $scope.customizationShower = false;
 
     // confirmation button togglers
@@ -32,20 +51,9 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     $scope.d3Picker = false;
     $scope.d4Picker = true;
 
-    $scope.featToggler=false;
+    $scope.featToggler = false;
 
-    //class togglers
-    $scope.classToggler = [false, false, false, false, false, true, false, false, false, false, false];
 
-    $scope.classSwitcher = function(x) {
-        for (var i = 0; i < $scope.classToggler.length; i++) {
-            if (i == x) {
-                $scope.classToggler[i] = true;
-            } else {
-                $scope.classToggler[i] = false;
-            }
-        }
-    };
 
     // ==============================   CONTENT PICKERS  ==========================
     //rolls
@@ -54,14 +62,7 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
         $scope.standardRoll = x;
     }
 
-    //CLASS
-    $scope.classList = ['BARBARIAN', 'BARD', 'CLERIC', 'DRUID', 'FIGHTER', 'MONK', 'PALADIN', 'RANGER', 'ROGUE', 'SORCEROR', 'WIZARD']
 
-    $scope.chosenClass = "MONK";
-
-    $scope.classPicker = function(x) {
-        $scope.chosenClass = $scope.classList[x];
-    };
 
 
     // ==============================   ROLL LOGIC  ==========================
@@ -96,6 +97,9 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
         $scope.standardRolls = [0, 0, 0, 0, 0, 0];
         $scope.attributes = [0, 0, 0, 0, 0, 0];
         $scope.attributeModifier = [-5, -5, -5, -5, -5, -5]
+        numberPositionPlaceholder = null;
+        $scope.tempAttribute = 0;
+
 
         for (let i = 0; i <= 5; i++) {
             for (let j = 0; j <= numberOfDieToRoll - 1; j++) {
@@ -113,31 +117,35 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     $scope.moveStat = function(number) {
         if (!$scope.standardRolls[number]) {
             return
+        } else {
+            $scope.tempAttribute = $scope.standardRolls[number];
+            // $scope.standardRolls[number] = 0;
+            numberPositionPlaceholder = number;
         }
-        $scope.tempAttribute = $scope.standardRolls[number];
-        // $scope.standardRolls[number] = 0;
-        numberPositionPlaceholder = number;
     };
     $scope.dropStat = function(number) {
-        if ($scope.attributes[number]) {
-            $scope.tempAttribute = $scope.attributes[number];
+        if ($scope.attributes[number] > 0) {
             for (var i = 0; i < $scope.standardRolls.length; i++) {
                 if (!$scope.standardRolls[i]) {
-                    $scope.standardRolls[i] = $scope.tempAttribute;
-                    break
+                  $scope.standardRolls[numberPositionPlaceholder] =0
+                  $scope.standardRolls[i] = $scope.attributes[number];
+                  $scope.attributes[number] = $scope.tempAttribute;
+                  $scope.tempAttribute = $scope.standardRolls[i]
+                  numberPositionPlaceholder = i;
+                  console.log(i);
+                  break
                 }
             }
-            $scope.attributes[number] = 0;
             $scope.setAttributeModifier(number);
-
             return
+        } else {
+            $scope.attributes[number] = $scope.tempAttribute;
+            $scope.tempAttribute = 0;
+            $scope.setAttributeModifier(number);
+            $scope.standardRolls[numberPositionPlaceholder] = 0;
         }
-        $scope.attributes[number] = $scope.tempAttribute;
-        $scope.tempAttribute = 0;
-        $scope.setAttributeModifier(number);
-        $scope.standardRolls[numberPositionPlaceholder] = 0;
     };
-    $scope.setAttributes= function() {
+    $scope.setAttributes = function() {
         var charCre = characterService.characterCreationObject.core
         charCre.strength = $scope.attributes[0]
         charCre.dexterity = $scope.attributes[1]
@@ -145,7 +153,7 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
         charCre.intelligence = $scope.attributes[3]
         charCre.wisdom = $scope.attributes[4]
         charCre.charisma = $scope.attributes[5]
-        // console.log(charCre);
+            // console.log(charCre);
     }
 
 

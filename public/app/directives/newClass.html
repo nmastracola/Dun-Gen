@@ -1,90 +1,89 @@
 <section class="newSection" id="class">
 
 <div class="classHolder">
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[0]" ng-click="classSwitcher(0); classPicker(0)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">BARBARIAN</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[1]" ng-click="classSwitcher(1); classPicker(1)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">BARD</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[2]" ng-click="classSwitcher(2); classPicker(2)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">CLERIC</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[3]" ng-click="classSwitcher(3); classPicker(3)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">DRUID</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[4]" ng-click="classSwitcher(4); classPicker(4)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">FIGHTER</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[5]" ng-click="classSwitcher(5); classPicker(5)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">MONK</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[6]" ng-click="classSwitcher(6); classPicker(6)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">PALADIN</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[7]" ng-click="classSwitcher(7); classPicker(7)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">RANGER</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[8]" ng-click="classSwitcher(8); classPicker(8)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">ROGUE</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[9]" ng-click="classSwitcher(9); classPicker(9)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">SORCEROR</h6>
   </div>
-  
+
   <div class="singleClass">
     <div class="classEnabler" ng-hide="classToggler[10]" ng-click="classSwitcher(10); classPicker(10)"></div>
     <div class="classImg"></div>
     <h6 class="classDescription">WIZARD</h6>
   </div>
-  
+
 </div>
 <!-- ==================  CLASS TITLE  ===================== -->
 <div class="classTitle">
   <h3>{{chosenClass}}</h3>
 </div>
-<!-- ===============================    CLASS CONTENTS     =============================== -->
 <div class="classContents">
-  
+  {{classObject.classDescription}}
 </div>
 
 
 
 <!-- ==================  CLASS BUTTON  ===================== -->
   <div class="buttonHolder">
-    <div class="txtAndButton">
+    <div class="txtAndButton" ng-click="classBtn = true; setClass()">
       <h5 class="txtButton">CONFIRM</h5>
-      <div class="buttonBase" ng-click="classBtn = true">
+      <div class="buttonBase">
         <div class="buttonSelected" ng-show="classBtn"></div>
       </div>
     </div>
