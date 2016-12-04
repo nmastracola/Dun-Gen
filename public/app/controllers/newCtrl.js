@@ -4,6 +4,7 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     $scope.races = races;
     $scope.feats = feats;
     $scope.classes = classes;
+    console.log(feats);
 
 
 
