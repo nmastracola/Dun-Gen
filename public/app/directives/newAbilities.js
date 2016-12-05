@@ -24,7 +24,7 @@ return{
 
     $scope.chosenFeats = [];
     // console.log($scope.feats);
-
+    $scope.charQual = characterService.characterCreationObject.qualifications
     $scope.selectedFeat = function (feat) {
       for (var i = 0; i < $scope.chosenFeats.length; i++) {
         if ($scope.chosenFeats[i] === feat) {

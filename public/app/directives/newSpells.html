@@ -5,7 +5,7 @@
 <!-- ======================  available spells  ======================== -->
 
         <div class="availableSpells">
-          
+
           <div class="spellHeaderHolder">
             <h4 class="spellHeader">AVAILABLE SPELLS</h4>
             <h5 class="spellSubHeader"> level 1 </h5>
@@ -42,13 +42,13 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="spellScrollIndicatorDown"></div>
-              
+
             </div>
           </div>
-          
-            
+
+
         </div>
 <!-- ======================      divider      ======================== -->
         <div class="spellsVerticalDivider"></div>
@@ -56,10 +56,10 @@
 
         <div class="actualSpellsHolder">
           <h4 class="selectedHeader">SELECTED SPELLS</h4>
-          
+
             <div class="selectedSpells">
-              
-              
+
+
               <!-- ===================  LEVEL 0 SPELLS   ====================== -->
               <div id="level0Spells" ng-hide="">
                 <!-- ng repeat goes here -->
@@ -84,7 +84,7 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
+
               <!-- ===================  LEVEL 1 SPELLS   ====================== -->
               <div id="level1Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -109,8 +109,8 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
-              
+
+
               <!-- ===================  LEVEL 2 SPELLS   ====================== -->
               <div id="level2Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -135,8 +135,8 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
-              
+
+
               <!-- ===================  LEVEL 3 SPELLS   ====================== -->
               <div id="level3Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -161,8 +161,8 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
-              
+
+
               <!-- ===================  LEVEL 4 SPELLS   ====================== -->
               <div id="level4Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -187,8 +187,8 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
-              
+
+
               <!-- ===================  LEVEL 5 SPELLS   ====================== -->
               <div id="level5Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -213,8 +213,8 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
-              
+
+
               <!-- ===================  LEVEL 6 SPELLS   ====================== -->
               <div id="level6Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -239,8 +239,8 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
-              
+
+
               <!-- ===================  LEVEL 7 SPELLS   ====================== -->
               <div id="level7Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -265,8 +265,8 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
-              
+
+
               <!-- ===================  LEVEL 8 SPELLS   ====================== -->
               <div id="level8Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -291,8 +291,8 @@
                 <!-- end counter box -->
                 </div>
               </div>
-              
-              
+
+
               <!-- ===================  LEVEL 9 SPELLS   ====================== -->
               <div id="level9Spells" ng-show="">
                 <!-- ng repeat goes here -->
@@ -318,12 +318,12 @@
                 </div>
               </div>
 
-                
-                
+
+
               </div>
                   <!-- END SELECTED SPELLS -->
-                  
-                  
+
+
                   <div class="spellBreakdown">
                       <h4 class="spellBreakdownHeader">SPELL BREAKDOWN</h4>
                       <!-- LABELS -->
@@ -383,7 +383,7 @@
                         <div class="spellBreakdownBox "><p>-</p></div>
                       </div>
                   </div>
-                  
+
             </div>
 
 
@@ -391,9 +391,9 @@
 
 <!-- ==================  SPELLS BUTTON  ===================== -->
 <div class="buttonHolder">
-  <div class="txtAndButton">
+  <div class="txtAndButton" ng-click="spellsBtn = true">
     <h5 class="txtButton">CONFIRM</h5>
-    <div class="buttonBase" ng-click="spellsBtn = true">
+    <div class="buttonBase">
       <div class="buttonSelected" ng-show="spellsBtn"></div>
     </div>
   </div>

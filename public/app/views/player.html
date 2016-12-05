@@ -46,7 +46,7 @@
             <p class="coreStatTxt">INIT</p>
           </div>
           <div class="coreStatBox">
-            <h3 class="coreStat">{{playerINIT}}</h3>
+            <h3 class="coreStat">{{playerInitiative}}</h3>
           </div>
         </div>
         </div>
@@ -69,6 +69,7 @@
   </div>
   <!-- =============================  PLAYER HUD =============================  -->
   <div class="playerHUD">
+    <dice-roller></dice-roller>
     <player-core-hud ng-show="playerMenuToggler[0]"></player-core-hud>
     <player-combat-hud ng-show="playerMenuToggler[1]"></player-combat-hud>
     <player-skills-hud ng-show="playerMenuToggler[2]"></player-skills-hud>

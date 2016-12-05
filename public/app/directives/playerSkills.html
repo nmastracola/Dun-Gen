@@ -1,1 +1,106 @@
-<h1>player skills test</h1>
+<div class="skillsHolder">
+    <!-- NG-REPEAT IN SKILLS HOLDER -->
+    <!-- ======================= TABLE TITLES SECTION, DO NOT EDIT  =======================-->
+    <div class="singleSkillHolder">
+      <div class=" skillTitleHeader">
+        <p class="skillHeaderTxt"><br>SKILL NAME</p>
+      </div>
+      <div class="skillClassSkillIndicatorHeader ">
+        <p class="skillHeaderTxt">CLASS<br>SKILL</p>
+      </div>
+      <div class=" skillHeader">
+        <p class="skillHeaderTxt"><br>RANKS</p>
+      </div>
+      <div class=" skillHeader">
+          <p class="skillHeaderTxt">ABILITY<br>MOD.</p>
+      </div>
+
+      <div class=" skillHeader">
+          <p class="skillHeaderTxt">MISC<br>MOD.</p>
+      </div>
+      <div class=" skillHeader">
+          <p class="skillHeaderTxt"><br>TOTAL</p>
+      </div>
+      <div class=" skillHeader">
+          <p class="skillHeaderTxt"><br>ROLL</p>
+      </div>
+      <div class="skillsDiceBox">
+    
+      </div>
+    </div>
+    
+    <!-- RIGHT HEADERS -->
+    
+    <div class="singleSkillHolder">
+      <div class=" skillTitleHeader">
+        <p class="skillHeaderTxt"><br>SKILL NAME</p>
+      </div>
+      <div class="skillClassSkillIndicatorHeader ">
+        <p class="skillHeaderTxt">CLASS<br>SKILL</p>
+      </div>
+      <div class=" skillHeader">
+        <p class="skillHeaderTxt"><br>RANKS</p>
+      </div>
+      <div class=" skillHeader">
+          <p class="skillHeaderTxt">ABILITY<br>MOD.</p>
+      </div>
+      <div class=" skillHeader">
+          <p class="skillHeaderTxt">MISC<br>MOD.</p>
+      </div>
+      <div class=" skillHeader">
+          <p class="skillHeaderTxt"><br>TOTAL</p>
+      </div>
+      <div class=" skillHeader">
+          <p class="skillHeaderTxt"><br>ROLL</p>
+      </div>
+      <div class="skillsDiceBox">
+    
+      </div>
+    </div>
+  
+    <!-- ======================= BEGIN NG-REPEAT  =======================-->
+  <div class="singleSkillHolder">
+  
+    <div class="skillTitle">
+      <h5>APPRAISAL</h5>
+      <!-- ng hide or show this div, toggler is located in directive js -->
+      <div class="skillPlusMinus" ng-show="customSkillToggler">
+        <h5 class="customSkill">+</h5>
+        <h5 class="customSkill">-</h5>
+      </div>
+    </div>
+    
+    <div class="skillClassSkillIndicator">
+        <!-- ng hide or show this div, toggler is located in directive js -->
+      <div class="skillClassSkillIndicated" ng-show="skillClassToggler"></div>
+    </div>
+    <div class="skillStatBox ltgreyBkg">
+      <h3 class="dkSkillTxt">0</h3>
+    </div>
+    <div class="skillStatBox dkgreyBkg">
+        <h3 class="dkSkillTxt">0</h3>
+    </div>
+    <!-- input box misc mod -->
+    <div class="skillStatBox ltgreyBkg">
+        <h3 class="dkSkillTxt">0</h3>
+    </div>
+    <!-- total box  -->
+    <div class="skillStatBox dkgreyBkg">
+        <h3 class="dkSkillTxt">0</h3>
+    </div>
+    <!-- roll box -->
+    <div class="skillStatBox blkBkg">
+        <h3 class="ltSkillTxt">0</h3>
+    </div>
+    <!-- dice icon -->
+    <div class="skillsDiceBox">
+      <img class="skillDice" src="/images/D20BLK.svg" alt="skill roll">
+    </div>
+  </div>
+  
+  <!-- //end single row -->
+  
+
+  
+
+</div>

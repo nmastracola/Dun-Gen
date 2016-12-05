@@ -1,0 +1,376 @@
+// COMMON ELEMENTS
+
+.wBTitlePadding{
+  padding: 12px 0 0 0;
+}
+
+.wBPadding{
+  padding: 13px 0 0 5px;
+}
+
+.combatInput{
+    font-family: $h;
+    font-weight: 700;
+    font-size: 1.5em;
+    height: 40px;
+    width: 70px;
+    background: lightgrey;
+    border: none;
+    text-align: left;
+    padding: 0 0 0 10px;
+    &:hover{
+      background: grey;
+      color: $wht;
+    }
+    &:focus{
+      outline: none;
+      box-shadow: 5px 5px 5px darkgrey;
+    }
+}
+// END COMMON ELEMENTS
+
+.combatHolder{
+}
+
+.combatWeaponsHolder{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.combatWeaponsHeaderBar{
+  width: 1200px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -10px;
+}
+
+.combatSingleWeapon{
+  width: 1200;
+  height: 80px;
+  margin-top: 10px;
+}
+
+.combatWeaponsRowHolder{
+  width: 1120px;
+  height: 90px;
+}
+
+.combatWeaponsDiceRoller{
+  width: 80px;
+  height: 80px;
+  padding: 15px;
+}
+
+.weaponDie{
+  height: 50px;
+  width: 50px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+// HEADER BAR CONTENT
+
+.horizontalWeaponIcon{
+  width: 100px;
+  height: 30px;
+  margin: 5px 15px 0 0;
+}
+
+.combatWeaponsTitleTxt{
+  margin: 9px 0 0 0;
+}
+
+.combatWeaponsEquipTxt{
+  margin-left: -7px;
+}
+
+// FIRST ROW
+
+.combatSingleWeaponRow1{
+  width: 1120px;
+  height: 40px;
+}
+
+// INTERIOR OF ROW
+
+.combatWeaponsTitle{
+  width: 250px;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
+
+.combatWeaponsType{
+  width: 130px;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
+
+.combatWeaponsRange{
+  width: 60px;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
+
+.combatWeaponsToHit{
+  width: 120px;
+  height: 40px;
+  margin: 0 10px 0 0;
+  justify-content: flex-end;
+}
+
+.combatWeaponsCrit{
+  width: 100px;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
+
+.combatWeaponsDamage{
+  width: 170px;
+  height: 40px;
+  margin: 0 10px 0 0;
+  justify-content: flex-end;
+}
+
+.combatWeaponsEquip{
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
+
+
+
+.combatWeaponsRollerSpacer{
+  width: 80px;
+  height: 40px;
+}
+
+.combatWeaponsToHitActual{
+  width: 60px;
+  height: 40px;
+}
+
+.combatWeaponsToHitRollResult{
+  padding: 12px 0 0 0;
+  background: $blk;
+  width: 60px;
+  height: 40px;
+}
+
+.combatWeaponsDamageActual{
+  width: 110px;
+}
+
+.combatWeaponsDamageResult{
+  width: 60px;
+  height: 40px;
+  background: $blk;
+}
+
+.combatWeaponsEquipIndicator{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  padding: 3px;
+  background: lightgrey;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.combatWeaponsEquipCheckbox{
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  background: $blk;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+// SECOND ROW MELEE
+
+
+.combatSingleWeaponRow2Melee{
+  width: 1120px;
+  height: 40px;
+  margin: 10px 0 0 0;
+}
+
+// SECOND ROW MELEE CONTENT
+
+.combatWeaponsAttacksPerRound{
+  height: 40px;
+  width: 260px;
+  justify-content: flex-end;
+}
+
+.combatWeaponsAttacksPerRoundBox{
+  height: 40px;
+  width: 60px;
+}
+
+
+.combatWeaponDualAttackIndicator{
+  width: 400px;
+  height: 40px;
+}
+
+.combatWeaponDualIndicatorBttn{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 3px;
+  background: lightgrey;
+  margin: 5px 10px 0 0;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.combatWeaponDualIndicatorCheckbox{
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: $blk;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.combatWeaponOtherModifiers{
+  height: 40px;
+  width: 400px;
+}
+
+.combatWeaponsBonus{
+  width: 50px;
+  height: 40px;
+  margin: 0 5px 0 0;
+}
+
+.combatWeaponsAddRemove{
+  width: 60px;
+  height: 40px;
+}
+.addRemoveWeapon{
+  padding: 8px;
+  &:hover{
+    cursor: pointer;
+    color:crimson;
+  }
+}
+
+// SECOND ROW RANGED
+
+.combatSingleWeaponRow2Ranged{
+  width: 1120px;
+  height: 40px;
+  margin: 10px 0 0 0;
+}
+
+.combatWeaponsAmmunition{
+  height: 40px;
+  width: 410px; 
+  margin: 0 5px 0 0;
+  justify-content: flex-end;
+}
+
+.ammoTypeInput{
+  font-family: $h;
+  font-weight: 400;
+  font-size: 1em;
+  height: 40px;
+  width: 160px;
+  background: lightgrey;
+  border: none;
+  text-align: left;
+  padding: 0 0 0 10px;
+  &:hover{
+    background: grey;
+    color: $wht;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 5px 5px 5px darkgrey;
+  }
+}
+
+// bottom half
+
+.combatFeatsAbilitiesHolder{
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+
+.comabtFeatFrame{
+  width: 550px;
+  height: 300px;
+
+}
+
+.combatFeatDivider{
+  height: 300px;
+}
+
+.combatFeatHeader{
+  height: 40px;
+  width: 550px;
+  justify-content: center;
+}
+.combatFeatArrow{
+  height: 300px;
+  width:25px;
+}
+
+.combatFeatHolder{
+  height:300px;
+  width: 500px;
+}
+
+.cfLeftArrow{
+  margin: 100px 0 0 0;
+width: 0; 
+height: 0; 
+border-top: 25px solid transparent;
+border-bottom: 25px solid transparent; 
+border-right:25px solid lightgrey; 
+&:hover{
+  border-right:25px solid $blk; 
+  cursor: pointer;
+}
+}
+
+.cfRightArrow{
+  margin: 100px 0 0 0;
+width: 0; 
+height: 0; 
+border-top: 25px solid transparent;
+border-bottom: 25px solid transparent; 
+border-left:25px solid lightgrey; 
+&:hover{
+  border-left:25px solid $blk; 
+  cursor: pointer;
+}
+}
+
+.combatFeatHeader{
+  margin: 20px 0 0 0;
+  width: 500px;
+}
+
+.featMainBodyText{
+  width: 480px;
+  margin: 0 auto;
+}
+
+.combatFeatSelecterHolder{
+  width:500px;
+  height: 40px;
+  margin: 20px 0 0 0;
+  justify-content: center;
+}
+

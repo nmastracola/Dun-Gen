@@ -15,9 +15,10 @@ $scope.togglePlayerDirectives = function(x){
   }
 }
 
+
 // ===================================   PLAYER ATTRIBUTES FPO  ===================================
 
-// CORE TAB
+// ===================================   CORE TAB  ===================================
 $scope.playerName = "Sir Roland Smackhammer";
 $scope.playerAlignment = "Lawful Good";
 $scope.playerRace = "HUMAN";
@@ -26,10 +27,13 @@ $scope.playerClass = ["Paladin"];
 $scope.playerClassLevel = [1];
 $scope.playerMaxHP = 42;
 $scope.playerHP = 37;
-$scope.playerAC = 18;
+//PLAYER AC IS IN AC SECTION OF CORE
 $scope.playerXP = 18000;
-$scope.playerINIT = 3;
-// CORE DIRECTIVE
+//PLAYER INITIATIVE IS LOCATED IN AC SECTION OF CORE
+
+
+// ===================================   CORE DIRECTIVE ===================================
+
 
 //attributes
 $scope.playerAtt={
@@ -68,6 +72,77 @@ $scope.playerAttTmpMod={
   'tmCHA': Math.floor((($scope.playerAtt.CHA + $scope.playerAttTmpAdj.taCHA)-10)/2)
 };
 
+//ARMOR CLASS 
+
+$scope.playerArmorBonus = 4;
+$scope.playerShieldBonus = 1; 
+//DEX MOD IS $scope.playerAttTmpMod.tmDEX
+$scope.playerSizeBonus = 0;
+$scope.playerNaturalArmor = 0;
+$scope.playerDeflectionBonus = 0;
+$scope.playerMiscArmorMod = 0;
+
+
+$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1) 
++ ($scope.playerSizeBonus * 1)+($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) 
++ ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
+
+
+$scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
+
+
+//INITIATIVE
+
+$scope.playerInitiativeMiscMod = 0;
+$scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiativeMiscMod);
+
+//SPEED
+
+$scope.playerSpeed = 30;
+$scope.playerSpeedWiArmor = 20;
+
+//SAVES
+
+$scope.playerSaves={
+  "FORTITUDE": 4,
+  "REFLEX": 2,
+  "WILL": 2
+}
+
+$scope.playerSavesBase={
+  "FORTITUDE": 0,
+  "REFLEX": 0,
+  "WILL": 0
+}
+
+$scope.playerSavesAbilityMod={
+  "FORTITUDE": 0,
+  "REFLEX": 0,
+  "WILL": 0
+}
+
+$scope.playerSavesMagicMod={
+  "FORTITUDE": 0,
+  "REFLEX": 0,
+  "WILL": 0
+}
+
+$scope.playerSavesMiscMod={
+  "FORTITUDE": 0,
+  "REFLEX": 0,
+  "WILL": 0
+}
+
+$scope.playerSavesTempMod={
+  "FORTITUDE": 0,
+  "REFLEX": 0,
+  "WILL": 0
+}
+// ===================================   SKILLS DIRECTIVE ===================================
+
+
+
+
 
 
 
@@ -95,6 +170,7 @@ $scope.playerChangeATT = function(x, att){
   $scope.playerAttTmpMod[modAdder] = Math.floor((($scope.playerAtt[att] + $scope.playerAttTmpAdj[attAdder])-10)/2);
   }
   
+  // ===================================   DICE ROLLER STUFF  ===================================
 
 
 

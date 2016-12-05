@@ -38,11 +38,8 @@ angular.module("scribe").service("characterService", function($http) {
         playerName: "",
         characterName: "",
         campaign: "",
-        race: "Elves", //CHANGE THIS TO EMPTY STRING!!!!!!!!!!
-        classes: [{
-            class: "",
-            level: ""
-        }],
+        race: "",
+        classes: [],
         alignment: "",
         experiance: ""
     },
