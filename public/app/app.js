@@ -16,8 +16,11 @@ angular.module('scribe', ['ui.router'])
         //     });
         //   },
         // }
-
-
+      })
+      .state('charSelect', {
+        url: '/charselect',
+        templateUrl: './app/views/charSelect.html',
+        controller: 'charSelectCtrl'
       })
       .state('new', {
         url: '/new',

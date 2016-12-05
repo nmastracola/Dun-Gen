@@ -24,6 +24,10 @@
 .newUser{
   text-align: center;
   color: lightgrey;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+  }
   &:hover{
     color: $blk;
   }
@@ -50,14 +54,21 @@
   text-align: center;
   padding: 7px;
   margin: 10px auto;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+  }
   &:hover{
     opacity: 0.8;
   }
+  border: none;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 0;
 }
 
 .loginSubmitTxt{
   color: $wht;
-
 }
 
 .backgroundCover{
@@ -121,8 +132,12 @@
 .newUserSubmit{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-
+  justify-content: space-around;
+  margin-top: 20px;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+  }
 }
 
 .littleLogo{
@@ -137,10 +152,29 @@
 
 
 .submitLabel{
-  margin: 10px 0 0 20px;
   &:hover{
       color: #A51E36;
       transition: color 1s;
   }
+  font-size: 1em;
+  font-family: 'Merriweather', serif;
+  color: $blk;
+  letter-spacing: .1em;
+
+}
+
+.signUpSubmitButton{
+  border: none;
+  background: none;
+  padding: 0; 
+  font-size: 1em;
+  font-family: 'Merriweather', serif;
+  color: $blk;
+  letter-spacing: .1em;
+}
+
+.newUserCancel{
+  display: flex;
+  align-items: center;
 }
 
