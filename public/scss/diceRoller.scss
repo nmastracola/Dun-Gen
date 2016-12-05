@@ -1,0 +1,134 @@
+.diceBag{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0 0 0;
+}
+
+.diceResultHolder{
+  height: 60px;
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+}
+
+.diceIncrementer{
+  width: 40px;
+  margin: 0 5px 0 5px;
+  padding: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.diceIncIndicator{
+  height:30px;
+  width: 40px;
+  padding: 0 0 0 0px;
+  text-align: right;
+  color: $blk;
+  border: none;
+  font-size: 2em;
+  font-family: $h;
+  font-weight: 700;
+  &:hover{
+    background: grey;
+    color: $wht;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 5px 5px 5px darkgrey;
+}
+}
+
+.diceIncIndicator::-webkit-inner-spin-button, 
+.diceIncIndicator::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0; /* Removes leftover margin */
+}
+
+.incrementerUp{
+  width: 0; 
+  height: 0; 
+  margin: 0 auto 3px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid grey;
+  &:hover{
+    border-bottom: 10px solid $blk;
+    cursor: pointer;
+  }
+}
+.incrementerDown{
+  width: 0; 
+  height: 0; 
+  margin: 3px auto;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid grey;
+  &:hover{
+    border-top: 10px solid $blk;
+    cursor: pointer;
+  }
+}
+
+.diceRollerD{
+  margin: 20px 10px 0 0;
+}
+
+.diceIncIndicatorTxt{
+  color: $wht;
+  margin: 9px 0 0 0;
+  text-align: center;
+}
+
+
+.diceResult{
+  background: $blk;
+  height: 60px;
+  width: 60px;
+}
+
+.diceResultTxt{
+  text-align: center;
+  color:$wht;
+  margin: 15px 0 0 0;
+}
+
+.dieHolder{
+  height: 60px;
+  width: 60px;
+  margin: 0 0 0 15px;
+  &:hover{
+    cursor: pointer;
+  }
+
+}
+
+#diceBagPercentage{
+ width: 48px;
+ width: 50px;
+ margin: 8px 0 0 0;
+}
+
+#diceBagd4{
+    margin: 8px 0 0 0;
+}
+
+#diceBagd6{
+    margin: 8px 0 0 0;
+}
+#diceBagd7{
+  
+}
+#diceBagd10{
+  
+}
+#diceBagd12{
+    width: 55px;
+}
+#diceBagd20{
+    width: 53px;
+}
+
+
