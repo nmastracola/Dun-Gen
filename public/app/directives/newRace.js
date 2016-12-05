@@ -39,14 +39,15 @@ angular.module('scribe')
                       $scope.attributes[4] += $scope.races[$scope.raceCounter].mod.wis
                   }
                   var charCre = characterService.characterCreationObject.core
-                  characterService.characterCreationObject.static = $scope.chosenRace
+                  characterService.characterCreationObject.static.race = $scope.chosenRace
                   charCre.strength = $scope.attributes[0]
                   charCre.dexterity = $scope.attributes[1]
                   charCre.constitution = $scope.attributes[2]
                   charCre.intelligence = $scope.attributes[3]
                   charCre.wisdom = $scope.attributes[4]
                   charCre.charisma = $scope.attributes[5]
-
+                  console.log(characterService.characterCreationObject);
+                  return
                 }
                 $scope.info = function() {
                     for (var i = 0; i < $scope.races.length; i++) {
