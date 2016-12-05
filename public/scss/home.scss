@@ -156,21 +156,22 @@
       color: #A51E36;
       transition: color 1s;
   }
-  font-size: 1em;
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto', sans-serif;
   color: $blk;
+  font-weight: 700;
   letter-spacing: .1em;
-
+  font-size: 1em;
 }
-
+ 
 .signUpSubmitButton{
   border: none;
   background: none;
   padding: 0; 
-  font-size: 1em;
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto', sans-serif;
   color: $blk;
+  font-weight: 700;
   letter-spacing: .1em;
+  font-size: 1em;
 }
 
 .newUserCancel{
