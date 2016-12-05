@@ -38,11 +38,8 @@ angular.module("scribe").service("characterService", function($http) {
         playerName: "",
         characterName: "",
         campaign: "",
-        race: "Elves", //CHANGE THIS TO EMPTY STRING!!!!!!!!!!
-        classes: [{
-            class: "",
-            level: ""
-        }],
+        race: "",
+        classes: [],
         alignment: "",
         experiance: ""
     },
@@ -137,8 +134,8 @@ angular.module("scribe").service("characterService", function($http) {
             MaximumDexBonus: null,
             ArmorCheckPenalty: null,
             ArcanespellFailureChance: null,
-            EquiptSpeed30: null,
-            EquiptSpeed20: null,
+            EquipSpeed30: null,
+            EquipSpeed20: null,
             Weight: null,
             type: "",
             description: ""

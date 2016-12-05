@@ -22,7 +22,7 @@
     </div>
     <!-- class section -->
 
-    <class ng-show="classShower"></class>
+    <class ng-show="classShower" classes="classes"></class>
 
     <!-- =============  abilities header   =============-->
     <div class="newHeader" id="abilitiesHeader" ng-click="abilitiesShower = !abilitiesShower">
@@ -33,7 +33,7 @@
       <abilities ng-show="abilitiesShower" feats="feats" races="races"></abilities>
 
     <!-- =============  spells header   =============-->
-    <div class="newHeader" id="spellsHeader" ng-click="spellsShower = !spellsShower">
+    <div class="newHeader" id="spellsHeader" ng-click="spellsShower = !spellsShower; classHasSpellsChecker()">
         <h4 class="newHeaderTxt">SPELLS</h4>
     </div>
     <!-- spells section -->

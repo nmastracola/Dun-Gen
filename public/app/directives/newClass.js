@@ -1,9 +1,53 @@
 angular.module('scribe')
-.directive('class', function(){
-return{
-  restrict: 'E',
-  templateUrl: './app/directives/newClass.html',
-  link: function( scope, element, attributes ) {}
-};
+    .directive('class', function() {
+        return {
+            restrict: 'E',
+            templateUrl: './app/directives/newClass.html',
+            controller: function($scope, $state, characterService) {
+                console.log(characterService.characterCreationObject.static.classes);
 
-});
+                //CLASS PICKERS
+                $scope.classList = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorceror', 'Wizard']
+
+                $scope.chosenClass = "Monk";
+                $scope.classObject = {}
+
+                $scope.classPicker = function(x) {
+                    $scope.chosenClass = $scope.classList[x];
+                    $scope.displayClass()
+                };
+                //class togglers
+                $scope.classToggler = [false, false, false, false, false, true, false, false, false, false, false];
+
+                $scope.classSwitcher = function(x) {
+                    for (var i = 0; i < $scope.classToggler.length; i++) {
+                        if (i == x) {
+                            $scope.classToggler[i] = true;
+                        } else {
+                            $scope.classToggler[i] = false;
+                        }
+                    }
+                };
+                //DISPLAY CLASS
+                $scope.displayClass = function() {
+                    for (var i = 0; i < $scope.classes.length; i++) {
+                        if ($scope.classes[i].class === $scope.chosenClass) {
+                            $scope.classObject = $scope.classes[i];
+                        }
+                    }
+                }
+                $scope.setClass = function() {
+                    characterService.characterCreationObject.static.classes.push({
+                        "class": $scope.classObject.class,
+                        "level": 1
+                    })
+
+                }
+            },
+            scope: {
+                classes: "="
+            },
+            link: function(scope, element, attributes) {}
+        };
+
+    });

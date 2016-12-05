@@ -1,7 +1,7 @@
 angular.module('scribe', ['ui.router'])
-.config(function($stateProvider, $urlRouterProvider){
+    .config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/');
 
   $stateProvider
       .state('home', {
@@ -16,22 +16,27 @@ angular.module('scribe', ['ui.router'])
         //     });
         //   },
         // }
-
-
+      })
+      .state('charSelect', {
+        url: '/charselect',
+        templateUrl: './app/views/charSelect.html',
+        controller: 'charSelectCtrl'
       })
       .state('new', {
-        url: '/new',
-        templateUrl: './app/views/new.html',
-        controller: 'newCtrl',
-        resolve: {
-          races: function (sService) {
-
-            return sService.races();
-          },
-          feats: function (sService) {
-            return sService.feats();
+          url: '/new',
+          templateUrl: './app/views/new.html',
+          controller: 'newCtrl',
+          resolve: {
+              races: function(sService) {
+                  return sService.races();
+              },
+              feats: function(sService) {
+                  return sService.feats();
+              },
+              classes: function(sService) {
+                  return sService.class();
+              }
           }
-        }
       })
       .state('player', {
         url: '/player',
@@ -39,3 +44,5 @@ angular.module('scribe', ['ui.router'])
         controller: 'playerCtrl'
       })
 })
+
+
