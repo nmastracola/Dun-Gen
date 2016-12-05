@@ -171,12 +171,31 @@ $w7: #BB80D1;
 $w8: #752F8A;
 $w9: #2F1A45;
 
+.centerTxt{
+  text-align: center;
+}
+
+.leftTxt{
+  text-align: left;
+}
+
+.rightTxt{
+  text-align: right;
+}
+
 .blkBkg{
     background-color: $blk;
+}
+.blkTxt{
+  color: $blk;
 }
 
 .whtBkg{
   background: $wht;
+}
+
+.whtTxt{
+  color: $wht;
 }
 
 .greyBkg{
@@ -191,13 +210,20 @@ $w9: #2F1A45;
   background: darkgrey;
 }
 
+.blkBkg{
+  background: $blk;
+}
+
 // =========  MASTER TEXT =========
 
-h1, h2, h3, h4, h5, h6{
-  font-family: 'Merriweather', serif;
+h1, h2, h3, h4, h5, h6, {
+  font-family: 'Roboto', sans-serif;
   color: $blk;
+  font-weight: 700;
   letter-spacing: .1em;
 }
+
+$h:'Roboto', sans-serif;
 
 p{
   font-family: 'Open Sans', sans-serif;
@@ -206,6 +232,7 @@ p{
 
 h1{
   font-size: 2em;
+  font-weight: 900;
 }
 
 h2{
@@ -262,4 +289,14 @@ h6{
 
 .borderAll{
   border: 2px solid grey;
+}
+
+.flexRow{
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
 }
