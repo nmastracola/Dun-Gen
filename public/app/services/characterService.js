@@ -38,7 +38,7 @@ angular.module("scribe").service("characterService", function($http) {
         playerName: "",
         characterName: "",
         campaign: "",
-        race: "", //CHANGE THIS TO EMPTY STRING!!!!!!!!!!
+        race: "", 
         classes: [{
             class: "",
             level: ""
