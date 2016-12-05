@@ -1,1 +1,118 @@
-<h1>player feats test</h1>
+<section class="newSection" id="spells">
+
+    <div class="spellsHolder">
+
+<!-- ======================  available spells  ======================== -->
+
+        <div class="availableSpells">
+
+          <div class="spellHeaderHolder">
+            <h4 class="spellHeader">CLASS / RACIAL ABILITIES</h4>
+          </div>
+          <!-- ========  LIST OF ABILITIES FOR LEVEL 1  ========== -->
+
+          <div class="spellSelector">
+            <div class="spellSelectorLabelContainer">
+              <h5>ABILITY</h5>
+              <h5>DESCRIPTION</h5>
+            </div>
+            <div class="spellChooser" >
+              <!-- NG REPEAT ABILITIES spellChooser -->
+              <div class="spellScrollIndicatorUp"></div>
+            <!-- ========  SINGLE ROW   ========== -->
+              <div class="spellChooserRow" ng-repeat='trait in chosenRaceTraits'>
+                <div class="spellName">
+                  <p class="abilityName">{{trait.name}}</p>
+                </div>
+
+                <div class="spellSelectionVertibar" ></div>
+                <div class="spellDescriptionHolder">
+                  <div class="spellDescShort" ng-hide="">
+                    <p>{{trait.desc}}</p>
+                  </div>
+                  <div class="spellDescDetailsRequest">
+                    <p class="spellDescriptionOpener"  ng-click="" ng-hide="">Details</p>
+                  </div>
+                  <div class="spellDescLong" ng-show="">
+                    <p>A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals 1d3 points of cold damage.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spellScrollIndicatorDown"></div>
+
+            </div>
+          </div>
+
+
+        </div>
+<!-- ======================      divider      ======================== -->
+        <div class="spellsVerticalDivider"></div>
+<!-- ======================  assigned spells  ======================== -->
+<div class="availableSpells">
+
+  <div class="spellHeaderHolder">
+    <h4 class="spellHeader">AVAILABLE FEATS</h4>
+  </div>
+  <!-- ========  LIST OF FEATS FOR LEVEL 1  ========== -->
+
+  <div class="spellSelector">
+    <div class="spellSelectorLabelContainer">
+      <h5>FEAT</h5>
+      <h5>SELECTED</h5>
+      <h5>DESCRIPTION</h5>
+    </div>
+    <div class="spellChooser" >
+      <!-- NG REPEAT FEATS IN  spellChooser -->
+      <div class="spellScrollIndicatorUp"></div>
+    <!-- ========  SINGLE ROW   ========== -->
+      <div class="spellChooserRow" ng-repeat='feat in feats'>
+        <div class="spellName">
+          <p>{{feat.name}}</p>
+        </div>
+        <!-- Potential code for changing the button color when clicked on spellSelection
+              class="spellSelectionIndicator" ng-show"selectedFeatIndicator"
+              ng-click="selectedFeat(feat); selectedFeatIndicator = !selectedFeatIndicator
+            -->
+        <div class="spellSelection" ng-click="selectedFeat(feat); featToggler = !featToggler">
+          <div class="spellSelectionIndicator" ng-show="featToggler"></div>
+        </div>
+        <div class="spellSelectionVertibar"></div>
+        <div class="spellDescriptionHolder">
+          <div class="spellDescShort" ng-hide="">
+            <p>{{feat.description}}</p>
+          </div>
+          <div class="spellDescDetailsRequest">
+            <p class="spellDescriptionOpener"  ng-click="" ng-hide="">Details</p>
+          </div>
+          <div class="spellDescLong" ng-show="">
+            <p>A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals 1d3 points of cold damage.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="spellScrollIndicatorDown"></div>
+
+    </div>
+  </div>
+</div>
+<!-- ========  END FEATS LIST  ========== -->
+</div>
+
+
+<div class="newSelectedFeats">
+  <h4 class="newSelectedFeatsHeader">CHOSEN FEATS</h4>
+  <div class="newSelectedFeatList" ng-repeat='feat in chosenFeats track by $index'>
+    <!-- ng-repeat in newSelectedFeatList -->
+    <h5 class="newSelectedFeatName">{{feat.name}}</h5>
+    <!-- when selecting feats from above, display selected feat info down here -->
+    <p class="newSelectedFeatDescription">{{feat.benefits}}</p>
+  </div>
+</div>
+
+
+
+
+
+
+</section>
