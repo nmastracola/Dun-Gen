@@ -1,0 +1,38 @@
+<div class="diceBag">
+  <!-- ===============  RESULTS  ================= -->
+  <div class="diceResultHolder">
+    <div class="diceIncrementer" >
+      <div class="incrementerUp" ng-click="dbIncrementer(1)"></div>
+        <input class="diceIncIndicator" type="number" name="" value="{{dBiterator}}">
+      <div class="incrementerDown" ng-click="dbIncrementer(-1)"></div>
+    </div>
+    <h4 class="diceRollerD">d</h4>
+  <div class="diceResult">
+    <h2 class="diceResultTxt">{{dieResult}}</h2>
+  </div>
+
+</div>
+  <!-- ===============  DICE  ================= -->
+<div class="dieHolder" >
+  <img ng-click="dieRoll('#diceBagPercentage'); dieReturn(dbPercentage) " class="diePic" id="diceBagPercentage" src="./images/diePercentage.svg" alt="percentage">
+</div>
+<div class="dieHolder">
+  <img ng-click="dieRoll('#diceBagd4'); dieReturn(dbD4)" class="diePic" id="diceBagd4" src="./images/dieD4.svg" alt="percentage">
+</div>
+<div class="dieHolder">
+  <img ng-click="dieRoll('#diceBagd6'); dieReturn(dbD6)" class="diePic" id="diceBagd6" src="./images/dieD6.svg" alt="percentage">
+</div>
+<div class="dieHolder">
+  <img ng-click="dieRoll('#diceBagd8'); dieReturn(dbD8)" class="diePic" id="diceBagd8" src="./images/dieD8.svg" alt="percentage">
+</div>
+<div class="dieHolder">
+  <img ng-click="dieRoll('#diceBagd10'); dieReturn(dbD10)" class="diePic" id="diceBagd10" src="./images/dieD10.svg" alt="percentage">
+</div>
+<div class="dieHolder">
+  <img ng-click="dieRoll('#diceBagd12'); dieReturn(dbD12)" class="diePic" id="diceBagd12" src="./images/dieD12.svg" alt="percentage">
+</div>
+<div class="dieHolder">
+  <img ng-click="dieRoll('#diceBagd20'); dieReturn(dbD20)" class="diePic" id="diceBagd20" src="./images/D20BLK.svg" alt="percentage">
+</div>
+  
+</div>
