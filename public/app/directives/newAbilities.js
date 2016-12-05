@@ -39,6 +39,9 @@ return{
     $scope.newCharFeats = function() {
       for (var i = 0; i < $scope.chosenFeats.length; i++) {
         characterService.characterCreationObject.feats.push({name: $scope.chosenFeats[i].name, known: true})
+      },
+      for (var j = 0; j < $scope.chosenFeats.length; j++) {
+        characterService.characterCreationObject.prerequisites.push({type: feat, value: $scope.chosenFeats[j].name})
       }
       console.log(characterService.characterCreationObject);
     }
