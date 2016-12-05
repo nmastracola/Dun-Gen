@@ -1,1 +1,274 @@
-<h1>player combat test</h1>
+<div class="combatHolder flexColumn">
+  
+  <!-- weapons section -->
+<div class="combatWeaponsHolder flexColumn">
+    <div class="combatWeaponsHeaderBar">
+      <div class="combatWeaponsTitle flexRow">
+        <img class="horizontalWeaponIcon"src="./images/weaponIcon.svg" alt="WEAPONS">
+        <h3 class="combatWeaponsTitleTxt">WEAPONS</h3>
+      </div>
+      <div class="combatWeaponsType centerTxt wBTitlePadding">
+        <h5>TYPE</h5>
+      </div>
+      <div class="combatWeaponsRange centerTxt wBTitlePadding">
+        <h5>RANGE</h5>
+      </div>
+      <div class="combatWeaponsToHit centerTxt wBTitlePadding">
+        <h5>TO HIT</h5>
+      </div>
+      <div class="combatWeaponsCrit centerTxt wBTitlePadding">
+        <h5>CRITICAL</h5>
+      </div>
+      <div class="combatWeaponsDamage centerTxt wBTitlePadding">
+        <h5>DAMAGE 1</h5>
+      </div>
+      <div class="combatWeaponsDamage centerTxt wBTitlePadding">
+        <h5>DAMAGE 2</h5>
+      </div>
+      <div class="combatWeaponsEquip  wBTitlePadding">
+        <h5 class="combatWeaponsEquipTxt">EQUIP</h5>
+      </div>
+      <div class="combatWeaponsRollerSpacer centerTxt wBTitlePadding">
+        <h5>ROLL</h5>
+      </div>
+    </div>
+    <!-- SINGLE WEAPONS NG-REPEAT -->
+    <div class="combatSingleWeapon flexRow">
+      
+      <div class="combatWeaponsRowHolder flexColumn">
+        
+    
+        <!-- top row -->
+        <div class="combatSingleWeaponRow1 flexRow">
+          <div class="combatWeaponsTitle flexRow leftTxt dkgreyBkg wBPadding">
+            <!-- insert weapon name here -->
+            <h5>Smackhammer of Flame +3</h5>
+          </div>
+          <div class="combatWeaponsType centerTxt ltgreyBkg wBPadding">
+            <!-- insert type here -->
+            <h5>SLASHING</h5>
+          </div>
+          <div class="combatWeaponsRange centerTxt dkgreyBkg wBPadding">
+            <!-- two way bind in the number, and the ft will stay -->
+            <h5>5ft</h5>
+          </div>
+          <div class="combatWeaponsToHit flexRow ltgreyBkg ">
+            <div class="combatWeaponsToHitActual centerTxt wBPadding">
+              <h5>+5</h5>
+              <!-- two way bind the number, and the plus will stay -->
+            </div>
+            <div class="combatWeaponsToHitRollResult centerTxt wBPadding ">
+              <!-- logic: to hit roll plus modifers goes here -->
+              <h5 class="whtTxt">12</h5>
+            </div>
+          </div>
+          <div class="combatWeaponsCrit centerTxt dkgreyBkg wBPadding">
+            <h5>19-20 x2</h5>
+          </div>
+          
+          <!-- first weapon damage -->
+          <div class="combatWeaponsDamage flexRow ltgreyBkg">
+            <div class="combatWeaponsDamageActual wBPadding centerTxt" >
+              <!-- two way bind the damage roll and the bonus seperately, and leave the + -->
+              <h5>1d6 +5</h5>
+            </div>
+            <div class="combatWeaponsDamageResult wBPadding centerTxt">
+                <h5 class="whtTxt">9</h5>
+            </div>
+          </div>
+          <div class="combatWeaponsDamage flexRow ltgreyBkg">
+            <div class="combatWeaponsDamageActual wBPadding centerTxt" >
+              <!-- two way bind the damage roll and the bonus seperately, and leave the + -->
+              <h5>1d6 fire</h5>
+            </div>
+            <div class="combatWeaponsDamageResult wBPadding centerTxt">
+                <h5 class="whtTxt">9</h5>
+            </div>
+          </div>
+          <div class="combatWeaponsEquip">
+            <div class="combatWeaponsEquipIndicator">
+              <!-- equpped or not toggler -->
+              <div class="combatWeaponsEquipCheckbox" ng-hide=""></div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <!-- SECOND row Melee-->
+        
+        
+        <div class="combatSingleWeaponRow2Melee flexRow" ng-hide="">
+          <div class="combatWeaponsAttacksPerRound flexRow">
+            <h5 class="wBPadding">ATTACKS PER ROUND:</h5>
+            <div class="combatWeaponsAttacksPerRoundBox centerTxt ltgreyBkg">
+              <!-- USE two way bidning on each number, leave the slashes -->
+                <h5 class="wBPadding">5/5/2</h5>
+            </div>
+          </div>
+                          <!-- dual attack indicator -->
+          <div class="combatWeaponDualAttackIndicator flexRow">
+            <h5 class="wBPadding">DUAL ATTACK: PRIMARY</h5>
+  <!-- first button -->
+            <div class="combatWeaponDualIndicatorBttn">
+              <div class="combatWeaponDualIndicatorCheckbox" ng-hide=""></div>
+            </div>
+            <h5  class="wBPadding">OFFHAND</h5>
+  <!-- second button -->
+            <div class="combatWeaponDualIndicatorBttn">
+              <div class="combatWeaponDualIndicatorCheckbox" ng-hide=""></div>
+            </div>
+          </div>
+          <div class="combatWeaponOtherModifiers flexRow">
+            <div class="combatWeaponAttackBonus flexRow ">
+                <h5 class="wBPadding">ATTACK BONUS</h5>
+              <div class="combatWeaponsBonus wBPadding centerTxt ltgreyBkg">
+                <!-- two way bind the number, leave the + -->
+                <h5>+5</h5>
+              </div>
+            </div>
+            <div class="combatWeaponDamageBonus flexRow centerTxt">
+              <h5 class="wBPadding">DAMAGE BONUS</h5>
+              <div class="combatWeaponsBonus wBPadding centerTxt ltgreyBkg">
+                <!-- two way bind the number, leave the + -->
+                <h5>+5</h5>
+              </div>
+            </div>
+          </div>
+          <!-- add or remove weapon toggler -->
+          <div class="combatWeaponsAddRemove flexRow">
+            <h3 class="addRemoveWeapon" ng-click="">+</h3>
+            <h3 class="addRemoveWeapon" ng-click="">-</h3>
+          </div>
+              </div>
+  <!-- end second row melee -->
+  
+  <!-- SECOND row Ranged-->
+      <div class="combatSingleWeaponRow2Ranged flexRow" ng-show="">
+        <div class="combatWeaponsAttacksPerRound flexRow">
+          <h5 class="wBPadding">ATTACKS PER ROUND:</h5>
+          <div class="combatWeaponsAttacksPerRoundBox centerTxt ltgreyBkg">
+            <!-- USE two way bidning on each number, leave the slashes -->
+              <h5 class="wBPadding">5/5/2</h5>
+          </div>
+        </div>
+        <div class="combatWeaponsAmmunition flexRow">
+          <h5 class="wBPadding">AMMUNITION</h5>
+          <input class="combatInput" type="number" name="ammunition" value="30">
+          <h5 class="wBPadding">TYPE</h5>
+          <input class="ammoTypeInput" type="text" name="type of ammunition" value="night arrows">
+        </div>
+        <div class="combatWeaponAttackBonus flexRow ">
+            <h5 class="wBPadding">ATTACK BONUS</h5>
+          <div class="combatWeaponsBonus wBPadding centerTxt ltgreyBkg">
+            <!-- two way bind the number, leave the + -->
+            <h5>+5</h5>
+          </div>
+        </div>
+        <div class="combatWeaponDamageBonus flexRow centerTxt">
+          <h5 class="wBPadding">DAMAGE BONUS</h5>
+          <div class="combatWeaponsBonus wBPadding centerTxt ltgreyBkg">
+            <!-- two way bind the number, leave the + -->
+            <h5>+5</h5>
+          </div>
+        </div>
+          <!-- add or remove weapon toggler -->
+        <div class="combatWeaponsAddRemove flexRow">
+          <h3 class="addRemoveWeapon" ng-click="">+</h3>
+          <h3 class="addRemoveWeapon" ng-click="">-</h3>
+        </div>
+      </div>
+    <!-- end second row ranged -->
+    
+      </div>
+      <!-- dice roller -->
+      <div class="combatWeaponsDiceRoller">
+        <img class="weaponDie"src="./images/D20BLK.svg" alt="roll">
+      </div>
+    </div>
+</div>
+  <!-- feats/Abilities section -->
+<div class="combatFeatsAbilitiesHolder">
+  <!-- left half -->
+  <!-- FEATS -->
+  <div class="comabtFeatFrame">
+    <div class="combatFeatHeader flexRow">
+      <img class="horizontalWeaponIcon"src="./images/weaponIcon.svg" alt="WEAPONS">
+      <h3 class="combatWeaponsTitleTxt">COMBAT FEATS</h3>
+    </div>
+    
+    <!-- ng-repeat feats here -->
+    <div class="combatFeatPicker flexRow">
+      <!-- feat CHOOSER.  NG CLICK TO PICK NEXT FEAT IN ARRAY -->
+      <div class="combatFeatArrow">
+        <div class="cfLeftArrow" ng-click=""></div>
+      </div>
+      <!-- MAIN BODY OF FEAT CONTENT -->
+      <div class="combatFeatHolder">
+        <div class="combatFeatHeader centerTxt">
+          <h4>WEAPON FOCUS</h4>
+        </div>
+        <div class="featMainBodyText leftTxt">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum sem eu sapien tristique ullamcorper. Aenean vehicula mauris vel eros auctor rhoncus. Fusce elementum, augue ac accumsan lacinia, risus justo consectetur nulla, euismod efficitur lorem nulla in metus. Mauris feugiat interdum ante, in gravida urna efficitur eu.</p>
+        </div>
+        <div class="combatFeatSelecterHolder flexRow">
+          <h4 class="wBPadding">SELECT FEAT </h4>
+          <div class="combatWeaponsEquipIndicator" ng-click="">
+            <div class="combatWeaponsEquipCheckbox" ng-click="" ng-hide=""></div>
+          </div>
+        </div>
+      </div>
+      <!-- feat CHOOSER.  NG CLICK TO PICK NEXT FEAT IN ARRAY -->
+      <div class="combatFeatArrow">
+        <div class="cfRightArrow" ng-click=""></div>
+      </div>
+      <!-- end feat chooser -->
+    </div>
+    
+  </div>
+  
+  
+  <!-- divider -->
+  <div class="combatFeatDivider borderRight"></div>
+  <!-- right half -->
+  <!-- ABILITIES -->
+  <div class="comabtFeatFrame">
+    <div class="combatFeatHeader flexRow">
+      <img class="horizontalWeaponIcon"src="./images/weaponIcon.svg" alt="WEAPONS">
+      <h3 class="combatWeaponsTitleTxt">COMBAT ABILITIES</h3>
+    </div>
+    
+    <!-- ng-repeat abilities here -->
+    <div class="combatFeatPicker flexRow">
+      <!-- abilities CHOOSER.  NG CLICK TO PICK NEXT abilities IN ARRAY -->
+      <div class="combatFeatArrow">
+        <div class="cfLeftArrow" ng-click=""></div>
+      </div>
+      <!-- MAIN BODY OF abilities CONTENT -->
+      <div class="combatFeatHolder">
+        <div class="combatFeatHeader centerTxt">
+          <h4>WEAPON FOCUS</h4>
+        </div>
+        <div class="featMainBodyText leftTxt">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum sem eu sapien tristique ullamcorper. Aenean vehicula mauris vel eros auctor rhoncus. Fusce elementum, augue ac accumsan lacinia, risus justo consectetur nulla, euismod efficitur lorem nulla in metus. Mauris feugiat interdum ante, in gravida urna efficitur eu.</p>
+        </div>
+        <div class="combatFeatSelecterHolder flexRow">
+          <h4 class="wBPadding">SELECT FEAT </h4>
+          <div class="combatWeaponsEquipIndicator" ng-click="">
+            <div class="combatWeaponsEquipCheckbox" ng-click="" ng-hide=""></div>
+          </div>
+        </div>
+      </div>
+      <!-- abilities CHOOSER.  NG CLICK TO PICK NEXT abilities IN ARRAY -->
+      <div class="combatFeatArrow">
+        <div class="cfRightArrow" ng-click=""></div>
+      </div>
+      <!-- end abilities chooser -->
+    </div>
+    
+  </div>
+
+
+</div>
+  
+
+</div>

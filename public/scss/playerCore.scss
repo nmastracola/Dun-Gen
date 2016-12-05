@@ -59,7 +59,7 @@
 }
 
 .playerAttributeSideLabel{
-  text-align: right;
+  text-align: left;
   margin: 15px;
 }
 
@@ -107,7 +107,6 @@
   height: 500px;
   display: flex;
   flex-direction: column;
-  background: green; 
 }
 
 .playerCoreArmorClassHolder {
@@ -189,19 +188,45 @@
 }
 
 .playerCoreFurtherACRow{
-  width: 100%;
+  width: 90%;
   height: 40px;
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
 .playerCoreSubHeader{
   text-align: right;
   margin: 12px 5px 0 5px;
 }
+.playerCoreSubheader2Line{
+  text-align: right;
+  margin: 3px 5px 0 5px;
+  width: 150px;
+}
+
 .playerCoreInitMargin{
   margin: -20px 0 0 0;
+}
+
+.playerCoreInput{
+    font-family: $h;
+    font-weight: 700;
+    font-size: 1.5em;
+    height: 40px;
+    width: 60px;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0 0 0 22px;
+    &:hover{
+      background: grey;
+      color: $wht;
+    }
+    &:focus{
+      outline: none;
+      box-shadow: 5px 5px 5px darkgrey;
+    }
 }
 
 // =============  THIRD ROW  =============
@@ -220,14 +245,23 @@
 // =============  SAVES ROW  =============
 
 .playerCoreSavesHolder{
-  height:160px;
+  height:190px;
   width:100%;
-  background: orange; 
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
   
 }
 
+.playerCoreFortitudeBox{
+  height: 40px;
+  width: 200px;
+  margin: 0 20px 0 0;
+}
 
-
+.playerCoreSaveSpacer{
+  height: 10px;
+}
 
 
 

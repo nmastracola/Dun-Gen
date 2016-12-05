@@ -27,7 +27,7 @@
     <div class="playerAttributeRow">
 
         <div class="playerAttributeCell">
-          <h4 class="playerAttributeSideLabel">STR</h4>
+          <h3 class="playerAttributeSideLabel">STR</h3>
         </div>
         <div class="playerAttributeCell playerAttributeMainContentCell">
           <h3 class="playerAttirbuteContentTxt">{{playerAtt.STR}}</h3>
@@ -51,7 +51,7 @@
       <div class="playerAttributeRow">
 
           <div class="playerAttributeCell">
-            <h4 class="playerAttributeSideLabel">DEX</h4>
+            <h3 class="playerAttributeSideLabel">DEX</h3>
           </div>
           <div class="playerAttributeCell playerAttributeMainContentCell">
             <h3 class="playerAttirbuteContentTxt">{{playerAtt.DEX}}</h3>
@@ -75,7 +75,7 @@
       <div class="playerAttributeRow">
 
           <div class="playerAttributeCell">
-            <h4 class="playerAttributeSideLabel">CON</h4>
+            <h3 class="playerAttributeSideLabel">CON</h3>
           </div>
           <div class="playerAttributeCell playerAttributeMainContentCell">
             <h3 class="playerAttirbuteContentTxt">{{playerAtt.CON}}</h3>
@@ -99,7 +99,7 @@
       <div class="playerAttributeRow">
 
           <div class="playerAttributeCell">
-            <h4 class="playerAttributeSideLabel">WIS</h4>
+            <h3 class="playerAttributeSideLabel">WIS</h3>
           </div>
           <div class="playerAttributeCell playerAttributeMainContentCell">
             <h3 class="playerAttirbuteContentTxt">{{playerAtt.WIS}}</h3>
@@ -123,7 +123,7 @@
         <div class="playerAttributeRow">
 
             <div class="playerAttributeCell">
-              <h4 class="playerAttributeSideLabel">INT</h4>
+              <h3 class="playerAttributeSideLabel">INT</h3>
             </div>
             <div class="playerAttributeCell playerAttributeMainContentCell">
               <h3 class="playerAttirbuteContentTxt">{{playerAtt.INT}}</h3>
@@ -147,7 +147,7 @@
         <div class="playerAttributeRow">
 
             <div class="playerAttributeCell">
-              <h4 class="playerAttributeSideLabel">CHA</h4>
+              <h3 class="playerAttributeSideLabel">CHA</h3>
             </div>
             <div class="playerAttributeCell playerAttributeMainContentCell">
               <h3 class="playerAttirbuteContentTxt">{{playerAtt.CHA}}</h3>
@@ -221,37 +221,37 @@
           <h4 class='playerCoreHeader'>AC</h4>
         </div>
         <div class="playerCoreStatBox statBoxBlue">
-          <h3 class="playerCoreTotalTxt">18</h3>
+          <h3 class="playerCoreTotalTxt">{{playerAC}}</h3>
         </div>
         <div class="playerCoreStatBox ">
           <h5 class='playerCoreArmorText1'>= 10 +</h5>
         </div>
         <div class="playerCoreStatBox ltgreyBkg">
-          <h3 class="playerCoreBoxContentTxt">0</h3>
+          <h3 class="playerCoreBoxContentTxt">{{playerArmorBonus}}</h3>
         </div>
         <h5 class='playerCoreArmorText'>+</h5>
         <div class="playerCoreStatBox dkgreyBkg">
-          <h3 class="playerCoreBoxContentTxt">0</h3>
+          <h3 class="playerCoreBoxContentTxt">{{playerShieldBonus}}</h3>
         </div>
         <h5 class='playerCoreArmorText'>+</h5>
         <div class="playerCoreStatBox ltgreyBkg">
-          <h3 class="playerCoreBoxContentTxt">0</h3>
+          <h3 class="playerCoreBoxContentTxt">{{playerAttTmpMod.tmDEX}}</h3>
         </div>
         <h5 class='playerCoreArmorText'>+</h5>
         <div class="playerCoreStatBox dkgreyBkg">
-          <h3 class="playerCoreBoxContentTxt">0</h3>
+          <h3 class="playerCoreBoxContentTxt">{{playerSizeBonus}}</h3>
         </div>
         <h5 class='playerCoreArmorText'>+</h5>
         <div class="playerCoreStatBox ltgreyBkg">
-          <h3 class="playerCoreBoxContentTxt">0</h3>
+          <h3 class="playerCoreBoxContentTxt">{{playerNaturalArmor}}</h3>
         </div>
         <h5 class='playerCoreArmorText'>+</h5>
         <div class="playerCoreStatBox dkgreyBkg">
-          <h3 class="playerCoreBoxContentTxt">0</h3>
+          <h3 class="playerCoreBoxContentTxt">{{playerDeflectionBonus}}</h3>
         </div>
         <h5 class='playerCoreArmorText'>+</h5>
         <div class="playerCoreStatBox ltgreyBkg">
-          <h3 class="playerCoreBoxContentTxt">0</h3>
+          <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerMiscArmorMod}}">
         </div>
       </div>
 
@@ -260,14 +260,14 @@
       <div class="playerCoreHorizontalDivider borderBottom"></div>
     <!-- FURTHER AC  SECOND ROW-->
     <div class="playerCoreFurtherACRow ">
-      <h5 class='playerCoreSubHeader'>TOUCH AC</h5>
+      <h4 class='playerCoreSubHeader'>TOUCH AC</h4>
       <div class="playerCoreStatBox ltgreyBkg">
-        <h3 class="playerCoreBoxContentTxt">0</h3></div>
-      <h5 class='playerCoreSubHeader'>FLAT-FOOTED AC</h5>
+        <h3 class="playerCoreBoxContentTxt">{{playerTouchAC}}</h3></div>
+      <h4 class='playerCoreSubheader2Line'>FLAT-FOOTED <br>AC</h4>
       <div class="playerCoreStatBox dkgreyBkg">
         <h3 class="playerCoreBoxContentTxt">0</h3>
       </div>
-      <h5 class='playerCoreSubHeader'>DAMAGE-REDUCTION</h5>
+      <h4 class='playerCoreSubheader2Line'>DAMAGE REDUCTION</h4>
       <div class="playerCoreStatBox ltgreyBkg">
         <h3 class="playerCoreBoxContentTxt">0</h3>
       </div>
@@ -305,17 +305,27 @@
         <div class="playerCoreInitiaveBox">
             <h4 class='playerCoreSubHeader'>INITIATIVE</h4>
         </div>
-        <div class="playerCoreStatBox statBoxBlue"></div>
+        <div class="playerCoreStatBox statBoxBlue">
+          <h3 class="playerCoreTotalTxt">{{playerInitiative}}</h3>
+        </div>
         <h5 class='playerCoreArmorText'>=</h5>
-        <div class="playerCoreStatBox dkgreyBkg"></div>
+        <div class="playerCoreStatBox dkgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">{{playerAttTmpMod.tmDEX}}</h3>
+        </div>
         <h5 class='playerCoreArmorText'>+</h5>
-        <div class="playerCoreStatBox ltgreyBkg"></div>
+        <div class="playerCoreStatBox ltgreyBkg">
+          <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerInitiativeMiscMod}}">
+        </div>
         <div class="playerCoreSpeedBox">
             <h4 class='playerCoreSubHeader'>SPEED</h4>
         </div>
-        <div class="playerCoreStatBox dkgreyBkg"></div>
+        <div class="playerCoreStatBox dkgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">{{playerSpeed}}</h3>
+        </div>
         <div class="playerCoreSpacerDiv"></div>
-        <div class="playerCoreStatBox ltgreyBkg"></div>
+        <div class="playerCoreStatBox ltgreyBkg">
+          <h3 class="playerCoreBoxContentTxt">{{playerSpeedWiArmor}}</h3>
+        </div>
       
       </div>
 
@@ -326,6 +336,126 @@
 
     <!-- SAVES-->
 <div class="playerCoreSavesHolder">
+  <!-- first row -->
+  <div class="playerCoreArmorClassRow">
+    <div class="playerCoreFortitudeBox">
+      <h4 class='playerCoreSubHeader'></h4>
+    </div>
+    <div class="playerCoreStatBox playerStatTotal">
+      <p class="playerStatLabel  ">TOTAL</p>
+    </div>
+    <div class="playerCoreSpacerDiv"></div>
+    <div class="playerCoreStatBox playerStatPadding">
+      <p class="playerStatLabel">BASE<BR>SAVE</p>
+    </div>
+    <div class="playerCoreSpacerDiv"></div>
+    <div class="playerCoreStatBox playerStatPadding">
+      <p class="playerStatLabel">ABILITY<BR>MOD</p>
+    </div>
+    <div class="playerCoreSpacerDiv"></div>
+    <div class="playerCoreStatBox playerStatPadding">
+      <p class="playerStatLabel">MAGIC<BR>MOD</p>
+    </div>
+    <div class="playerCoreSpacerDiv"></div>
+    <div class="playerCoreStatBox playerStatPadding">
+      <p class="playerStatLabel">MISC<BR>MOD</p>
+    </div>
+    <div class="playerCoreSpacerDiv"></div>
+    <div class="playerCoreStatBox playerStatPadding">
+      <p class="playerStatLabel">TEMP<BR>MOD</p>
+    </div>
+  </div>
+  <div class="playerCoreSaveSpacer"></div>
+    <!-- second row -->
+  <div class="playerCoreArmorClassRow">
+    <div class="playerCoreFortitudeBox">
+      <h4 class='playerCoreSubHeader'>FORTITUDE</h4>
+    </div>
+    <div class="playerCoreStatBox statBoxBlue">
+      <h3 class="playerCoreTotalTxt">{{playerSaves.FORTITUDE}}</h3>
+    </div>
+    <h5 class='playerCoreArmorText'>=</h5>
+    <div class="playerCoreStatBox dkgreyBkg">
+      <h3 class="playerCoreBoxContentTxt">{{playerSavesBase.FORTITUDE}}</h3>
+    </div>
+    <h5 class='playerCoreArmorText'>+</h5>
+    <div class="playerCoreStatBox ltgreyBkg">
+      <h3 class="playerCoreBoxContentTxt">{{playerSavesAbilityMod.FORTITUDE}}</h3>
+    </div>
+    <h5 class='playerCoreArmorText'>+</h5>
+    <div class="playerCoreStatBox dkgreyBkg">
+      <h3 class="playerCoreBoxContentTxt">{{playerSavesMagicMod.FORTITUDE}}</h3>
+    </div>
+    <h5 class='playerCoreArmorText'>+</h5>
+    <div class="playerCoreStatBox ltgreyBkg">
+      <h3 class="playerCoreBoxContentTxt">{{playerSavesMiscMod.FORTITUDE}}</h3>
+    </div>
+    <h5 class='playerCoreArmorText'>+</h5>
+    <div class="playerCoreStatBox dkgreyBkg">
+      <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerSavesTempMod.FORTITUDE}}">
+    </div>
+  </div>
+  <div class="playerCoreSaveSpacer"></div>
+    <!-- third row -->
+    <div class="playerCoreArmorClassRow">
+      <div class="playerCoreFortitudeBox">
+        <h4 class='playerCoreSubHeader'>REFLEX</h4>
+      </div>
+      <div class="playerCoreStatBox statBoxBlue">
+        <h3 class="playerCoreTotalTxt">{{playerSaves.REFLEX}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>=</h5>
+      <div class="playerCoreStatBox ltgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">{{playerSavesBase.REFLEX}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>+</h5>
+      <div class="playerCoreStatBox dkgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">{{playerSavesAbilityMod.REFLEX}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>+</h5>
+      <div class="playerCoreStatBox ltgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">{{playerSavesMagicMod.REFLEX}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>+</h5>
+      <div class="playerCoreStatBox dkgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">{{playerSavesMiscMod.REFLEX}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>+</h5>
+      <div class="playerCoreStatBox ltgreyBkg">
+        <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerSavesTempMod.REFLEX}}">
+      </div>
+    </div>
+      <div class="playerCoreSaveSpacer"></div>
+    <!-- fourth row -->
+    <div class="playerCoreArmorClassRow">
+      <div class="playerCoreFortitudeBox">
+        <h4 class='playerCoreSubHeader'>WILL</h4>
+      </div>
+      <div class="playerCoreStatBox statBoxBlue">
+        <h3 class="playerCoreTotalTxt">{{playerSaves.WILL}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>=</h5>
+      <div class="playerCoreStatBox dkgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">{{playerSavesAbilityMod.WILL}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>+</h5>
+      <div class="playerCoreStatBox ltgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">{{playerSavesMagicMod.WILL}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>+</h5>
+      <div class="playerCoreStatBox dkgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">{{playerSavesMiscMod.WILL}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>+</h5>
+      <div class="playerCoreStatBox ltgreyBkg">
+        <h3 class="playerCoreBoxContentTxt">{{playerSavesTempMod.WILL}}</h3>
+      </div>
+      <h5 class='playerCoreArmorText'>+</h5>
+      <div class="playerCoreStatBox dkgreyBkg">
+        <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerSaves.WILL}}">
+      </div>
+    </div>
+    
 </div>
 
     
