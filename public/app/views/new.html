@@ -13,7 +13,7 @@
     </div>
     <!-- race section -->
 
-    <race ng-show="raceShower" races="races"></race>
+    <race ng-show="raceShower" races="races" attributes="attributes"></race>
 
 
     <!-- =============  class header   =============-->
@@ -30,7 +30,7 @@
     </div>
     <!-- abilities section -->
 
-      <abilities ng-show="abilitiesShower"></abilities>
+      <abilities ng-show="abilitiesShower" feats="feats" races="races"></abilities>
 
     <!-- =============  spells header   =============-->
     <div class="newHeader" id="spellsHeader" ng-click="spellsShower = !spellsShower">

@@ -12,5 +12,16 @@ angular.module('scribe').service('sService', function($http){
     });
   };
 
+  this.feats = function(id) {
+    var query = "";
+    if (id) query = '?_id=' + id;
+    return $http({
+      method: 'GET',
+      url: '/api/feats' + query
+    }).then(function(response) {
+      // console.log(response);
+      return response.data;
+    });
+  };
 
 });
