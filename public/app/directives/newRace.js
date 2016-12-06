@@ -16,8 +16,6 @@ angular.module('scribe')
               };
 
               $scope.confirmRace = function() {
-                console.log($scope.races);
-                // console.log("Confirming: " + $scope.abilityCounter);
                 var charCre = characterService.characterCreationObject.core
                 characterService.characterCreationObject.static.race = $scope.chosenRace
                   if ($scope.races[$scope.raceCounter].mod.bon) {
@@ -78,11 +76,9 @@ angular.module('scribe')
                       $scope.charCreQual[i].value[1]=$scope.attributes[5]
                     }
                   }
-                  console.log($scope.charCreQual);
                   $scope.raceShower = !$scope.raceShower;
                   $scope.classShower = !$scope.classShower;
 
-                  console.log(characterService.characterCreationObject);
                   return
                 }
                 $scope.info = function() {
@@ -90,7 +86,6 @@ angular.module('scribe')
                         if ($scope.races[i].name === $scope.chosenRace) {
                             $scope.raceInfo = $scope.races[i].traits;
                             $scope.modText = $scope.races[i].modText;
-                            // console.log($scope.races);
                             $scope.raceCounter = i;
                         };
                     };
@@ -102,7 +97,6 @@ angular.module('scribe')
                           $scope.raceCounter = null;
 
                         }
-                        // console.log($scope.races[$scope.raceCounter].mod.bon);
                     }else {
                       $scope.staticRace = false;
 
@@ -114,7 +108,6 @@ angular.module('scribe')
                 $scope.raceToggler = [false, false, false, true, false, false, false];
                 $scope.raceSwitcher = function(x) {
 
-                  // console.log(characterService.characterCreationObject);
 
               }
 

@@ -17,8 +17,6 @@ module.exports = {
 
 // UPDATE //
   editFeat: function(req, res,next){
-    console.log(req.query);
-    console.log(req.query.name);
     Feats.update(req.query, req.body, function(err,user){
       if(err){
         res.status(500).send(err);
@@ -228,9 +226,7 @@ module.exports = {
  },
  createCharacter: function(req, res, next){
    Character.create(req.body, function(err, user){
-     console.log(req.body);
      if(err){
-       console.log(err);
        res.status(500).send(err);
      }
      res.status(200).send(user);
