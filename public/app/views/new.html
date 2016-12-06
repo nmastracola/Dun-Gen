@@ -22,7 +22,7 @@
     </div>
     <!-- class section -->
 
-    <class ng-show="classShower" classes="classes" race-choice="raceChoice()" abilities-shower="abilitiesShower" class-shower="classShower"></class>
+    <class ng-show="classShower" classes="classes" race-choice="raceChoice()" abilities-shower="abilitiesShower" class-shower="classShower" spells-tab="spellsTab"></class>
 
     <!-- =============  abilities header   =============-->
     <div class="newHeader" id="abilitiesHeader" ng-click="abilitiesShower = !abilitiesShower">
@@ -42,7 +42,7 @@
 
 
     <!-- =============  spells header   =============-->
-    <div class="newHeader" id="spellsHeader" ng-click="spellsShower = !spellsShower">
+    <div class="newHeader" id="spellsHeader" ng-show="spellsTab" ng-click="spellsShower = !spellsShower">
         <h4 class="newHeaderTxt">SPELLS</h4>
     </div>
     <!-- spells section -->

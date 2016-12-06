@@ -18,6 +18,8 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     $scope.spellsShower = false;
     $scope.skillsShower = false;
 
+    $scope.spellsTab=false
+
     $scope.classHasSpellsChecker = function() {
         console.log(characterService.characterCreationObject.static);
 
