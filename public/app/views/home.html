@@ -1,13 +1,13 @@
-<div class="fixedBkgrd whtBkg">
-  <div class="homeBox whtBkg">
+<div class="fixedBkgrd homeSplash">
+  <div class="homeBox ">
     <div class="mainLogo">
       <img src="./images/dgLogo.svg" alt="Dun-Gen Logo">
     </div>
     <form class="login" ng-submit="login(user)">
       <h6 class="newUser" ng-click="toggler=!toggler">NEW USER?</h6>
       <input class="loginInput" type="text" name="signInUsername" required ng-model="user.username" placeholder="user name">
-      <input class="loginInput" type="password" name="password" required ng-model="user.password" placeholder="password">
-      <button class="loginSubmit" type="submit" name="signInSubmit"><span class="loginSubmitTxt">submit</span></button>
+      <input class="loginInput offWhtTxt" type="password" name="password" required ng-model="user.password" placeholder="password">
+      <button class="loginSubmit" type="submit" name="signInSubmit"><span class="loginSubmitTxt offWhtTxt">submit</span></button>
     </form>
   </div>
   
@@ -15,7 +15,7 @@
   
   <div class="backgroundCover"  ng-show="toggler" ng-click="toggler=!toggler"></div>
 
-    <div class="modal" ng-show="toggler">
+    <div class="modal offWhtBkg" ng-show="toggler">
   
       <h5 class="modalWelcome">WELCOME TO DUN-GEN</h5>
       <form ng-submit="register(newUser)">

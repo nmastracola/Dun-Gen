@@ -1,11 +1,20 @@
+.homeSplash{
+  background-image: url("../images/LandingBkgrd.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
+}
+
+
 .homeBox{
   height: 350px;
   width: 250px;
-  margin: 100px auto;
+  margin: 150px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-   box-shadow: 5px 5px 5px lightgrey;
+
 }
 
 .mainLogo{
@@ -36,7 +45,6 @@
 .loginInput{
   border: none;
   background-color: $blk;
-  color: $wht;
   height: 30px;
   width: 200px;
   text-align: center;
@@ -68,7 +76,7 @@
 }
 
 .loginSubmitTxt{
-  color: $wht;
+
 }
 
 .backgroundCover{
@@ -85,7 +93,6 @@
 .modal{
   height: 300px;
   width: 400px;
-  background-color: $wht;
   z-index: 4;
   position: absolute;
   margin: auto;
