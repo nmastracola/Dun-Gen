@@ -10,8 +10,6 @@ angular.module('scribe')
         $scope.charQual = characterService.characterCreationObject.qualifications
         $scope.qualArrs = [];
         $scope.qualArrsChecker = function() {
-          console.log("$scope.qualArrsChecker used");
-          console.log($scope.qualArrs);
 
           for (var i = 0; i < $scope.qualArrs.length; i++) {
             // if it finds false in arr then return false. once all true there is no return
@@ -22,11 +20,9 @@ angular.module('scribe')
           return true
         }
         $scope.verifyMatch = function(qualificationObj, prerequisiteObj, index) {
-          console.log("$scope.verifyMatch used");
           if (qualificationObj.type === prerequisiteObj.type) {
             if (prerequisiteObj.value[1]) {
               if (qualificationObj.value[0] == prerequisiteObj.value[0]) {
-                console.log("val 0 true");
                 if ((qualificationObj.value[1]) *1 >= (prerequisiteObj.value[1]) *1) {
                   $scope.qualArrs[index] = true
                 }
@@ -59,10 +55,7 @@ angular.module('scribe')
             }
             for (var i = 0; i < feat.prerequisites.length; i++) {
               for (var j = 0; j < $scope.charQual.length; j++) {
-                console.log(i, "i");
-                console.log(j, "i");
                 if ($scope.verifyMatch($scope.charQual[j], feat.prerequisites[i], i)) {
-                  console.log(i, "index true");
                   if ($scope.qualArrsChecker()) {
                     $scope.chosenFeats.push(feat);
                     $scope.remainingFeats--
@@ -100,13 +93,10 @@ angular.module('scribe')
           $scope.abilitiesShower = !$scope.abilitiesShower
           // $scope.spellsShower = !$scope.spellsShower
           $scope.classHasSpellsChecker()
-          console.log(characterService.characterCreationObject);
         }
         $scope.hideIneligableFeats = function() {
           // hideIneligableFeats
         }
-
-
       },
       scope: {
         races: '=',

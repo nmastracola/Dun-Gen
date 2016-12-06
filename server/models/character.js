@@ -18,6 +18,10 @@ var characterSchema = mongoose.Schema({
           type: String,
           required: true
       },
+      portraitURL:{
+        type: String,
+        default: 'http://i.imgur.com/WQ9QupQ.jpg'
+      },
       campaign: {
           type: String
       },
@@ -281,6 +285,17 @@ var characterSchema = mongoose.Schema({
       total: {
           type: Number,
           required: true
+      },
+      useUntrained: {
+          type: Boolean,
+          required: true
+      },
+      armorCheck: {
+          type: Boolean,
+          required: true
+      },
+      Description: {
+          type: String
       }
   }],
   spellsKnown: [{
@@ -314,8 +329,7 @@ var characterSchema = mongoose.Schema({
   equipment: [{
       armorClassItems: [{
           name: {
-              type: String,
-              required: true
+              type: String
           },
           cost: {
               type: Number
@@ -342,8 +356,7 @@ var characterSchema = mongoose.Schema({
               type: Number
           },
           type: {
-              type: String,
-              required: true
+              type: String
           },
           description: {
               type: String
@@ -351,8 +364,7 @@ var characterSchema = mongoose.Schema({
       }],
       gear: {
           item: {
-              type: String,
-              required: true
+              type: String
           },
           cost: {
               type: Number

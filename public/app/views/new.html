@@ -5,7 +5,7 @@
     </div>
     <!-- first section -->
 
-      <rolls ng-show="rollShower" roll-shower="rollShower" race-shower="raceShower" attributes="attributes"></rolls>
+      <rolls ng-show="rollShower" roll-shower="rollShower" race-shower="raceShower" attributes="attributes" attribute-modifier="attributeModifier"></rolls>
 
     <!-- =============  race header   =============-->
     <div class="newHeader" id="raceHeader" ng-click="raceShower = !raceShower">
@@ -31,6 +31,15 @@
     <!-- abilities section -->
 
       <abilities ng-show="abilitiesShower" feats="feats" races="races" abilities-shower="abilitiesShower" spells-shower="spellsShower" class-has-spells-checker="classHasSpellsChecker()" chosen-race-traits="chosenRaceTraits" feat-toggler="featToggler"></abilities>
+
+      <!-- =============  skills header   =============-->
+      <div class="newHeader" id="skillsHeader" ng-click="skillsShower = !skillsShower">
+          <h4 class="newHeaderTxt">SKILLS</h4>
+      </div>
+      <!-- skills section -->
+
+        <skills ng-show="skillsShower" attributes="attributes" skills="skills" attribute-modifier="attributeModifier"></skills>
+
 
     <!-- =============  spells header   =============-->
     <div class="newHeader" id="spellsHeader" ng-show="spellsTab" ng-click="spellsShower = !spellsShower">
