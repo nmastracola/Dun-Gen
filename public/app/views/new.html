@@ -5,7 +5,7 @@
     </div>
     <!-- first section -->
 
-      <rolls ng-show="rollShower"></rolls>
+      <rolls ng-show="rollShower" roll-shower="rollShower" race-shower="raceShower" attributes="attributes"></rolls>
 
     <!-- =============  race header   =============-->
     <div class="newHeader" id="raceHeader" ng-click="raceShower = !raceShower">
@@ -13,16 +13,16 @@
     </div>
     <!-- race section -->
 
-    <race ng-show="raceShower" races="races" attributes="attributes"></race>
+    <race ng-show="raceShower" races="races" attributes="attributes" race-shower="raceShower" class-shower="classShower"></race>
 
 
     <!-- =============  class header   =============-->
-    <div class="newHeader" id="classHeader" ng-click="classShower = !classShower">
+    <div class="newHeader" id="classHeader" ng-click="classShower = !classShower; raceChoice()">
         <h4 class="newHeaderTxt">CLASS</h4>
     </div>
     <!-- class section -->
 
-    <class ng-show="classShower" classes="classes"></class>
+    <class ng-show="classShower" classes="classes" race-choice="raceChoice()" abilities-shower="abilitiesShower" class-shower="classShower"></class>
 
     <!-- =============  abilities header   =============-->
     <div class="newHeader" id="abilitiesHeader" ng-click="abilitiesShower = !abilitiesShower">
@@ -30,10 +30,10 @@
     </div>
     <!-- abilities section -->
 
-      <abilities ng-show="abilitiesShower" feats="feats" races="races"></abilities>
+      <abilities ng-show="abilitiesShower" feats="feats" races="races" abilities-shower="abilitiesShower" spells-shower="spellsShower" class-has-spells-checker="classHasSpellsChecker()" chosen-race-traits="chosenRaceTraits" feat-toggler="featToggler"></abilities>
 
     <!-- =============  spells header   =============-->
-    <div class="newHeader" id="spellsHeader" ng-click="spellsShower = !spellsShower; classHasSpellsChecker()">
+    <div class="newHeader" id="spellsHeader" ng-click="spellsShower = !spellsShower">
         <h4 class="newHeaderTxt">SPELLS</h4>
     </div>
     <!-- spells section -->

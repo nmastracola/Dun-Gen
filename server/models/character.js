@@ -44,6 +44,14 @@ var characterSchema = mongoose.Schema({
           required: true
       }
   }],
+  qualifications: [{
+    type: {
+      type: String
+    },
+    value: [{
+      type: String
+    }]
+  }],
   core: {
       strength: {
           type: Number,
