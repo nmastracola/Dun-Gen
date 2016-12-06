@@ -3,41 +3,46 @@ angular.module('scribe', ['ui.router'])
 
         $urlRouterProvider.otherwise('/');
 
-        $stateProvider
-            .state('home', {
-                url: '/',
-                templateUrl: './app/views/homse.html',
-                controller: 'homeCtrl'
-                    // resolve: {
-                    //   characters: function (sService) {
-                    //     return sService.characters().then(function(response) {
-                    //       // console.log(response);
-                    //       return response.data;
-                    //     });
-                    //   },
-                    // }
+  $stateProvider
+      .state('home', {
+        url: '/',
+        templateUrl: './app/views/home.html',
+        controller: 'homeCtrl'
+        // resolve: {
+        //   characters: function (sService) {
+        //     return sService.characters().then(function(response) {
+        //       // console.log(response);
+        //       return response.data;
+        //     });
+        //   },
+        // }
+      })
+      .state('charSelect', {
+        url: '/charselect',
+        templateUrl: './app/views/charSelect.html',
+        controller: 'charSelectCtrl'
+      })
+      .state('new', {
+          url: '/new',
+          templateUrl: './app/views/new.html',
+          controller: 'newCtrl',
+          resolve: {
+              races: function(sService) {
+                  return sService.races();
+              },
+              feats: function(sService) {
+                  return sService.feats();
+              },
+              classes: function(sService) {
+                  return sService.class();
+              }
+          }
+      })
+      .state('player', {
+        url: '/player',
+        templateUrl: './app/views/player.html',
+        controller: 'playerCtrl'
+      })
+})
 
 
-            })
-            .state('new', {
-                url: '/new',
-                templateUrl: './app/views/new.html',
-                controller: 'newCtrl',
-                resolve: {
-                    races: function(sService) {
-                        return sService.races();
-                    },
-                    feats: function(sService) {
-                        return sService.feats();
-                    },
-                    classes: function(sService) {
-                        return sService.class();
-                    }
-                }
-            })
-            .state('player', {
-                url: '/player',
-                templateUrl: './app/views/player.html',
-                controller: 'playerCtrl'
-            })
-    })

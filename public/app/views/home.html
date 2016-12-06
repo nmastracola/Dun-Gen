@@ -3,13 +3,11 @@
     <div class="mainLogo">
       <img src="./images/dgLogo.svg" alt="Dun-Gen Logo">
     </div>
-    <form class="login" >
+    <form class="login" ng-submit="login(user)">
       <h6 class="newUser" ng-click="toggler=!toggler">NEW USER?</h6>
-      <input class="loginInput" type="text" name="username" value="user name">
-      <input class="loginInput" type="password" name="username" value="password">
-      <div class="loginSubmit">
-        <p class="loginSubmitTxt">submit</p>
-      </div>
+      <input class="loginInput" type="text" name="signInUsername" required ng-model="user.username" placeholder="user name">
+      <input class="loginInput" type="password" name="password" required ng-model="user.password" placeholder="password">
+      <button class="loginSubmit" type="submit" name="signInSubmit"><span class="loginSubmitTxt">submit</span></button>
     </form>
   </div>
   
@@ -20,34 +18,40 @@
     <div class="modal" ng-show="toggler">
   
       <h5 class="modalWelcome">WELCOME TO DUN-GEN</h5>
+      <form ng-submit="register(newUser)">
+        <div class="newUserInputRow">
+          <p class="newUserInputLabel">USER NAME</p>
+          <input class="newUserInput" ng-model="newUser.username" type="text"></input>
+        </div>
         
-      <div class="newUserInputRow">
-        <p class="newUserInputLabel">USER NAME</p>
-        <input class="newUserInput" type="text"></input>
-      </div>
-      
-      <div class="newUserInputRow">
-        <p class="newUserInputLabel">E-MAIL</p>
-        <input class="newUserInput" type="text"></input>
-      </div>
-      
-      <div class="newUserInputRow">
-        <p class="newUserInputLabel">PASSWORD</p>
-        <input class="newUserInput" type="password"></input>
-      </div>
-      
-      <div class="newUserInputRow">
-        <p class="newUserInputLabel">RE-ENTER PASSWORD</p>
-        <input class="newUserInput" type="password"></input>
-      </div>
+        <div class="newUserInputRow">
+          <p class="newUserInputLabel">E-MAIL</p>
+          <input class="newUserInput" ng-model="newUser.email" type="email"></input>
+        </div>
+        
+        <div class="newUserInputRow">
+          <p class="newUserInputLabel">PASSWORD</p>
+          <input class="newUserInput" ng-model="newUser.password" type="password"></input>
+        </div>
+        
+        <div class="newUserInputRow">
+          <p class="newUserInputLabel">RE-ENTER PASSWORD</p>
+          <input class="newUserInput" ng-model="newUser.passConfirm" type="password"></input>
+        </div>
 
   <!-- ==================== sumbit Button ==================== -->
 
-      <div class="newUserSubmit"  ng-click="toggler=!toggler">
-        <div class="littleLogo">
-        <img src="./images/dgLogo.svg" alt="Dun-Gen Logo">
+        <div class="newUserSubmit">
+          <button class="signUpSubmitButton" type="submit" name="signUpSubmit">
+            <span class="submitLabel" ng-click="register(newUser)">Begin</span>        
+          </button>
+          <div class="littleLogo" ng-click="register(newUser)">
+            <img src="./images/dgLogo.svg" alt="Dun-Gen Logo">
+          </div>
+          <div class="newUserCancel">
+            <h5 class="submitLabel" ng-click="toggler=!toggler">Cancel</h5>
+          </div>
         </div>
-        <h5 class="submitLabel">Begin</h5>
-      </div>
+      </form>
   
 </div>

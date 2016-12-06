@@ -43,7 +43,6 @@ proficiency
 canCast
 casterLevel
 bab
-hasFamiliar
 characterLevel
 hasSkillRanks
 hasCriticalFeats
