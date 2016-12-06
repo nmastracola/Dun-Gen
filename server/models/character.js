@@ -371,11 +371,42 @@ var characterSchema = mongoose.Schema({
           type: Number
       }
   }],
-  customization: [{
-      description: {
+  customization: {
+      name: {
+          type: String
+      },
+      homeland: {
+          type: String
+      },
+      diety: {
+          type: String
+      },
+      age: {
+          type: String
+      },
+      height: {
+          type: String
+      },
+      weight: {
+          type: String
+      },
+      hair: {
+          type: String
+      },
+      eyes: {
+          type: String
+      },
+      misc: {
+          type: String
+      },
+      characterDescription: {
+          type: String
+      },
+      biography: {
           type: String
       }
-  }],
+
+  },
   journal: {
       type: String
   },
