@@ -7,8 +7,8 @@ angular.module("scribe").service("characterService", function($http) {
   this.createCharacter = function(characterData) {
     return $http({
       method: 'POST',
-      url: '/character',
-      data: characterData
+      url: '/api/character',
+      data: characterCreationObject
     }).then(function(response) {
       return response;
     });
@@ -38,7 +38,7 @@ angular.module("scribe").service("characterService", function($http) {
         playerName: "",
         characterName: "",
         campaign: "",
-        race: "", 
+        race: "",
         classes: [{
             class: "",
             level: ""
@@ -155,9 +155,19 @@ angular.module("scribe").service("characterService", function($http) {
         },
         wealth: null
     }],
-    customization: [{
-        description: ""
-    }],
+    customization: {
+      name: "",
+      homeland: "",
+      diety: "",
+      age: "",
+      height: "",
+      weight: "",
+      hair: "",
+      eyes: "",
+      misc: "",
+      characterDescription: "",
+      biography: ""
+    },
     journal: "",
     menu: {
         colorScheme: null,
