@@ -285,6 +285,18 @@ var characterSchema = mongoose.Schema({
       total: {
           type: Number,
           required: true
+      },
+      useUntrained: {
+          type: Boolean,
+          required: true
+      },
+      armorCheck: {
+          type: Boolean,
+          required: true
+      },
+      Description: {
+          type: String,
+          required: false
       }
   }],
   spellsKnown: [{
@@ -318,8 +330,7 @@ var characterSchema = mongoose.Schema({
   equipment: [{
       armorClassItems: [{
           name: {
-              type: String,
-              required: true
+              type: String
           },
           cost: {
               type: Number
@@ -346,8 +357,7 @@ var characterSchema = mongoose.Schema({
               type: Number
           },
           type: {
-              type: String,
-              required: true
+              type: String
           },
           description: {
               type: String
@@ -355,8 +365,7 @@ var characterSchema = mongoose.Schema({
       }],
       gear: {
           item: {
-              type: String,
-              required: true
+              type: String
           },
           cost: {
               type: Number
@@ -375,11 +384,42 @@ var characterSchema = mongoose.Schema({
           type: Number
       }
   }],
-  customization: [{
-      description: {
+  customization: {
+      name: {
+          type: String
+      },
+      homeland: {
+          type: String
+      },
+      diety: {
+          type: String
+      },
+      age: {
+          type: String
+      },
+      height: {
+          type: String
+      },
+      weight: {
+          type: String
+      },
+      hair: {
+          type: String
+      },
+      eyes: {
+          type: String
+      },
+      misc: {
+          type: String
+      },
+      characterDescription: {
+          type: String
+      },
+      biography: {
           type: String
       }
-  }],
+
+  },
   journal: {
       type: String
   },

@@ -55,8 +55,8 @@ app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 
 // TEMP USER ENDPOINT
 app.post('/api/user', serverMFPopulateCtrl.addUser);
-app.post('/api/character', serverMFPopulateCtrl.addCharacter);
 app.get('/api/character', serverMFPopulateCtrl.getCharacter);
+app.post('/api/character', serverMFPopulateCtrl.createCharacter);
 
 // TABLE POPULATION ENDPOINTS
 app.post('/api/feats', serverMFPopulateCtrl.addFeat);
@@ -85,6 +85,7 @@ app.get('/api/damagingArmor', serverMFPopulateCtrl.getDamagingArmor);
 app.get('/api/goodsAndServices', serverMFPopulateCtrl.getGoodsAndServices);
 app.get('/api/bonusSpells', serverMFPopulateCtrl.getBonusSpells);
 app.get('/api/characters', serverMFPopulateCtrl.getUserCharacters);
+
 
 // CONNECTIONS //
 var mongoURI = config.MONGO_URI;

@@ -3,7 +3,6 @@
 angular.module("scribe").service("characterService", function($http) {
   // CRUD FUNCTIONS
   // ============================================================
-
   this.createCharacter = function(characterData) {
     return $http({
       method: 'POST',
@@ -46,6 +45,11 @@ angular.module("scribe").service("characterService", function($http) {
         playerName: "",
         characterName: "",
         campaign: "",
+        race: "",
+        classes: [{
+            class: "",
+            level: ""
+        }],
         race: "",
         classes: [],
         alignment: "",
@@ -158,9 +162,19 @@ angular.module("scribe").service("characterService", function($http) {
         },
         wealth: null
     }],
-    customization: [{
-        description: ""
-    }],
+    customization: {
+      name: "",
+      homeland: "",
+      diety: "",
+      age: "",
+      height: "",
+      weight: "",
+      hair: "",
+      eyes: "",
+      misc: "",
+      characterDescription: "",
+      biography: ""
+    },
     journal: "",
     menu: {
         colorScheme: null,
@@ -168,5 +182,34 @@ angular.module("scribe").service("characterService", function($http) {
     }
 
   };
+  var self = this;
+  this.createCharacter = function(characterData) {
+    return $http({
+      method: 'POST',
+      url: '/api/character',
+      data: self.characterCreationObject
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.editCharacter = function(id, characterData) {
+    return $http({
+      method: 'PUT',
+      url: "/character/" + id,
+      data: characterData
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.deleteCharacter = function(id) {
+    return $http({
+      method: 'DELETE',
+      url: '/character/' + id
+    }).then(function(response) {
+      return response;
+    });
+  };
+  // OTHER FUNCTIONS
+  // ============================================================
 
 });

@@ -226,9 +226,11 @@ module.exports = {
      res.status(200).send(user);
    })
  },
- addCharacter: function(req, res, next){
+ createCharacter: function(req, res, next){
    Character.create(req.body, function(err, user){
+     console.log(req.body);
      if(err){
+       console.log(err);
        res.status(500).send(err);
      }
      res.status(200).send(user);
