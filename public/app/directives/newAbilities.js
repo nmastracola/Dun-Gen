@@ -1,59 +1,123 @@
 angular.module('scribe')
-.directive('abilities', function(){
-return{
-  restrict: 'E',
-  templateUrl: './app/directives/newAbilities.html',
-  controller: function($scope, characterService) {
-    // console.log("races", $scope.races);
-    // console.log("feats", $scope.feats);
-    // for (var i = 0; i < $scope.feats.length; i++) {
-    //   // console.log($scope.feats[i].name);
-    // }
-    //compare race chosen to races available
-    //charcterService.characterCreationObject
-    function raceChoice () {
-      for (var i = 0; i < $scope.races.length; i++) {
-        // console.log($scope.races[i].name);
-        if ($scope.races[i].name === characterService.characterCreationObject.static.race) {
-          $scope.chosenRaceTraits = $scope.races[i].traits;
-          // console.log($scope.races[i]);
-        }
-      }
-    }
-    raceChoice();
+  .directive('abilities', function() {
+    return {
+      restrict: 'E',
+      templateUrl: './app/directives/newAbilities.html',
+      controller: function($scope, characterService) {
+        $scope.chosenFeats = [];
+        $scope.remainingFeats = 3
 
-    $scope.chosenFeats = [];
-    // console.log($scope.feats);
-    $scope.charQual = characterService.characterCreationObject.qualifications
-    $scope.selectedFeat = function (feat) {
-      for (var i = 0; i < $scope.chosenFeats.length; i++) {
-        if ($scope.chosenFeats[i] === feat) {
-          $scope.chosenFeats.splice(i, 1);
-          return
-        }
-      }
-        $scope.chosenFeats.push(feat);
-        console.log($scope.chosenFeats);
-    }
+        $scope.charQual = characterService.characterCreationObject.qualifications
+        $scope.qualArrs = [];
+        $scope.qualArrsChecker = function() {
+          console.log("$scope.qualArrsChecker used");
+          console.log($scope.qualArrs);
 
-    $scope.newCharFeats = function() {
-      for (var i = 0; i < $scope.chosenFeats.length; i++) {
-        characterService.characterCreationObject.feats.push({name: $scope.chosenFeats[i].name, known: true})
+          for (var i = 0; i < $scope.qualArrs.length; i++) {
+            // if it finds false in arr then return false. once all true there is no return
+            if (!$scope.qualArrs[i]) {
+              return false;
+            }
+          }
+          return true
+        }
+        $scope.verifyMatch = function(qualificationObj, prerequisiteObj, index) {
+          console.log("$scope.verifyMatch used");
+          if (qualificationObj.type === prerequisiteObj.type) {
+            if (prerequisiteObj.value[1]) {
+              if (qualificationObj.value[0] == prerequisiteObj.value[0]) {
+                console.log("val 0 true");
+                if ((qualificationObj.value[1]) *1 >= (prerequisiteObj.value[1]) *1) {
+                  $scope.qualArrs[index] = true
+                }
+              }
+            } else if (qualificationObj.value == prerequisiteObj.value[0]) {
+              $scope.qualArrs[index] = true
+            }
+            else if (qualificationObj.value >= (prerequisiteObj.value[0])*1) {
+              $scope.qualArrs[index] = true
+            }
+          }
+          return $scope.qualArrs[index]
+        }
+        $scope.selectedFeat = function(feat) {
+          if ($scope.remainingFeats === 0) {
+            alert("You have no remaining feats.")
+            return
+          }
+          for (var i = 0; i < $scope.chosenFeats.length; i++) {
+            if ($scope.chosenFeats[i] === feat) {
+              $scope.chosenFeats.splice(i, 1);
+              $scope.remainingFeats++
+              $scope.qualArrs = [];
+                return
+            }
+          }
+          if (feat.prerequisites) {
+            for (var i = 0; i < feat.prerequisites.length; i++) {
+              $scope.qualArrs.push(false)
+            }
+            for (var i = 0; i < feat.prerequisites.length; i++) {
+              for (var j = 0; j < $scope.charQual.length; j++) {
+                console.log(i, "i");
+                console.log(j, "i");
+                if ($scope.verifyMatch($scope.charQual[j], feat.prerequisites[i], i)) {
+                  console.log(i, "index true");
+                  if ($scope.qualArrsChecker()) {
+                    $scope.chosenFeats.push(feat);
+                    $scope.remainingFeats--
+                    $scope.qualArrs = [];
+                    return
+                  }
+                } else if (i === feat.prerequisites.length -1 && j === $scope.charQual.length -1) {
+                  alert("You do not have the needed prerequisites for this feat. Please select another.")
+                  $scope.qualArrs = [];
+                  return
+                }
+              }
+            }
+
+          } else {
+            $scope.chosenFeats.push(feat);
+            $scope.remainingFeats--
+            $scope.qualArrs = [];
+          }
+        }
+
+        $scope.newCharFeats = function() {
+          for (var i = 0; i < $scope.chosenFeats.length; i++) {
+            characterService.characterCreationObject.feats.push({
+              name: $scope.chosenFeats[i].name,
+              known: true
+            })
+          };
+          for (var j = 0; j < $scope.chosenFeats.length; j++) {
+            characterService.characterCreationObject.prerequisites.push({
+              type: feat,
+              value: $scope.chosenFeats[j].name
+            })
+          }
+          $scope.abilitiesShower = !$scope.abilitiesShower
+          $scope.spellsShower = !$scope.spellsShower
+          $scope.classHasSpellsChecker()
+          console.log(characterService.characterCreationObject);
+        }
+        $scope.hideIneligableFeats = function() {
+          // hideIneligableFeats
+        }
+
+
       },
-      for (var j = 0; j < $scope.chosenFeats.length; j++) {
-        characterService.characterCreationObject.prerequisites.push({type: feat, value: $scope.chosenFeats[j].name})
-      }
-      console.log(characterService.characterCreationObject);
-    }
+      scope: {
+        races: '=',
+        feats: '=',
+        abilitiesShower: "=",
+        spellsShower: "=",
+        classHasSpellsChecker: "&",
+        chosenRaceTraits: "=",
+        featToggler: "="
+      },
+      link: function(scope, element, attributes) {}
+    };
 
-
-
-  },
-  scope: {
-    races: '=',
-    feats: '='
-  },
-  link: function( scope, element, attributes ) {}
-};
-
-});
+  });

@@ -16,7 +16,10 @@ angular.module('scribe')
               };
 
               $scope.confirmRace = function() {
+                console.log($scope.races);
                 // console.log("Confirming: " + $scope.abilityCounter);
+                var charCre = characterService.characterCreationObject.core
+                characterService.characterCreationObject.static.race = $scope.chosenRace
                   if ($scope.races[$scope.raceCounter].mod.bon) {
                     $scope.attributes[$scope.abilityCounter] += 2
                   }
@@ -38,14 +41,47 @@ angular.module('scribe')
                   if ($scope.races[$scope.raceCounter].mod.wis) {
                       $scope.attributes[4] += $scope.races[$scope.raceCounter].mod.wis
                   }
-                  var charCre = characterService.characterCreationObject.core
-                  characterService.characterCreationObject.static.race = $scope.chosenRace
+                  $scope.charCreQual = characterService.characterCreationObject.qualifications
                   charCre.strength = $scope.attributes[0]
+                  for (var i = 0; i < $scope.charCreQual.length; i++) {
+                    if ($scope.charCreQual[i].value[0]==="str") {
+                      $scope.charCreQual[i].value[1]=$scope.attributes[0]
+                    }
+                  }
                   charCre.dexterity = $scope.attributes[1]
+                  for (var i = 0; i < $scope.charCreQual.length; i++) {
+                    if ($scope.charCreQual[i].value[1]==="dex") {
+                      $scope.charCreQual[i].value[1]=$scope.attributes[1]
+                    }
+                  }
                   charCre.constitution = $scope.attributes[2]
+                  for (var i = 0; i < $scope.charCreQual.length; i++) {
+                    if ($scope.charCreQual[i].value[2]==="con") {
+                      $scope.charCreQual[i].value[1]=$scope.attributes[2]
+                    }
+                  }
                   charCre.intelligence = $scope.attributes[3]
+                  for (var i = 0; i < $scope.charCreQual.length; i++) {
+                    if ($scope.charCreQual[i].value[3]==="int") {
+                      $scope.charCreQual[i].value[1]=$scope.attributes[3]
+                    }
+                  }
                   charCre.wisdom = $scope.attributes[4]
+                  for (var i = 0; i < $scope.charCreQual.length; i++) {
+                    if ($scope.charCreQual[i].value[4]==="wis") {
+                      $scope.charCreQual[i].value[1]=$scope.attributes[4]
+                    }
+                  }
                   charCre.charisma = $scope.attributes[5]
+                  for (var i = 0; i < $scope.charCreQual.length; i++) {
+                    if ($scope.charCreQual[i].value[5]==="cha") {
+                      $scope.charCreQual[i].value[1]=$scope.attributes[5]
+                    }
+                  }
+                  console.log($scope.charCreQual);
+                  $scope.raceShower = !$scope.raceShower;
+                  $scope.classShower = !$scope.classShower;
+
                   console.log(characterService.characterCreationObject);
                   return
                 }
@@ -137,7 +173,9 @@ angular.module('scribe')
           },
           scope: {
               races: "=",
-              attributes: "="
+              attributes: "=",
+              raceShower: "=",
+              classShower: "="
           },
           link: function(scope, element, attributes) {}
       };
