@@ -10,41 +10,52 @@
 }
 
 #firstHeader{
-  background-color: $blk;
+  background-color: #141117;
   &:hover{
     opacity: .9;
   }
 }
 #raceHeader{
-  background-color: $f9;
+  background-color: #231E29; 
   &:hover{
     opacity: .9;
   }
 }
 #classHeader{
-  background-color: $f8;
+  background-color: #2E2736;
   &:hover{
     opacity: .9;
   }
 }
 #abilitiesHeader{
-  background-color: $f7;
+  background-color: #3D3447;
   &:hover{
     opacity: .9;
   }
 }
+#skillsHeader{
+  background-color: #483D54;
+  &:hover{
+    opacity: .9;
+  }
+}
+
 #spellsHeader{
-  background-color: $f6;
+  background-color: #554963;
   &:hover{
     opacity: .9;
   }
 }
+
+
 #customizationHeader{
-  background-color: $f5;
+  background-color: #645675;
   &:hover{
     opacity: .9;
   }
 }
+
+
 
 .newSubheader{
   text-align: center;

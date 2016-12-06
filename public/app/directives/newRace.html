@@ -5,43 +5,64 @@
 
   <div class="raceSelector">
     <div class="characterEnabler" ng-hide="raceToggler[0]" ng-click="raceSwitcher(0); racePicker(0)"></div>
-    <div class="raceImage greyBkg"></div>
+    <div class="raceImage">
+      <div class="dwarfBkg" ng-show="raceToggler[0]"></div>
+      <div class="whtOverlay"></div>
+      <img class="heroImage" src="./images/dwarfIcon.svg" alt="dwarf"></div>
     <h5 class="raceLabel">DWARF</h5>
   </div>
 
   <div class="raceSelector">
     <div class="characterEnabler" ng-hide="raceToggler[1]" ng-click="raceSwitcher(1); racePicker(1)"></div>
-    <div class="raceImage"><img src="./images/elfIcon.svg" alt="Elf"></div>
+    <div class="raceImage">
+      <div class="elfBkg" ng-show="raceToggler[1]"></div>
+      <div class="whtOverlay"></div>
+      <img class="heroImage"src="./images/elfIcon.svg" alt="Elf"></div>
     <h5 class="raceLabel">ELF</h5>
   </div>
 
   <div class="raceSelector">
     <div class="characterEnabler" ng-hide="raceToggler[2]" ng-click="raceSwitcher(2); racePicker(2)"></div>
-    <div class="raceImage"><img src="./images/gnomeIcon.svg" alt="Elf"></div>
+    <div class="raceImage">
+      <div class="gnomeBkg" ng-show="raceToggler[2]"></div>
+      <div class="whtOverlay"></div>
+      <img class="heroImage" src="./images/gnomeIcon.svg" alt="Gnome"></div>
     <h5 class="raceLabel">GNOME</h5>
   </div>
 
   <div class="raceSelector">
     <div class="characterEnabler" ng-hide="raceToggler[3]" ng-click="raceSwitcher(3); racePicker(3)"></div>
-    <div class="raceImage"><img src="./images/halfElfIcon.svg" alt="Half-Elf"></div>
+    <div class="raceImage">
+      <div class="halfElfBkg" ng-show="raceToggler[3]"></div>
+      <div class="whtOverlay"></div>
+      <img  class="heroImage" src="./images/halfElfIcon.svg" alt="Half-Elf"></div>
     <h5 class="raceLabel " >HALF-ELF</h5>
   </div>
 
   <div class="raceSelector">
     <div class="characterEnabler" ng-hide="raceToggler[4]" ng-click="raceSwitcher(4); racePicker(4)"></div>
-    <div class="raceImage"><img src="./images/orcIcon.svg" alt="Half-Orc-Half-Dire-Halfling"></div>
+    <div class="raceImage">
+      <div class="orcBkg" ng-show="raceToggler[4]"></div>
+      <div class="whtOverlay"></div>
+      <img class="heroImage" src="./images/orcIcon.svg" alt="Half-Orc-Half-Dire-Halfling"></div>
     <h5 class="raceLabel">HALF-ORC</h5>
   </div>
 
   <div class="raceSelector">
     <div class="characterEnabler" ng-hide="raceToggler[5]" ng-click="raceSwitcher(5); racePicker(5)"></div>
-    <div class="raceImage"><img src="./images/halflingIcon.svg" alt="halfling"></div>
+    <div class="raceImage">
+      <div class="halflingBkg" ng-show="raceToggler[5]"></div>
+      <div class="whtOverlay"></div>
+      <img class="heroImage" src="./images/halflingIcon.svg" alt="halfling"></div>
     <h5 class="raceLabel">HALFLING</h5>
   </div>
 
   <div class="raceSelector">
     <div class="characterEnabler" ng-hide="raceToggler[6]" ng-click="raceSwitcher(6); racePicker(6)"></div>
-    <div class="raceImage "><img src="./images/humanIcon.svg" alt="Elf"></div>
+    <div class="raceImage ">
+      <div class="humanBkg" ng-show="raceToggler[6]"></div>
+      <div class="whtOverlay"></div>
+      <img class="heroImage" src="./images/humanIcon.svg" alt="Elf"></div>
     <h5 class="raceLabel">HUMAN</h5>
   </div>
 </div>
@@ -99,7 +120,7 @@
       </div>
     </div>
 </div>
-  <div class="rParagraph" ng-repeat="trait in raceInfo">{{trait.desc}}<br><br></div>
+  <div class="rParagraph" ng-repeat="trait in raceInfo"><p>{{trait.desc}}</p><br><br></div>
 </div>
 
 <!-- ===============================  END PLACEHOLDER  ================================== -->
