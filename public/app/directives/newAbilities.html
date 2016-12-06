@@ -83,10 +83,10 @@
             <p>{{feat.description}}</p>
           </div>
           <div class="spellDescDetailsRequest">
-            <p class="spellDescriptionOpener"  ng-click="" ng-hide="">Details</p>
+            <p class="spellDescriptionOpener"  ng-click="abilityInfo = !abilityInfo" ng-hide="">Details</p>
           </div>
-          <div class="spellDescLong" ng-show="">
-            <p>A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals 1d3 points of cold damage.</p>
+          <div class="spellDescLong" ng-show="abilityInfo">
+            <p>{{feat}}</p>
           </div>
         </div>
       </div>
@@ -99,7 +99,11 @@
 <!-- ========  END FEATS LIST  ========== -->
 </div>
 
-
+<div class="remainingFeatsContainer">
+<div>{{remainingFeats}}</div>
+</div>
+<div class="remainingFeatsContainer" ng-click="hideIneligableFeats()">Hide Ineligable Feats
+</div>
 <div class="newSelectedFeats">
   <h4 class="newSelectedFeatsHeader">CHOSEN FEATS</h4>
   <div class="newSelectedFeatList" ng-repeat='feat in chosenFeats track by $index'>
