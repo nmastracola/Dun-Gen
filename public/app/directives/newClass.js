@@ -41,11 +41,20 @@ angular.module('scribe')
                         "class": $scope.classObject.class,
                         "level": 1
                     })
-
+                    characterService.characterCreationObject.qualifications.push({
+                        "type": "bab",
+                        "value": 1
+                    })
+                    $scope.classShower= !$scope.classShower
+                    $scope.abilitiesShower= !$scope.abilitiesShower
+                    $scope.raceChoice()
                 }
             },
             scope: {
-                classes: "="
+                classes: "=",
+                raceChoice: "&",
+                abilitiesShower: "=",
+                classShower: "="
             },
             link: function(scope, element, attributes) {}
         };

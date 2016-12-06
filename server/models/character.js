@@ -44,38 +44,68 @@ var characterSchema = mongoose.Schema({
           required: true
       }
   }],
-  core: [{
+  qualifications: [{
+    type: {
+      type: String
+    },
+    value: [{
+      type: String
+    }]
+  }],
+  core: {
       strength: {
           type: Number,
           required: true
+      },
+      tempStrength: {
+          type: Number
       },
       dexterity: {
           type: Number,
           required: true
       },
+      tempDexterity: {
+          type: Number
+      },
       constitution: {
           type: Number,
           required: true
+      },
+      tempConstitution: {
+          type: Number
       },
       intelligence: {
           type: Number,
           required: true
       },
+      tempIntelligence: {
+          type: Number
+      },
       wisdom: {
           type: Number,
           required: true
+      },
+      tempWisdom: {
+          type: Number
       },
       charisma: {
           type: Number,
           required: true
       },
-      armorClass: {
-          type: Number,
-          required: true
+      tempCharisma: {
+          type: Number
       },
-      initiative: {
-          type: Number,
-          required: true
+      naturalArmorClass: {
+          type: Number
+      },
+      miscArmorClass: {
+          type: Number
+      },
+      miscInitiative: {
+          type: Number
+      },
+      fortitudeBaseSave: {
+          type: Number
       },
       fortitudeMagicModifier: {
           type: Number
@@ -83,10 +113,16 @@ var characterSchema = mongoose.Schema({
       fortitudeMiscellaneousModifier: {
           type: Number
       },
+      reflexBaseSave: {
+          type: Number
+      },
       reflexMagicModifier: {
           type: Number
       },
       reflexMiscellaneousModifier: {
+          type: Number
+      },
+      willBaseSave: {
           type: Number
       },
       willMagicModifier: {
@@ -99,29 +135,28 @@ var characterSchema = mongoose.Schema({
           type: Number,
           required: true
       },
+      temporaryHitPoints: {
+          type: Number
+      },
       maxHitPoints: {
           type: Number,
           required: true
       },
       hitPointsModifier: {
-          type: Number,
-          required: true
+          type: Number
       },
       wounds: {
-          type: String,
-          required: true
+          type: String
       },
-      speeds: [{
+      speeds: {
           movementType: {
-              type: String,
-              required: true
+              type: String
           },
           movementSpeed: {
-              type: Number,
-              required: true
+              type: Number
           }
-      }]
-  }],
+      }
+  },
   weapons: [{
       name: {
           type: String
@@ -241,8 +276,7 @@ var characterSchema = mongoose.Schema({
           required: true
       },
       miscellaneousModifier: {
-          type: Number,
-          required: true
+          type: Number
       },
       total: {
           type: Number,
@@ -280,7 +314,8 @@ var characterSchema = mongoose.Schema({
   equipment: [{
       armorClassItems: [{
           name: {
-              type: String
+              type: String,
+              required: true
           },
           cost: {
               type: Number

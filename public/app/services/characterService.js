@@ -43,6 +43,7 @@ angular.module("scribe").service("characterService", function($http) {
         alignment: "",
         experiance: ""
     },
+    qualifications: [],
     core: {
         strength: "",
         dexterity: "",
