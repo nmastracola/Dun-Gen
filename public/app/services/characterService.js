@@ -14,10 +14,8 @@ angular.module("scribe").service("characterService", function($http) {
             class: "",
             level: ""
         }],
-        race: "",
-        classes: [],
         alignment: "",
-        experiance: ""
+        experience: ""
     },
     qualifications: [],
     core: {

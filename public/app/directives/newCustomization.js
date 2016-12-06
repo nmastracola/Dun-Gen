@@ -4,6 +4,8 @@ return{
   restrict: 'E',
   templateUrl: './app/directives/newCustomization.html',
   controller: function($scope, characterService) {
+  console.log("class", $scope.classes);
+  
     $scope.customization = {}
 
     $scope.charObj = characterService.characterCreationObject.customization
@@ -22,13 +24,12 @@ return{
       $scope.charObj.biography = $scope.customization.biography
       console.log("CharObj", $scope.charObj);
     }
-
     $scope.submitNewChar = function() {
       characterService.createCharacter();
     }
   },
   scope: {
-
+    classes: '='
   },
   link: function( scope, element, attributes ) {}
 };
