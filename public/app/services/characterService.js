@@ -3,6 +3,42 @@
 angular.module("scribe").service("characterService", function($http) {
   // CRUD FUNCTIONS
   // ============================================================
+  this.createCharacter = function(characterData) {
+    return $http({
+      method: 'POST',
+      url: '/character',
+      data: characterData
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.editCharacter = function(id, characterData) {
+    return $http({
+      method: 'PUT',
+      url: "/character/" + id,
+      data: characterData
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.deleteCharacter = function(id) {
+    return $http({
+      method: 'DELETE',
+      url: '/character/' + id
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.getUserCharacters = function(){
+    return $http({
+      method: 'GET',
+      url: '/api/characters'
+    }).then(function(response){
+      return response.data
+    })
+  };
+  // OTHER FUNCTIONS
+  // ============================================================
   this.characterCreationObject = {
     static: {
         userId: "",
