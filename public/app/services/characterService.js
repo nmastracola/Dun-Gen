@@ -3,35 +3,6 @@
 angular.module("scribe").service("characterService", function($http) {
   // CRUD FUNCTIONS
   // ============================================================
-
-  this.createCharacter = function(characterData) {
-    return $http({
-      method: 'POST',
-      url: '/api/character',
-      data: characterCreationObject
-    }).then(function(response) {
-      return response;
-    });
-  };
-  this.editCharacter = function(id, characterData) {
-    return $http({
-      method: 'PUT',
-      url: "/character/" + id,
-      data: characterData
-    }).then(function(response) {
-      return response;
-    });
-  };
-  this.deleteCharacter = function(id) {
-    return $http({
-      method: 'DELETE',
-      url: '/character/' + id
-    }).then(function(response) {
-      return response;
-    });
-  };
-  // OTHER FUNCTIONS
-  // ============================================================
   this.characterCreationObject = {
     static: {
         userId: "",
@@ -175,5 +146,34 @@ angular.module("scribe").service("characterService", function($http) {
     }
 
   };
+  var self = this;
+  this.createCharacter = function(characterData) {
+    return $http({
+      method: 'POST',
+      url: '/api/character',
+      data: self.characterCreationObject
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.editCharacter = function(id, characterData) {
+    return $http({
+      method: 'PUT',
+      url: "/character/" + id,
+      data: characterData
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.deleteCharacter = function(id) {
+    return $http({
+      method: 'DELETE',
+      url: '/character/' + id
+    }).then(function(response) {
+      return response;
+    });
+  };
+  // OTHER FUNCTIONS
+  // ============================================================
 
 });
