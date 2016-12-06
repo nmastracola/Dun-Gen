@@ -18,6 +18,10 @@ var characterSchema = mongoose.Schema({
           type: String,
           required: true
       },
+      portraitURL:{
+        type: String,
+        default: 'http://i.imgur.com/WQ9QupQ.jpg'
+      },
       campaign: {
           type: String
       },

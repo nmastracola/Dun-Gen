@@ -30,6 +30,14 @@ angular.module("scribe").service("characterService", function($http) {
       return response;
     });
   };
+  this.getUserCharacters = function(){
+    return $http({
+      method: 'GET',
+      url: '/api/characters'
+    }).then(function(response){
+      return response.data
+    })
+  };
   // OTHER FUNCTIONS
   // ============================================================
   this.characterCreationObject = {
