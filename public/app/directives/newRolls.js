@@ -18,7 +18,6 @@ return{
     $scope.standardRolls = [0, 0, 0, 0, 0, 0];
     $scope.hybridRolls = [0, 0, 0, 0, 0, 0];
     $scope.pointBuyRolls = [0, 0, 0, 0, 0, 0];
-    $scope.attributeModifier = [-5, -5, -5, -5, -5, -5]
     $scope.attributeSummedPlaceholder = 0;
     $scope.tempAttribute = 0;
     var numberPositionPlaceholder = 0;
@@ -80,7 +79,6 @@ return{
                   $scope.attributes[number] = $scope.tempAttribute;
                   $scope.tempAttribute = $scope.standardRolls[i]
                   numberPositionPlaceholder = i;
-                  console.log(i);
                   break
                 }
             }
@@ -93,7 +91,6 @@ return{
             $scope.standardRolls[numberPositionPlaceholder] = 0;
         }
     };
-    console.log($scope.raceShower);
 
     $scope.setAttributes = function() {
       var charCreQual = characterService.characterCreationObject.qualifications
@@ -113,15 +110,13 @@ return{
         charCreQual.push({"type": "attribute", "value": ["cha", $scope.attributes[5]]});
         $scope.rollShower= !$scope.rollShower
         $scope.raceShower= !$scope.raceShower
-        console.log($scope.raceShower);
-            // console.log(charCre);
-            console.log(characterService.characterCreationObject);
     }
   },
   scope:{
     raceShower: "=",
     rollShower: "=",
-    attributes: "="
+    attributes: "=",
+    attributeModifier:"="
   },
   link: function( scope, element, attributes ) {}
 };

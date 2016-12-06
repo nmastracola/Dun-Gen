@@ -8,48 +8,67 @@ angular.module("scribe").service("characterService", function($http) {
         userId: "",
         playerName: "",
         characterName: "",
+            // required: true
         campaign: "",
         race: "",
+            // required: true
         classes: [{
-            class: "",
-            level: ""
+          class: "Monk",
+          level: 1
         }],
-        race: "",
-        classes: [],
         alignment: "",
-        experiance: ""
+            // required: true
+        experience: null
+            // required: true
     },
     qualifications: [],
     core: {
-        strength: "",
-        dexterity: "",
-        constitution: "",
-        intelligence: "",
-        wisdom: "",
-        charisma: "",
-        armorClassModifier: "",
-        initiativeModifier: "",
-        speedModifier: "",
-        fortitudeMacigModifier: "",
-        fortitudeMiscellaneousModifier: "",
-        reflexMacigModifier: "",
-        reflexMiscellaneousModifier: "",
-        willMacigModifier: "",
-        willMiscellaneousModifier: "",
-        currentHitPoints: "",
-        maxHitPoints: "",
-        HitPointsModifier: "",
+        strength: null,
+            // required: true
+        tempStrength: null,
+        dexterity: null,
+            // required: true
+        tempDexterity: null,
+        constitution: null,
+            // required: true
+        tempConstitution: null,
+        intelligence: null,
+            // required: true
+        tempIntelligence: null,
+        wisdom: null,
+            // required: true
+        tempWisdom: null,
+        charisma: null,
+            // required: true
+        tempCharisma: null,
+        naturalArmorClass: null,
+        miscArmorClass: null,
+        miscInitiative: null,
+        fortitudeBaseSave: null,
+        fortitudeMagicModifier: null,
+        fortitudeMiscellaneousModifier: null,
+        reflexBaseSave: null,
+        reflexMagicModifier: null,
+        reflexMiscellaneousModifier: null,
+        willBaseSave: null,
+        willMagicModifier: null,
+        willMiscellaneousModifier: null,
+        currentHitPoints: null,
+            // required: true
+        temporaryHitPoints: null,
+        maxHitPoints: null,
+            // required: true
+        hitPointsModifier: null,
         wounds: "",
-        speeds: [{
+        speeds: {
             movementType: "",
-            movementSpeed: ""
-        }]
+            movementSpeed: null
+        }
     },
     weapons: [{
         name: "",
         type: "",
         subtype: "",
-        name: "",
         cost: null,
         damage: {
             die: [null],
@@ -61,10 +80,11 @@ angular.module("scribe").service("characterService", function($http) {
         },
         range: null,
         weight: null,
-        damagetype: {
+        damageType: {
             blunt: false,
             piercing: false,
-            slashing: false
+            slashing: false,
+            other: ""
         },
         special: {
             brace: false,
@@ -76,74 +96,90 @@ angular.module("scribe").service("characterService", function($http) {
             trip: false
         },
         description: "",
-        equiped: false,
+        equipped: false,
         primary: false,
         offhand: false,
         ammunition: null,
         weaponAttackBonus: null,
-        damageAttackBonus: null,
+        weaponDamageBonus: null,
         notes: ""
     }],
     skills: [{
         name: "",
+            // required: true
         classSkill: false,
+            // required: true
         ranks: null,
-        abilityModifier: null,
+            // required: true
+        primaryAttribute:"",
+            // required: true
+        attributeModifier: null,
+            // required: true
         miscellaneousModifier: null,
-        total: null
+        total: null,
+            // required: true
+        useUntrained: false,
+            // required: true
+        armorCheck: false,
+            // required: true
+        Description: ""
     }],
-    spells: [{
-        knownSpells: [{
-            name: "",
-            spellTracker: null
-        }]
+    spellsKnown: [{
+        name: "",
+        spellTracker: null
     }],
-    feats: [],
+    feats: [{
+        name: "",
+        active: false,
+        available: null
+    }],
     abilities: [{
         name: "",
-        known: false
+        active: false
     }],
     equipment: [{
         armorClassItems: [{
-            Name: "",
-            Cost: null,
-            ArmorShieldBonus: null,
-            MaximumDexBonus: null,
-            ArmorCheckPenalty: null,
-            ArcanespellFailureChance: null,
-            EquipSpeed30: null,
-            EquipSpeed20: null,
-            Weight: null,
+            name: "",
+            cost: null,
+            armorShieldBonus: null,
+            maxDexBonus: null,
+            armorCheckPenalty: null,
+            arcaneSpellFailureChance: null,
+            equipSpeed30: null,
+            equipSpeed20: null,
+            weight: null,
             type: "",
             description: ""
         }],
         gear: {
-            Item: "",
-            Cost: null,
-            Weight: null,
+            item: "",
+            cost: null,
+            weight: null,
             category: "",
             description: ""
         },
         wealth: null
     }],
     customization: {
-      name: "",
-      homeland: "",
-      diety: "",
-      age: "",
-      height: "",
-      weight: "",
-      hair: "",
-      eyes: "",
-      misc: "",
-      characterDescription: "",
-      biography: ""
+        name: "",
+        homeland: "",
+        diety: "",
+        age: "",
+        height: "",
+        weight: "",
+        hair: "",
+        eyes: "",
+        misc: "",
+        characterDescription: "",
+        biography: ""
+
     },
     journal: "",
     menu: {
         colorScheme: null,
         portrait: ""
     }
+
 
   };
   var self = this;

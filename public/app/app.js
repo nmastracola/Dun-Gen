@@ -11,7 +11,6 @@ angular.module('scribe', ['ui.router'])
         // resolve: {
         //   characters: function (sService) {
         //     return sService.characters().then(function(response) {
-        //       // console.log(response);
         //       return response.data;
         //     });
         //   },
@@ -35,6 +34,9 @@ angular.module('scribe', ['ui.router'])
               },
               classes: function(sService) {
                   return sService.class();
+              },
+              skills: function(sService) {
+                  return sService.skill();
               }
           }
       })
@@ -44,5 +46,3 @@ angular.module('scribe', ['ui.router'])
         controller: 'playerCtrl'
       })
 })
-
-

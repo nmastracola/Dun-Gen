@@ -291,8 +291,7 @@ var characterSchema = mongoose.Schema({
           required: true
       },
       Description: {
-          type: String,
-          required: false
+          type: String
       }
   }],
   spellsKnown: [{

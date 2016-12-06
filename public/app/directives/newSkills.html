@@ -21,16 +21,11 @@
       <div class=" skillHeader">
           <p class="skillHeaderTxt"><br>TOTAL</p>
       </div>
-      <div class=" skillHeader">
-          <p class="skillHeaderTxt"><br>ROLL</p>
-      </div>
-      <div class="skillsDiceBox">
-    
-      </div>
+
     </div>
-    
+
     <!-- RIGHT HEADERS -->
-    
+
     <div class="singleSkillHolder">
       <div class=" skillTitleHeader">
         <p class="skillHeaderTxt"><br>SKILL NAME</p>
@@ -50,35 +45,30 @@
       <div class=" skillHeader">
           <p class="skillHeaderTxt"><br>TOTAL</p>
       </div>
-      <div class=" skillHeader">
-          <p class="skillHeaderTxt"><br>ROLL</p>
-      </div>
-      <div class="skillsDiceBox">
-    
-      </div>
+
     </div>
-  
+
     <!-- ======================= BEGIN NG-REPEAT  =======================-->
-  <div class="singleSkillHolder">
-  
+  <div class="singleSkillHolder" ng-repeat="skill in skills">
+
     <div class="skillTitle">
-      <h5>APPRAISAL</h5>
+      <h5>{{skill.Skill}}</h5>
       <!-- ng hide or show this div, toggler is located in directive js -->
       <div class="skillPlusMinus" ng-show="customSkillToggler">
         <h5 class="customSkill">+</h5>
         <h5 class="customSkill">-</h5>
       </div>
     </div>
-    
-    <div class="skillClassSkillIndicator">
+
+    <div class="skillClassSkillIndicator" ng-click="">
         <!-- ng hide or show this div, toggler is located in directive js -->
-      <div class="skillClassSkillIndicated" ng-show="skillClassToggler"></div>
+      <div class="skillClassSkillIndicated" ng-show="coolSkillClassToggler(skill)"></div>
     </div>
     <div class="skillStatBox ltgreyBkg">
       <h3 class="dkSkillTxt">0</h3>
     </div>
     <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">0</h3>
+        <h3 class="dkSkillTxt">{{skillAbilityMod(skill)}}</h3>
     </div>
     <!-- input box misc mod -->
     <div class="skillStatBox ltgreyBkg">
@@ -88,20 +78,10 @@
     <div class="skillStatBox dkgreyBkg">
         <h3 class="dkSkillTxt">0</h3>
     </div>
-    <!-- roll box -->
-    <div class="skillStatBox blkBkg">
-        <h3 class="ltSkillTxt">0</h3>
-    </div>
-    <!-- dice icon -->
-    <!-- hide the dice icon for character gen. -->
-    <div class="skillsDiceBox">
-      <img class="skillDice" src="/images/D20BLK.svg" alt="skill roll">
-    </div>
-  </div>
-  
-  <!-- //end single row -->
-  
 
-  
+  <!-- //end single row -->
+
+
+
 
 </div>
