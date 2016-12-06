@@ -32,6 +32,15 @@
 
       <abilities ng-show="abilitiesShower" feats="feats" races="races" abilities-shower="abilitiesShower" spells-shower="spellsShower" class-has-spells-checker="classHasSpellsChecker()" chosen-race-traits="chosenRaceTraits" feat-toggler="featToggler"></abilities>
 
+      <!-- =============  skills header   =============-->
+      <div class="newHeader" id="skillsHeader" ng-click="skillsShower = !skillsShower">
+          <h4 class="newHeaderTxt">SKILLS</h4>
+      </div>
+      <!-- skills section -->
+
+        <skills ng-show="skillsShower"></skills>
+
+
     <!-- =============  spells header   =============-->
     <div class="newHeader" id="spellsHeader" ng-show="spellsTab" ng-click="spellsShower = !spellsShower">
         <h4 class="newHeaderTxt">SPELLS</h4>
