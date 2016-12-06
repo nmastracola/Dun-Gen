@@ -206,6 +206,14 @@ module.exports = {
      res.status(200).send(user);
    })
  },
+ getUserCharacters: function(req, res, next){
+   Character.find({userId: req.user._id}, function(err, chars){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(chars);
+   }) 
+ },
 
  //TEMP USER
  addUser: function(req, res, next){
