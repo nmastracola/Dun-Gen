@@ -1,1 +1,94 @@
-<h1>player equipment test</h1>
+<div class="equipmentBox flexColumn">
+<!-- ARMOR -->
+  <div class="acEquipmentHolder flexColumn">
+      <!-- ARMOR HEADER -->
+    <div class="acEquipmentHeaders flexRow">
+      <div class="acEquipmentName flexRow">
+        <img class="shieldIcon" src="./images/shieldIcon.svg" alt="equipment">
+        <h2 class="eqBigTitlePadding">AC EQUIPMENT</h2>
+      </div>
+      <div class="acEquipmentBonus ">
+        <h6 class="eqTallTitlePadding centerTxt">AC BONUS</h6>
+      </div>
+      <div class="acEquipmentType ">
+        <h6 class="eqTitlePadding centerTxt">TYPE</h6>
+      </div>
+      <div class="acEquipmentCheck ">
+        <h6 class="eqTallTitlePadding centerTxt">CHECK PENALTY</h6>
+      </div>
+      <div class="acEquipmentSpellFailure ">
+        <h6 class="eqTallTitlePadding centerTxt">SPELL FAILURE</h6>
+      </div>
+      <div class="acEquipmentWeight ">
+        <h6 class="eqTitlePadding centerTxt">WEIGHT</h6>
+      </div>
+      <div class="acEquipmentDex ">
+        <h6 class="eqTallTitlePadding centerTxt">DEX. BONUS</h6>
+      </div>
+      <div class="acEquipmentProperties ">
+        <h6 class="eqTitlePadding centerTxt">PROPERTIES</h6>
+      </div>
+      <div class="acEquipmentEquippedLabel ">
+        <h6 class="eqTitlePadding centerTxt">EQUIPPED</h6>
+      </div>
+  
+    
+    </div>
+    
+    <!-- AC ITEMS -->
+    
+    <div class="acEquipmentRow flexRow">
+      <!-- ng-repeat here -->
+      <div class="acEquipmentName dkgreyBkg eqPadding leftTxt">
+        <h5 class=" ">Taco Shell Armor +1</h5>
+      </div>
+      <div class="acEquipmentBonus ltgreyBkg eqPadding centerTxt">
+        <h5 class=" ">+1</h5>
+      </div>
+      <div class="acEquipmentType dkgreyBkg eqPadding centerTxt">
+        <h5 class=" ">LIGHT</h5>
+      </div>
+      <div class="acEquipmentCheck ltgreyBkg eqPadding centerTxt">
+        <h5 class=" ">-2</h5>
+      </div>
+      <div class="acEquipmentSpellFailure dkgreyBkg eqPadding centerTxt">
+        <h5 class=" ">20%</h5>
+      </div>
+      <div class="acEquipmentWeight ltgreyBkg eqPadding centerTxt">
+        <h5 class=" ">50lbs</h5>
+      </div>
+      <div class="acEquipmentDex dkgreyBkg eqPadding centerTxt">
+        <h5 class=" ">+1</h5>
+      </div>
+      <div class="acEquipmentProperties ltgreyBkg eqPadding leftTxt">
+        <p class=" ">Armor ruined when wet.</p>
+      </div>
+      <div class="acEquipmentEquipped ">
+        <div class="combatWeaponsEquipIndicator" ng-click="">
+          <div class="combatWeaponsEquipCheckbox" ng-click="" ng-hide=""></div>
+        </div>
+      </div>
+      <div class="acEquipmentAddRemove flexRow">
+        <h3 class="addRemoveArmor" ng-click="">+</h3>
+        <h3 class="addRemoveArmor" ng-click="">-</h3>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MISCELANEOUS EQUIPMENT -->
+  
+  <div class="equipmentMiscBox flexRow">
+    <div class="eqMiscSectionHead">
+      
+    </div>
+    <div class="eqMiscSectionHead">
+      
+    </div>
+    
+    
+    
+  </div>
+  
+  
+  
+</div>
