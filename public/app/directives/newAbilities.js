@@ -92,13 +92,13 @@ angular.module('scribe')
             })
           };
           for (var j = 0; j < $scope.chosenFeats.length; j++) {
-            characterService.characterCreationObject.prerequisites.push({
-              type: feat,
-              value: $scope.chosenFeats[j].name
+            characterService.characterCreationObject.qualifications.push({
+              "type": "feat",
+              "value": $scope.chosenFeats[j].name
             })
           }
           $scope.abilitiesShower = !$scope.abilitiesShower
-          $scope.spellsShower = !$scope.spellsShower
+          // $scope.spellsShower = !$scope.spellsShower
           $scope.classHasSpellsChecker()
           console.log(characterService.characterCreationObject);
         }

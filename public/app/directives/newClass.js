@@ -47,6 +47,9 @@ angular.module('scribe')
                     })
                     $scope.classShower= !$scope.classShower
                     $scope.abilitiesShower= !$scope.abilitiesShower
+                    if ($scope.classObject.hasSpells) {
+                      $scope.spellsTab = true
+                    }
                     $scope.raceChoice()
                 }
             },
@@ -54,7 +57,8 @@ angular.module('scribe')
                 classes: "=",
                 raceChoice: "&",
                 abilitiesShower: "=",
-                classShower: "="
+                classShower: "=",
+                spellsTab: "="
             },
             link: function(scope, element, attributes) {}
         };
