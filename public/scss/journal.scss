@@ -1,0 +1,34 @@
+.journalHolder{
+  width: 1000px;
+  margin: 20px auto;
+}
+
+.journalHeader{
+  width: 1000px;
+  height: 30px;
+  margin: 0 0 10px 0;
+}
+
+.journalInput{
+  height: 500px;
+  width: 1000px;
+  padding: 50px;
+  font-family: $j;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: #1C0701;
+  border: 0;
+  box-shadow: 10px 10px 5px lightgrey;
+  &:hover{
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 5px 5px 5px grey;
+  }
+  
+}
+
+.journalHeaderTxt{
+  font-family: $j;
+  
+}
