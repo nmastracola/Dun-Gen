@@ -19,7 +19,6 @@ angular.module('scribe').service('sService', function($http){
       method: 'GET',
       url: '/api/feats' + query
     }).then(function(response) {
-      // console.log(response);
       return response.data;
     });
   };
@@ -31,7 +30,17 @@ angular.module('scribe').service('sService', function($http){
       method: 'GET',
       url: '/api/class' + query
     }).then(function(response) {
-      // console.log(response);
+      return response.data;
+    });
+  };
+
+  this.skill = function(id) {
+    var query = "";
+    if (id) query = '?_id=' + id;
+    return $http({
+      method: 'GET',
+      url: '/api/skills' + query
+    }).then(function(response) {
       return response.data;
     });
   };

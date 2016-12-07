@@ -4,7 +4,6 @@ angular.module('scribe')
             restrict: 'E',
             templateUrl: './app/directives/newClass.html',
             controller: function($scope, $state, characterService) {
-                console.log(characterService.characterCreationObject.static.classes);
 
                 //CLASS PICKERS
                 $scope.classList = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorceror', 'Wizard']

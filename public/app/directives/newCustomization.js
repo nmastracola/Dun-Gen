@@ -20,7 +20,6 @@ return{
       $scope.charObj.misc = $scope.customization.misc
       $scope.charObj.characterDescription = $scope.customization.characterDescription
       $scope.charObj.biography = $scope.customization.biography
-      console.log("CharObj", $scope.charObj);
     }
 
     $scope.submitNewChar = function() {

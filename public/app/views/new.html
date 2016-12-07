@@ -5,7 +5,7 @@
     </div>
     <!-- first section -->
 
-      <rolls ng-show="rollShower" roll-shower="rollShower" race-shower="raceShower" attributes="attributes"></rolls>
+      <rolls ng-show="rollShower" roll-shower="rollShower" race-shower="raceShower" attributes="attributes" attribute-modifier="attributeModifier"></rolls>
 
     <!-- =============  race header   =============-->
     <div class="newHeader" id="raceHeader" ng-click="raceShower = !raceShower">
@@ -38,7 +38,7 @@
       </div>
       <!-- skills section -->
 
-        <skills ng-show="skillsShower"></skills>
+        <skills ng-show="skillsShower" attributes="attributes" skills="skills" attribute-modifier="attributeModifier"></skills>
 
 
     <!-- =============  spells header   =============-->

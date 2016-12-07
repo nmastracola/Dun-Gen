@@ -17,8 +17,6 @@ module.exports = {
 
 // UPDATE //
   editFeat: function(req, res,next){
-    console.log(req.query);
-    console.log(req.query.name);
     Feats.update(req.query, req.body, function(err,user){
       if(err){
         res.status(500).send(err);
@@ -208,6 +206,14 @@ module.exports = {
      res.status(200).send(user);
    })
  },
+ getUserCharacters: function(req, res, next){
+   Character.find({userId: req.user._id}, function(err, chars){
+     if(err){
+       res.status(500).send(err);
+     }
+     res.status(200).send(chars);
+   }) 
+ },
 
  //TEMP USER
  addUser: function(req, res, next){
@@ -220,9 +226,7 @@ module.exports = {
  },
  createCharacter: function(req, res, next){
    Character.create(req.body, function(err, user){
-     console.log(req.body);
      if(err){
-       console.log(err);
        res.status(500).send(err);
      }
      res.status(200).send(user);
