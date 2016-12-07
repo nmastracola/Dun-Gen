@@ -275,10 +275,6 @@ var characterSchema = mongoose.Schema({
           type: String,
           required: true
       },
-      attributeModifier: {
-          type: Number,
-          required: true
-      },
       miscellaneousModifier: {
           type: Number
       },

@@ -5,17 +5,37 @@ return{
   templateUrl: './app/directives/newSkills.html',
   controller: function ($scope, characterService) {
 
-    console.log($scope.skills);
-
+    $scope.characterSkillsArrs=[]
     $scope.coolSkillClassToggler = function (skill) {
       var charClass = characterService.characterCreationObject.static.classes[0].class
-      console.log(skill);
       for (var props in skill) {
         // console.log(props);
         // console.log(charClass);
         if (props === charClass) {
           // console.log(skill[props]);
+
           return skill[props];
+        }
+      }
+    }
+
+    $scope.setSkills = function () {
+      for (var i = 0; i < skills.length; i++) {
+        var charClass = characterService.characterCreationObject.static.classes[0].class
+        for (var props in skill[i]) {
+          if (props === charClass) {
+            $scope.characterSkillsArrs.push({
+              "name": skill[i].Skill,
+              "classSkill": false,
+              "primaryAttribute": skill[i].Ability,
+              "miscellaneousModifier": 0,
+              "total": null,
+              "useUntrained": skill[i].Untrained,
+              "armorCheck": skill[i].ArmorCheck,
+              "Description": skill[i].Description
+            })
+            return skill[props];
+          }
         }
       }
     }
