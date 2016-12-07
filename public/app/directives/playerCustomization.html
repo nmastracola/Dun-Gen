@@ -1,1 +1,74 @@
-<h1>player customization test</h1>
+<section class="newSection" id="customization">
+
+<div class="detialHolder">
+
+  <div class="smallDetails">
+
+  <div class="detailRow">
+    <h6 class="detailText">NAME</h6>
+    <input class="detailInput ltgreyBkg" type="text" name="diety" ng-model="customization.name">
+  </div>
+
+  <div class="detailRow">
+    <h6 class="detailText">HOMELAND</h6>
+    <input class="detailInput greyBkg" type="text" name="diety" ng-model="customization.homeland">
+  </div>
+
+  <div class="detailRow">
+    <h6 class="detailText">DEITY</h6>
+    <input class="detailInput ltgreyBkg" type="text" name="diety" ng-model="customization.diety">
+  </div>
+
+  <div class="detailRow">
+    <h6 class="detailText">AGE</h6>
+    <input class="detailInput greyBkg" type="text" name="diety" ng-model="customization.age">
+  </div>
+
+  <div class="detailRow">
+    <h6 class="detailText">HEIGHT</h6>
+    <input class="detailInput ltgreyBkg" type="text" name="diety" ng-model="customization.height">
+  </div>
+
+  <div class="detailRow">
+    <h6 class="detailText">WEIGHT</h6>
+    <input class="detailInput greyBkg" type="text" name="diety" ng-model="customization.weight">
+  </div>
+
+  <div class="detailRow">
+    <h6 class="detailText">HAIR</h6>
+    <input class="detailInput ltgreyBkg" type="text" name="diety" ng-model="customization.hair">
+  </div>
+
+  <div class="detailRow">
+    <h6 class="detailText">EYES</h6>
+    <input class="detailInput greyBkg" type="text" name="diety" ng-model="customization.eyes">
+  </div>
+
+  <div class="detailRow">
+    <h6 class="detailText">MISC</h6>
+    <textarea class="detailInput ltgreyBkg tripleDetail" type="text" name="diety" ng-model="customization.misc"></textarea>
+  </div>
+  </div>
+
+  <div class="customizationDivider"></div>
+
+  <div class="descriptionHolder">
+    <h6>CHARACTER DESCRIPTION</h6>
+    <textarea class="description" type="text" name="description" value="" ng-model="customization.characterDescription"></textarea>
+  </div>
+
+</div>
+
+<div class="biographyHolder">
+  <h6 class="bioHeader">BIOGRAPHY</h6>
+  <textarea class="biography" ng-model="customization.biography"></textarea>
+</div>
+
+<button type="button" name="button" ng-click="customizationFields(); submitNewChar()">SUBMIT</button>
+
+
+
+
+
+
+</section>
