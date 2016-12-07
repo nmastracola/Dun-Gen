@@ -76,6 +76,23 @@ angular.module('scribe')
             $scope.qualArrs = [];
           }
         }
+        $scope.characterSkillsArrs=[]
+        $scope.setSkills = function () {
+          for (var i = 0; i < $scope.skills.length; i++) {
+            var charClass = characterService.characterCreationObject.static.classes[0].class
+              characterService.characterCreationObject.skills.push({
+                "name": $scope.skills[i].Skill,
+                "classSkill": false,
+                "primaryAttribute": $scope.skills[i].Ability,
+                "miscellaneousModifier": 0,
+                "total": null,
+                "useUntrained": $scope.skills[i].Untrained,
+                "armorCheck": $scope.skills[i].ArmorCheck,
+                "Description": $scope.skills[i].Description
+              })
+              console.log(characterService.characterCreationObject.skills);
+          }
+        }
 
         $scope.newCharFeats = function() {
           for (var i = 0; i < $scope.chosenFeats.length; i++) {
@@ -91,8 +108,10 @@ angular.module('scribe')
             })
           }
           $scope.abilitiesShower = !$scope.abilitiesShower
+          $scope.skillsShower = !$scope.skillsShower
           // $scope.spellsShower = !$scope.spellsShower
           $scope.classHasSpellsChecker()
+          $scope.setSkills()
         }
         $scope.hideIneligableFeats = function() {
           // hideIneligableFeats
@@ -105,7 +124,9 @@ angular.module('scribe')
         spellsShower: "=",
         classHasSpellsChecker: "&",
         chosenRaceTraits: "=",
-        featToggler: "="
+        featToggler: "=",
+        skills: "=",
+        skillsShower: "="
       },
       link: function(scope, element, attributes) {}
     };

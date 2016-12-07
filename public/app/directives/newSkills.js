@@ -4,20 +4,23 @@ return{
   restrict: 'E',
   templateUrl: './app/directives/newSkills.html',
   controller: function ($scope, characterService) {
-
-    console.log($scope.skills);
-
+    $scope.skills = characterService.characterCreationObject.skills
+    $scope.characterSkillsArrs=[]
     $scope.coolSkillClassToggler = function (skill) {
       var charClass = characterService.characterCreationObject.static.classes[0].class
-      console.log(skill);
       for (var props in skill) {
         // console.log(props);
         // console.log(charClass);
         if (props === charClass) {
           // console.log(skill[props]);
+
           return skill[props];
         }
       }
+    }
+
+    $scope.logger = function () {
+      console.log($scope.skills);
     }
 
     $scope.setAttributeModifier = function() {
@@ -60,7 +63,7 @@ return{
     }
   },
   scope: {
-    skills:"=",
+    // skills: "=",
     attributes:"=",
     attributeModifier:"="
 

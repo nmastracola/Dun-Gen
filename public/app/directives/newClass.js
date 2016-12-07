@@ -30,10 +30,13 @@ angular.module('scribe')
                 //DISPLAY CLASS
                 $scope.displayClass = function() {
                     for (var i = 0; i < $scope.classes.length; i++) {
+                      console.log($scope.classes[i]);
+                      // think things break here
                         if ($scope.classes[i].class === $scope.chosenClass) {
                             $scope.classObject = $scope.classes[i];
                         }
                     }
+                    console.log($scope.classObject);
                 }
                 $scope.setClass = function() {
                     characterService.characterCreationObject.static.classes.push({
@@ -51,6 +54,7 @@ angular.module('scribe')
                     }
                     $scope.raceChoice()
                 }
+                
             },
             scope: {
                 classes: "=",
