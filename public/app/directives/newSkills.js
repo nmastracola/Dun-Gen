@@ -5,11 +5,8 @@ return{
   templateUrl: './app/directives/newSkills.html',
   controller: function ($scope, characterService) {
 
-    console.log($scope.skills);
-
     $scope.coolSkillClassToggler = function (skill) {
       var charClass = characterService.characterCreationObject.static.classes[0].class
-      console.log(skill);
       for (var props in skill) {
         // console.log(props);
         // console.log(charClass);

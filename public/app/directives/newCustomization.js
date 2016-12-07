@@ -4,7 +4,6 @@ return{
   restrict: 'E',
   templateUrl: './app/directives/newCustomization.html',
   controller: function($scope, characterService) {
-  console.log("class", $scope.classes);
 
     $scope.customization = {}
 
