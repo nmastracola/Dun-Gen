@@ -53,9 +53,7 @@ angular.module("scribe").service("characterService", function($http) {
           level: 1
         }],
         alignment: "",
-            // required: true
-        experience: null
-            // required: true
+        experience: ""
     },
     qualifications: [],
     core: {

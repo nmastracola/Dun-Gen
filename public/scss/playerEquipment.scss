@@ -8,6 +8,7 @@
 
 .eqBigTitlePadding{
   padding: 10px 0 0 0;
+  margin: 0 0 0 20px;
 }
 
 .eqTallTitlePadding{
@@ -113,18 +114,32 @@
 .equipmentMiscBox{
   width: 1200px;
   margin: 20px 0 0 0;
+  flex-wrap: wrap;
 }
 
 .eqMiscSectionHead{
   width: 580px;
   height: 40px;
   margin: 0 20px 0 0;
-  background: blue;
 }
 
+.eqMiscBar{
+  width: 580px;
+  height: 40px;
+  margin: 10px 20px 0 0;
+}
 
+.eqMiscName{
+  width: 400px;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
 
-
+.eqMiscWeight{
+  width: 80px;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
 
 
 

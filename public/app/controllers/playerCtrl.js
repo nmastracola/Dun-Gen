@@ -1,7 +1,7 @@
 angular.module('scribe').controller('playerCtrl', function($scope, sService){
 
 $scope.test = sService.test;
-// ===================================   TOGGLERS  ===================================
+// ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
 
@@ -14,8 +14,17 @@ $scope.togglePlayerDirectives = function(x){
     }
   }
 }
+$scope.playerSubMenuToggler = [false, false, false, false, false, false, true];
 
-
+$scope.togglePlayerSpellDirectives = function(x){
+  for (var i = 0; i < $scope.playerSubMenuToggler.length; i++) {
+    if(i === x){
+      $scope.playerSubMenuToggler[i] = true;
+    }else{
+      $scope.playerSubMenuToggler[i] = false;
+    }
+  }
+}
 // ===================================   PLAYER ATTRIBUTES FPO  ===================================
 
 // ===================================   CORE TAB  ===================================

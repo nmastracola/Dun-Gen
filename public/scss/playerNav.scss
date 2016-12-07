@@ -132,5 +132,14 @@
   height: 40px;
   width: 100%;
   background-color: $p1  ; 
+  justify-content: center;
 }
 
+.subRowHeaders{
+  padding: 12px 0 0 0;
+  margin: 0 20px 0 20px;
+  &:hover{
+    color: $wht;
+    cursor: pointer;
+  }
+}
