@@ -36,5 +36,16 @@
   <p class="PlayerNavTxt">MENU</p>
   </div>
   </div>
-  <div class="bttnSubRow" ng-style="barStyle"></div>
+  <div class="bttnSubRow centerTxt flexRow" ng-style="barStyle">
+    <div class="subRowSpellsTxt flexRow" ng-show="playerMenuToggler[3]">
+      <!-- ng hide or show based on character abilities -->
+      <p class="subRowHeaders" ng-show="playerSubMenuToggler[0]" ng-click="togglePlayerSpellDirectives(0)">BARD</p>
+      <p class="subRowHeaders" ng-show="playerSubMenuToggler[1]" ng-click="togglePlayerSpellDirectives(1)">CLERIC</p>
+      <p class="subRowHeaders" ng-show="playerSubMenuToggler[2]" ng-click="togglePlayerSpellDirectives(2)">DRUID</p>
+      <p class="subRowHeaders" ng-show="playerSubMenuToggler[3]" ng-click="togglePlayerSpellDirectives(3)">PALADIN</p>
+      <p class="subRowHeaders" ng-show="playerSubMenuToggler[4]" ng-click="togglePlayerSpellDirectives(4)">RANGER</p>
+      <p class="subRowHeaders" ng-show="playerSubMenuToggler[5]" ng-click="togglePlayerSpellDirectives(5)">SORCEROR</p>
+      <p class="subRowHeaders" ng-show="playerSubMenuToggler[6]" ng-click="togglePlayerSpellDirectives(6)">WIZARD</p>
+    </div>
+  </div>
 </div>
