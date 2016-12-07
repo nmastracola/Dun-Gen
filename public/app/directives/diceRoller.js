@@ -34,8 +34,6 @@ return{
     };
 
 
-
-
     scope.dBiterator = 1;
     scope.dieResult = 20;
 
@@ -52,13 +50,41 @@ return{
     }
 
     scope.dbIncrementer = function(x){
-      if (scope.dBiterator > 1){
+      if (x > 0){
         scope.dBiterator += x;
-      }else if(scope.dBiterator == 1  && x > 0){
+      }else if(scope.dBiterator >= 2  && x < 0){
         scope.dBiterator += x;
       }
+      console.log(scope.dBiterator);
 
     }
+
+
+
+    // original coooooode
+    // scope.dBiterator = 1;
+    // scope.dieResult = 20;
+    //
+    // scope.dbPercentage = (100 * scope.dBiterator);
+    // scope.dbD4 = (4 * scope.dBiterator);
+    // scope.dbD6 = (6 * scope.dBiterator);
+    // scope.dbD8 = (8 * scope.dBiterator);
+    // scope.dbD10 = (10 * scope.dBiterator);
+    // scope.dbD12 = (12 * scope.dBiterator);
+    // scope.dbD20 = (20 * scope.dBiterator);
+    //
+    // scope.dieReturn = function(x){
+    //   scope.dieResult = x;
+    // }
+    //
+    // scope.dbIncrementer = function(x){
+    //   if (scope.dBiterator > 1){
+    //     scope.dBiterator += x;
+    //   }else if(scope.dBiterator == 1  && x > 0){
+    //     scope.dBiterator += x;
+    //   }
+    //
+    // }
 
     }
   };
