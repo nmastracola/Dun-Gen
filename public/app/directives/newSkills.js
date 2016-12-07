@@ -4,7 +4,7 @@ return{
   restrict: 'E',
   templateUrl: './app/directives/newSkills.html',
   controller: function ($scope, characterService) {
-
+    $scope.skills = characterService.characterCreationObject.skills
     $scope.characterSkillsArrs=[]
     $scope.coolSkillClassToggler = function (skill) {
       var charClass = characterService.characterCreationObject.static.classes[0].class
@@ -19,25 +19,8 @@ return{
       }
     }
 
-    $scope.setSkills = function () {
-      for (var i = 0; i < skills.length; i++) {
-        var charClass = characterService.characterCreationObject.static.classes[0].class
-        for (var props in skill[i]) {
-          if (props === charClass) {
-            $scope.characterSkillsArrs.push({
-              "name": skill[i].Skill,
-              "classSkill": false,
-              "primaryAttribute": skill[i].Ability,
-              "miscellaneousModifier": 0,
-              "total": null,
-              "useUntrained": skill[i].Untrained,
-              "armorCheck": skill[i].ArmorCheck,
-              "Description": skill[i].Description
-            })
-            return skill[props];
-          }
-        }
-      }
+    $scope.logger = function () {
+      console.log($scope.skills);
     }
 
     $scope.setAttributeModifier = function() {
@@ -80,7 +63,7 @@ return{
     }
   },
   scope: {
-    skills:"=",
+    // skills: "=",
     attributes:"=",
     attributeModifier:"="
 
