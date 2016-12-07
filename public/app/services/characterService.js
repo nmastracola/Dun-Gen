@@ -138,61 +138,69 @@ angular.module("scribe").service("characterService", function($http) {
         weaponDamageBonus: null,
         notes: ""
     }],
-    skills: [{
-        name: "",
-            // required: true
-        classSkill: false,
-            // required: true
-        ranks: null,
-            // required: true
-        primaryAttribute:"",
-            // required: true
-        attributeModifier: null,
-            // required: true
-        miscellaneousModifier: null,
-        total: null,
-            // required: true
-        useUntrained: false,
-            // required: true
-        armorCheck: false,
-            // required: true
-        Description: ""
-    }],
-    spellsKnown: [{
-        name: "",
-        spellTracker: null
-    }],
-    feats: [{
-        name: "",
-        active: false,
-        available: null
-    }],
-    abilities: [{
-        name: "",
-        active: false
-    }],
+    skills: [
+    //   {
+    //     name: "",
+    //         // required: true
+    //     classSkill: false,
+    //         // required: true
+    //     ranks: null,
+    //         // required: true
+    //     primaryAttribute:"",
+    //         // required: true
+    //     miscellaneousModifier: null,
+    //     total: null,
+    //         // required: true
+    //     useUntrained: false,
+    //         // required: true
+    //     armorCheck: false,
+    //         // required: true
+    //     Description: ""
+    // }
+  ],
+    spellsKnown: [
+    //   {
+    //     name: "",
+    //     spellTracker: null
+    // }
+  ],
+    feats: [
+    //   {
+    //     name: "",
+    //     active: false,
+    //     available: null
+    // }
+  ],
+    abilities: [
+    //   {
+    //     name: "",
+    //     active: false
+    // }
+  ],
     equipment: [{
-        armorClassItems: [{
-            name: "",
-            cost: null,
-            armorShieldBonus: null,
-            maxDexBonus: null,
-            armorCheckPenalty: null,
-            arcaneSpellFailureChance: null,
-            equipSpeed30: null,
-            equipSpeed20: null,
-            weight: null,
-            type: "",
-            description: ""
-        }],
-        gear: {
-            item: "",
-            cost: null,
-            weight: null,
-            category: "",
-            description: ""
-        },
-        wealth: null
+        armorClassItems: [
+        //   {
+        //     name: "",
+        //     cost: null,
+        //     armorShieldBonus: null,
+        //     maxDexBonus: null,
+        //     armorCheckPenalty: null,
+        //     arcaneSpellFailureChance: null,
+        //     equipSpeed30: null,
+        //     equipSpeed20: null,
+        //     weight: null,
+        //     type: "",
+        //     description: ""
+        // }
+      ],
+        // gear: {
+        //     item: "",
+        //     cost: null,
+        //     weight: null,
+        //     category: "",
+        //     description: ""
+        // },
+        wealth: 0
     }],
     customization: {
         name: "",
