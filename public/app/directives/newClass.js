@@ -11,7 +11,7 @@ angular.module('scribe')
 
                 $scope.chosenClass = "Monk";
                 $scope.classObject = {}
-                
+
                 $scope.classPicker = function(x) {
                     $scope.chosenClass = $scope.classList[x];
                     $scope.displayClass()
@@ -40,6 +40,7 @@ angular.module('scribe')
                 }
                 $scope.displayClass();
                 $scope.setClass = function() {
+                    characterService.characterCreationObject.static.classes = []
                     characterService.characterCreationObject.static.classes.push({
                         "class": $scope.classObject.class,
                         "level": 1
@@ -57,10 +58,10 @@ angular.module('scribe')
                     }
                     $scope.raceChoice()
                 }
-                
+
                 $scope.alignmentToggler = [false, false, false, false, false, false, false, false, false];
                 $scope.alignmentSwitcher = function(x) {
-  
+
                     for (var i = 0; i < $scope.alignmentToggler.length; i++) {
                         if (i == x) {
                           $scope.alignmentCounter = i;
@@ -70,7 +71,7 @@ angular.module('scribe')
                         }
                     }
                 };
-                
+
             },
             scope: {
                 classes: "=",
