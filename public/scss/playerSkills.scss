@@ -105,3 +105,27 @@
   font-size: .8em;
   color: grey;
 }
+
+.skillIncrementerBox{
+  height: 30px;
+  width: 50px;
+  margin: 0 10px 0 10px;
+  color: $blk;
+  border: 0;
+  font-family: $h;
+  font-weight: 700;
+  font-size: 1.5em;
+  padding: 3px 0 0 15px;
+  &:hover{
+    background: grey;
+    color: $wht;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 5px 5px 5px darkgrey;
+  }
+  
+}
+
+
+

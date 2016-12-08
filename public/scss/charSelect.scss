@@ -1,97 +1,89 @@
 .charSelectBkgrd {
-  background-color: #f1efeb;
   width: 100%;
   min-height: 100vh;
+  background-image: url("../images/characterSelectionBkg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right:0
 }
 
 .charSelectFullWrapper{
-  width: 100%;
-  height: 100%;
+  width: 750px;
+  margin: 110px auto;
+  
 }
 
 .charSelectTopWrapper{
-  width: 100%;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
 .charSelectCreateChar{
-  width: 400px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $blk;
+  width: 100%;
+  height: 50px;
   cursor: pointer;
+  padding: 15px 0 0 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+8,292331+40,292331+60,ffffff+92&0+8,1+40,1+60,0+92 */
+background: -moz-linear-gradient(left,  rgba(255,255,255,0) 8%, rgba(41,35,49,1) 40%, rgba(41,35,49,1) 60%, rgba(255,255,255,0) 92%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 8%,rgba(41,35,49,1) 40%,rgba(41,35,49,1) 60%,rgba(255,255,255,0) 92%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(255,255,255,0) 8%,rgba(41,35,49,1) 40%,rgba(41,35,49,1) 60%,rgba(255,255,255,0) 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+
   &:focus{
     outline: none;
+  }
+  &:hover{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+8,7081af+40,7081af+60,ffffff+92&0+8,1+40,1+60,0+92 */
+background: -moz-linear-gradient(left,  rgba(255,255,255,0) 8%, rgba(112,129,175,1) 40%, rgba(112,129,175,1) 60%, rgba(255,255,255,0) 92%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 8%,rgba(112,129,175,1) 40%,rgba(112,129,175,1) 60%,rgba(255,255,255,0) 92%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(255,255,255,0) 8%,rgba(112,129,175,1) 40%,rgba(112,129,175,1) 60%,rgba(255,255,255,0) 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
   }
 }
 
 .charSelectCreateCharText{
-  color: #f1efeb;
+
 }
 
 .charSelectBottomWrapper{
     width: 100%;
-    min-height: 60vh;
-}
-
-.charSelectBottomTitle{
-  text-align: center;
-  padding: 10px;
-  box-shadow: 0 5px 5px $blk;
+    margin: 20px 0 0 0;
 }
 
 .charSelectCharListWrapper{
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  margin: 20px 0 0;
 }
 
-.charSelectCharList{
-  min-width: 200px;
-  width: 20%;
-  min-height: 300px;
-  background-color: $blk;
-  margin: 20px;
-  flex-direction: column;
-  text-align: center;
-  padding-bottom: 20px;
-}
-
-.charSelectCharNameWrapper{
-  padding: 20px;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.charSelectCharRow{
+  background: $blk;
+  height:40px;
+  width: 720px;
+  margin: 10px 5px 10px 5px;
 }
 
 .charSelectCharName{
   color: #f1efeb;
+  width: 300px;
+  padding: 10px 0 0 10px;
+  &:hover{
+    cursor: pointer;
+    color: crimson;
+  }
 }
 
-.charSelectCharPortraitWrapper{
-  margin-bottom: 20px;
-}
-
-.charSelectCharPortrait{
-  width: 150px;
-  height: 200px;
+.charSelectClassesWrapperWrapper{
+    margin: 10px 0 20px 0;
 }
 
 .charSelectCharClassesWrapper{
-  width: 100%;
-  margin-bottom: 10px;
+
 }
 
 .charSelectCharClass{
-  color: #f1efeb;
+  margin: 10px 10px 0 0;
+
 }

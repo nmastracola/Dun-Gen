@@ -4,25 +4,31 @@ return{
   restrict: 'E',
   templateUrl: './app/directives/newSkills.html',
   controller: function ($scope, characterService) {
-    $scope.skills = characterService.characterCreationObject.skills
+    $scope.charGenSkills = characterService.characterCreationObject.skills
     $scope.characterSkillsArrs=[]
     $scope.coolSkillClassToggler = function (skill) {
       var charClass = characterService.characterCreationObject.static.classes[0].class
-      for (var props in skill) {
-        // console.log(props);
-        // console.log(charClass);
-        if (props === charClass) {
-          // console.log(skill[props]);
+      for (var i = 0; i < $scope.skills.length; i++) {
+        if ($scope.skills[i].skill === skill.name) {
+          for (var props in $scope.skills[i]) {
+            console.log($scope.skills[i][props], "props");
+            console.log($scope.skills[i], "skill at i");
+            // console.log(charClass);
+            if (props === charClass) {
+              // console.log(skill[props]);
 
-          return skill[props];
+              return $scope.skills[i][props];
+            }
+          }
         }
       }
     }
 
-    $scope.logger = function () {
-      console.log($scope.skills);
-    }
+    // $scope.logger = function () {
+    //   console.log($scope.charGenskills);
+    // }
 
+    // works
     $scope.setAttributeModifier = function() {
         for (var i = 0; i < $scope.attributes.length; i++) {
           var attribute = $scope.attributes[i];
@@ -35,11 +41,23 @@ return{
           $scope.attributeModifier[i] = modifier
         }
     }
+    $scope.ranks = 0;
+    $scope.setSkillTotal = function (skill) {
 
+      // ($scope.ranks *1) = document.getElementById("rankClick").value
+      // console.log(document.getElementById("rankClick").value);
+      // skill.ranks = $scope.ranks;
+      // console.log($scope.ranks);
+      skill.ranks = ($scope.ranks * 1)
+      skill.total = ($scope.abilityMod * 1) + (skill.ranks * 1) + (skill.miscellaneousModifier * 1)
+      return skill.total
+    }
+
+    // works
     $scope.skillAbilityMod = function (skill) {
       $scope.setAttributeModifier()
       $scope.abilityMod = 0;
-      switch (skill.Ability) {
+      switch (skill.primaryAttribute) {
     case "Str":
         $scope.abilityMod = $scope.attributeModifier[0];
         break;
@@ -63,7 +81,7 @@ return{
     }
   },
   scope: {
-    // skills: "=",
+    skills: "=",
     attributes:"=",
     attributeModifier:"="
 

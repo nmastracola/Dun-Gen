@@ -6,7 +6,7 @@ angular.module('scribe')
             controller: function($scope, $state, characterService) {
 
                 //CLASS PICKERS
-                $scope.classList = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorceror', 'Wizard']
+                $scope.classList = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Wizard']
 
                 $scope.chosenClass = "Monk";
                 $scope.classObject = {}
@@ -30,13 +30,12 @@ angular.module('scribe')
                 //DISPLAY CLASS
                 $scope.displayClass = function() {
                     for (var i = 0; i < $scope.classes.length; i++) {
-                      console.log($scope.classes[i]);
                       // think things break here
                         if ($scope.classes[i].class === $scope.chosenClass) {
                             $scope.classObject = $scope.classes[i];
+                            $scope.classFeatures = $scope.classObject.classFeaturesDump
                         }
                     }
-                    console.log($scope.classObject);
                 }
                 $scope.setClass = function() {
                     characterService.characterCreationObject.static.classes.push({
@@ -45,7 +44,7 @@ angular.module('scribe')
                     })
                     characterService.characterCreationObject.qualifications.push({
                         "type": "bab",
-                        "value": 1
+                        "value": $scope.classObject.genericLevelGain[0].baseAttackBonus
                     })
                     $scope.classShower= !$scope.classShower
                     $scope.abilitiesShower= !$scope.abilitiesShower
