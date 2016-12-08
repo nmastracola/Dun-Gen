@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+  cursor: pointer;
 }
 
 .classImg{
@@ -49,12 +50,6 @@ background: -moz-linear-gradient(left,  #292331 2%, #ffffff 40%, #ffffff 60%, #2
 background: -webkit-linear-gradient(left,  #292331 2%,#ffffff 40%,#ffffff 60%,#292331 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to right,  #292331 2%,#ffffff 40%,#ffffff 60%,#292331 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#292331', endColorstr='#292331',GradientType=1 ); /* IE6-9 */
-}
-
-.classContents{
-  width: 85%;
-  margin: 20px auto;
-  line-height: 1.2em;
 }
 
 .classImgSvg{
@@ -238,6 +233,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   background: linear-gradient(to right,  rgba(255,255,255,1) 25%,rgba(152,0,255,1) 50%,rgba(255,255,255,1) 75%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 
+}
+
+.classContents{
+  width: 85%;
+  margin: 20px auto;
+  line-height: 1.2em;
+}
+
+.alignmentEnabler{
+  background-color: lightgray;
+  opacity: .9;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.alignmentChanger{
+  margin-bottom: 20px;
+  height: 40px;
+  width: 100%;
+  background-color: lightgray;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alignmentChangerOptions{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  border: solid transparent 5px;
+  position: relative;
 }
 
 .classContentsShortDesc{
