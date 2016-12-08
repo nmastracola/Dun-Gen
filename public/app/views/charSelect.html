@@ -1,26 +1,28 @@
 <div class="charSelectBkgrd">
   <div class="charSelectFullWrapper">
+    
     <div class="charSelectTopWrapper">
-      <div ui-sref="new" class="charSelectCreateChar">
-        <h3 class="charSelectCreateCharText">Create New Character</h3>
+      <div ui-sref="new" class="charSelectCreateChar centerTxt">
+        <h3 class="charSelectCreateCharText offWhtTxt">CREATE NEW CHARACTER</h3>
       </div>
     </div>
+    
+    <!-- ng-show if there are saved characters -->
     <div class="charSelectBottomWrapper">
-      <div class="charSelectBottomTitle">
-        <h2>Saved Characters</h2>  
+      <div class="charSelectCreateChar centerTxt">
+        <h3 class="charSelectCreateCharText offWhtTxt">SAVED CHARACTERS</h3>  
       </div>
-      <div class="charSelectCharListWrapper">
-        <div class="charSelectCharList" ng-repeat="char in userChars">
-          <div class="charSelectCharNameWrapper">
-            <h4 class="charSelectCharName">{{char.characterName}}</h4>
-          </div>
-          <div class="charSelectCharPortraitWrapper">
-            <img class="charSelectCharPortrait" src="{{char.portraitURL}}">
-          </div>
-          <div class="charSelectCharClassesWrapper" ng-repeat="class in char.classes">
-            <p class="charSelectCharClass">Level {{class.level}} {{class.class}}</p>
-          </div>
+      <div class="charSelectCharListWrapper flexColumn">
+            <!-- individual character starts here -->
+        <div class="charSelectCharRow flexRow" ng-repeat="char in userChars">
+
+            <h4 class="charSelectCharName leftTxt">{{char.characterName}}</h4>
+            <div class="charSelectCharClassesWrapper" ng-repeat="class in char.classes">
+              <p class="charSelectCharClass  flexRow">Level {{class.level}} {{class.class}}</p>
+            </div>
+
         </div>
+        
       </div>
     </div>
   </div>
