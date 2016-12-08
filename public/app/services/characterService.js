@@ -1,42 +1,6 @@
 // INITILIZE SERVICE
 // ============================================================
 angular.module("scribe").service("characterService", function($http) {
-  // CRUD FUNCTIONS
-  // ============================================================
-  this.createCharacter = function(characterData) {
-    return $http({
-      method: 'POST',
-      url: '/character',
-      data: characterData
-    }).then(function(response) {
-      return response;
-    });
-  };
-  this.editCharacter = function(id, characterData) {
-    return $http({
-      method: 'PUT',
-      url: "/character/" + id,
-      data: characterData
-    }).then(function(response) {
-      return response;
-    });
-  };
-  this.deleteCharacter = function(id) {
-    return $http({
-      method: 'DELETE',
-      url: '/character/' + id
-    }).then(function(response) {
-      return response;
-    });
-  };
-  this.getUserCharacters = function(){
-    return $http({
-      method: 'GET',
-      url: '/api/characters'
-    }).then(function(response){
-      return response.data
-    })
-  };
   // OTHER FUNCTIONS
   // ============================================================
   this.characterCreationObject = {
@@ -205,7 +169,7 @@ angular.module("scribe").service("characterService", function($http) {
     customization: {
         name: "",
         homeland: "",
-        diety: "",
+        deity: "",
         age: "",
         height: "",
         weight: "",
@@ -247,6 +211,22 @@ angular.module("scribe").service("characterService", function($http) {
     return $http({
       method: 'DELETE',
       url: '/character/' + id
+    }).then(function(response) {
+      return response;
+    });
+  };
+  this.getUserCharacters = function(){
+    return $http({
+      method: 'GET',
+      url: '/api/characters'
+    }).then(function(response){
+      return response.data
+    })
+  };
+  this.getCharObject = function(id) { //ADD user id later
+    return $http({
+      method: 'GET',
+      url: '/api/character' + id
     }).then(function(response) {
       return response;
     });
