@@ -11,8 +11,8 @@ return{
       for (var i = 0; i < $scope.skills.length; i++) {
         if ($scope.skills[i].skill === skill.name) {
           for (var props in $scope.skills[i]) {
-            console.log($scope.skills[i][props], "props");
-            console.log($scope.skills[i], "skill at i");
+            // console.log($scope.skills[i][props], "props");
+            // console.log($scope.skills[i], "skill at i");
             // console.log(charClass);
             if (props === charClass) {
               // console.log(skill[props]);
@@ -24,9 +24,71 @@ return{
       }
     }
 
+
     // $scope.logger = function () {
     //   console.log($scope.charGenskills);
     // }
+    $scope.hitDice = 0
+
+    $scope.hitDiceSetter = function () {
+      var tempHD = 0
+      for (var i = 0; i < characterService.characterCreationObject.static.classes.length; i++) {
+        tempHD += characterService.characterCreationObject.static.classes[i].level
+      }
+      $scope.hitDice = tempHD
+      console.log($scope.hitDice);
+    }
+
+    $scope.ranks = 0;
+    $scope.skillRanksSetter = function (skill, numToAdd) {
+      $scope.hitDiceSetter();
+      for (var i = 0; i < $scope.charGenSkills.length; i++) {
+        if ($scope.charGenSkills[i] === skill) {
+          if (numToAdd !== 0) {
+            console.log($scope.hitDice);
+            if (numToAdd > 0 && $scope.remainingSkills > 0 && $scope.charGenSkills[i].ranks < $scope.hitDice) {
+              $scope.charGenSkills[i].ranks += numToAdd
+              $scope.remainingSkills -= numToAdd
+              return $scope.charGenSkills[i].ranks
+            }
+            if (numToAdd < 0 && $scope.charGenSkills[i].ranks > 0) {
+              $scope.charGenSkills[i].ranks += numToAdd
+              $scope.remainingSkills -= numToAdd
+              return $scope.charGenSkills[i].ranks
+            }
+          }
+        }
+      }
+    }
+
+    $scope.skillmiscellaneousMod = function (skill) {
+      if (skill.classSkill) {
+        for (var i = 0; i < $scope.charGenSkills.length; i++) {
+          if ($scope.charGenSkills[i].name === skill.name) {
+            if ($scope.charGenSkills[i].ranks > 0) {
+              $scope.charGenSkills[i].miscellaneousModifier = 3
+              return $scope.charGenSkills[i].miscellaneousModifier
+            }
+            else if ($scope.charGenSkills[i].ranks === 0) {
+              $scope.charGenSkills[i].miscellaneousModifier = 0
+              return $scope.charGenSkills[i].miscellaneousModifier
+            }
+          }
+        }
+      }else{
+        return skill.miscellaneousModifier
+      }
+    }
+
+    $scope.setSkillTotal = function (skill) {
+      for (var i = 0; i < $scope.charGenSkills.length; i++) {
+        if ($scope.charGenSkills[i] === skill) {
+        $scope.charGenSkills[i].total = $scope.abilityMod + $scope.charGenSkills[i].ranks + $scope.charGenSkills[i].miscellaneousModifier
+        return $scope.charGenSkills[i].total
+        }
+      }
+    }
+
 
     // works
     $scope.setAttributeModifier = function() {
@@ -41,18 +103,6 @@ return{
           $scope.attributeModifier[i] = modifier
         }
     }
-    $scope.ranks = 0;
-    $scope.setSkillTotal = function (skill) {
-
-      // ($scope.ranks *1) = document.getElementById("rankClick").value
-      // console.log(document.getElementById("rankClick").value);
-      // skill.ranks = $scope.ranks;
-      // console.log($scope.ranks);
-      skill.ranks = ($scope.ranks * 1)
-      skill.total = ($scope.abilityMod * 1) + (skill.ranks * 1) + (skill.miscellaneousModifier * 1)
-      return skill.total
-    }
-
     // works
     $scope.skillAbilityMod = function (skill) {
       $scope.setAttributeModifier()
@@ -83,7 +133,11 @@ return{
   scope: {
     skills: "=",
     attributes:"=",
-    attributeModifier:"="
+    attributeModifier:"=",
+    classHasSpellsChecker: "&",
+    classes: "=",
+    remainingSkills: "="
+
 
   },
   link: function( scope, element, attributes ) {}

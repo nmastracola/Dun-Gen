@@ -78,7 +78,7 @@ angular.module('scribe')
                   }
                   $scope.raceShower = !$scope.raceShower;
                   $scope.classShower = !$scope.classShower;
-
+                  $scope.displayClass();
                   return
                 }
                 $scope.info = function() {
@@ -168,7 +168,12 @@ angular.module('scribe')
               races: "=",
               attributes: "=",
               raceShower: "=",
-              classShower: "="
+              classShower: "=",
+              displayClass: "&",
+              chosenClass: "=",
+              classes: "=",
+              classFeatures: "=",
+              classObject: "="
           },
           link: function(scope, element, attributes) {}
       };
