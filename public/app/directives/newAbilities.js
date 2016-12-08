@@ -81,7 +81,7 @@ angular.module('scribe')
           for (var i = 0; i < $scope.skills.length; i++) {
             characterService.characterCreationObject.skills.push({
               "name": $scope.skills[i].Skill,
-              "ranks": $scope.ranks,
+              "ranks": 0,
               "primaryAttribute": $scope.skills[i].Ability,
               "miscellaneousModifier": 0,
               "total": 0,
@@ -113,7 +113,7 @@ angular.module('scribe')
           }
           $scope.abilitiesShower = !$scope.abilitiesShower
           $scope.skillsShower = !$scope.skillsShower
-
+          $scope.setRemainingSkills()
           $scope.setSkills()
         }
         $scope.hideIneligableFeats = function() {
@@ -125,11 +125,11 @@ angular.module('scribe')
         feats: '=',
         abilitiesShower: "=",
         spellsShower: "=",
-        classHasSpellsChecker: "&",
         chosenRaceTraits: "=",
         featToggler: "=",
         skills: "=",
-        skillsShower: "="
+        skillsShower: "=",
+        setRemainingSkills: "&"
       },
       link: function(scope, element, attributes) {}
     };

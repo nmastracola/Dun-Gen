@@ -4,103 +4,110 @@
 
 
     <div class="singleSkillHolder">
-      <div class=" skillTitleHeader">
-        <p class="skillHeaderTxt"><br>SKILL NAME</p>
-      </div>
-      <div class="skillClassSkillIndicatorHeader ">
-        <p class="skillHeaderTxt">CLASS<br>SKILL</p>
-      </div>
-      <div class=" skillHeader">
-        <p class="skillHeaderTxt"><br>RANKS</p>
-      </div>
-      <div class=" skillHeader">
-          <p class="skillHeaderTxt">ABILITY<br>MOD.</p>
-      </div>
+        <div class=" skillTitleHeader">
+            <p class="skillHeaderTxt"><br>SKILL NAME</p>
+        </div>
+        <div class="skillClassSkillIndicatorHeader ">
+            <p class="skillHeaderTxt">CLASS<br>SKILL</p>
+        </div>
+        <div class=" skillHeader">
+            <p class="skillHeaderTxt"><br>RANKS</p>
+        </div>
+        <div class=" skillHeader">
+            <p class="skillHeaderTxt">ABILITY<br>MOD.</p>
+        </div>
 
-      <div class=" skillHeader">
-          <p class="skillHeaderTxt">MISC<br>MOD.</p>
-      </div>
-      <div class=" skillHeader">
-          <p class="skillHeaderTxt"><br>TOTAL</p>
-      </div>
+        <div class=" skillHeader">
+            <p class="skillHeaderTxt">MISC<br>MOD.</p>
+        </div>
+        <div class=" skillHeader">
+            <p class="skillHeaderTxt"><br>TOTAL</p>
+        </div>
 
     </div>
 
     <!-- RIGHT HEADERS -->
 
     <div class="singleSkillHolder">
-      <div class=" skillTitleHeader">
-        <p class="skillHeaderTxt"><br>SKILL NAME</p>
-      </div>
-      <div class="skillClassSkillIndicatorHeader ">
-        <p class="skillHeaderTxt">CLASS<br>SKILL</p>
-      </div>
-      <div class=" skillHeader">
-        <p class="skillHeaderTxt"><br>RANKS</p>
-      </div>
-      <div class=" skillHeader">
-          <p class="skillHeaderTxt">ABILITY<br>MOD.</p>
-      </div>
-      <div class=" skillHeader">
-          <p class="skillHeaderTxt">MISC<br>MOD.</p>
-      </div>
-      <div class=" skillHeader">
-          <p class="skillHeaderTxt"><br>TOTAL</p>
-      </div>
+        <div class=" skillTitleHeader">
+            <p class="skillHeaderTxt"><br>SKILL NAME</p>
+        </div>
+        <div class="skillClassSkillIndicatorHeader ">
+            <p class="skillHeaderTxt">CLASS<br>SKILL</p>
+        </div>
+        <div class=" skillHeader">
+            <p class="skillHeaderTxt"><br>RANKS</p>
+        </div>
+        <div class=" skillHeader">
+            <p class="skillHeaderTxt">ABILITY<br>MOD.</p>
+        </div>
+        <div class=" skillHeader">
+            <p class="skillHeaderTxt">MISC<br>MOD.</p>
+        </div>
+        <div class=" skillHeader">
+            <p class="skillHeaderTxt"><br>TOTAL</p>
+        </div>
 
     </div>
 
     <!-- ======================= BEGIN NG-REPEAT  =======================-->
-  <div class="singleSkillHolder" ng-repeat="skill in charGenSkills track by $index">
+    <div class="singleSkillHolder" ng-repeat="skill in charGenSkills track by $index">
 
-    <div class="skillTitle">
-      <h5>{{skill.name}}</h5>
-      <!-- ng hide or show this div, toggler is located in directive js -->
-      <div class="skillPlusMinus" ng-show="customSkillToggler">
-        <h5 class="customSkill">+</h5>
-        <h5 class="customSkill">-</h5>
-      </div>
-    </div>
-
-    <div class="skillClassSkillIndicator" ng-click="">
-
-
-        <!-- ng hide or show this div, toggler is located in directive js -->
-      <div class="skillClassSkillIndicated" ng-show="{{skill.classSkill}}"></div>
-    </div>
-
-    <input class="skillIncrementerBox ltgreyBkg" type="number" name="ranks" min="0" id="rankClick" value="0" ng-change="setSkillTotal(skill, ranks)" ng-model="ranks">
-
-    <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">{{skillAbilityMod(skill)}}</h3>
-    </div>
-    <!-- input box misc mod -->
-    <div class="skillStatBox ltgreyBkg">
-        <h3 class="dkSkillTxt">{{skill.miscellaneousModifier}}</h3>
-    </div>
-    <!-- total box  -->
-    <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">{{setSkillTotal(skill)}}</h3>
-    </div>
-
-  <!-- //end single row -->
-
-
-
-
-</div>
-<div class="buttonHolder">
-    <div class="txtAndButton" ng-click="rollBtn = true;">
-        <h5 class="txtButton">CONFIRM</h5>
-        <div class="buttonBase">
-            <div class="buttonSelected" ng-show="rollBtn"></div>
+        <div class="skillTitle">
+            <h5>{{skill.name}}</h5>
+            <!-- ng hide or show this div, toggler is located in directive js -->
+            <div class="skillPlusMinus" ng-show="customSkillToggler">
+                <h5 class="customSkill">+</h5>
+                <h5 class="customSkill">-</h5>
+            </div>
         </div>
-    </div>
-    <div class="txtAndButton">
-        <div class="buttonBase" ng-click="rollBtn = false">
-            <div class="buttonSelected" ng-hide="rollBtn"></div>
-        </div>
-        <h5 class="txtButton">CANCEL</h5>
-    </div>
 
-</div>
+        <div class="skillClassSkillIndicator" ng-click="">
+
+
+            <!-- ng hide or show this div, toggler is located in directive js -->
+            <div class="skillClassSkillIndicated" ng-show="{{skill.classSkill}}"></div>
+        </div>
+        <div class="skillStatBox ltgreyBkg">
+            <h3 class="dkSkillTxt">{{skill.ranks}}</h3>
+        </div>
+        <div class="skillIncrementerArrowHolder">
+            <div class="skillUpArrow" ng-click="skillRanksSetter(skill, 1)"></div>
+            <div class="skillDownArrow" ng-click="skillRanksSetter(skill, -1)"></div>
+        </div>
+
+        <div class="skillStatBox dkgreyBkg">
+            <h3 class="dkSkillTxt">{{skillAbilityMod(skill)}}</h3>
+        </div>
+        <!-- input box misc mod -->
+        <div class="skillStatBox ltgreyBkg">
+            <h3 class="dkSkillTxt">{{skillmiscellaneousMod(skill)}}</h3>
+        </div>
+        <!-- total box  -->
+        <div class="skillStatBox dkgreyBkg">
+            <h3 class="dkSkillTxt">{{setSkillTotal(skill)}}</h3>
+        </div>
+
+        <!-- //end single row -->
+
+    </div>
+    REMAINING SKILL RANKS
+    <div class="remainingFeatsContainer">
+       <!-- This logic is doable but I am thinking it is MVP+ -->
+    <div>{{remainingSkills}}</div>
+    </div>
+    <div class="buttonHolder">
+        <div class="txtAndButton" ng-click="rollBtn = true; classHasSpellsChecker()">
+            <h5 class="txtButton">CONFIRM</h5>
+            <div class="buttonBase">
+                <div class="buttonSelected" ng-show="rollBtn"></div>
+            </div>
+        </div>
+        <div class="txtAndButton">
+            <div class="buttonBase" ng-click="rollBtn = false">
+                <div class="buttonSelected" ng-hide="rollBtn"></div>
+            </div>
+            <h5 class="txtButton">CANCEL</h5>
+        </div>
+
+    </div>
