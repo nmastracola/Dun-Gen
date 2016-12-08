@@ -1,0 +1,54 @@
+.skillsHudContainer {
+  width: 650px;
+  height: 130px;
+  justify-content: center;
+}
+
+.name {
+  color: grey;
+}
+
+.leftSkillsBoxContainer {
+  width: 45%;
+  height: 100%;
+  margin: 5px;
+}
+
+.skillDesc {
+  color: black;
+  height: 80%;
+  overflow: hidden;
+  overflow-y: scroll;
+
+}
+
+.difficultyContainer {
+  height: 17px;
+  padding-top: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.rightSkillsBoxContainer {
+  width: 45%;
+  height: 100%;
+  margin: 5px;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+// arrow styling if we decide to implement it
+// .floatArrow {
+//   float: right;
+//   margin-top: -8px;
+// }
+
+.textSize {
+  font-size: 12px;
+}

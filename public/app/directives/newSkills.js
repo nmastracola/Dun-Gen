@@ -28,13 +28,25 @@ return{
     // $scope.logger = function () {
     //   console.log($scope.charGenskills);
     // }
+    $scope.hitDice = 0
+
+    $scope.hitDiceSetter = function () {
+      var tempHD = 0
+      for (var i = 0; i < characterService.characterCreationObject.static.classes.length; i++) {
+        tempHD += characterService.characterCreationObject.static.classes[i].level
+      }
+      $scope.hitDice = tempHD
+      console.log($scope.hitDice);
+    }
 
     $scope.ranks = 0;
     $scope.skillRanksSetter = function (skill, numToAdd) {
+      $scope.hitDiceSetter();
       for (var i = 0; i < $scope.charGenSkills.length; i++) {
         if ($scope.charGenSkills[i] === skill) {
           if (numToAdd !== 0) {
-            if (numToAdd > 0 && $scope.remainingSkills > 0) {
+            console.log($scope.hitDice);
+            if (numToAdd > 0 && $scope.remainingSkills > 0 && $scope.charGenSkills[i].ranks < $scope.hitDice) {
               $scope.charGenSkills[i].ranks += numToAdd
               $scope.remainingSkills -= numToAdd
               return $scope.charGenSkills[i].ranks

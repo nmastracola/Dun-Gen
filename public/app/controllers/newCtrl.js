@@ -34,9 +34,17 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
         if (classes[i].hasSpells) {
           $scope.spellsShower = !$scope.spellsShower;
           $scope.skillsShower = !$scope.skillsShower;
-          $scope.spellsTab = !$scope.spellsTab;
         }
       }
+    }
+  }
+
+  $scope.remainingFeats = 1
+  $scope.setRemainingFeats = function () {
+    $scope.remainingFeats = 1
+    if (characterService.characterCreationObject.static.race === 'Humans') {
+      console.log(characterService.characterCreationObject.static.race);
+      $scope.remainingFeats += 1
     }
   }
 

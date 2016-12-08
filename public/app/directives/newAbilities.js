@@ -5,7 +5,6 @@ angular.module('scribe')
       templateUrl: './app/directives/newAbilities.html',
       controller: function($scope, characterService) {
         $scope.chosenFeats = [];
-        $scope.remainingFeats = 3
 
         $scope.charQual = characterService.characterCreationObject.qualifications
         $scope.qualArrs = [];
@@ -36,10 +35,6 @@ angular.module('scribe')
           return $scope.qualArrs[index]
         }
         $scope.selectedFeat = function(feat) {
-          if ($scope.remainingFeats === 0) {
-            alert("You have no remaining feats.")
-            return
-          }
           for (var i = 0; i < $scope.chosenFeats.length; i++) {
             if ($scope.chosenFeats[i] === feat) {
               $scope.chosenFeats.splice(i, 1);
@@ -48,6 +43,12 @@ angular.module('scribe')
               return
             }
           }
+
+          if ($scope.remainingFeats === 0) {
+            alert("You have no remaining feats.")
+            return
+          }
+
           if (feat.prerequisites) {
             for (var i = 0; i < feat.prerequisites.length; i++) {
               $scope.qualArrs.push(false)
@@ -68,7 +69,6 @@ angular.module('scribe')
                 }
               }
             }
-
           } else {
             $scope.chosenFeats.push(feat);
             $scope.remainingFeats--
@@ -115,8 +115,39 @@ angular.module('scribe')
           $scope.setRemainingSkills()
           $scope.setSkills()
         }
-        $scope.hideIneligableFeats = function() {
-          // hideIneligableFeats
+        console.log($scope.feats);
+        $scope.featsDisplayArrs = $scope.feats
+        $scope.hideIneligableFeats = function(feat) {
+          if ($scope.featsDisplayArrs.length < 173) {
+            $scope.featsDisplayArrs = $scope.feats
+            return
+          }
+          $scope.featsDisplayArrs = [];
+          for (var k = 0; k < $scope.feats.length; k++) {
+            $scope.qualArrs = [];
+            var feat = $scope.feats[k]
+            if (feat.prerequisites) {
+              for (var i = 0; i < feat.prerequisites.length; i++) {
+                $scope.qualArrs.push(false)
+              }
+              for (var i = 0; i < feat.prerequisites.length; i++) {
+                for (var j = 0; j < $scope.charQual.length; j++) {
+                  if ($scope.verifyMatch($scope.charQual[j], feat.prerequisites[i], i)) {
+                    if ($scope.qualArrsChecker()) {
+                      $scope.qualArrs = [];
+                      $scope.featsDisplayArrs.push($scope.feats[k])
+                    }
+                  } else if (i === feat.prerequisites.length - 1 && j === $scope.charQual.length - 1) {
+                    $scope.qualArrs = [];
+                  }
+                }
+              }
+            } else {
+              $scope.qualArrs = [];
+              $scope.featsDisplayArrs.push($scope.feats[k])
+
+            }
+          }
         }
       },
       scope: {
@@ -128,7 +159,8 @@ angular.module('scribe')
         featToggler: "=",
         skills: "=",
         skillsShower: "=",
-        setRemainingSkills: "&"
+        setRemainingSkills: "&",
+        remainingFeats: "="
       },
       link: function(scope, element, attributes) {}
     };
