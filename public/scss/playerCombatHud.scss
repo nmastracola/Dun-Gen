@@ -1,0 +1,118 @@
+.paddingCleaner{
+  padding: 0 0 0 10px;
+}
+
+.combatHudStack{
+  width: 80px;
+  height: 100%;
+  padding: 0;
+  margin: 0 20px 0 0;
+}
+
+.combatHudStackBox{
+  width: 80px;
+  height: 55px;
+  margin: 5px 0 0 0;
+}
+
+.combatHudWeapon1{
+  height: 100%;
+  width: 250px;
+}
+
+.combatHudStackHeader{
+  margin-top: 5px;
+  font-size: .7em;
+  line-height: 1.2em;
+}
+
+.combatHudStackerContent{
+  margin: 8px 0 0 0;
+}
+
+// weapons section
+
+.combatHudWeaponsBox{
+  width: 550px;
+  height: 100%;
+}
+
+.combatHudWeapon{
+  height: 100%;
+  width: 260px;
+  margin: 0 0 0 5px;
+}
+
+.combatWeaponBox{
+  height: 95px;
+  width: 260px;
+}
+
+.combatHudUpArrow{
+  width: 0; 
+  height: 0; 
+    margin: 0 auto;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid darkgrey;
+  &:hover{
+    border-bottom: 15px solid grey;
+    cursor: pointer;
+  }
+}
+
+.combatHudDownArrow{
+  width: 0; 
+  height: 0; 
+  margin: 0 auto;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid darkgrey;
+  &:hover{
+    border-top: 15px solid grey;
+    cursor: pointer;
+  }
+}
+
+.combatWeaponHeader{
+  padding: 10px 0 0 0;
+}
+
+.combatWeaponBottomRow{
+  width: 100%;
+  height: 60px;
+  margin: 3px 0 0 0;
+  justify-content: space-around;
+}
+
+.weaponIcon{
+  height: 60px;
+  width: 30px;
+  
+}
+
+.combatWeaponStatBox{
+  height: 60px;
+  width: 80px;
+}
+
+.combatWeaponsStatContentBox{
+  height: 40px;
+  width: 60px;
+  margin: 2px auto;
+}
+
+.combatWeaponsStatContent{
+  padding: 10px 0 0 0;
+}
+
+.combatWeaponStatBoxHeader{
+  font-size: .8em;
+}
+
+.combatWeaponsDie{
+  height: 40px;
+  width: 40px;
+  margin: 10px 0 0 0;
+}
+
