@@ -25,14 +25,17 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
 
   $scope.classHasSpellsChecker = function() {
     var pickedClass = characterService.characterCreationObject.static.classes[0].class
+    console.log(pickedClass);
     for (var i = 0; i < classes.length; i++) {
       if (classes[i].class === pickedClass) {
         if (!classes[i].hasSpells) {
+          $scope.customizationShower = !$scope.customizationShower;
+          $scope.skillsShower = !$scope.skillsShower;
+        }
+        if (classes[i].hasSpells) {
           $scope.spellsShower = !$scope.spellsShower;
-          alert("Your class does not have spells, I am moving you on to skills.")
-          $scope.skillsShower = !$scope.skillsShower
-          
-
+          $scope.skillsShower = !$scope.skillsShower;
+          $scope.spellsTab = !$scope.spellsTab;
         }
       }
     }
@@ -42,6 +45,16 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     for (var i = 0; i < $scope.races.length; i++) {
       if ($scope.races[i].name === characterService.characterCreationObject.static.race) {
         $scope.chosenRaceTraits = $scope.races[i].traits;
+      }
+    }
+  }
+
+  $scope.remainingSkills = 0;
+  $scope.setRemainingSkills= function () {
+    for (var i = 0; i < $scope.classes.length; i++) {
+      if ($scope.classes[i].class = characterService.characterCreationObject.static.classes[0].class) {
+        $scope.remainingSkills += ($scope.classes[i].skillsPerLevel *1) + $scope.attributeModifier[3] +1
+        return
       }
     }
   }

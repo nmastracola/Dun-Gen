@@ -30,7 +30,7 @@
     </div>
     <!-- abilities section -->
 
-      <abilities ng-show="abilitiesShower" feats="feats" races="races" abilities-shower="abilitiesShower" spells-shower="spellsShower" class-has-spells-checker="classHasSpellsChecker()" chosen-race-traits="chosenRaceTraits" feat-toggler="featToggler" skills="skills" skills-shower="skillsShower"></abilities>
+      <abilities ng-show="abilitiesShower" feats="feats" races="races" abilities-shower="abilitiesShower" spells-shower="spellsShower" chosen-race-traits="chosenRaceTraits" feat-toggler="featToggler" skills="skills" skills-shower="skillsShower" set-remaining-skills="setRemainingSkills()"></abilities>
 
       <!-- =============  skills header   =============-->
       <div class="newHeader" id="skillsHeader" ng-click="skillsShower = !skillsShower">
@@ -38,7 +38,7 @@
       </div>
       <!-- skills section -->
 
-        <skills ng-show="skillsShower" attributes="attributes" skills="skills" attribute-modifier="attributeModifier"></skills>
+        <skills ng-show="skillsShower" attributes="attributes" skills="skills" attribute-modifier="attributeModifier" class-has-spells-checker="classHasSpellsChecker()" classes="classes" remaining-skills="remainingSkills"></skills>
 
 
     <!-- =============  spells header   =============-->
