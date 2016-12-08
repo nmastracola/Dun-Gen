@@ -48,8 +48,12 @@ angular.module('scribe')
                         "type": "bab",
                         "value": $scope.classObject.genericLevelGain[0].baseAttackBonus
                     })
-                    characterService.characterCreationObject.alignment = $scope.alignments[$scope.alignmentCounter]
-                    console.log(characterService.characterCreationObject.alignment);
+                    characterService.characterCreationObject.static.alignment = $scope.alignments[$scope.alignmentCounter]
+                    characterService.characterCreationObject.static.baseAttackBonus = $scope.classObject.genericLevelGain[0].baseAttackBonus
+                    characterService.characterCreationObject.static.experience = 0;
+                    characterService.characterCreationObject.core.fortitudeBaseSave = $scope.classObject.genericLevelGain[0].fortSave
+                    characterService.characterCreationObject.core.reflexBaseSave = $scope.classObject.genericLevelGain[0].refSave
+                    characterService.characterCreationObject.core.willBaseSave = $scope.classObject.genericLevelGain[0].willSave
                     $scope.classShower= !$scope.classShower
                     $scope.abilitiesShower= !$scope.abilitiesShower
                     if ($scope.classObject.hasSpells) {
