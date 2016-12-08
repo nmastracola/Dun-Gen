@@ -27,6 +27,13 @@ return{
     // $scope.logger = function () {
     //   console.log($scope.charGenskills);
     // }
+    $scope.ranks = 0;
+
+    $scope.skillRanksSetter = function (numToAdd) {
+      if (numToAdd > 0) {
+        $scope.ranks += numToAdd
+      }
+    }
 
     // works
     $scope.setAttributeModifier = function() {
@@ -41,7 +48,6 @@ return{
           $scope.attributeModifier[i] = modifier
         }
     }
-    $scope.ranks = 0;
     $scope.setSkillTotal = function (skill) {
 
       // ($scope.ranks *1) = document.getElementById("rankClick").value

@@ -112,8 +112,8 @@ angular.module('scribe')
             })
           }
           $scope.abilitiesShower = !$scope.abilitiesShower
-          $scope.spellsShower = !$scope.spellsShower
-          $scope.classHasSpellsChecker()
+          $scope.skillsShower = !$scope.skillsShower
+
           $scope.setSkills()
         }
         $scope.hideIneligableFeats = function() {

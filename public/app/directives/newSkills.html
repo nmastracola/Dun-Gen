@@ -69,7 +69,7 @@
       <div class="skillClassSkillIndicated" ng-show="{{skill.classSkill}}"></div>
     </div>
 
-    <input class="skillIncrementerBox ltgreyBkg" type="number" name="ranks" min="0" id="rankClick" value="0">
+    <input class="skillIncrementerBox ltgreyBkg" type="number" name="ranks" min="0" id="rankClick" value="0" ng-change="setSkillTotal(skill, ranks)" ng-model="ranks">
 
     <div class="skillStatBox dkgreyBkg">
         <h3 class="dkSkillTxt">{{skillAbilityMod(skill)}}</h3>
