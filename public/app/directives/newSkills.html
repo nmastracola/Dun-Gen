@@ -1,21 +1,7 @@
 <div class="skillsHolder">
     <!-- NG-REPEAT IN SKILLS HOLDER -->
     <!-- ======================= TABLE TITLES SECTION, DO NOT EDIT  =======================-->
-    <div class="buttonHolder">
-        <div class="txtAndButton" ng-click="rollBtn = true; logger()">
-            <h5 class="txtButton">CONFIRM</h5>
-            <div class="buttonBase">
-                <div class="buttonSelected" ng-show="rollBtn"></div>
-            </div>
-        </div>
-        <div class="txtAndButton">
-            <div class="buttonBase" ng-click="rollBtn = false">
-                <div class="buttonSelected" ng-hide="rollBtn"></div>
-            </div>
-            <h5 class="txtButton">CANCEL</h5>
-        </div>
 
-    </div>
 
     <div class="singleSkillHolder">
       <div class=" skillTitleHeader">
@@ -65,7 +51,7 @@
     </div>
 
     <!-- ======================= BEGIN NG-REPEAT  =======================-->
-  <div class="singleSkillHolder" ng-repeat="skill in skills">
+  <div class="singleSkillHolder" ng-repeat="skill in charGenSkills">
 
     <div class="skillTitle">
       <h5>{{skill.name}}</h5>
@@ -78,26 +64,41 @@
 
     <div class="skillClassSkillIndicator" ng-click="">
         <!-- ng hide or show this div, toggler is located in directive js -->
-      <div class="skillClassSkillIndicated" ng-show="coolSkillClassToggler(skill)"></div>
+      <div class="skillClassSkillIndicated" ng-show="{{skill.classSkill}}"></div>
     </div>
     <div class="skillStatBox ltgreyBkg">
-      <h3 class="dkSkillTxt">0</h3>
+      <h3 class="dkSkillTxt">{{skill.ranks}}</h3>
     </div>
     <div class="skillStatBox dkgreyBkg">
         <h3 class="dkSkillTxt">{{skillAbilityMod(skill)}}</h3>
     </div>
     <!-- input box misc mod -->
     <div class="skillStatBox ltgreyBkg">
-        <h3 class="dkSkillTxt">0</h3>
+        <h3 class="dkSkillTxt">{{skill.miscellaneousModifier}}</h3>
     </div>
     <!-- total box  -->
     <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">0</h3>
+        <h3 class="dkSkillTxt">{{setSkillTotal(skill)}}</h3>
     </div>
 
   <!-- //end single row -->
 
 
 
+
+</div>
+<div class="buttonHolder">
+    <div class="txtAndButton" ng-click="rollBtn = true;">
+        <h5 class="txtButton">CONFIRM</h5>
+        <div class="buttonBase">
+            <div class="buttonSelected" ng-show="rollBtn"></div>
+        </div>
+    </div>
+    <div class="txtAndButton">
+        <div class="buttonBase" ng-click="rollBtn = false">
+            <div class="buttonSelected" ng-hide="rollBtn"></div>
+        </div>
+        <h5 class="txtButton">CANCEL</h5>
+    </div>
 
 </div>

@@ -23,14 +23,13 @@ angular.module('scribe')
           if (qualificationObj.type === prerequisiteObj.type) {
             if (prerequisiteObj.value[1]) {
               if (qualificationObj.value[0] == prerequisiteObj.value[0]) {
-                if ((qualificationObj.value[1]) *1 >= (prerequisiteObj.value[1]) *1) {
+                if ((qualificationObj.value[1]) * 1 >= (prerequisiteObj.value[1]) * 1) {
                   $scope.qualArrs[index] = true
                 }
               }
             } else if (qualificationObj.value == prerequisiteObj.value[0]) {
               $scope.qualArrs[index] = true
-            }
-            else if (qualificationObj.value >= (prerequisiteObj.value[0])*1) {
+            } else if (qualificationObj.value >= (prerequisiteObj.value[0]) * 1) {
               $scope.qualArrs[index] = true
             }
           }
@@ -45,8 +44,8 @@ angular.module('scribe')
             if ($scope.chosenFeats[i] === feat) {
               $scope.chosenFeats.splice(i, 1);
               $scope.remainingFeats++
-              $scope.qualArrs = [];
-                return
+                $scope.qualArrs = [];
+              return
             }
           }
           if (feat.prerequisites) {
@@ -59,10 +58,10 @@ angular.module('scribe')
                   if ($scope.qualArrsChecker()) {
                     $scope.chosenFeats.push(feat);
                     $scope.remainingFeats--
-                    $scope.qualArrs = [];
+                      $scope.qualArrs = [];
                     return
                   }
-                } else if (i === feat.prerequisites.length -1 && j === $scope.charQual.length -1) {
+                } else if (i === feat.prerequisites.length - 1 && j === $scope.charQual.length - 1) {
                   alert("You do not have the needed prerequisites for this feat. Please select another.")
                   $scope.qualArrs = [];
                   return
@@ -73,25 +72,30 @@ angular.module('scribe')
           } else {
             $scope.chosenFeats.push(feat);
             $scope.remainingFeats--
-            $scope.qualArrs = [];
+              $scope.qualArrs = [];
           }
         }
-        $scope.characterSkillsArrs=[]
-        $scope.setSkills = function () {
+        $scope.characterSkillsArrs = []
+        $scope.setSkills = function() {
+          var charClass = characterService.characterCreationObject.static.classes[0].class
           for (var i = 0; i < $scope.skills.length; i++) {
-            var charClass = characterService.characterCreationObject.static.classes[0].class
-              characterService.characterCreationObject.skills.push({
-                "name": $scope.skills[i].Skill,
-                "classSkill": false,
-                "primaryAttribute": $scope.skills[i].Ability,
-                "miscellaneousModifier": 0,
-                "total": null,
-                "useUntrained": $scope.skills[i].Untrained,
-                "armorCheck": $scope.skills[i].ArmorCheck,
-                "Description": $scope.skills[i].Description
-              })
-              console.log(characterService.characterCreationObject.skills);
+            characterService.characterCreationObject.skills.push({
+              "name": $scope.skills[i].Skill,
+              "ranks": 0,
+              "primaryAttribute": $scope.skills[i].Ability,
+              "miscellaneousModifier": 0,
+              "total": 0,
+              "useUntrained": $scope.skills[i].Untrained,
+              "armorCheck": $scope.skills[i].ArmorCheck,
+              "Description": $scope.skills[i].Description
+            })
+            for (var props in $scope.skills[i]) {
+              if (props === charClass) {
+                characterService.characterCreationObject.skills[i].classSkill = $scope.skills[i][props];
+              }
+            }
           }
+          console.log(characterService.characterCreationObject.skills);
         }
 
         $scope.newCharFeats = function() {
@@ -109,7 +113,7 @@ angular.module('scribe')
           }
           $scope.abilitiesShower = !$scope.abilitiesShower
           $scope.skillsShower = !$scope.skillsShower
-          // $scope.spellsShower = !$scope.spellsShower
+            // $scope.spellsShower = !$scope.spellsShower
           $scope.classHasSpellsChecker()
           $scope.setSkills()
         }
