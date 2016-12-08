@@ -8,7 +8,7 @@
     </div>
     
     <!-- ng-show if there are saved characters -->
-    <div class="charSelectBottomWrapper">
+    <div class="charSelectBottomWrapper" >
       <div class="charSelectCreateChar centerTxt">
         <h3 class="charSelectCreateCharText offWhtTxt">SAVED CHARACTERS</h3>  
       </div>
@@ -18,7 +18,7 @@
 
             <h4 class="charSelectCharName leftTxt">{{char.characterName}}</h4>
             <div class="charSelectCharClassesWrapper" ng-repeat="class in char.classes">
-              <p class="charSelectCharClass  flexRow">Level {{class.level}} {{class.class}}</p>
+              <p class="charSelectCharClass offWhtTxt flexRow">Level {{class.level}} {{class.class}}</p>
             </div>
 
         </div>
