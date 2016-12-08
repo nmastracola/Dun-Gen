@@ -1,1 +1,101 @@
-<h1>player core hud test</h1>
+<div class="hudBox">
+
+  
+  <div class="coreHudHolder flexColumn">
+    <!-- header row -->
+    <div class="coreHudHeaderRow flexRow">
+      <div class="coreHudHP">
+        <p class="CoreHudHeaders leftTxt">CURRENT HP</p>
+      </div>
+      <div class="coreHudBox hudMarginRight ">
+        <p class="CoreHudHeaders leftTxt">MAX HP</p>
+      </div>
+      <div class="coreHudHP">
+        <p class="CoreHudHeaders leftTxt">MODIFIER</p>
+      </div>
+      <div class="coreHudWoundSpacer">
+        <p class="CoreHudHeaders leftTxt">WOUND</p>
+      </div>
+    </div>
+    <!-- end header row -->
+    <!-- begin content row -->
+    <div class="coreHudRow flexRow">
+      <!-- hit points -->
+      <div class="coreHudHP flexRow">
+        <div class="coreHudBox blkBkg">
+            <h4 class="hudCoreContent whtTxt centerTxt">{{playerHP}}</h4>
+        </div>
+        <div class="coreHudIncHolder">
+          <div class="hudUpArrow" ng-click="playerChangeHP(1)"></div>
+          <div class="hudDowArrow" ng-click="playerChangeHP(-1)"></div>
+        </div>
+      </div>
+      <!-- max hit points -->
+      <div class="coreHudBox ltgreyBkg hudMarginRight">
+            <h4 class="hudCoreContent whtTxt centerTxt">{{playerMaxHP}}</h4>
+      </div>
+      <!-- HP MODIFIER -->
+      <div class="coreHudHP flexRow">
+        <div class="coreHudBox dkgreyBkg">
+            <h4 class="hudCoreContent whtTxt centerTxt">0</h4>
+        </div>
+        <div class="coreHudIncHolder">
+          <div class="hudUpArrow hudGreyUpArrow" ng-click=""></div>
+          <div class="hudDowArrow hudGreyDownArrow" ng-click=""></div>
+        </div>
+      </div>
+      <!-- wounds -->
+        <!-- needs to bind to something on the character object -->
+            <input class="coreHudWound ltgreyBkg" type="text" name="" value="Sprained Dice Hand">
+    </div>
+      <!-- end conent row -->
+  </div>
+  
+  <!-- begin second row of informtaion -->
+  
+  <div class="coreHudHolder flexColumn">
+    <!-- header row -->
+    <div class="coreHudHeaderRow flexRow">
+      <div class="coreHudBoxWide ">
+        <p class="CoreHudHeaders leftTxt">SPEED</p>
+      </div>
+      <div class="coreHudBoxWide ">
+          <p class="CoreHudHeaders leftTxt">W/I ARMOR</p>
+      </div>
+      <div class="coreHudBoxWide ">
+          <p class="CoreHudHeaders leftTxt">FLY</p>
+      </div>
+      <div class="coreHudBoxWide ">
+          <p class="CoreHudHeaders leftTxt">CLIMB</p>
+      </div>
+      <div class="coreHudBoxWide ">
+          <p class="CoreHudHeaders leftTxt">BURROW</p>
+      </div>
+      <div class="coreHudSpeedModSpacer ">
+          <p class="CoreHudHeaders leftTxt">MODIFIERS</p>
+      </div>
+    </div>
+    <!-- end header row -->
+    <!-- begin content row -->
+    <div class="coreHudRow flexRow">
+      <div class="coreHudBoxWide greyBkg">
+        <h4 class="hudCoreContent whtTxt centerTxt">30ft</h4>
+      </div>
+      <div class="coreHudBoxWide ltgreyBkg">
+        <h4 class="hudCoreContent centerTxt">20ft</h4>
+      </div>
+      <div class="coreHudBoxWide dkgreyBkg">
+          <h4 class="hudCoreContent centerTxt">0ft</h4>
+      </div>
+      <div class="coreHudBoxWide ltgreyBkg">
+          <h4 class="hudCoreContent centerTxt">10ft</h4>
+      </div>
+      <div class="coreHudBoxWide dkgreyBkg">
+          <h4 class="hudCoreContent centerTxt">0ft</h4>
+      </div>
+      <input class="coreHudSpeedModifier dkgreyBkg" type="text" name="" value="magic carpet 120ft">
+    </div>
+      <!-- end conent row -->
+  </div>
+
+</div>
