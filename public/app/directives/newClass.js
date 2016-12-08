@@ -57,6 +57,8 @@ angular.module('scribe')
                       $scope.spellsTab = true
                     }
                     $scope.raceChoice()
+                    $scope.setRemainingFeats()
+                    
                 }
 
                 $scope.alignmentToggler = [false, false, false, false, false, false, false, false, false];
@@ -78,7 +80,8 @@ angular.module('scribe')
                 raceChoice: "&",
                 abilitiesShower: "=",
                 classShower: "=",
-                spellsTab: "="
+                spellsTab: "=",
+                setRemainingFeats: "&"
             },
             link: function(scope, element, attributes) {}
         };

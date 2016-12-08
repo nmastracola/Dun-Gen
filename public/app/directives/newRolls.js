@@ -32,11 +32,8 @@ return{
     $scope.setAttributeModifier = function(number) {
         var attribute = $scope.attributes[number];
         var modifier = (attribute - 10) / 2;
-        if (modifier >= 0) {
             modifier = Math.floor(modifier)
-        } else {
-            modifier = Math.ceil(modifier)
-        }
+
         $scope.attributeModifier[number] = modifier
     };
     $scope.rollStats = function(numberOfDieToRoll) {

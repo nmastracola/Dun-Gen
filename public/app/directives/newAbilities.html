@@ -66,7 +66,7 @@
       <!-- NG REPEAT FEATS IN  spellChooser -->
       <div class="spellScrollIndicatorUp"></div>
     <!-- ========  SINGLE ROW   ========== -->
-      <div class="spellChooserRow" ng-repeat='feat in feats'>
+      <div class="spellChooserRow" ng-repeat='feat in featsDisplayArrs'>
         <div class="spellName">
           <p>{{feat.name}}</p>
         </div>
@@ -99,25 +99,19 @@
 <!-- ========  END FEATS LIST  ========== -->
 </div>
 
-<div class="remainingFeatsContainer">
-  <!-- This logic is doable but I am thinking it is MVP+ -->
-<div>{{remainingFeats}}</div>
-</div>
-<div class="remainingFeatsContainer" ng-click="hideIneligableFeats()">Hide Ineligable Feats
-  <!-- This logic is doable but I am thinking it is MVP+ -->
-</div>
+
 
 <!-- ==================  FEATS CONTROLLS  ===================== -->
 <div class="buttonHolder">
   <div class="txtAndButton" ng-click="abilitiesBtn = true; newCharFeats()" >
-    <h5 class="txtButton">CONFIRM</h5>
+    <h5 class="txtButton">REMAINING FEATS</h5>
     <div class="buttonBase">
-      <div class="buttonSelected" ng-show="abilitiesBtn"></div>
+      {{remainingFeats}}
     </div>
   </div>
-  <div class="txtAndButton" ng-click="abilitiesBtn = false">
+  <div class="txtAndButton" ng-click="abilitiesBahtn = !abilitiesBahtn; hideIneligableFeats()">
     <div class="buttonBase">
-      <div class="buttonSelected" ng-hide="abilitiesBtn"></div>
+      <div class="buttonSelected" ng-show="abilitiesBahtn"></div>
     </div>
       <h5 class="txtButton">HIDE INELEGABLE FEATS</h5>
   </div>
