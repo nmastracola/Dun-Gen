@@ -25,7 +25,6 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
 
   $scope.classHasSpellsChecker = function() {
     var pickedClass = characterService.characterCreationObject.static.classes[0].class
-    console.log(pickedClass);
     for (var i = 0; i < classes.length; i++) {
       if (classes[i].class === pickedClass) {
         if (!classes[i].hasSpells) {
@@ -40,6 +39,15 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     }
   }
 
+  $scope.remainingFeats = 1
+  $scope.setRemainingFeats = function () {
+    $scope.remainingFeats = 1
+    if (characterService.characterCreationObject.static.race === 'Humans') {
+      console.log(characterService.characterCreationObject.static.race);
+      $scope.remainingFeats += 1
+    }
+  }
+
   $scope.raceChoice = function() {
     for (var i = 0; i < $scope.races.length; i++) {
       if ($scope.races[i].name === characterService.characterCreationObject.static.race) {
@@ -51,7 +59,7 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
   $scope.remainingSkills = 0;
   $scope.setRemainingSkills= function () {
     for (var i = 0; i < $scope.classes.length; i++) {
-      if ($scope.classes[i].class = characterService.characterCreationObject.static.classes[0].class) {
+      if ($scope.classes[i].class == characterService.characterCreationObject.static.classes[0].class) {
         $scope.remainingSkills += ($scope.classes[i].skillsPerLevel *1) + $scope.attributeModifier[3] +1
         return
       }
