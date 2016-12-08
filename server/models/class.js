@@ -70,6 +70,23 @@ var classSchema = mongoose.Schema({
       armorProficiencies: {
         type: String
       },
+      babProgression: {
+        type: String
+      },
+      highSaves: {
+        type: String
+      },
+      classSkillsDump: {
+        type: String
+      },
+      classFeaturesDump: [{
+        title: {
+          type: String
+        },
+        text: {
+          type: String
+        }
+      }],
       genericLevelGain:[{
           level: {
               type: Number,
