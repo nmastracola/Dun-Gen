@@ -79,6 +79,7 @@ angular.module('scribe')
                   $scope.raceShower = !$scope.raceShower;
                   $scope.classShower = !$scope.classShower;
                   $scope.displayClass();
+                  console.log(characterService.characterCreationObject.static.race);
                   return
                 }
                 $scope.info = function() {

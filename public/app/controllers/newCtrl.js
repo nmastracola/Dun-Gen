@@ -40,6 +40,15 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
     }
   }
 
+  $scope.remainingFeats = 1
+  $scope.setRemainingFeats = function () {
+    $scope.remainingFeats = 1
+    if (characterService.characterCreationObject.static.race === 'Humans') {
+      console.log(characterService.characterCreationObject.static.race);
+      $scope.remainingFeats += 1
+    }
+  }
+
   $scope.raceChoice = function() {
     for (var i = 0; i < $scope.races.length; i++) {
       if ($scope.races[i].name === characterService.characterCreationObject.static.race) {
