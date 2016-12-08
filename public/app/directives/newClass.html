@@ -118,7 +118,77 @@
   <h3>{{chosenClass}}</h3>
 </div>
 <div class="classContents">
-  <p>{{classObject.classDescription}}</p>
+  <div class="raceStatChanger" ng-hide="staticRace">
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">Lawful Good</h5>
+    <div class="buttonBase" ng-click="abilitySwitcher(0)">
+      <div class="buttonSelected" ng-show="abilityToggler[0]"></div>
+    </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">Lawful Neutral</h5>
+    <div class="buttonBase" ng-click="abilitySwitcher(1)">
+      <div class="buttonSelected" ng-show="abilityToggler[1]"></div>
+    </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">Lawful Evil</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(2)">
+      <div class="buttonSelected" ng-show="abilityToggler[2]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">Neutral Good</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(3)">
+      <div class="buttonSelected" ng-show="abilityToggler[3]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">True Neutral</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(4)">
+      <div class="buttonSelected" ng-show="abilityToggler[4]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">Neutral Evil</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(5)">
+      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">Chaotic Good</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(5)">
+      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">Chaotic Neutral</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(5)">
+      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      </div>
+    </div>
+    <div class="raceStatChangerOptions">
+      <h5 class="txtButton">Chaotic Evil</h5>
+      <div class="buttonBase" ng-click="abilitySwitcher(5)">
+      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      </div>
+    </div>
+  </div>
+  <h4 class="centerTxt boldTxt classContentsShortDesc">{{classObject.shortClassDescription}}</h4>
+  <p class="classContentsFullDesc">{{classObject.classDescription}}</p>
+  <p class="classContentsBottomSpacer"><span class="boldTxt">Role: </span>{{classObject.role}}</p>
+  <h4 class="centerTxt boldTxt">Class Features</h4>
+  <p class="classContentsBottomSpacer"><span class="boldTxt">Hit Dice:</span> D{{classObject.hitDie}}</p>
+  <p class="classContentsBottomSpacer"><span class="boldTxt">BAB Progression:</span> {{classObject.babProgression}}</p>
+  <p class="classContentsBottomSpacer"><span class="boldTxt">High Saves:</span> {{classObject.highSaves}}</p>
+  <p class="classContentsBottomSpacer"><span class="boldTxt">Weapon Proficiencies:</span> {{classObject.weaponProficiencies}}</p>
+  <p class="classContentsBottomSpacer"><span class="boldTxt">Armor Proficiencies:</span> {{classObject.armorProficiencies}}</p>
+  <p class="classContentsBottomSpacer"><span class="boldTxt">Class Skills: </span>{{classObject.classSkillsDump}}</p>
+  <p class="classContentsBottomSpacer"><span class="boldTxt">Skill Ranks per Level:</span> {{classObject.skillsPerLevel}} + Int modifier</p>
+  <h4 class="centerTxt boldTxt">Class Abilities</h4>
+  <div class="classContentsFeatures" ng-repeat="feature in classFeatures">
+    <p><span class="boldTxt">{{feature.title}}</span>{{feature.text}}</p>
+  </div>
 </div>
 
 
