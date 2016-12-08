@@ -35,7 +35,6 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
         if (classes[i].hasSpells) {
           $scope.spellsShower = !$scope.spellsShower;
           $scope.skillsShower = !$scope.skillsShower;
-          $scope.spellsTab = !$scope.spellsTab;
         }
       }
     }
