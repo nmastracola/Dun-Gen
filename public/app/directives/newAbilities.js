@@ -81,7 +81,7 @@ angular.module('scribe')
           for (var i = 0; i < $scope.skills.length; i++) {
             characterService.characterCreationObject.skills.push({
               "name": $scope.skills[i].Skill,
-              "ranks": 0,
+              "ranks": $scope.ranks,
               "primaryAttribute": $scope.skills[i].Ability,
               "miscellaneousModifier": 0,
               "total": 0,
@@ -112,8 +112,7 @@ angular.module('scribe')
             })
           }
           $scope.abilitiesShower = !$scope.abilitiesShower
-          $scope.skillsShower = !$scope.skillsShower
-            // $scope.spellsShower = !$scope.spellsShower
+          $scope.spellsShower = !$scope.spellsShower
           $scope.classHasSpellsChecker()
           $scope.setSkills()
         }

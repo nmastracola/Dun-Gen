@@ -41,9 +41,15 @@ return{
           $scope.attributeModifier[i] = modifier
         }
     }
-
+    $scope.ranks = 0;
     $scope.setSkillTotal = function (skill) {
-      skill.total = $scope.abilityMod + skill.ranks + skill.miscellaneousModifier
+
+      // ($scope.ranks *1) = document.getElementById("rankClick").value
+      // console.log(document.getElementById("rankClick").value);
+      // skill.ranks = $scope.ranks;
+      // console.log($scope.ranks);
+      skill.ranks = ($scope.ranks * 1)
+      skill.total = ($scope.abilityMod * 1) + (skill.ranks * 1) + (skill.miscellaneousModifier * 1)
       return skill.total
     }
 

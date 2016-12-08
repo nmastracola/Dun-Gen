@@ -51,7 +51,7 @@
     </div>
 
     <!-- ======================= BEGIN NG-REPEAT  =======================-->
-  <div class="singleSkillHolder" ng-repeat="skill in charGenSkills">
+  <div class="singleSkillHolder" ng-repeat="skill in charGenSkills track by $index">
 
     <div class="skillTitle">
       <h5>{{skill.name}}</h5>
@@ -63,12 +63,14 @@
     </div>
 
     <div class="skillClassSkillIndicator" ng-click="">
+
+
         <!-- ng hide or show this div, toggler is located in directive js -->
       <div class="skillClassSkillIndicated" ng-show="{{skill.classSkill}}"></div>
     </div>
-    <div class="skillStatBox ltgreyBkg">
-      <h3 class="dkSkillTxt">{{skill.ranks}}</h3>
-    </div>
+
+    <input class="skillIncrementerBox ltgreyBkg" type="number" name="ranks" min="0" id="rankClick" value="0">
+
     <div class="skillStatBox dkgreyBkg">
         <h3 class="dkSkillTxt">{{skillAbilityMod(skill)}}</h3>
     </div>
