@@ -169,7 +169,7 @@ angular.module("scribe").service("characterService", function($http) {
     customization: {
         name: "",
         homeland: "",
-        diety: "",
+        deity: "",
         age: "",
         height: "",
         weight: "",

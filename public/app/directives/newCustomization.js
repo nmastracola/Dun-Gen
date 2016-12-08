@@ -11,8 +11,8 @@ return{
 
     $scope.customizationFields = function() {
       $scope.charObj.name = $scope.customization.name
-      $scope.charObj.homeland = $scope.customization.honmeland
-      $scope.charObj.diety = $scope.customization.diety
+      $scope.charObj.homeland = $scope.customization.homeland
+      $scope.charObj.deity = $scope.customization.deity
       $scope.charObj.age = $scope.customization.age
       $scope.charObj.height = $scope.customization.height
       $scope.charObj.weight = $scope.customization.weight
@@ -23,6 +23,8 @@ return{
       $scope.charObj.biography = $scope.customization.biography
 
       $scope.currentlySelectedCharacterHitPointCalculatorBasedOnConstitutionModifierHitDieFavoredClassAndIfTheCharacterHasSelectedTheToughnessFeat()
+      console.log($scope.charObj);
+      console.log(characterService.characterCreationObject);
     }
     $scope.submitNewChar = function() {
       characterService.createCharacter();

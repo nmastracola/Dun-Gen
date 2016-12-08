@@ -1,15 +1,15 @@
 // REQUIRE DEPENDENCIES
 // ============================================================
 var mongoose = require('mongoose');
+var objectID = mongoose.Schema.Types.ObjectId;
 // DEFINE SCHEMA
 // ============================================================
 var characterSchema = mongoose.Schema({
   static: [{
       userId: {
-          // type: objectID,
-          // ref: 'Users',
-          // required: true
-          type: String,
+          type: objectID,
+          ref: 'Users',
+          required: true
       },
       playerName: {
           type: String
