@@ -29,8 +29,9 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
       if (classes[i].class === pickedClass) {
         if (!classes[i].hasSpells) {
           $scope.spellsShower = !$scope.spellsShower;
-          alert("Your class does not have spells, I am moving you on to customization.")
-          $scope.customizationShower = !$scope.customizationShower;
+          alert("Your class does not have spells, I am moving you on to skills.")
+          $scope.skillsShower = !$scope.skillsShower
+          
 
         }
       }
