@@ -106,6 +106,24 @@
 <div class="remainingFeatsContainer" ng-click="hideIneligableFeats()">Hide Ineligable Feats
   <!-- This logic is doable but I am thinking it is MVP+ -->
 </div>
+
+<!-- ==================  FEATS CONTROLLS  ===================== -->
+<div class="buttonHolder">
+  <div class="txtAndButton" ng-click="abilitiesBtn = true; newCharFeats()" >
+    <h5 class="txtButton">CONFIRM</h5>
+    <div class="buttonBase">
+      <div class="buttonSelected" ng-show="abilitiesBtn"></div>
+    </div>
+  </div>
+  <div class="txtAndButton" ng-click="abilitiesBtn = false">
+    <div class="buttonBase">
+      <div class="buttonSelected" ng-hide="abilitiesBtn"></div>
+    </div>
+      <h5 class="txtButton">HIDE INELEGABLE FEATS</h5>
+  </div>
+</div>
+
+
 <div class="newSelectedFeats">
   <h4 class="newSelectedFeatsHeader">CHOSEN FEATS</h4>
   <div class="newSelectedFeatList" ng-repeat='feat in chosenFeats track by $index'>
