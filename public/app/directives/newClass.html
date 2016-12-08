@@ -118,59 +118,68 @@
   <h3>{{chosenClass}}</h3>
 </div>
 <div class="classContents">
-  <div class="raceStatChanger" ng-hide="staticRace">
-    <div class="raceStatChangerOptions">
+  <div class="alignmentChanger" ng-hide="staticRace">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.lawfulGood"></div>
       <h5 class="txtButton">Lawful Good</h5>
-    <div class="buttonBase" ng-click="abilitySwitcher(0)">
-      <div class="buttonSelected" ng-show="abilityToggler[0]"></div>
+      <div class="buttonBase" ng-click="alignmentSwitcher(0)">
+        <div class="buttonSelected" ng-show="alignmentToggler[0]"></div>
+      </div>
     </div>
-    </div>
-    <div class="raceStatChangerOptions">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.lawfulNeutral"></div>
       <h5 class="txtButton">Lawful Neutral</h5>
-    <div class="buttonBase" ng-click="abilitySwitcher(1)">
-      <div class="buttonSelected" ng-show="abilityToggler[1]"></div>
+    <div class="buttonBase" ng-click="alignmentSwitcher(1)">
+      <div class="buttonSelected" ng-show="alignmentToggler[1]"></div>
     </div>
     </div>
-    <div class="raceStatChangerOptions">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.lawfulEvil"></div>
       <h5 class="txtButton">Lawful Evil</h5>
-      <div class="buttonBase" ng-click="abilitySwitcher(2)">
-      <div class="buttonSelected" ng-show="abilityToggler[2]"></div>
+      <div class="buttonBase" ng-click="alignmentSwitcher(2)">
+      <div class="buttonSelected" ng-show="alignmentToggler[2]"></div>
       </div>
     </div>
-    <div class="raceStatChangerOptions">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.neutralGood"></div>
       <h5 class="txtButton">Neutral Good</h5>
-      <div class="buttonBase" ng-click="abilitySwitcher(3)">
-      <div class="buttonSelected" ng-show="abilityToggler[3]"></div>
+      <div class="buttonBase" ng-click="alignmentSwitcher(3)">
+      <div class="buttonSelected" ng-show="alignmentToggler[3]"></div>
       </div>
     </div>
-    <div class="raceStatChangerOptions">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.neutralNeutral"></div>
       <h5 class="txtButton">True Neutral</h5>
-      <div class="buttonBase" ng-click="abilitySwitcher(4)">
-      <div class="buttonSelected" ng-show="abilityToggler[4]"></div>
+      <div class="buttonBase" ng-click="alignmentSwitcher(4)">
+      <div class="buttonSelected" ng-show="alignmentToggler[4]"></div>
       </div>
     </div>
-    <div class="raceStatChangerOptions">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.neutralEvil"></div>
       <h5 class="txtButton">Neutral Evil</h5>
-      <div class="buttonBase" ng-click="abilitySwitcher(5)">
-      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      <div class="buttonBase" ng-click="alignmentSwitcher(5)">
+      <div class="buttonSelected" ng-show="alignmentToggler[5]"></div>
       </div>
     </div>
-    <div class="raceStatChangerOptions">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.chaoticGood"></div>
       <h5 class="txtButton">Chaotic Good</h5>
-      <div class="buttonBase" ng-click="abilitySwitcher(5)">
-      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      <div class="buttonBase" ng-click="alignmentSwitcher(6)">
+      <div class="buttonSelected" ng-show="alignmentToggler[6]"></div>
       </div>
     </div>
-    <div class="raceStatChangerOptions">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.chaoticNeutral"></div>
       <h5 class="txtButton">Chaotic Neutral</h5>
-      <div class="buttonBase" ng-click="abilitySwitcher(5)">
-      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      <div class="buttonBase" ng-click="alignmentSwitcher(7)">
+      <div class="buttonSelected" ng-show="alignmentToggler[7]"></div>
       </div>
     </div>
-    <div class="raceStatChangerOptions">
+    <div class="alignmentChangerOptions">
+      <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.chaoticEvil"></div>
       <h5 class="txtButton">Chaotic Evil</h5>
-      <div class="buttonBase" ng-click="abilitySwitcher(5)">
-      <div class="buttonSelected" ng-show="abilityToggler[5]"></div>
+      <div class="buttonBase" ng-click="alignmentSwitcher(8)">
+      <div class="buttonSelected" ng-show="alignmentToggler[8]"></div>
       </div>
     </div>
   </div>
