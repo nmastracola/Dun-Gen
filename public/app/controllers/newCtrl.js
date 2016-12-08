@@ -25,7 +25,6 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
 
   $scope.classHasSpellsChecker = function() {
     var pickedClass = characterService.characterCreationObject.static.classes[0].class
-    console.log(pickedClass);
     for (var i = 0; i < classes.length; i++) {
       if (classes[i].class === pickedClass) {
         if (!classes[i].hasSpells) {
@@ -60,7 +59,7 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
   $scope.remainingSkills = 0;
   $scope.setRemainingSkills= function () {
     for (var i = 0; i < $scope.classes.length; i++) {
-      if ($scope.classes[i].class = characterService.characterCreationObject.static.classes[0].class) {
+      if ($scope.classes[i].class == characterService.characterCreationObject.static.classes[0].class) {
         $scope.remainingSkills += ($scope.classes[i].skillsPerLevel *1) + $scope.attributeModifier[3] +1
         return
       }

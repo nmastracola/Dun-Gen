@@ -95,7 +95,6 @@ angular.module('scribe')
               }
             }
           }
-          console.log(characterService.characterCreationObject.skills);
         }
 
         $scope.newCharFeats = function() {
