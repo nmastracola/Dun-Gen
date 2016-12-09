@@ -9,7 +9,7 @@ return{
 
     $scope.charObjDesc = characterService.characterCreationObject.customization
     $scope.charObj = characterService.characterCreationObject
-    
+
     $scope.HPCalc = function() {
     var currentClass = characterService.characterCreationObject.static.classes[0].class;
     var feats = characterService.characterCreationObject.feats;
@@ -46,7 +46,7 @@ return{
       $scope.charObjDesc.biography = $scope.customization.biography
       $scope.HPCalc()
     }
-    
+
     $scope.submitNewChar = function() {
       characterService.createCharacter()
       .then(function(response){
@@ -57,11 +57,13 @@ return{
         $state.go('home')
       })
     }
-    
+
   },
   scope: {
     classes: '=',
-    attributeModifier: '='
+    attributeModifier: '=',
+    customizationShower:"=",
+    classHasSpellsChecker:"&"
   },
   link: function( scope, element, attributes ) {}
 };
