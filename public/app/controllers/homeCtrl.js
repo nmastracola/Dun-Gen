@@ -13,7 +13,8 @@ $scope.login = function(user) {
       alert('User does not exist');
       $scope.user.password = '';
     } else {
-      $state.go('charSelect');
+      console.log(response.data);
+      $state.go('charSelect', {userId: response.data._id});
     }
   }).catch(function(err) {
     alert('Unable to login');
@@ -28,10 +29,11 @@ $scope.register = function(user) {
       } else {
         alert('User Created');
         $scope.newUser = {};
-        $state.go('charSelect')
+        console.log(response.data);
+        console.log(response.data._id);
+        $state.go('charSelect', {userId: response.data._id});
       }
     }).catch(function(err) {
-
       alert('Unable to create user');
     });
   }
