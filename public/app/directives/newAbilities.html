@@ -85,8 +85,38 @@
           <div class="spellDescDetailsRequest">
             <p class="spellDescriptionOpener"  ng-click="abilityInfo = !abilityInfo" ng-hide="">Details</p>
           </div>
-          <div class="spellDescLong" ng-show="abilityInfo">
-            <p>{{feat}}</p>
+          <div class="spellDescLong greyBkg" ng-show="abilityInfo">
+            <h5 ng-show="feat.prerequisites[0]" class="newSelectedFeatName">prerequisite 1:</h5>
+            <p ng-show="feat.prerequisites[0]">{{feat.prerequisites[0].type}}</p>
+            <p ng-show="feat.prerequisites[0]">{{feat.prerequisites[0].value[0]}}</p>
+            <p ng-show="feat.prerequisites[0].value[1]">{{feat.prerequisites[0].value[1]}}</p>
+            <h5 ng-show="feat.prerequisites[1]" class="newSelectedFeatName">prerequisite 2:</h5>
+            <p ng-show="feat.prerequisites[1]">{{feat.prerequisites[1].type}}</p>
+            <p ng-show="feat.prerequisites[1]">{{feat.prerequisites[1].value[0]}}</p>
+            <p ng-show="feat.prerequisites[1].value[1]">{{feat.prerequisites[1].value[1]}}</p>
+            <h5 ng-show="feat.prerequisites[2]" class="newSelectedFeatName">prerequisite 3:</h5>
+            <p ng-show="feat.prerequisites[2]">{{feat.prerequisites[2].type}}</p>
+            <p ng-show="feat.prerequisites[2]">{{feat.prerequisites[2].value[0]}}</p>
+            <p ng-show="feat.prerequisites[2].value[1]">{{feat.prerequisites[2].value[1]}}</p>
+            <h5 ng-show="feat.prerequisites[3]" class="newSelectedFeatName">prerequisite 4:</h5>
+            <p ng-show="feat.prerequisites[3]">{{feat.prerequisites[3].type}}</p>
+            <p ng-show="feat.prerequisites[3]">{{feat.prerequisites[3].value[0]}}</p>
+            <p ng-show="feat.prerequisites[3].value[1]">{{feat.prerequisites[3].value[1]}}</p>
+            <h5 ng-show="feat.prerequisites[4]" class="newSelectedFeatName">prerequisite 5:</h5>
+            <p ng-show="feat.prerequisites[4]">{{feat.prerequisites[4].type}}</p>
+            <p ng-show="feat.prerequisites[4]">{{feat.prerequisites[4].value[0]}}</p>
+            <p ng-show="feat.prerequisites[4].value[1]">{{feat.prerequisites[4].value[1]}}</p>
+            <h5 ng-show="feat.prerequisites[5]" class="newSelectedFeatName">prerequisite 6:</h5>
+            <p ng-show="feat.prerequisites[5]">{{feat.prerequisites[5].type}}</p>
+            <p ng-show="feat.prerequisites[5]">{{feat.prerequisites[5].value[0]}}</p>
+            <p ng-show="feat.prerequisites[5].value[1]">{{feat.prerequisites[5].value[1]}}</p>
+            <h5 ng-show="feat.prerequisites[6]" class="newSelectedFeatName">prerequisite 7:</h5>
+            <p ng-show="feat.prerequisites[6]">{{feat.prerequisites[6].type}}</p>
+            <p ng-show="feat.prerequisites[6]">{{feat.prerequisites[6].value[0]}}</p>
+            <p ng-show="feat.prerequisites[6].value[1]">{{feat.prerequisites[6].value[1]}}</p>
+
+            <h5 class="newSelectedFeatName">Description:</h5>
+            <p>{{feat.benefits}}</p>
           </div>
         </div>
       </div>
