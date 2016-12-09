@@ -13,7 +13,7 @@
     </div>
     <!-- race section -->
 
-    <race ng-show="raceShower" races="races" classes="classes" display-class="displayClass()" chosen-class="chosenClass" class-features="classFeatures" class-object="classObject" attributes="attributes" race-shower="raceShower" class-shower="classShower"></race>
+    <race ng-show="raceShower" races="races" classes="classes" display-class="displayClass()" chosen-class="chosenClass" class-features="classFeatures" class-object="classObject" attributes="attributes" race-shower="raceShower" class-shower="classShower" roll-shower="rollShower"></race>
 
 
     <!-- =============  class header   =============-->
@@ -22,7 +22,7 @@
     </div>
     <!-- class section -->
 
-    <class ng-show="classShower" classes="classes" race-choice="raceChoice()" abilities-shower="abilitiesShower" class-shower="classShower" spells-tab="spellsTab" set-remaining-feats="setRemainingFeats()"></class>
+    <class ng-show="classShower" classes="classes" race-choice="raceChoice()" abilities-shower="abilitiesShower" race-shower="raceShower" class-shower="classShower" spells-tab="spellsTab" set-remaining-feats="setRemainingFeats()"></class>
 
     <!-- =============  abilities header   =============-->
     <div class="newHeader" id="abilitiesHeader">
@@ -30,7 +30,7 @@
     </div>
     <!-- abilities section -->
 
-      <abilities ng-show="abilitiesShower" feats="feats" races="races" abilities-shower="abilitiesShower" spells-shower="spellsShower" chosen-race-traits="chosenRaceTraits" feat-toggler="featToggler" skills="skills" skills-shower="skillsShower" set-remaining-skills="setRemainingSkills()" remaining-feats="remainingFeats"></abilities>
+      <abilities ng-show="abilitiesShower" feats="feats" races="races" abilities-shower="abilitiesShower" spells-shower="spellsShower" chosen-race-traits="chosenRaceTraits" feat-toggler="featToggler" skills="skills" skills-shower="skillsShower" set-remaining-skills="setRemainingSkills()" remaining-feats="remainingFeats" class-shower="classShower" abilities-shower="abilitiesShower" chosen-feats="chosenFeats"></abilities>
 
       <!-- =============  skills header   =============-->
       <div class="newHeader" id="skillsHeader">
@@ -38,7 +38,7 @@
       </div>
       <!-- skills section -->
 
-        <skills ng-show="skillsShower" attributes="attributes" skills="skills" attribute-modifier="attributeModifier" class-has-spells-checker="classHasSpellsChecker()" classes="classes" remaining-skills="remainingSkills"></skills>
+        <skills ng-show="skillsShower" attributes="attributes" skills="skills" attribute-modifier="attributeModifier" class-has-spells-checker="classHasSpellsChecker()" classes="classes" remaining-skills="remainingSkills" skills-shower="skillsShower" chosen-feats="chosenFeats" abilities-shower="abilitiesShower"></skills>
 
 
     <!-- =============  spells header   =============-->
@@ -55,6 +55,6 @@
         <h4 class="newHeaderTxt">CUSTOMIZATION</h4>
     </div>
     <!-- customization section -->
-    <customization ng-show="customizationShower" classes="classes" attribute-modifier='attributeModifier'></customization>
+    <customization ng-show="customizationShower" classes="classes" attribute-modifier='attributeModifier' customization-shower="customizationShower" class-has-spells-checker="classHasSpellsChecker()"></customization>
 
 </div>

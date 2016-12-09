@@ -55,7 +55,7 @@ app.put('/user/:_id', isAuthed, serverUserCtrl.update);
 
 // TEMP USER ENDPOINT
 app.post('/api/user', serverMFPopulateCtrl.addUser);
-app.get('/api/character', serverMFPopulateCtrl.getCharacter);
+app.get('/api/character/:charId', serverMFPopulateCtrl.getCharacter);
 app.post('/api/character', serverMFPopulateCtrl.createCharacter);
 
 // TABLE POPULATION ENDPOINTS

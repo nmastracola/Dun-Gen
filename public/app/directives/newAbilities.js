@@ -4,7 +4,6 @@ angular.module('scribe')
       restrict: 'E',
       templateUrl: './app/directives/newAbilities.html',
       controller: function($scope, characterService) {
-        $scope.chosenFeats = [];
 
         $scope.charQual = characterService.characterCreationObject.qualifications
         $scope.qualArrs = [];
@@ -115,6 +114,15 @@ angular.module('scribe')
           $scope.setRemainingSkills()
           $scope.setSkills()
         }
+
+        $scope.reverseNewCharFeats = function() {
+          $scope.chosenFeats = [];
+          $scope.abilitiesShower = !$scope.abilitiesShower
+          $scope.classShower = !$scope.classShower
+          $scope.setRemainingSkills()
+          $scope.setSkills()
+        }
+
         console.log($scope.feats);
         $scope.featsDisplayArrs = $scope.feats
         $scope.hideIneligableFeats = function(feat) {
@@ -160,7 +168,9 @@ angular.module('scribe')
         skills: "=",
         skillsShower: "=",
         setRemainingSkills: "&",
-        remainingFeats: "="
+        remainingFeats: "=",
+        classShower:"=",
+        chosenFeats:"="
       },
       link: function(scope, element, attributes) {}
     };
