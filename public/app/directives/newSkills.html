@@ -87,16 +87,20 @@
         <div class="skillStatBox dkgreyBkg">
             <h3 class="dkSkillTxt">{{setSkillTotal(skill)}}</h3>
         </div>
-
-        <!-- //end single row -->
-
     </div>
-    REMAINING SKILL RANKS
-    <div class="remainingFeatsContainer">
-       <!-- This logic is doable but I am thinking it is MVP+ -->
-    <div>{{remainingSkills}}</div>
-    </div>
-    <div class="buttonHolder">
+    <!-- //end single row -->
+
+<div class="singleSkillHolder flexEnd">
+  <h5 class="remainingRanksTxt rightTxt">  REMAINING SKILL RANKS </h5>
+
+  <div class="remainingRanks">
+     <!-- This logic is doable but I am thinking it is MVP+ -->
+  <h3 class="remainingRanksContent whtTxt centerTxt">{{remainingSkills}}</h3>
+  </div>
+</div>
+    
+    
+    <div class="buttonHolder topMargin">
         <div class="txtAndButton" ng-click="rollBtn = true; classHasSpellsChecker()">
             <h5 class="txtButton">CONFIRM</h5>
             <div class="buttonBase">

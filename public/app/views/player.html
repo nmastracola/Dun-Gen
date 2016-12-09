@@ -57,7 +57,6 @@
             <p class="coreStatTxt">XP</p>
           </div>
           <div class="bigCoreStatBox">
-            <!-- <h3 class="coreStat">{{playerXP}}</h3> -->
             <input class="xpInput" type="text" name="XP" value="{{playerXP}}">
           </div>
         </div>
@@ -70,14 +69,14 @@
   <!-- =============================  PLAYER HUD =============================  -->
   <div class="playerHUD">
     <dice-roller></dice-roller>
-    <player-core-hud ng-show="playerMenuToggler[0]; playerMenuToggler[7]"></player-core-hud>
+    <player-core-hud ng-show="playerMenuToggler[0] || playerMenuToggler[7]"></player-core-hud>
     <player-combat-hud ng-show="playerMenuToggler[1]"></player-combat-hud>
     <player-skills-hud ng-show="playerMenuToggler[2]"></player-skills-hud>
     <player-spells-hud ng-show="playerMenuToggler[3]"></player-spells-hud>
     <player-feats-hud ng-show="playerMenuToggler[4]"></player-feats-hud>
     <player-equipment-hud ng-show="playerMenuToggler[5]"></player-equipment-hud>
     <player-customization-hud ng-show="playerMenuToggler[6]"></player-customization-hud>
-    <player-journal-hud ng-show="playerMenuToggler[7]"></player-journal-hud>
+    <player-journal-hud ng-show=""></player-journal-hud>
     <player-menu-hud ng-show="playerMenuToggler[8]"></player-menu-hud>
   </div>
   <!-- =============================  END PLAYER HEADER =============================  -->
@@ -88,7 +87,7 @@
 <!-- ==============================================================  PLAYER BODY ==============================================================  -->
 <div class="playerBody">
   <div class="playerSpacer"></div>
-  <player-core ng-show="playerMenuToggler[0]"></player-core>
+  <player-core ng-show="playerMenuToggler[0] || playerMenuToggler[8]"></player-core>
   <player-combat ng-show="playerMenuToggler[1]"></player-combat>
   <player-skills ng-show="playerMenuToggler[2]"></player-skills>
   <player-spells ng-show="playerMenuToggler[3]"></player-spells>
@@ -96,5 +95,5 @@
   <player-equipment ng-show="playerMenuToggler[5]"></player-equipment>
   <player-customization ng-show="playerMenuToggler[6]"></player-customization>
   <player-journal ng-show="playerMenuToggler[7]"></player-journal>
-  <player-menu ng-show="playerMenuToggler[8]"></player-menu>
+  <player-menu ng-show=""></player-menu>
 </div>

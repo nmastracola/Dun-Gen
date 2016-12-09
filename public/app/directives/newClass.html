@@ -117,72 +117,75 @@
 <div class="classTitle">
   <h3>{{chosenClass}}</h3>
 </div>
-<div class="classContents">
-  <div class="alignmentChanger" ng-hide="staticRace">
-    <div class="alignmentChangerOptions">
+
+  
+  <div class="alignmentChanger flexRow" ng-hide="staticRace">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.lawfulGood"></div>
-      <h5 class="txtButton">Lawful Good</h5>
-      <div class="buttonBase" ng-click="alignmentSwitcher(0)">
-        <div class="buttonSelected" ng-show="alignmentToggler[0]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">Lawful<br>Good</h5>
+      <div class="alignmentButtonBase" ng-click="alignmentSwitcher(0)">
+        <div class="alignmentButtonSelected" ng-show="alignmentToggler[0]"></div>
       </div>
     </div>
-    <div class="alignmentChangerOptions">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.lawfulNeutral"></div>
-      <h5 class="txtButton">Lawful Neutral</h5>
-    <div class="buttonBase" ng-click="alignmentSwitcher(1)">
-      <div class="buttonSelected" ng-show="alignmentToggler[1]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">Lawful<br>Neutral</h5>
+    <div class="alignmentButtonBase" ng-click="alignmentSwitcher(1)">
+      <div class="alignmentButtonSelected" ng-show="alignmentToggler[1]"></div>
     </div>
     </div>
-    <div class="alignmentChangerOptions">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.lawfulEvil"></div>
-      <h5 class="txtButton">Lawful Evil</h5>
-      <div class="buttonBase" ng-click="alignmentSwitcher(2)">
-      <div class="buttonSelected" ng-show="alignmentToggler[2]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">Lawful<br>Evil</h5>
+      <div class="alignmentButtonBase" ng-click="alignmentSwitcher(2)">
+      <div class="alignmentButtonSelected" ng-show="alignmentToggler[2]"></div>
       </div>
     </div>
-    <div class="alignmentChangerOptions">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.neutralGood"></div>
-      <h5 class="txtButton">Neutral Good</h5>
-      <div class="buttonBase" ng-click="alignmentSwitcher(3)">
-      <div class="buttonSelected" ng-show="alignmentToggler[3]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">Neutral<br>Good</h5>
+      <div class="alignmentButtonBase" ng-click="alignmentSwitcher(3)">
+      <div class="alignmentButtonSelected" ng-show="alignmentToggler[3]"></div>
       </div>
     </div>
-    <div class="alignmentChangerOptions">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.neutralNeutral"></div>
-      <h5 class="txtButton">True Neutral</h5>
-      <div class="buttonBase" ng-click="alignmentSwitcher(4)">
-      <div class="buttonSelected" ng-show="alignmentToggler[4]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">True<br>Neutral</h5>
+      <div class="alignmentButtonBase" ng-click="alignmentSwitcher(4)">
+      <div class="alignmentButtonSelected" ng-show="alignmentToggler[4]"></div>
       </div>
     </div>
-    <div class="alignmentChangerOptions">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.neutralEvil"></div>
-      <h5 class="txtButton">Neutral Evil</h5>
-      <div class="buttonBase" ng-click="alignmentSwitcher(5)">
-      <div class="buttonSelected" ng-show="alignmentToggler[5]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">Neutral<br>Evil</h5>
+      <div class="alignmentButtonBase" ng-click="alignmentSwitcher(5)">
+      <div class="alignmentButtonSelected" ng-show="alignmentToggler[5]"></div>
       </div>
     </div>
-    <div class="alignmentChangerOptions">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.chaoticGood"></div>
-      <h5 class="txtButton">Chaotic Good</h5>
-      <div class="buttonBase" ng-click="alignmentSwitcher(6)">
-      <div class="buttonSelected" ng-show="alignmentToggler[6]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">Chaotic<br>Good</h5>
+      <div class="alignmentButtonBase" ng-click="alignmentSwitcher(6)">
+      <div class="alignmentButtonSelected" ng-show="alignmentToggler[6]"></div>
       </div>
     </div>
-    <div class="alignmentChangerOptions">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.chaoticNeutral"></div>
-      <h5 class="txtButton">Chaotic Neutral</h5>
-      <div class="buttonBase" ng-click="alignmentSwitcher(7)">
-      <div class="buttonSelected" ng-show="alignmentToggler[7]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">Chaotic<br>Neutral</h5>
+      <div class="alignmentButtonBase" ng-click="alignmentSwitcher(7)">
+      <div class="alignmentButtonSelected" ng-show="alignmentToggler[7]"></div>
       </div>
     </div>
-    <div class="alignmentChangerOptions">
+    <div class="alignmentChangerOptions flexRow">
       <div class="alignmentEnabler" ng-hide="classObject.alignmentRestriction.chaoticEvil"></div>
-      <h5 class="txtButton">Chaotic Evil</h5>
-      <div class="buttonBase" ng-click="alignmentSwitcher(8)">
-      <div class="buttonSelected" ng-show="alignmentToggler[8]"></div>
+      <h5 class="alignmentTxtBttn rightTxt">Chaotic<br>Evil</h5>
+      <div class="alignmentButtonBase" ng-click="alignmentSwitcher(8)">
+      <div class="alignmentButtonSelected" ng-show="alignmentToggler[8]"></div>
       </div>
     </div>
   </div>
+  
+<div class="classContents">
   <h4 class="centerTxt boldTxt classContentsShortDesc">{{classObject.shortClassDescription}}</h4>
   <p class="classContentsFullDesc">{{classObject.classDescription}}</p>
   <p class="classContentsBottomSpacer"><span class="boldTxt">Role: </span>{{classObject.role}}</p>
