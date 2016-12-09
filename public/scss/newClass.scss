@@ -253,21 +253,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .alignmentChanger{
-  margin-bottom: 20px;
+  margin: 20px auto 20px;
   height: 40px;
-  width: 100%;
+  width: 90%;
   background-color: lightgray;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
 }
 
 .alignmentChangerOptions{
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  border: solid transparent 5px;
+
   position: relative;
 }
 
@@ -287,3 +281,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   margin: 15px 0;
 }
 
+.alignmentButtonBase{
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  background-color: $wht;
+  // border: 2px solid $blk;
+  margin: 10px 0px 0 10px;
+  cursor: pointer;
+}
+
+.alignmentButtonSelected{
+  width: 16px;
+  height: 16px;
+  background-color: $f7;
+  position: relative;
+}
+
+.alignmentTxtBttn{
+  margin: 0 0 0 5px;
+  padding: 5px 0 0 0;
+}
