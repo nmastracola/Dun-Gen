@@ -2,8 +2,6 @@ angular.module('scribe').controller('playerCtrl', function($scope, sService, cha
 
 $scope.test = sService.test;
 $scope.character = character;
-console.log($scope.character);
-console.log($scope.character[0]);
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
