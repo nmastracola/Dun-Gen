@@ -13,7 +13,7 @@ $scope.login = function(user) {
       alert('User does not exist');
       $scope.user.password = '';
     } else {
-      $state.go('charSelect', {userId: response.data.userId});
+      $state.go('charSelect', {userId: response.data._id});
     }
   }).catch(function(err) {
     alert('Unable to login');
@@ -28,7 +28,7 @@ $scope.register = function(user) {
       } else {
         alert('User Created');
         $scope.newUser = {};
-        $state.go('charSelect', {userId: response.data.userId});
+        $state.go('charSelect', {userId: response.data._id});
       }
     }).catch(function(err) {
 
