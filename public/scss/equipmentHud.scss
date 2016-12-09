@@ -1,0 +1,29 @@
+.equipmentHudContainer {
+  width: 650px;
+  height: 130px;
+  justify-content: center;
+  background: snow;
+}
+
+.equipmentHudLeft {
+  width: 70%;
+  height: 80%;
+  border-right: 5px solid grey;
+  background: olive;
+}
+
+.header {
+
+}
+
+.headerImg img {
+  height: 30px;
+  width: 30px;
+}
+
+.leftBox {
+  height: 50px;
+  width: 100px;
+  background: orange;
+  margin-right: 10px;
+}
