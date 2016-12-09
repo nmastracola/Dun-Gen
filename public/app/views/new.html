@@ -1,6 +1,6 @@
 <div class="scrollBkgrd">
     <!--=============  first header   =============-->
-    <div class="newHeader" id="firstHeader" ng-click="rollShower = !rollShower">
+    <div class="newHeader" id="firstHeader">
         <h4 class="newHeaderTxt">ROLLS</h4>
     </div>
     <!-- first section -->
@@ -8,7 +8,7 @@
       <rolls ng-show="rollShower" roll-shower="rollShower" race-shower="raceShower" attributes="attributes" attribute-modifier="attributeModifier"></rolls>
 
     <!-- =============  race header   =============-->
-    <div class="newHeader" id="raceHeader" ng-click="raceShower = !raceShower">
+    <div class="newHeader" id="raceHeader">
         <h4 class="newHeaderTxt">RACE</h4>
     </div>
     <!-- race section -->
@@ -17,7 +17,7 @@
 
 
     <!-- =============  class header   =============-->
-    <div class="newHeader" id="classHeader" ng-click="classShower = !classShower; raceChoice()">
+    <div class="newHeader" id="classHeader">
         <h4 class="newHeaderTxt">CLASS</h4>
     </div>
     <!-- class section -->
@@ -25,7 +25,7 @@
     <class ng-show="classShower" classes="classes" race-choice="raceChoice()" abilities-shower="abilitiesShower" class-shower="classShower" spells-tab="spellsTab" set-remaining-feats="setRemainingFeats()"></class>
 
     <!-- =============  abilities header   =============-->
-    <div class="newHeader" id="abilitiesHeader" ng-click="abilitiesShower = !abilitiesShower">
+    <div class="newHeader" id="abilitiesHeader">
         <h4 class="newHeaderTxt">ABILITIES</h4>
     </div>
     <!-- abilities section -->
@@ -33,7 +33,7 @@
       <abilities ng-show="abilitiesShower" feats="feats" races="races" abilities-shower="abilitiesShower" spells-shower="spellsShower" chosen-race-traits="chosenRaceTraits" feat-toggler="featToggler" skills="skills" skills-shower="skillsShower" set-remaining-skills="setRemainingSkills()" remaining-feats="remainingFeats"></abilities>
 
       <!-- =============  skills header   =============-->
-      <div class="newHeader" id="skillsHeader" ng-click="skillsShower = !skillsShower">
+      <div class="newHeader" id="skillsHeader">
           <h4 class="newHeaderTxt">SKILLS</h4>
       </div>
       <!-- skills section -->
@@ -42,7 +42,7 @@
 
 
     <!-- =============  spells header   =============-->
-    <div class="newHeader" id="spellsHeader" ng-show="spellsTab" ng-click="spellsShower = !spellsShower">
+    <div class="newHeader" id="spellsHeader" ng-show="spellsTab">
         <h4 class="newHeaderTxt">SPELLS</h4>
     </div>
     <!-- spells section -->
@@ -51,7 +51,7 @@
 
 
     <!-- =============  customization header   =============-->
-    <div class="newHeader" id="customizationHeader" ng-click="customizationShower = !customizationShower">
+    <div class="newHeader" id="customizationHeader">
         <h4 class="newHeaderTxt">CUSTOMIZATION</h4>
     </div>
     <!-- customization section -->
