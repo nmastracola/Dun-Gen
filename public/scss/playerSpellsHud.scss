@@ -1,0 +1,44 @@
+.spellHudHeader{
+  width: 100%;
+  margin: 5px 0 5px 0;
+  justify-content: center;
+}
+
+.spellHudDescription{
+  width: 550px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.spellHudDescriptionHolder{
+  overflow-y: scroll;
+}
+
+.spellHudLeftArrow{
+  width: 0; 
+  height: 0; 
+  margin: 2px 0 0 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid $blk;
+  &:hover{
+    border-left: 10px solid lightGrey;
+  }
+}
+
+.spellHudRightArrow{
+  width: 0; 
+  height: 0; 
+  margin: 2px 0 0 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid $blk;
+  &:hover{
+    border-right: 10px solid lightGrey;
+  }
+  
+}
+
+.spellHudCenteringTxt{
+  margin: 0 20px 0 20px;
+}

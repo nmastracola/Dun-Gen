@@ -16,8 +16,8 @@
             <!-- individual character starts here -->
         <div class="charSelectCharRow flexRow" ng-repeat="char in userChars">
 
-            <h4 class="charSelectCharName leftTxt">{{char.characterName}}</h4>
-            <div class="charSelectCharClassesWrapper" ng-repeat="class in char.classes">
+            <h4 class="charSelectCharName leftTxt">{{char.static.characterName}}</h4>
+            <div class="charSelectCharClassesWrapper" ng-repeat="class in char.static.classes">
               <p class="charSelectCharClass offWhtTxt flexRow">Level {{class.level}} {{class.class}}</p>
             </div>
 
