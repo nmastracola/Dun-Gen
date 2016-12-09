@@ -19,7 +19,7 @@ module.exports = {
   editFeat: function(req, res,next){
     Feats.update(req.query, req.body, function(err,user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -30,7 +30,7 @@ module.exports = {
   addFeat: function(req, res, next){
     Feats.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -38,7 +38,7 @@ module.exports = {
   addSpells: function(req, res, next){
     spells.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -46,7 +46,7 @@ module.exports = {
   addArmor: function(req, res, next){
     Armor.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -54,7 +54,7 @@ module.exports = {
   addGoodsAndServices: function(req, res, next){
     GoodsAndServices.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -62,7 +62,7 @@ module.exports = {
   addSkills: function(req, res, next){
     Skills.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -70,7 +70,7 @@ module.exports = {
   addWeapons: function(req, res, next){
     Weapons.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -78,7 +78,7 @@ module.exports = {
   addDamagingArmor: function(req, res, next){
     DamagingArmor.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -86,7 +86,7 @@ module.exports = {
   addChat: function(req, res, next){
     Chat.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -94,7 +94,7 @@ module.exports = {
   addClass: function(req, res, next){
     Class.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -102,7 +102,7 @@ module.exports = {
   addRaces: function(req, res, next){
     races.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -110,7 +110,7 @@ module.exports = {
   addBonusSpells: function(req, res, next){
     BonusSpells.create(req.body, function(err, user){
       if(err){
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
       res.status(200).send(user);
     })
@@ -121,7 +121,7 @@ module.exports = {
  getFeat: function(req, res, next){
    Feats.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -129,7 +129,7 @@ module.exports = {
  getSpells: function(req, res, next){
    spells.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -137,7 +137,7 @@ module.exports = {
  getClass: function(req, res, next){
    Class.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -145,7 +145,7 @@ module.exports = {
  getArmor: function(req, res, next){
    Armor.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -153,7 +153,7 @@ module.exports = {
  getRaces: function(req, res, next){
    races.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -161,7 +161,7 @@ module.exports = {
  getChat: function(req, res, next){
    Chat.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -169,7 +169,7 @@ module.exports = {
  getSkills: function(req, res, next){
    Skills.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -177,7 +177,7 @@ module.exports = {
  getWeapons: function(req, res, next){
    Weapons.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -185,7 +185,7 @@ module.exports = {
  getDamagingArmor: function(req, res, next){
    DamagingArmor.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -193,7 +193,7 @@ module.exports = {
  getGoodsAndServices: function(req, res, next){
    GoodsAndServices.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -201,7 +201,7 @@ module.exports = {
  getBonusSpells: function(req, res, next){
    BonusSpells.find(req.query, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
@@ -209,7 +209,7 @@ module.exports = {
  getUserCharacters: function(req, res, next){
    Character.find({'static.userId': req.user._id}, function(err, chars){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(chars);
    }) 
@@ -219,24 +219,24 @@ module.exports = {
  addUser: function(req, res, next){
    TempUser.create(req.body, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })
  },
  createCharacter: function(req, res, next){
    req.body.static.userId = req.user._id;
-   Character.create(req.body, function(err, user){
+   Character.create(req.body, function(err, char){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
-     res.status(200).send(user);
+     res.status(200).send(char);
    })
  },
  getCharacter: function(req, res, next){
-   Character.find(req.query, function(err, user){
+   Character.find({_id: req.params.charId}, function(err, user){
      if(err){
-       res.status(500).send(err);
+       return res.status(500).send(err);
      }
      res.status(200).send(user);
    })

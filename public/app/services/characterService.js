@@ -10,6 +10,7 @@ angular.module("scribe").service("characterService", function($http) {
         playerName: "",
         characterName: "",
             // required: true
+        gender: "",
         campaign: "",
         race: "",
             // required: true
@@ -57,10 +58,19 @@ angular.module("scribe").service("characterService", function($http) {
         hitPointsModifier: null,
         wounds: "",
         speeds: {
-            movementType: "",
-            movementSpeed: null
-        }
-    },
+            baseSpeed: "",
+            baseSpeedMod: null,
+            flySpeed: "",
+            flySpeedMod: null,
+            swimSpeed: "",
+            swimSpeedMod: null,
+            climbSpeed: "",
+            climbSpeedMod: null,
+            burrowSpeed: "",
+            burrowSpeedMod: null,
+            miscSpeedMod: null
+          }
+        },
     weapons: [{
         name: "",
         type: "",
@@ -221,10 +231,10 @@ angular.module("scribe").service("characterService", function($http) {
       return response.data
     })
   };
-  this.getCharObject = function(id) { //ADD user id later
+  this.getCharObject = function(charId) {
     return $http({
       method: 'GET',
-      url: '/api/character' + id
+      url: '/api/character/' + charId
     }).then(function(response) {
       return response;
     });

@@ -43,7 +43,6 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
   $scope.setRemainingFeats = function () {
     $scope.remainingFeats = 1
     if (characterService.characterCreationObject.static.race === 'Humans') {
-      console.log(characterService.characterCreationObject.static.race);
       $scope.remainingFeats += 1
     }
   }

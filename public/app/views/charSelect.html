@@ -14,7 +14,7 @@
       </div>
       <div class="charSelectCharListWrapper flexColumn">
             <!-- individual character starts here -->
-        <div class="charSelectCharRow flexRow" ng-repeat="char in userChars">
+        <div ng-click="(displayChar(char._id))" class="charSelectCharRow flexRow" ng-repeat="char in userChars">
 
             <h4 class="charSelectCharName leftTxt">{{char.static.characterName}}</h4>
             <div class="charSelectCharClassesWrapper" ng-repeat="class in char.static.classes">

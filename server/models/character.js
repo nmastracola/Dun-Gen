@@ -18,6 +18,9 @@ var characterSchema = mongoose.Schema({
           type: String,
           required: true
       },
+      gender: {
+        type: String
+      },
       portraitURL:{
         type: String,
         default: 'http://i.imgur.com/WQ9QupQ.jpg'
@@ -160,10 +163,37 @@ var characterSchema = mongoose.Schema({
           type: String
       },
       speeds: {
-          movementType: {
-              type: String
+          baseSpeed: {
+              type: Number
           },
-          movementSpeed: {
+          baseSpeedMod: {
+              type: Number
+          },
+          flySpeed: {
+              type: Number
+          },
+          flySpeedMod: {
+              type: Number
+          },
+          swimSpeed: {
+              type: Number
+          },
+          swimSpeedMod: {
+              type: Number
+          },
+          climbSpeed: {
+              type: Number
+          },
+          climbSpeedMod: {
+              type: Number
+          },
+          burrowSpeed: {
+              type: Number
+          },
+          burrowSpeedMod: {
+              type: Number
+          },
+          miscSpeedMod: {
               type: Number
           }
       }
