@@ -22,6 +22,7 @@ angular.module('scribe', ['ui.router'])
         controller: 'charSelectCtrl',
         resolve: {
           userChars: function($stateParams, characterService){
+            console.log($stateParams.userId);
             return characterService.getUserCharacters($stateParams.userId);
           }
         }
