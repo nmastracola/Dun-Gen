@@ -1,5 +1,7 @@
 angular.module('scribe').controller('newCtrl', function($scope, sService, characterService, races, feats, classes, skills) {
 
+  $scope.chosenFeats = [];
+
   $scope.test = sService.test;
   $scope.races = races;
   $scope.feats = feats;
@@ -17,8 +19,8 @@ angular.module('scribe').controller('newCtrl', function($scope, sService, charac
   $scope.raceShower = false;
   $scope.classShower = false;
   $scope.abilitiesShower = false;
-  $scope.spellsShower = false;
   $scope.skillsShower = false;
+  $scope.spellsShower = false;
   $scope.customizationShower = false;
 
   $scope.spellsTab = false
