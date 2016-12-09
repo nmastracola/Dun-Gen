@@ -17,9 +17,14 @@ angular.module('scribe', ['ui.router'])
         // }
       })
       .state('charSelect', {
-        url: '/charselect',
+        url: '/charselect/:userId',
         templateUrl: './app/views/charSelect.html',
-        controller: 'charSelectCtrl'
+        controller: 'charSelectCtrl',
+        resolve: {
+          userChars: function($stateParams, characterService){
+            return characterService.getUserCharacters($stateParams.userId);
+          }
+        }
       })
       .state('new', {
           url: '/new',
@@ -44,9 +49,10 @@ angular.module('scribe', ['ui.router'])
         url: '/player/:userId/:charId',
         templateUrl: './app/views/player.html',
         controller: 'playerCtrl',
-        params: {
-          userId: null,
-          charId: null
+        resolve:{
+          character: function($stateParams, characterService) {
+            return characterService.getCharObject($stateParams.charId);
+          }
         }
       })
 })
