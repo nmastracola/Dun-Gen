@@ -28,7 +28,7 @@
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>STR</h4></div>
-                    <div class="rollBox blkBkg" ng-click="dropStat(0)">
+                    <div class="rollBox blkBkg" ng-click="dropStat(0); attributesDisplayersetter=0">
                         <h5 class="rollContent">{{attributes[0]}}</h5></div>
                     <div class="rollBox ltgreyBkg">
                         <h5 class="rollContent">{{attributeModifier[0]}}</h5></div>
@@ -39,7 +39,7 @@
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>DEX</h4></div>
-                    <div class="rollBox blkBkg " ng-click="dropStat(1)">
+                    <div class="rollBox blkBkg " ng-click="dropStat(1); attributesDisplayersetter=1">
                         <h5 class="rollContent">{{attributes[1]}}</h5></div>
                     <div class="rollBox ltgreyBkg">
                         <h5 class="rollContent">{{attributeModifier[1]}}</h5></div>
@@ -50,7 +50,7 @@
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>CON</h4></div>
-                    <div class="rollBox blkBkg " ng-click="dropStat(2)">
+                    <div class="rollBox blkBkg " ng-click="dropStat(2); attributesDisplayersetter=2">
                         <h5 class="rollContent">{{attributes[2]}}</h5></div>
                     <div class="rollBox ltgreyBkg">
                         <h5 class="rollContent">{{attributeModifier[2]}}</h5></div>
@@ -61,7 +61,7 @@
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>INT</h4></div>
-                    <div class="rollBox blkBkg " ng-click="dropStat(3)">
+                    <div class="rollBox blkBkg " ng-click="dropStat(3); attributesDisplayersetter=3">
                         <h5 class="rollContent">{{attributes[3]}}</h5></div>
                     <div class="rollBox ltgreyBkg">
                         <h5 class="rollContent">{{attributeModifier[3]}}</h5></div>
@@ -72,7 +72,7 @@
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>WIS</h4></div>
-                    <div class="rollBox blkBkg " ng-click="dropStat(4)">
+                    <div class="rollBox blkBkg " ng-click="dropStat(4); attributesDisplayersetter=4">
                         <h5 class="rollContent">{{attributes[4]}}</h5></div>
                     <div class="rollBox ltgreyBkg">
                         <h5 class="rollContent">{{attributeModifier[4]}}</h5></div>
@@ -83,7 +83,7 @@
                 <div class="rollRow">
                     <div class="rollBox whtBkg">
                         <h4>CHA</h4></div>
-                    <div class="rollBox blkBkg" ng-click="dropStat(5)">
+                    <div class="rollBox blkBkg" ng-click="dropStat(5); attributesDisplayersetter=5">
                         <h5 class="rollContent">{{attributes[5]}}</h5></div>
                     <div class="rollBox ltgreyBkg">
                         <h5 class="rollContent">{{attributeModifier[5]}}</h5></div>
@@ -313,10 +313,8 @@
     </section>
 
     <div class="rollDetails">
-        <h4 class="rollDetailHeader">STRENGTH</h4>
-        <p class="rollDetailsP">Strength measures muscle and physical power. This ability is important for those who engage in hand-to-hand (or "melee") combat, such as fighters, monks, paladins, and some rangers. Strength also sets the maximum amount of weight your character
-            can carry. A character with a Strength score of 0 is too weak to move in any way and is unconscious. Some creatures do not possess a Strength score and have no modifier at all to Strength-based skills or checks.
-        </p>
+        <h4 class="rollDetailHeader">{{attributesDisplayerHeaders[attributesDisplayersetter]}}</h4>
+        <p class="rollDetailsP">{{attributesDisplayerBODY[attributesDisplayersetter]}}</p>
     </div>
 
     <div class="buttonHolder">

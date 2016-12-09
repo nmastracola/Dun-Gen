@@ -64,7 +64,21 @@
   <textarea class="biography" ng-model="customization.biography"></textarea>
 </div>
 
-<button type="button" name="button" ng-click="customizationFields(); submitNewChar()">SUBMIT</button>
+<div class="buttonHolder">
+    <div class="txtAndButton" ng-click="rollBtn = true; customizationFields(); submitNewChar()">
+        <h5 class="txtButton">CONFIRM</h5>
+        <div class="buttonBase">
+            <div class="buttonSelected" ng-show="rollBtn"></div>
+        </div>
+    </div>
+    <div class="txtAndButton">
+        <div class="buttonBase" ng-click="rollBtn = false">
+            <div class="buttonSelected" ng-hide="rollBtn"></div>
+        </div>
+        <h5 class="txtButton">CANCEL</h5>
+    </div>
+
+</div>
 
 
 
