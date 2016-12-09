@@ -18,6 +18,14 @@ angular.module('scribe')
               $scope.confirmRace = function() {
                 var charCre = characterService.characterCreationObject.core
                 characterService.characterCreationObject.static.race = $scope.chosenRace
+                if ($scope.male){
+                  characterService.characterCreationObject.static.gender = "Male"
+                } else if ($scope.female){
+                  characterService.characterCreationObject.static.gender = "Female"
+                } else {
+                  characterService.characterCreationObject.static.gender = "Ambiguous"
+                }
+                characterService.characterCreationObject.core.speeds.baseSpeed = $scope.races[$scope.raceCounter].speed
                   if ($scope.races[$scope.raceCounter].mod.bon) {
                     $scope.attributes[$scope.abilityCounter] += 2
                   }
@@ -80,7 +88,6 @@ angular.module('scribe')
                   $scope.classShower = !$scope.classShower;
                   $scope.displayClass();
                   $scope.raceConfirmed = 1
-
                   console.log(characterService.characterCreationObject.static.race);
                   return
                 }
@@ -90,7 +97,7 @@ angular.module('scribe')
                     $scope.rollShower = !$scope.rollShower
                     $scope.raceShower = !$scope.raceShower
                     console.log(characterService.characterCreationObject);
-                    
+
                     return
                   }
                   var charCre = characterService.characterCreationObject.core

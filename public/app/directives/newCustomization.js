@@ -3,7 +3,7 @@ angular.module('scribe')
 return{
   restrict: 'E',
   templateUrl: './app/directives/newCustomization.html',
-  controller: function($scope, characterService) {
+  controller: function($scope, characterService, $state) {
 
     $scope.customization = {}
 
@@ -16,10 +16,8 @@ return{
 
     $scope.charHitPoints = 0;
     for (let i = 0; i < $scope.classes.length; i++) {
-      console.log($scope.classes);
       if ($scope.classes[i].class === currentClass) {
         $scope.charHitPoints = $scope.classes[i].hitDie + $scope.attributeModifier[2]
-        console.log("hp before toughness = " + $scope.charHitPoints);
 
           for (let i = 0; i < feats.length; i++) {
             if (feats[i].name === "Toughness") {
@@ -46,13 +44,18 @@ return{
       $scope.charObjDesc.misc = $scope.customization.misc
       $scope.charObjDesc.characterDescription = $scope.customization.characterDescription
       $scope.charObjDesc.biography = $scope.customization.biography
-
       $scope.HPCalc()
-      console.log(characterService.characterCreationObject);
     }
 
     $scope.submitNewChar = function() {
-      characterService.createCharacter();
+      characterService.createCharacter()
+      .then(function(response){
+        $state.go('player', {userId: response.data.static.userId, charId: response.data._id})
+      })
+      .catch(function(err){
+        alert("There was an error, please log in and try again.")
+        $state.go('home')
+      })
     }
 
   },

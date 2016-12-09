@@ -11,7 +11,7 @@ return{
       for (var i = 0; i < $scope.skills.length; i++) {
         if ($scope.skills[i].skill === skill.name) {
           for (var props in $scope.skills[i]) {
-            // console.log($scope.skills[i][props], "props");
+            // console.($scope.skills[i][props], "props");
             // console.log($scope.skills[i], "skill at i");
             // console.log(charClass);
             if (props === charClass) {
@@ -36,7 +36,6 @@ return{
         tempHD += characterService.characterCreationObject.static.classes[i].level
       }
       $scope.hitDice = tempHD
-      console.log($scope.hitDice);
     }
 
     $scope.ranks = 0;
@@ -45,7 +44,6 @@ return{
       for (var i = 0; i < $scope.charGenSkills.length; i++) {
         if ($scope.charGenSkills[i] === skill) {
           if (numToAdd !== 0) {
-            console.log($scope.hitDice);
             if (numToAdd > 0 && $scope.remainingSkills > 0 && $scope.charGenSkills[i].ranks < $scope.hitDice) {
               $scope.charGenSkills[i].ranks += numToAdd
               $scope.remainingSkills -= numToAdd
