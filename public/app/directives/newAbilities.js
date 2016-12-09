@@ -123,7 +123,6 @@ angular.module('scribe')
           $scope.setSkills()
         }
 
-        console.log($scope.feats);
         $scope.featsDisplayArrs = $scope.feats
         $scope.hideIneligableFeats = function(feat) {
           if ($scope.featsDisplayArrs.length < 173) {

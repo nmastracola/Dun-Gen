@@ -9,12 +9,11 @@ angular.module("scribe").controller("charSelectCtrl", function($scope, character
   // ============================================================
   
   $scope.userChars = userChars;
-  console.log($scope.userChars);
   
   $scope.displayChar = function(charId){
     characterService.getCharObject(charId)
     .then(function(response){
-      $state.go('player', {userId: response[0].static.userId, charId: response[0]._id})
+      $state.go('player', {charId: response[0]._id})
     })
     .catch(function(err){
       alert("There was an error, please log in and try again.")

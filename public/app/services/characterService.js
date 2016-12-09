@@ -197,7 +197,7 @@ angular.module("scribe").service("characterService", function($http) {
 
   };
 
-  this.createCharacter = function(characterData) {
+  this.createCharacter = function() {
     return $http({
       method: 'POST',
       url: '/api/character',
@@ -223,10 +223,10 @@ angular.module("scribe").service("characterService", function($http) {
       return response;
     });
   };
-  this.getUserCharacters = function(){
+  this.getUserCharacters = function(userId){
     return $http({
       method: 'GET',
-      url: '/api/characters'
+      url: '/api/characters/' + userId
     }).then(function(response){
       return response.data
     })
