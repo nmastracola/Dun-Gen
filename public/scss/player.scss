@@ -98,6 +98,7 @@ z-index: 2;
 .coreStat{
   color: $wht;
   text-align: center;
+    padding: 10px 0 0 0;
 }
 
 .coreHPup{
@@ -131,7 +132,7 @@ z-index: 2;
   height: 40px;
   background-color: $blk;
   text-align: center;
-  font-family: 'Merriweather', serif;
+  font-family: $h;
   color: $wht;
   letter-spacing: .1em;
   font-size: 1.5em;
