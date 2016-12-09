@@ -11,7 +11,7 @@ angular.module('scribe')
 
                 $scope.chosenClass = "Monk";
                 $scope.classObject = {}
-                
+
                 $scope.classPicker = function(x) {
                     $scope.chosenClass = $scope.classList[x];
                     $scope.displayClass()
@@ -40,6 +40,7 @@ angular.module('scribe')
                 }
                 $scope.displayClass();
                 $scope.setClass = function() {
+                    characterService.characterCreationObject.static.classes = []
                     characterService.characterCreationObject.static.classes.push({
                         "class": $scope.classObject.class,
                         "level": 1
@@ -48,19 +49,25 @@ angular.module('scribe')
                         "type": "bab",
                         "value": $scope.classObject.genericLevelGain[0].baseAttackBonus
                     })
-                    characterService.characterCreationObject.alignment = $scope.alignments[$scope.alignmentCounter]
-                    console.log(characterService.characterCreationObject.alignment);
+                    characterService.characterCreationObject.static.alignment = $scope.alignments[$scope.alignmentCounter]
+                    characterService.characterCreationObject.static.baseAttackBonus = $scope.classObject.genericLevelGain[0].baseAttackBonus
+                    characterService.characterCreationObject.static.experience = 0;
+                    characterService.characterCreationObject.core.fortitudeBaseSave = $scope.classObject.genericLevelGain[0].fortSave
+                    characterService.characterCreationObject.core.reflexBaseSave = $scope.classObject.genericLevelGain[0].refSave
+                    characterService.characterCreationObject.core.willBaseSave = $scope.classObject.genericLevelGain[0].willSave
                     $scope.classShower= !$scope.classShower
                     $scope.abilitiesShower= !$scope.abilitiesShower
                     if ($scope.classObject.hasSpells) {
                       $scope.spellsTab = true
                     }
                     $scope.raceChoice()
+                    $scope.setRemainingFeats()
+                    
                 }
-                
+
                 $scope.alignmentToggler = [false, false, false, false, false, false, false, false, false];
                 $scope.alignmentSwitcher = function(x) {
-  
+
                     for (var i = 0; i < $scope.alignmentToggler.length; i++) {
                         if (i == x) {
                           $scope.alignmentCounter = i;
@@ -70,14 +77,15 @@ angular.module('scribe')
                         }
                     }
                 };
-                
+
             },
             scope: {
                 classes: "=",
                 raceChoice: "&",
                 abilitiesShower: "=",
                 classShower: "=",
-                spellsTab: "="
+                spellsTab: "=",
+                setRemainingFeats: "&"
             },
             link: function(scope, element, attributes) {}
         };

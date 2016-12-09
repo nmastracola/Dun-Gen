@@ -1,0 +1,31 @@
+.customizationHudContainer {
+  width: 650px;
+  height: 130px;
+  overflow-y: scroll;
+}
+
+.customizationHudHeader {
+
+}
+
+.customizationHudBox {
+  width: 85%;
+  height: calc(1em + 5px);
+  padding: 2.5px;
+  margin-top: 5px;
+}
+
+.skillPlusMinus {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.whiteTxt {
+  color: white;
+  height: 100%;
+}
+
+.rowMe {
+  justify-content: center;
+  margin-top: 5px;
+}

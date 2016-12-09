@@ -6,16 +6,14 @@ angular.module("scribe").service("characterService", function($http) {
   this.characterCreationObject = {
     static: {
         userId: "",
+            // required: true
         playerName: "",
         characterName: "",
             // required: true
         campaign: "",
         race: "",
             // required: true
-        classes: [{
-          class: "Monk",
-          level: 1
-        }],
+        classes: [],
         alignment: "",
         experience: ""
     },
@@ -188,12 +186,12 @@ angular.module("scribe").service("characterService", function($http) {
 
 
   };
-  var self = this;
+
   this.createCharacter = function(characterData) {
     return $http({
       method: 'POST',
       url: '/api/character',
-      data: self.characterCreationObject
+      data: this.characterCreationObject
     }).then(function(response) {
       return response;
     });

@@ -5,7 +5,7 @@ var objectID = mongoose.Schema.Types.ObjectId;
 // DEFINE SCHEMA
 // ============================================================
 var characterSchema = mongoose.Schema({
-  static: [{
+  static: {
       userId: {
           type: objectID,
           ref: 'Users',
@@ -32,7 +32,7 @@ var characterSchema = mongoose.Schema({
       classes: [{
           class: {
               type: String,
-                  required: true
+              required: true
           },
           level: {
               type: Number,
@@ -46,8 +46,12 @@ var characterSchema = mongoose.Schema({
       experience: {
           type: Number,
           required: true
+      },
+      baseAttackBonus: {
+        type: Number,
+        required: true
       }
-  }],
+  },
   qualifications: [{
     type: {
       type: String
@@ -109,7 +113,8 @@ var characterSchema = mongoose.Schema({
           type: Number
       },
       fortitudeBaseSave: {
-          type: Number
+          type: Number,
+          required: true
       },
       fortitudeMagicModifier: {
           type: Number
@@ -118,7 +123,8 @@ var characterSchema = mongoose.Schema({
           type: Number
       },
       reflexBaseSave: {
-          type: Number
+          type: Number,
+          required: true
       },
       reflexMagicModifier: {
           type: Number
@@ -127,7 +133,8 @@ var characterSchema = mongoose.Schema({
           type: Number
       },
       willBaseSave: {
-          type: Number
+          type: Number,
+          required: true
       },
       willMagicModifier: {
           type: Number
@@ -290,7 +297,7 @@ var characterSchema = mongoose.Schema({
           type: Boolean,
           required: true
       },
-      Description: {
+      description: {
           type: String
       }
   }],

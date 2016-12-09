@@ -225,6 +225,7 @@ module.exports = {
    })
  },
  createCharacter: function(req, res, next){
+   req.body.static.userId = req.user._id;
    Character.create(req.body, function(err, user){
      if(err){
        res.status(500).send(err);
