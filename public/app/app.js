@@ -41,8 +41,12 @@ angular.module('scribe', ['ui.router'])
           }
       })
       .state('player', {
-        url: '/player',
+        url: '/player/:userId/:charId',
         templateUrl: './app/views/player.html',
-        controller: 'playerCtrl'
+        controller: 'playerCtrl',
+        params: {
+          userId: null,
+          charId: null
+        }
       })
 })

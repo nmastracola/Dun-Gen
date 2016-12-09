@@ -11,7 +11,7 @@ return{
       for (var i = 0; i < $scope.skills.length; i++) {
         if ($scope.skills[i].skill === skill.name) {
           for (var props in $scope.skills[i]) {
-            // console.log($scope.skills[i][props], "props");
+            // console.($scope.skills[i][props], "props");
             // console.log($scope.skills[i], "skill at i");
             // console.log(charClass);
             if (props === charClass) {
@@ -36,7 +36,6 @@ return{
         tempHD += characterService.characterCreationObject.static.classes[i].level
       }
       $scope.hitDice = tempHD
-      console.log($scope.hitDice);
     }
 
     $scope.ranks = 0;
@@ -45,7 +44,6 @@ return{
       for (var i = 0; i < $scope.charGenSkills.length; i++) {
         if ($scope.charGenSkills[i] === skill) {
           if (numToAdd !== 0) {
-            console.log($scope.hitDice);
             if (numToAdd > 0 && $scope.remainingSkills > 0 && $scope.charGenSkills[i].ranks < $scope.hitDice) {
               $scope.charGenSkills[i].ranks += numToAdd
               $scope.remainingSkills -= numToAdd
@@ -129,6 +127,27 @@ return{
       }
       return $scope.abilityMod
     }
+    $scope.skillCancel=function () {
+      for (var i = 0; i < $scope.charGenSkills.length; i++) {
+        $scope.charGenSkills[i] = 0
+      }
+      for (var i = 0; i < $scope.chosenFeats.length; i++) {
+        for (var j = 0; j < characterService.characterCreationObject.feats.length; j++) {
+          if (characterService.characterCreationObject.feats[j].name === $scope.chosenFeats[i].name) {
+            characterService.characterCreationObject.feats.splice(j,1)
+          }
+        }
+      };
+      for (var i = 0; i < $scope.chosenFeats.length; i++) {
+        for (var j = 0; j < characterService.characterCreationObject.qualifications.length; j++) {
+          if (characterService.characterCreationObject.qualifications[j].value[1] === $scope.chosenFeats[i].name) {
+            characterService.characterCreationObject.qualifications[j].splice(j,1)
+          }
+        }
+      };
+      $scope.skillsShower=!$scope.skillsShower
+      $scope.abilitiesShower=!$scope.abilitiesShower
+    }
   },
   scope: {
     skills: "=",
@@ -136,7 +155,10 @@ return{
     attributeModifier:"=",
     classHasSpellsChecker: "&",
     classes: "=",
-    remainingSkills: "="
+    remainingSkills: "=",
+    skillsShower: "=",
+    abilitiesShower:"=",
+    chosenFeats:"="
 
 
   },
