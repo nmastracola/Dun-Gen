@@ -207,7 +207,7 @@ module.exports = {
    })
  },
  getUserCharacters: function(req, res, next){
-   Character.find({userId: req.user._id}, function(err, chars){
+   Character.find({'static.userId': req.user._id}, function(err, chars){
      if(err){
        res.status(500).send(err);
      }
