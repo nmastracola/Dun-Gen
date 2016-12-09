@@ -236,7 +236,7 @@ angular.module("scribe").service("characterService", function($http) {
       method: 'GET',
       url: '/api/character/' + charId
     }).then(function(response) {
-      return response;
+      return response.data;
     });
   };
   // OTHER FUNCTIONS
