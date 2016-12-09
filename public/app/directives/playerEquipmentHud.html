@@ -1,4 +1,4 @@
-<div class="equipmentHudContainer">
+<div class="equipmentHudContainer flexRow">
 
     <div class="equipmentHudLeft">
         <div class="header flexRow">
@@ -10,55 +10,92 @@
             </div>
         </div>
         <div class="boxes flexRow">
-          <div class="leftBox">
-              <div class="boxName">
-                  <p>PLATINUM</p>
-              </div>
-              <div class="boxValue">
-                  <p>4</p>
-              </div>
-          </div>
-          <div class="leftBox">
-              <div class="boxName">
-                  <p>GOLD</p>
-              </div>
-              <div class="boxValue">
-                  <p>4</p>
-              </div>
-          </div>
-          <div class="leftBox">
-              <div class="boxName">
-                  <p>SILVER</p>
-              </div>
-              <div class="boxValue">
-                  <p>4</p>
-              </div>
-          </div>
-          <div class="leftBox">
-              <div class="boxName">
-                  <p>COPPER</p>
-              </div>
-              <div class="boxValue">
-                  <p>4</p>
-              </div>
-          </div>
+            <div class="leftBox">
+                <div class="boxName">
+                    <p>PLATINUM</p>
+                </div>
+                <div class="boxValue">
+                    <p>4</p>
+                </div>
+            </div>
+            <div class="leftBox">
+                <div class="boxName">
+                    <p>GOLD</p>
+                </div>
+                <div class="boxValue">
+                    <p>11,789</p>
+                </div>
+            </div>
+            <div class="leftBox">
+                <div class="boxName">
+                    <p>SILVER</p>
+                </div>
+                <div class="boxValue">
+                    <p>56</p>
+                </div>
+            </div>
+            <div class="leftBox">
+                <div class="boxName">
+                    <p>COPPER</p>
+                </div>
+                <div class="boxValue">
+                    <p>12</p>
+                </div>
+            </div>
         </div>
 
         <div class="consolidateButton flexRow">
             <p>CONSOLIDATE</p>
             <div class="spellSelection" ng-click="">
-              <div class="spellSelectionIndicator" ng-show""></div>
+                <div class="spellSelectionIndicator" ng-show""></div>
             </div>
         </div>
         <!-- <div class="spacer ">
         </div> -->
+    </div>
+
+    <div class="spacer "></div>
+
+    <div class="equipmentHudRight">
+        <div class="header headerRight flexRow">
+            <div class="weightImg">
+                <img src="images/weightIcon.svg"/>
+                <div class="littleKg">
+                  <p class='whiteTxt'>32</p>
+                  <br>
+                  <p class='whiteTxt'>KG</p>
+                </div>
+            </div>
+            <div class="headerName">
+                <h3>WEIGHT</h3>
+            </div>
+        </div>
+      <div class="rightBoxes flexRow">
+        <div class="rightBox flexColumn">
+            <div class="boxName nameRight">
+                <p>CURRENT</p>
+            </div>
+            <div class="rightInnerBox">
+                <div class="boxValue valueRight flexRow">
+                    <p>12</p><p> Lbs</p>
+                </div>
+            </div>
+        </div>
+        <div class="rightBox flexColumn">
+            <div class="boxName nameRight">
+                <p>MAX</p>
+            </div>
+            <div class="rightInnerBox">
+                <div class="boxValue valueRight flexRow">
+                    <p>12</p><p> Lbs</p>
+                </div>
+            </div>
+        </div>
       </div>
-
-      <div class="spacer ">
+      <div class="changingLoad centerTxt">
+        <p>MEDIUM LOAD</p>
       </div>
-
-
-
-
 
     </div>
+
+</div>
