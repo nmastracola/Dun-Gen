@@ -129,6 +129,27 @@ return{
       }
       return $scope.abilityMod
     }
+    $scope.skillCancel=function () {
+      for (var i = 0; i < $scope.charGenSkills.length; i++) {
+        $scope.charGenSkills[i] = 0
+      }
+      for (var i = 0; i < $scope.chosenFeats.length; i++) {
+        for (var j = 0; j < characterService.characterCreationObject.feats.length; j++) {
+          if (characterService.characterCreationObject.feats[j].name === $scope.chosenFeats[i].name) {
+            characterService.characterCreationObject.feats.splice(j,1)
+          }
+        }
+      };
+      for (var i = 0; i < $scope.chosenFeats.length; i++) {
+        for (var j = 0; j < characterService.characterCreationObject.qualifications.length; j++) {
+          if (characterService.characterCreationObject.qualifications[j].value[1] === $scope.chosenFeats[i].name) {
+            characterService.characterCreationObject.qualifications[j].splice(j,1)
+          }
+        }
+      };
+      $scope.skillsShower=!$scope.skillsShower
+      $scope.abilitiesShower=!$scope.abilitiesShower
+    }
   },
   scope: {
     skills: "=",
@@ -136,7 +157,10 @@ return{
     attributeModifier:"=",
     classHasSpellsChecker: "&",
     classes: "=",
-    remainingSkills: "="
+    remainingSkills: "=",
+    skillsShower: "=",
+    abilitiesShower:"=",
+    chosenFeats:"="
 
 
   },
