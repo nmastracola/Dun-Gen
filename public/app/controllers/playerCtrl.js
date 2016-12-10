@@ -1,7 +1,9 @@
 angular.module('scribe').controller('playerCtrl', function($scope, sService, character){
 
+
+
 $scope.test = sService.test;
-$scope.character = character;
+$scope.character = character[0];
 console.log($scope.character);
 console.log($scope.character[0]);
 // ===================================   MENU TOGGLERS  ===================================
@@ -84,10 +86,10 @@ $scope.playerAttTmpMod={
   'tmCHA': Math.floor((($scope.playerAtt.CHA + $scope.playerAttTmpAdj.taCHA)-10)/2)
 };
 
-//ARMOR CLASS 
+//ARMOR CLASS
 
 $scope.playerArmorBonus = 4;
-$scope.playerShieldBonus = 1; 
+$scope.playerShieldBonus = 1;
 //DEX MOD IS $scope.playerAttTmpMod.tmDEX
 $scope.playerSizeBonus = 0;
 $scope.playerNaturalArmor = 0;
@@ -95,8 +97,8 @@ $scope.playerDeflectionBonus = 0;
 $scope.playerMiscArmorMod = 0;
 
 
-$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1) 
-+ ($scope.playerSizeBonus * 1)+($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) 
+$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
++ ($scope.playerSizeBonus * 1)+($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1)
 + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
 
 
@@ -181,7 +183,7 @@ $scope.playerChangeATT = function(x, att){
   $scope.playerAttTmpAdj[attAdder] += x;
   $scope.playerAttTmpMod[modAdder] = Math.floor((($scope.playerAtt[att] + $scope.playerAttTmpAdj[attAdder])-10)/2);
   }
-  
+
   // ===================================   DICE ROLLER STUFF  ===================================
 
 
