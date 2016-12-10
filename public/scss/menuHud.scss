@@ -1,0 +1,14 @@
+.menuBox{
+  height: 120px;
+  width: 100px;
+  margin: 10px 20px 0 20px;
+}
+
+.menuIcon{
+  height: 90px;
+  width: 80px;
+  margin: 0 auto;
+  &:hover{
+    cursor: pointer;
+  }
+}
