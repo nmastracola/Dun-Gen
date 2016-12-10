@@ -88,7 +88,6 @@ angular.module('scribe')
                   $scope.classShower = !$scope.classShower;
                   $scope.displayClass();
                   $scope.raceConfirmed = 1
-                  console.log(characterService.characterCreationObject.static.race);
                   return
                 }
                 $scope.raceConfirmed = 0
@@ -96,8 +95,6 @@ angular.module('scribe')
                   if ($scope.raceConfirmed = 0) {
                     $scope.rollShower = !$scope.rollShower
                     $scope.raceShower = !$scope.raceShower
-                    console.log(characterService.characterCreationObject);
-
                     return
                   }
                   var charCre = characterService.characterCreationObject.core
@@ -163,7 +160,6 @@ angular.module('scribe')
                     $scope.rollShower = !$scope.rollShower
                     $scope.raceShower = !$scope.raceShower
                     $scope.displayClass();
-                    console.log(characterService.characterCreationObject);
                     return
                   }
                 $scope.info = function() {

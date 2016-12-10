@@ -11,11 +11,7 @@ return{
       for (var i = 0; i < $scope.skills.length; i++) {
         if ($scope.skills[i].skill === skill.name) {
           for (var props in $scope.skills[i]) {
-            // console.($scope.skills[i][props], "props");
-            // console.log($scope.skills[i], "skill at i");
-            // console.log(charClass);
             if (props === charClass) {
-              // console.log(skill[props]);
 
               return $scope.skills[i][props];
             }
@@ -26,7 +22,6 @@ return{
 
 
     // $scope.logger = function () {
-    //   console.log($scope.charGenskills);
     // }
     $scope.hitDice = 0
 

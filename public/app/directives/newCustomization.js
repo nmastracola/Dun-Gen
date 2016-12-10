@@ -50,11 +50,11 @@ return{
     $scope.submitNewChar = function() {
       characterService.createCharacter()
       .then(function(response){
-        $state.go('player', {userId: response.static.userId, charId: response._id})
+        $state.go('player', {charId: response.data._id})
       })
       .catch(function(err){
-        alert("There was an error, please log in and try again.")
-        $state.go('home')
+        alert("There was an error.")
+        // $state.go('home')
       })
     }
 
