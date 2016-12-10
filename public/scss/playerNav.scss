@@ -133,6 +133,7 @@
   width: 100%;
   background-color: $p1  ; 
   justify-content: center;
+  position: relative;
 }
 
 .subRowHeaders{
@@ -142,4 +143,24 @@
     color: $wht;
     cursor: pointer;
   }
+}
+
+.saveIconHolder{
+  height: 30px;
+  width: 80px;
+  position: absolute;
+  right: 40px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.saveIcon{
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+}
+
+.saveText{
+    padding:7px 5px 0 0;
 }
