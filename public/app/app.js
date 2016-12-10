@@ -22,7 +22,6 @@ angular.module('scribe', ['ui.router'])
         controller: 'charSelectCtrl',
         resolve: {
           userChars: function($stateParams, characterService){
-            console.log($stateParams.userId);
             return characterService.getUserCharacters($stateParams.userId);
           }
         }
@@ -47,11 +46,11 @@ angular.module('scribe', ['ui.router'])
           }
       })
       .state('player', {
-        url: '/player/:userId/:charId',
+        url: '/player/:charId',
         templateUrl: './app/views/player.html',
         controller: 'playerCtrl',
-        resolve:{
-          character: function($stateParams, characterService) {
+        resolve: {
+          character: function($stateParams, characterService){
             return characterService.getCharObject($stateParams.charId);
           }
         }

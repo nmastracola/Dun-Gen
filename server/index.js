@@ -84,7 +84,7 @@ app.get('/api/weapons', serverMFPopulateCtrl.getWeapons);
 app.get('/api/damagingArmor', serverMFPopulateCtrl.getDamagingArmor);
 app.get('/api/goodsAndServices', serverMFPopulateCtrl.getGoodsAndServices);
 app.get('/api/bonusSpells', serverMFPopulateCtrl.getBonusSpells);
-app.get('/api/characters', serverMFPopulateCtrl.getUserCharacters);
+app.get('/api/characters/:userId', serverMFPopulateCtrl.getUserCharacters);
 
 
 // CONNECTIONS //
