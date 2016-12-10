@@ -114,6 +114,18 @@ return{
         $scope.rollShower= !$scope.rollShower
         $scope.raceShower= !$scope.raceShower
     }
+    
+    $scope.backToSelect = function(){
+      characterService.characterCreationObject.qualifications = []
+      var charCre = characterService.characterCreationObject.core
+      charCre.strength = null
+      charCre.dexterity = null
+      charCre.constitution = null
+      charCre.intelligence = null
+      charCre.wisdom = null
+      charCre.charisma = null
+      $state.go('home');
+    }
   },
   scope:{
     raceShower: "=",
