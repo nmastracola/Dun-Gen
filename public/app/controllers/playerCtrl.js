@@ -133,31 +133,31 @@ $scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiat
 
 $scope.playerSpeed = $scope.character.core.speeds.baseSpeed;
 $scope.playerSpeedWiArmor = 20;
-
-//SAVES
+ 
+//=======================  SAVES  =======================
 
 $scope.playerSavesBase={
-  "FORTITUDE": $scope.character.core.fortitudeBaseSave,
-  "REFLEX": $scope.character.reflexBaseSave,
-  "WILL": $scope.character.core.willBaseSave
+  "FORTITUDE": $scope.character.core.fortitudeBaseSave  || 0,
+  "REFLEX": $scope.character.reflexBaseSave  || 0,
+  "WILL": $scope.character.core.willBaseSave  || 0
 }
 
 $scope.playerSavesAbilityMod={
-  "FORTITUDE": $scope.playerAttMod.mCON,
-  "REFLEX": $scope.playerAttMod.mDEX,
-  "WILL": $scope.playerAttMod.mWIS
+  "FORTITUDE": $scope.playerAttMod.mCON  || 0,
+  "REFLEX": $scope.playerAttMod.mDEX || 0,
+  "WILL": $scope.playerAttMod.mWIS || 0
 }
 
 $scope.playerSavesMagicMod={
-  "FORTITUDE": $scope.character.core.fortitudeMagicModifier,
-  "REFLEX": $scope.character.core.reflexMagicModifier,
-  "WILL": $scope.character.core.willMagicModifier
+  "FORTITUDE": $scope.character.core.fortitudeMagicModifier || 0,
+  "REFLEX": $scope.character.core.reflexMagicModifier || 0,
+  "WILL": $scope.character.core.willMagicModifier || 0
 }
 
 $scope.playerSavesMiscMod={
-  "FORTITUDE": $scope.character.core.fortitudeMiscellaneousModifier,
-  "REFLEX": $scope.character.core.reflexMiscellaneousModifier,
-  "WILL": $scope.character.core.willMiscellaneousModifier
+  "FORTITUDE": $scope.character.core.fortitudeMiscellaneousModifier || 0,
+  "REFLEX": $scope.character.core.reflexMiscellaneousModifier || 0,
+  "WILL": $scope.character.core.willMiscellaneousModifier || 0
 }
 
 $scope.playerSavesTempMod={
