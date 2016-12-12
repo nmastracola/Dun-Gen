@@ -116,7 +116,6 @@ $scope.playerNaturalArmor = 99;
 $scope.playerDeflectionBonus = 99;
 $scope.playerMiscArmorMod = 99;
 
-=
 $scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1) 
 + ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
 
