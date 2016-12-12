@@ -189,7 +189,7 @@
   <h4 class="centerTxt boldTxt classContentsShortDesc">{{classObject.shortClassDescription}}</h4>
   <p class="classContentsFullDesc">{{classObject.classDescription}}</p>
   <p class="classContentsBottomSpacer"><span class="boldTxt">Role: </span>{{classObject.role}}</p>
-  <h4 class="centerTxt boldTxt">Class Features</h4>
+  <h4 class="classContentsTopSpacer centerTxt boldTxt">Class Features</h4>
   <p class="classContentsBottomSpacer"><span class="boldTxt">Hit Dice:</span> D{{classObject.hitDie}}</p>
   <p class="classContentsBottomSpacer"><span class="boldTxt">BAB Progression:</span> {{classObject.babProgression}}</p>
   <p class="classContentsBottomSpacer"><span class="boldTxt">High Saves:</span> {{classObject.highSaves}}</p>
@@ -197,8 +197,14 @@
   <p class="classContentsBottomSpacer"><span class="boldTxt">Armor Proficiencies:</span> {{classObject.armorProficiencies}}</p>
   <p class="classContentsBottomSpacer"><span class="boldTxt">Class Skills: </span>{{classObject.classSkillsDump}}</p>
   <p class="classContentsBottomSpacer"><span class="boldTxt">Skill Ranks per Level:</span> {{classObject.skillsPerLevel}} + Int modifier</p>
-  <h4 class="centerTxt boldTxt">Class Abilities</h4>
-  <div class="classContentsFeatures" ng-repeat="feature in classFeatures">
+  <div ng-click="classAbilities = !classAbilities" ng-class="{greyBkg: classAbilities}" class="classAbilitiesShower">
+    <h4 ng-hide="classAbilities" class="hideShowAbilities centerTxt boldTxt">Hide</h4>
+    <h4 ng-show="classAbilities" class="hideShowAbilities centerTxt boldTxt">Show</h4>
+    <h4 class="centerTxt boldTxt">Class Abilities</h4>
+    <!-- Spacing makes things weird... if we have problems consider changing from a div to a single
+    h4 tag with a span on Show and Hide -->
+  </div>
+  <div class="classContentsFeatures" ng-hide="classAbilities" ng-repeat="feature in classFeatures">
     <p><span class="boldTxt">{{feature.title}}</span>{{feature.text}}</p>
   </div>
 </div>
