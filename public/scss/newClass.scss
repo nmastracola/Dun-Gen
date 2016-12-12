@@ -235,6 +235,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 
+.classAbilitiesShower{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover{
+      color: #A51E36;
+      transition: color 1s;
+  }
+  // Below disables highlighting.  Great for anything you click a lot
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hideShowAbilities{
+  margin-right: 6px;
+}
+
 .classContents{
   width: 85%;
   margin: 20px auto;
@@ -261,7 +284,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .alignmentChangerOptions{
-
   position: relative;
 }
 
@@ -271,6 +293,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .classContentsFullDesc{
   margin: 15px 0;
+}
+
+.classContentsTopSpacer{
+  margin-top: 20px;
 }
 
 .classContentsBottomSpacer{

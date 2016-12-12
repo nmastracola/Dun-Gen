@@ -25,12 +25,12 @@
           <p class="skillHeaderTxt"><br>ROLL</p>
       </div>
       <div class="skillsDiceBox">
-    
+
       </div>
     </div>
-    
+
     <!-- RIGHT HEADERS -->
-    
+
     <div class="singleSkillHolder">
       <div class=" skillTitleHeader">
         <p class="skillHeaderTxt"><br>SKILL NAME</p>
@@ -54,58 +54,58 @@
           <p class="skillHeaderTxt"><br>ROLL</p>
       </div>
       <div class="skillsDiceBox">
-    
+
       </div>
     </div>
-  
+
     <!-- ======================= BEGIN NG-REPEAT  =======================-->
-  <div class="singleSkillHolder">
-  
+  <div class="singleSkillHolder" ng-repeat="skill in character.skills">
+
     <div class="skillTitle">
-      <h5>APPRAISAL</h5>
+      <h5>{{skill.name}}</h5>
       <!-- ng hide or show this div, toggler is located in directive js -->
       <div class="skillPlusMinus" ng-show="customSkillToggler">
-        <h5 class="customSkill">+</h5>
-        <h5 class="customSkill">-</h5>
+        <h5 class="customSkill" ng-click="customSkillToggler=true">+</h5>
+        <h5 class="customSkill" ng-click="customSkillToggler=false">-</h5>
       </div>
     </div>
-    
+
     <div class="skillClassSkillIndicator">
         <!-- ng hide or show this div, toggler is located in directive js -->
-      <div class="skillClassSkillIndicated" ng-show="skillClassToggler"></div>
+      <div class="skillClassSkillIndicated" ng-show="{{skillClassTogglerFun(skill)}}"></div>
     </div>
     <div class="skillStatBox ltgreyBkg">
-      <h3 class="dkSkillTxt">0</h3>
+      <h3 class="dkSkillTxt">{{skill.ranks}}</h3>
     </div>
     <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">0</h3>
+        <h3 class="dkSkillTxt">{{skillModFun(skill)}}</h3>
     </div>
     <!-- input box misc mod -->
     <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">0</h3>
+        <h3 class="dkSkillTxt">{{skill.miscellaneousModifier}}</h3>
     </div>
     <!-- total box  -->
     <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">0</h3>
+        <h3 class="dkSkillTxt">{{skillTotalCalc(skill)}}</h3>
     </div>
     <!-- roll box -->
     <div class="skillStatBox blkBkg">
-        <h3 class="ltSkillTxt">0</h3>
+        <h3 class="ltSkillTxt">{{skillRollResult || 0}}</h3>
     </div>
     <!-- incrementer box -->
     <div class="skillIncrementerArrowHolder">
-      <div class="skillUpArrow"></div>
-      <div class="skillDownArrow"></div>
+      <div class="skillUpArrow" ng-click="skillModifierSetter(skill, 1)"></div>
+      <div class="skillDownArrow" ng-click="skillModifierSetter(skill, -1)"></div>
     </div>
     <!-- dice icon -->
-    <div class="skillsDiceBox">
+    <div class="skillsDiceBox" ng-click="skillRollResult=rollForSkill(skill)">
       <img class="skillDice" src="/images/D20BLK.svg" alt="skill roll">
     </div>
   </div>
-  
-  <!-- //end single row -->
-  
 
-  
+  <!-- //end single row -->
+
+
+
 
 </div>

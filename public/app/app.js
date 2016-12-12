@@ -50,6 +50,9 @@ angular.module('scribe', ['ui.router'])
         templateUrl: './app/views/player.html',
         controller: 'playerCtrl',
         resolve: {
+          feats: function(sService) {
+              return sService.feats();
+          },
           character: function($stateParams, characterService){
             return characterService.getCharObject($stateParams.charId);
           }

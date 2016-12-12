@@ -7,15 +7,15 @@
     <div class="playerCoreContentHolder">
       <h3>{{playerName}}</h3>
       <div class="playerCoreContentHeader">
-        <h5 class="playerCoreContentTxt">{{playerRace}} </h5>
-        <h5 class="playerCoreContentTxt">- level {{playerLevel}} -</h5>
-        <h5 class="playerCoreContentTxt"> {{playerAlignment}}</h5>
+        <h5 class="playerCoreContentTxt">{{playerRace}}</h5>
+        <h5 class="playerCoreContentTxt"> - Level {{playerLevel}} - </h5>
+        <h5 class="playerCoreContentTxt">{{playerAlignment}}</h5>
       </div>
       <div class="playerCoreContentSubheader">
         <h6 class="playerCoreContentSubTxt">{{playerClass[0]}} {{playerClassLevel[0]}} {{playerClass[1]}} {{playerClassLevel[1]}} {{playerClass[2]}} {{playerClassLevel[2]}} {{playerClass[3]}} {{playerClassLevel[3]}}</h6>
       </div>
       <div class="playerCoreNumberStatHolder">
-        
+
         <div class="coreStatboxHolder">
           <div class="coreHPup" ng-click="playerChangeHP(1)"></div>
         <div class="coreStatbox">
@@ -28,7 +28,7 @@
         </div>
         <div class="coreHPdown" ng-click="playerChangeHP(-1)"></div>
         </div>
-        
+
         <div class="coreStatboxHolder">
         <div class="coreStatbox">
           <div class="coreStatboxLabel">
@@ -39,7 +39,7 @@
           </div>
         </div>
         </div>
-        
+
         <div class="coreStatboxHolder">
         <div class="coreStatbox">
           <div class="coreStatboxLabel">
@@ -50,20 +50,20 @@
           </div>
         </div>
         </div>
-        
+
         <div class="coreStatboxHolder">
         <div class="bigStatbox">
           <div class="coreStatboxLabel">
             <p class="coreStatTxt">XP</p>
           </div>
           <div class="bigCoreStatBox">
-            <input class="xpInput" type="text" name="XP" value="{{playerXP}}">
+            <input class="xpInput" type="text" name="XP" ng-model="playerXP">
           </div>
         </div>
         </div>
-        
+
       </div>
-      
+
     </div>
   </div>
   <!-- =============================  PLAYER HUD =============================  -->

@@ -167,17 +167,17 @@
             </div>
 
         </div>
-    
-    
-    
+
+
+
   </div>
-  
-  
+
+
    <!-- ========================  DIVIDER  ======================== -->
   <div class="playerCoreDivider borderRight "></div>
    <!-- ========================  RIGHT SIDE OF THE DIVIDE  ======================== -->
   <div class="playerCoreStatsHolder">
-  
+
     <div class="playerCoreArmorClassHolder">
       <!-- single row -->
       <div class="playerCoreArmorClassRow ">
@@ -193,11 +193,11 @@
         <div class="playerCoreStatBox playerStatPadding">
           <p class="playerStatLabel">SHIELD<BR>BONUS</p>
         </div>
-                <div class="playerCoreSpacerDiv"></div>  
+                <div class="playerCoreSpacerDiv"></div>
         <div class="playerCoreStatBox playerStatPadding">
           <p class="playerStatLabel">DEX<BR>MOD</p>
         </div>
-                <div class="playerCoreSpacerDiv"></div>    
+                <div class="playerCoreSpacerDiv"></div>
         <div class="playerCoreStatBox playerStatPadding">
           <p class="playerStatLabel">SIZE<BR>MOD</p>
         </div>
@@ -214,14 +214,14 @@
           <p class="playerStatLabel">MISC<BR>MOD</p>
         </div>
       </div>
-      
+
       <!-- content -->
       <div class="playerCoreArmorClassRow ">
         <div class="playerCoreStatBox">
           <h4 class='playerCoreHeader'>AC</h4>
         </div>
         <div class="playerCoreStatBox statBoxBlue">
-          <h3 class="playerCoreTotalTxt">{{playerAC}}</h3>
+          <h3 class="playerCoreTotalTxt">{{playerACCalc()}}</h3>
         </div>
         <div class="playerCoreStatBox ">
           <h5 class='playerCoreArmorText1'>= 10 +</h5>
@@ -251,7 +251,7 @@
         </div>
         <h5 class='playerCoreArmorText'>+</h5>
         <div class="playerCoreStatBox ltgreyBkg">
-          <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerMiscArmorMod}}">
+          <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" ng-model="playerMiscArmorMod">
         </div>
       </div>
 
@@ -298,7 +298,7 @@
         <div class="playerCoreStatBox playerStatPadding">
           <p class="playerStatLabel">WITH<BR>ARMOR</p>
         </div>
-      
+
       </div>
       <!-- row 3 subrow 2 -->
       <div class="playerCoreArmorClassRow">
@@ -306,7 +306,7 @@
             <h4 class='playerCoreSubHeader'>INITIATIVE</h4>
         </div>
         <div class="playerCoreStatBox statBoxBlue">
-          <h3 class="playerCoreTotalTxt">{{playerInitiative}}</h3>
+          <h3 class="playerCoreTotalTxt">{{playerInitiativeCalc()}}</h3>
         </div>
         <h5 class='playerCoreArmorText'>=</h5>
         <div class="playerCoreStatBox dkgreyBkg">
@@ -314,7 +314,7 @@
         </div>
         <h5 class='playerCoreArmorText'>+</h5>
         <div class="playerCoreStatBox ltgreyBkg">
-          <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerInitiativeMiscMod}}">
+          <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" ng-model="playerInitiativeMiscMod">
         </div>
         <div class="playerCoreSpeedBox">
             <h4 class='playerCoreSubHeader'>SPEED</h4>
@@ -326,7 +326,7 @@
         <div class="playerCoreStatBox ltgreyBkg">
           <h3 class="playerCoreBoxContentTxt">{{playerSpeedWiArmor}}</h3>
         </div>
-      
+
       </div>
 
 </div>
@@ -372,7 +372,7 @@
       <h4 class='playerCoreSubHeader'>FORTITUDE</h4>
     </div>
     <div class="playerCoreStatBox statBoxBlue">
-      <h3 class="playerCoreTotalTxt">{{playerSaves.FORTITUDE}}</h3>
+      <h3 class="playerCoreTotalTxt">{{playerFortSaveCalc()}}</h3>
     </div>
     <h5 class='playerCoreArmorText'>=</h5>
     <div class="playerCoreStatBox dkgreyBkg">
@@ -380,7 +380,7 @@
     </div>
     <h5 class='playerCoreArmorText'>+</h5>
     <div class="playerCoreStatBox ltgreyBkg">
-      <h3 class="playerCoreBoxContentTxt">{{playerSavesAbilityMod.FORTITUDE}}</h3>
+      <h3 class="playerCoreBoxContentTxt">{{playerFortAbilityModCalc()}}</h3>
     </div>
     <h5 class='playerCoreArmorText'>+</h5>
     <div class="playerCoreStatBox dkgreyBkg">
@@ -392,7 +392,7 @@
     </div>
     <h5 class='playerCoreArmorText'>+</h5>
     <div class="playerCoreStatBox dkgreyBkg">
-      <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerSavesTempMod.FORTITUDE}}">
+      <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" ng-model="playerSavesTempMod.FORTITUDE">
     </div>
   </div>
   <div class="playerCoreSaveSpacer"></div>
@@ -402,7 +402,7 @@
         <h4 class='playerCoreSubHeader'>REFLEX</h4>
       </div>
       <div class="playerCoreStatBox statBoxBlue">
-        <h3 class="playerCoreTotalTxt">{{playerSaves.REFLEX}}</h3>
+        <h3 class="playerCoreTotalTxt">{{playerRefSaveCalc()}}</h3>
       </div>
       <h5 class='playerCoreArmorText'>=</h5>
       <div class="playerCoreStatBox ltgreyBkg">
@@ -410,7 +410,7 @@
       </div>
       <h5 class='playerCoreArmorText'>+</h5>
       <div class="playerCoreStatBox dkgreyBkg">
-        <h3 class="playerCoreBoxContentTxt">{{playerSavesAbilityMod.REFLEX}}</h3>
+        <h3 class="playerCoreBoxContentTxt">{{playerRefAbilityModCalc()}}</h3>
       </div>
       <h5 class='playerCoreArmorText'>+</h5>
       <div class="playerCoreStatBox ltgreyBkg">
@@ -422,7 +422,7 @@
       </div>
       <h5 class='playerCoreArmorText'>+</h5>
       <div class="playerCoreStatBox ltgreyBkg">
-        <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerSavesTempMod.REFLEX}}">
+        <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" ng-model="playerSavesTempMod.REFLEX">
       </div>
     </div>
       <div class="playerCoreSaveSpacer"></div>
@@ -432,7 +432,7 @@
         <h4 class='playerCoreSubHeader'>WILL</h4>
       </div>
       <div class="playerCoreStatBox statBoxBlue">
-        <h3 class="playerCoreTotalTxt">{{playerSaves.WILL}}</h3>
+        <h3 class="playerCoreTotalTxt">{{playerWillSaveCalc()}}</h3>
       </div>
       <h5 class='playerCoreArmorText'>=</h5>
       <div class="playerCoreStatBox ltgreyBkg">
@@ -440,7 +440,7 @@
       </div>
       <h5 class='playerCoreArmorText'>+</h5>
       <div class="playerCoreStatBox dkgreyBkg">
-        <h3 class="playerCoreBoxContentTxt">{{playerSavesAbilityMod.WILL}}</h3>
+        <h3 class="playerCoreBoxContentTxt">{{playerWillAbilityModCalc()}}</h3>
       </div>
       <h5 class='playerCoreArmorText'>+</h5>
       <div class="playerCoreStatBox ltgreyBkg">
@@ -452,18 +452,18 @@
       </div>
       <h5 class='playerCoreArmorText'>+</h5>
       <div class="playerCoreStatBox ltgreyBkg">
-        <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" value="{{playerSavesTempMod.REFLEX}}">
+        <input class="playerCoreInput" type="number" max="99" name="Misc Armor Mod" ng-model="playerSavesTempMod.WILL">
       </div>
     </div>
       <div class="playerCoreSaveSpacer"></div>
 
-    
+
 </div>
 
-    
-    
+
+
   </div>
   <!-- END OF RIGHT SIDE -->
-  
-  
+
+
 </div>

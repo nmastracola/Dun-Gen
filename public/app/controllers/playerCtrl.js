@@ -1,8 +1,9 @@
-angular.module('scribe').controller('playerCtrl', function($scope, sService, character){
+angular.module('scribe').controller('playerCtrl', function($scope, sService, character, feats){
 
+
+$scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
-console.log($scope.character);
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
@@ -34,7 +35,6 @@ $scope.togglePlayerSpellDirectives = function(x){
 $scope.calcCurrentLevel = function(){
   $scope.currentTotalLevel = 0
   for (i = 0; i < $scope.character.static.classes.length; i++){
-    console.log($scope.currentTotalLevel);
     $scope.currentTotalLevel += $scope.character.static.classes[i].level * 1
   }
 }
@@ -100,15 +100,15 @@ $scope.playerAttTmpMod={
   'tmSTR': Math.floor((($scope.playerAtt.STR + $scope.playerAttTmpAdj.taSTR)-10)/2),
   'tmDEX': Math.floor((($scope.playerAtt.DEX + $scope.playerAttTmpAdj.taDEX)-10)/2),
   'tmCON': Math.floor((($scope.playerAtt.CON + $scope.playerAttTmpAdj.taCON)-10)/2),
-  'tmWIS': Math.floor((($scope.playerAtt.WIS + $scope.playerAttTmpAdj.taWIS)-10)/2),
   'tmINT': Math.floor((($scope.playerAtt.INT + $scope.playerAttTmpAdj.taINT)-10)/2),
+  'tmWIS': Math.floor((($scope.playerAtt.WIS + $scope.playerAttTmpAdj.taWIS)-10)/2),
   'tmCHA': Math.floor((($scope.playerAtt.CHA + $scope.playerAttTmpAdj.taCHA)-10)/2)
 };
 
-//ARMOR CLASS 
+//ARMOR CLASS
 
 $scope.playerArmorBonus = 99;
-$scope.playerShieldBonus = 99; 
+$scope.playerShieldBonus = 99;
 //DEX MOD IS $scope.playerAttTmpMod.tmDEX
 $scope.playerSizeBonus = 99;
 $scope.playerNaturalArmor = 99;
@@ -116,10 +116,14 @@ $scope.playerDeflectionBonus = 99;
 $scope.playerMiscArmorMod = 99;
 
 
-$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1) 
-+ ($scope.playerSizeBonus * 1)+($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) 
-+ ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
+$scope.playerACCalc = function(){
+  $scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
+  + ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
 
+  return $scope.playerAC
+}
+
+$scope.playerACCalc();
 
 $scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
 
@@ -127,13 +131,21 @@ $scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.player
 //INITIATIVE
 
 $scope.playerInitiativeMiscMod = 0;
-$scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiativeMiscMod);
+
+$scope.playerInitiativeCalc = function(){
+  $scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiativeMiscMod);
+
+  return $scope.playerInitiative
+}
+
+$scope.playerInitiativeCalc();
 
 //SPEED
 
 $scope.playerSpeed = $scope.character.core.speeds.baseSpeed;
-$scope.playerSpeedWiArmor = 20;
- 
+
+$scope.playerSpeedWiArmor = 99;
+
 //=======================  SAVES  =======================
 
 $scope.playerSavesBase={
@@ -143,10 +155,32 @@ $scope.playerSavesBase={
 }
 
 $scope.playerSavesAbilityMod={
-  "FORTITUDE": $scope.playerAttMod.mCON  || 0,
-  "REFLEX": $scope.playerAttMod.mDEX || 0,
-  "WILL": $scope.playerAttMod.mWIS || 0
+  "FORTITUDE": $scope.playerAttTmpMod.tmCON  || 0,
+  "REFLEX": $scope.playerAttTmpMod.tmDEX || 0,
+  "WILL": $scope.playerAttTmpMod.tmWIS || 0
 }
+
+$scope.playerFortAbilityModCalc = function(){
+  $scope.playerSavesAbilityMod.FORTITUDE = $scope.playerAttTmpMod.tmCON * 1
+
+  return $scope.playerSavesAbilityMod.FORTITUDE
+}
+
+$scope.playerRefAbilityModCalc = function(){
+  $scope.playerSavesAbilityMod.REFLEX = $scope.playerAttTmpMod.tmDEX * 1
+
+  return $scope.playerSavesAbilityMod.REFLEX
+}
+
+$scope.playerWillAbilityModCalc = function(){
+  $scope.playerSavesAbilityMod.WILL = $scope.playerAttTmpMod.tmWIS * 1
+
+  return $scope.playerSavesAbilityMod.WILL
+}
+
+$scope.playerFortAbilityModCalc();
+$scope.playerRefAbilityModCalc();
+$scope.playerWillAbilityModCalc();
 
 $scope.playerSavesMagicMod={
   "FORTITUDE": $scope.character.core.fortitudeMagicModifier || 0,
@@ -161,9 +195,9 @@ $scope.playerSavesMiscMod={
 }
 
 $scope.playerSavesTempMod={
-  "FORTITUDE": 99,
-  "REFLEX": 99,
-  "WILL": 99
+  "FORTITUDE": 0,
+  "REFLEX": 0,
+  "WILL": 0
 }
 
 $scope.playerSaves={
@@ -171,6 +205,28 @@ $scope.playerSaves={
   "REFLEX": ($scope.playerSavesBase.REFLEX * 1) + ($scope.playerSavesAbilityMod.REFLEX * 1) + ($scope.playerSavesMagicMod.REFLEX * 1) + ($scope.playerSavesMiscMod.REFLEX * 1) + ($scope.playerSavesTempMod.REFLEX * 1),
   "WILL": ($scope.playerSavesBase.WILL * 1) + ($scope.playerSavesAbilityMod.WILL * 1) + ($scope.playerSavesMagicMod.WILL * 1) + ($scope.playerSavesMiscMod.WILL * 1) + ($scope.playerSavesTempMod.WILL * 1)
 }
+
+$scope.playerFortSaveCalc = function(){
+  $scope.playerSaves.FORTITUDE = ($scope.playerSavesBase.FORTITUDE * 1) + ($scope.playerSavesAbilityMod.FORTITUDE * 1) + ($scope.playerSavesMagicMod.FORTITUDE * 1) + ($scope.playerSavesMiscMod.FORTITUDE * 1) + ($scope.playerSavesTempMod.FORTITUDE * 1)
+
+  return $scope.playerSaves.FORTITUDE
+}
+
+$scope.playerRefSaveCalc = function(){
+  $scope.playerSaves.REFLEX = ($scope.playerSavesBase.REFLEX * 1) + ($scope.playerSavesAbilityMod.REFLEX * 1) + ($scope.playerSavesMagicMod.REFLEX * 1) + ($scope.playerSavesMiscMod.REFLEX * 1) + ($scope.playerSavesTempMod.REFLEX * 1)
+
+  return $scope.playerSaves.REFLEX
+}
+
+$scope.playerWillSaveCalc = function(){
+  $scope.playerSaves.WILL = ($scope.playerSavesBase.WILL * 1) + ($scope.playerSavesAbilityMod.WILL * 1) + ($scope.playerSavesMagicMod.WILL * 1) + ($scope.playerSavesMiscMod.WILL * 1) + ($scope.playerSavesTempMod.WILL * 1)
+
+  return $scope.playerSaves.WILL
+}
+
+$scope.playerFortSaveCalc();
+$scope.playerRefSaveCalc();
+$scope.playerWillSaveCalc();
 
 // ===================================   SKILLS DIRECTIVE ===================================
 
@@ -195,6 +251,11 @@ $scope.playerChangeHP = function(x){
   }
 }
 
+$scope.logger=function () {
+  console.log($scope.character);
+}
+
+
 // ===========   STR MODIFIER =============
 
 $scope.playerChangeATT = function(x, att){
@@ -203,7 +264,7 @@ $scope.playerChangeATT = function(x, att){
   $scope.playerAttTmpAdj[attAdder] += x;
   $scope.playerAttTmpMod[modAdder] = Math.floor((($scope.playerAtt[att] + $scope.playerAttTmpAdj[attAdder])-10)/2);
   }
-  
+
   // ===================================   DICE ROLLER STUFF  ===================================
 
 
