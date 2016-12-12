@@ -115,9 +115,15 @@ $scope.playerNaturalArmor = 99;
 $scope.playerDeflectionBonus = 99;
 $scope.playerMiscArmorMod = 99;
 
-$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
-+ ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
 
+$scope.playerACCalc = function(){
+  $scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
+  + ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
+
+  return $scope.playerAC
+}
+
+$scope.playerACCalc();
 
 $scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
 
@@ -125,7 +131,14 @@ $scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.player
 //INITIATIVE
 
 $scope.playerInitiativeMiscMod = 0;
-$scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiativeMiscMod);
+
+$scope.playerInitiativeCalc = function(){
+  $scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiativeMiscMod);
+
+  return $scope.playerInitiative
+}
+
+$scope.playerInitiativeCalc();
 
 //SPEED
 
@@ -142,10 +155,32 @@ $scope.playerSavesBase={
 }
 
 $scope.playerSavesAbilityMod={
-  "FORTITUDE": $scope.playerAttMod.mCON  || 0,
-  "REFLEX": $scope.playerAttMod.mDEX || 0,
-  "WILL": $scope.playerAttMod.mWIS || 0
+  "FORTITUDE": $scope.playerAttTmpMod.tmCON  || 0,
+  "REFLEX": $scope.playerAttTmpMod.tmDEX || 0,
+  "WILL": $scope.playerAttTmpMod.tmWIS || 0
 }
+
+$scope.playerFortAbilityModCalc = function(){
+  $scope.playerSavesAbilityMod.FORTITUDE = $scope.playerAttTmpMod.tmCON * 1
+
+  return $scope.playerSavesAbilityMod.FORTITUDE
+}
+
+$scope.playerRefAbilityModCalc = function(){
+  $scope.playerSavesAbilityMod.REFLEX = $scope.playerAttTmpMod.tmDEX * 1
+
+  return $scope.playerSavesAbilityMod.REFLEX
+}
+
+$scope.playerWillAbilityModCalc = function(){
+  $scope.playerSavesAbilityMod.WILL = $scope.playerAttTmpMod.tmWIS * 1
+
+  return $scope.playerSavesAbilityMod.WILL
+}
+
+$scope.playerFortAbilityModCalc();
+$scope.playerRefAbilityModCalc();
+$scope.playerWillAbilityModCalc();
 
 $scope.playerSavesMagicMod={
   "FORTITUDE": $scope.character.core.fortitudeMagicModifier || 0,
@@ -170,6 +205,28 @@ $scope.playerSaves={
   "REFLEX": ($scope.playerSavesBase.REFLEX * 1) + ($scope.playerSavesAbilityMod.REFLEX * 1) + ($scope.playerSavesMagicMod.REFLEX * 1) + ($scope.playerSavesMiscMod.REFLEX * 1) + ($scope.playerSavesTempMod.REFLEX * 1),
   "WILL": ($scope.playerSavesBase.WILL * 1) + ($scope.playerSavesAbilityMod.WILL * 1) + ($scope.playerSavesMagicMod.WILL * 1) + ($scope.playerSavesMiscMod.WILL * 1) + ($scope.playerSavesTempMod.WILL * 1)
 }
+
+$scope.playerFortSaveCalc = function(){
+  $scope.playerSaves.FORTITUDE = ($scope.playerSavesBase.FORTITUDE * 1) + ($scope.playerSavesAbilityMod.FORTITUDE * 1) + ($scope.playerSavesMagicMod.FORTITUDE * 1) + ($scope.playerSavesMiscMod.FORTITUDE * 1) + ($scope.playerSavesTempMod.FORTITUDE * 1)
+
+  return $scope.playerSaves.FORTITUDE
+}
+
+$scope.playerRefSaveCalc = function(){
+  $scope.playerSaves.REFLEX = ($scope.playerSavesBase.REFLEX * 1) + ($scope.playerSavesAbilityMod.REFLEX * 1) + ($scope.playerSavesMagicMod.REFLEX * 1) + ($scope.playerSavesMiscMod.REFLEX * 1) + ($scope.playerSavesTempMod.REFLEX * 1)
+
+  return $scope.playerSaves.REFLEX
+}
+
+$scope.playerWillSaveCalc = function(){
+  $scope.playerSaves.WILL = ($scope.playerSavesBase.WILL * 1) + ($scope.playerSavesAbilityMod.WILL * 1) + ($scope.playerSavesMagicMod.WILL * 1) + ($scope.playerSavesMiscMod.WILL * 1) + ($scope.playerSavesTempMod.WILL * 1)
+
+  return $scope.playerSaves.WILL
+}
+
+$scope.playerFortSaveCalc();
+$scope.playerRefSaveCalc();
+$scope.playerWillSaveCalc();
 
 // ===================================   SKILLS DIRECTIVE ===================================
 

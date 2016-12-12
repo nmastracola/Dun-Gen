@@ -50,7 +50,7 @@ angular.module('scribe')
           }
           return skill.total
         }
-        console.log(scope.character);
+
         scope.skillModifierSetter = function (skill, numToAdd) {
           for (var i = 0; i < scope.character.skills.length; i++) {
             if (scope.character.skills[i] === skill) {
