@@ -23,7 +23,8 @@ angular.module('scribe')
         }
 
         scope.rollForSkill = function (skill) {
-         return skill.total
+          var roll = (Math.floor((Math.random() * 20) + 1)) + skill.total
+          return roll
         }
 
         scope.skillTotalCalc = function (skill) {
