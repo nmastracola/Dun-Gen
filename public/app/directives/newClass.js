@@ -4,7 +4,7 @@ angular.module('scribe')
             restrict: 'E',
             templateUrl: './app/directives/newClass.html',
             controller: function($scope, $state, characterService) {
-
+                $scope.classAbilities = true;
                 //CLASS PICKERS
                 $scope.classList = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Wizard']
                 $scope.alignments = ['Lawful Good', 'Lawful Neutral', 'Lawful Evil', "Neutral Good", "True Neutral", "Neutral Evil", "Chaotic Good", "Chaotic Neutral", "Chaotic Evil"]
