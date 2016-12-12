@@ -1,8 +1,9 @@
 angular.module('scribe').controller('playerCtrl', function($scope, sService, character){
 
+
+
 $scope.test = sService.test;
 $scope.character = character[0];
-console.log($scope.character);
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
@@ -100,24 +101,24 @@ $scope.playerAttTmpMod={
   'tmSTR': Math.floor((($scope.playerAtt.STR + $scope.playerAttTmpAdj.taSTR)-10)/2),
   'tmDEX': Math.floor((($scope.playerAtt.DEX + $scope.playerAttTmpAdj.taDEX)-10)/2),
   'tmCON': Math.floor((($scope.playerAtt.CON + $scope.playerAttTmpAdj.taCON)-10)/2),
-  'tmWIS': Math.floor((($scope.playerAtt.WIS + $scope.playerAttTmpAdj.taWIS)-10)/2),
   'tmINT': Math.floor((($scope.playerAtt.INT + $scope.playerAttTmpAdj.taINT)-10)/2),
+  'tmWIS': Math.floor((($scope.playerAtt.WIS + $scope.playerAttTmpAdj.taWIS)-10)/2),
   'tmCHA': Math.floor((($scope.playerAtt.CHA + $scope.playerAttTmpAdj.taCHA)-10)/2)
 };
 
-//ARMOR CLASS 
+//ARMOR CLASS
 
 $scope.playerArmorBonus = 99;
-$scope.playerShieldBonus = 99; 
+$scope.playerShieldBonus = 99;
 //DEX MOD IS $scope.playerAttTmpMod.tmDEX
 $scope.playerSizeBonus = 99;
 $scope.playerNaturalArmor = 99;
 $scope.playerDeflectionBonus = 99;
 $scope.playerMiscArmorMod = 99;
 
+=
 $scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1) 
-+ ($scope.playerSizeBonus * 1)+($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) 
-+ ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
++ ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
 
 
 $scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
@@ -131,8 +132,9 @@ $scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiat
 //SPEED
 
 $scope.playerSpeed = $scope.character.core.speeds.baseSpeed;
+
 $scope.playerSpeedWiArmor = 99;
- 
+
 //=======================  SAVES  =======================
 
 $scope.playerSavesBase={
@@ -202,7 +204,7 @@ $scope.playerChangeATT = function(x, att){
   $scope.playerAttTmpAdj[attAdder] += x;
   $scope.playerAttTmpMod[modAdder] = Math.floor((($scope.playerAtt[att] + $scope.playerAttTmpAdj[attAdder])-10)/2);
   }
-  
+
   // ===================================   DICE ROLLER STUFF  ===================================
 
 
