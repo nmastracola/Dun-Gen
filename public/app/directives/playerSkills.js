@@ -22,7 +22,11 @@ angular.module('scribe')
           }
         }
 
+
+          // ====================== NEED TO GET DESCRIPTION ========================
+          
         scope.rollForSkill = function (skill) {
+        scope.$root.selectedSkill = skill
          return skill.total
         }
 
