@@ -1,7 +1,7 @@
 angular.module('scribe').controller('playerCtrl', function($scope, sService, character, feats, skills){
 
 
-$scope.feats = skills
+$scope.skills = skills
 $scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
