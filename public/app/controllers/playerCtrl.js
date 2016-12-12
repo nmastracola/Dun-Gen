@@ -116,10 +116,9 @@ $scope.playerNaturalArmor = 99;
 $scope.playerDeflectionBonus = 99;
 $scope.playerMiscArmorMod = 99;
 
-
-$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
-+ ($scope.playerSizeBonus * 1)+($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1)
-+ ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
+=
+$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1) 
++ ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
 
 
 $scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
@@ -133,7 +132,8 @@ $scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiat
 //SPEED
 
 $scope.playerSpeed = $scope.character.core.speeds.baseSpeed;
-$scope.playerSpeedWiArmor = 20;
+
+$scope.playerSpeedWiArmor = 99;
 
 //=======================  SAVES  =======================
 
@@ -162,9 +162,9 @@ $scope.playerSavesMiscMod={
 }
 
 $scope.playerSavesTempMod={
-  "FORTITUDE": 99,
-  "REFLEX": 99,
-  "WILL": 99
+  "FORTITUDE": 0,
+  "REFLEX": 0,
+  "WILL": 0
 }
 
 $scope.playerSaves={
