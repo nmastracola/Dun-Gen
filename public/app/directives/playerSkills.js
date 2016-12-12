@@ -22,7 +22,12 @@ angular.module('scribe')
           }
         }
 
+
+          // ====================== NEED TO GET DESCRIPTION ========================
+
         scope.rollForSkill = function (skill) {
+        scope.$root.selectedSkill = skill
+         return skill.total
           var roll = (Math.floor((Math.random() * 20) + 1)) + skill.total
           return roll
         }
