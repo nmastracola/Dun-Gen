@@ -4,7 +4,6 @@ angular.module('scribe').controller('playerCtrl', function($scope, sService, cha
 
 $scope.test = sService.test;
 $scope.character = character[0];
-console.log($scope.character[0]);
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
@@ -32,17 +31,39 @@ $scope.togglePlayerSpellDirectives = function(x){
 // ===================================   PLAYER ATTRIBUTES FPO  ===================================
 
 // ===================================   CORE TAB  ===================================
-$scope.playerName = "Sir Roland Smackhammer";
-$scope.playerAlignment = "Lawful Good";
-$scope.playerRace = "HUMAN";
-$scope.playerLevel = "1";
-$scope.playerClass = ["Paladin"];
-$scope.playerClassLevel = [1];
-$scope.playerMaxHP = 42;
-$scope.playerHP = 37;
+
+$scope.calcCurrentLevel = function(){
+  $scope.currentTotalLevel = 0
+  for (i = 0; i < $scope.character.static.classes.length; i++){
+    console.log($scope.currentTotalLevel);
+    $scope.currentTotalLevel += $scope.character.static.classes[i].level * 1
+  }
+}
+
+$scope.calcCurrentLevel();
+
+$scope.aggregateClasses = function(){
+  $scope.classHolderArr = []
+  $scope.classLevelHolderArr = []
+  for (i = 0; i < $scope.character.static.classes.length; i++){
+    $scope.classHolderArr.push($scope.character.static.classes[i].class)
+    $scope.classLevelHolderArr.push($scope.character.static.classes[i].level)
+  }
+}
+
+$scope.playerName = $scope.character.static.characterName;
+$scope.playerAlignment = $scope.character.static.alignment;
+$scope.playerRace = $scope.character.static.race;
+$scope.playerLevel = $scope.currentTotalLevel;
+$scope.playerClass = $scope.classHolderArr;
+$scope.playerClassLevel = $scope.classLevelHolderArr;
+$scope.playerMaxHP = $scope.character.core.maxHitPoints;
+$scope.playerHP = $scope.character.core.currentHitPoints;
 //PLAYER AC IS IN AC SECTION OF CORE
-$scope.playerXP = 18000;
+$scope.playerXP = $scope.character.static.experience;
 //PLAYER INITIATIVE IS LOCATED IN AC SECTION OF CORE
+
+
 
 
 // ===================================   CORE DIRECTIVE ===================================
@@ -50,12 +71,12 @@ $scope.playerXP = 18000;
 
 //attributes
 $scope.playerAtt={
-  'STR': 16,
-  'DEX': 15,
-  'CON': 14,
-  'WIS': 13,
-  'INT': 12,
-  'CHA': 11
+  'STR': $scope.character.core.strength,
+  'DEX': $scope.character.core.dexterity,
+  'CON': $scope.character.core.constitution,
+  'WIS': $scope.character.core.wisdom,
+  'INT': $scope.character.core.intelligence,
+  'CHA': $scope.character.core.charisma
 };
 
 $scope.playerAttMod={
@@ -87,13 +108,18 @@ $scope.playerAttTmpMod={
 
 //ARMOR CLASS
 
+<<<<<<< HEAD
 $scope.playerArmorBonus = 4;
 $scope.playerShieldBonus = 1;
+=======
+$scope.playerArmorBonus = 99;
+$scope.playerShieldBonus = 99;
+>>>>>>> master
 //DEX MOD IS $scope.playerAttTmpMod.tmDEX
-$scope.playerSizeBonus = 0;
-$scope.playerNaturalArmor = 0;
-$scope.playerDeflectionBonus = 0;
-$scope.playerMiscArmorMod = 0;
+$scope.playerSizeBonus = 99;
+$scope.playerNaturalArmor = 99;
+$scope.playerDeflectionBonus = 99;
+$scope.playerMiscArmorMod = 99;
 
 
 $scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
@@ -111,46 +137,47 @@ $scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiat
 
 //SPEED
 
-$scope.playerSpeed = 30;
+$scope.playerSpeed = $scope.character.core.speeds.baseSpeed;
 $scope.playerSpeedWiArmor = 20;
 
-//SAVES
-
-$scope.playerSaves={
-  "FORTITUDE": 4,
-  "REFLEX": 2,
-  "WILL": 2
-}
+//=======================  SAVES  =======================
 
 $scope.playerSavesBase={
-  "FORTITUDE": 0,
-  "REFLEX": 0,
-  "WILL": 0
+  "FORTITUDE": $scope.character.core.fortitudeBaseSave  || 0,
+  "REFLEX": $scope.character.reflexBaseSave  || 0,
+  "WILL": $scope.character.core.willBaseSave  || 0
 }
 
 $scope.playerSavesAbilityMod={
-  "FORTITUDE": 0,
-  "REFLEX": 0,
-  "WILL": 0
+  "FORTITUDE": $scope.playerAttMod.mCON  || 0,
+  "REFLEX": $scope.playerAttMod.mDEX || 0,
+  "WILL": $scope.playerAttMod.mWIS || 0
 }
 
 $scope.playerSavesMagicMod={
-  "FORTITUDE": 0,
-  "REFLEX": 0,
-  "WILL": 0
+  "FORTITUDE": $scope.character.core.fortitudeMagicModifier || 0,
+  "REFLEX": $scope.character.core.reflexMagicModifier || 0,
+  "WILL": $scope.character.core.willMagicModifier || 0
 }
 
 $scope.playerSavesMiscMod={
-  "FORTITUDE": 0,
-  "REFLEX": 0,
-  "WILL": 0
+  "FORTITUDE": $scope.character.core.fortitudeMiscellaneousModifier || 0,
+  "REFLEX": $scope.character.core.reflexMiscellaneousModifier || 0,
+  "WILL": $scope.character.core.willMiscellaneousModifier || 0
 }
 
 $scope.playerSavesTempMod={
-  "FORTITUDE": 0,
-  "REFLEX": 0,
-  "WILL": 0
+  "FORTITUDE": 99,
+  "REFLEX": 99,
+  "WILL": 99
 }
+
+$scope.playerSaves={
+  "FORTITUDE": ($scope.playerSavesBase.FORTITUDE * 1) + ($scope.playerSavesAbilityMod.FORTITUDE * 1) + ($scope.playerSavesMagicMod.FORTITUDE * 1) + ($scope.playerSavesMiscMod.FORTITUDE * 1) + ($scope.playerSavesTempMod.FORTITUDE * 1),
+  "REFLEX": ($scope.playerSavesBase.REFLEX * 1) + ($scope.playerSavesAbilityMod.REFLEX * 1) + ($scope.playerSavesMagicMod.REFLEX * 1) + ($scope.playerSavesMiscMod.REFLEX * 1) + ($scope.playerSavesTempMod.REFLEX * 1),
+  "WILL": ($scope.playerSavesBase.WILL * 1) + ($scope.playerSavesAbilityMod.WILL * 1) + ($scope.playerSavesMagicMod.WILL * 1) + ($scope.playerSavesMiscMod.WILL * 1) + ($scope.playerSavesTempMod.WILL * 1)
+}
+
 // ===================================   SKILLS DIRECTIVE ===================================
 
 

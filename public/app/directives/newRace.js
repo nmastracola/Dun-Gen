@@ -4,9 +4,9 @@ angular.module('scribe')
             restrict: 'E',
             templateUrl: './app/directives/newRace.html',
             controller: function($scope, $state, characterService) {
-              $scope.chosenRace = "Half-Elves"
+              $scope.chosenRace = "Half-Elf"
               $scope.staticRace = false
-              $scope.raceList = ['Dwarves', 'Elves', 'Gnomes', 'Half-Elves', 'Half-Orcs', 'Halflings', 'Humans']
+              $scope.raceList = ['Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Half-Orc', 'Halfling', 'Human']
               $scope.raceCounter = 3;
 
               $scope.racePicker = function(x) {

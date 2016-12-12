@@ -26,7 +26,6 @@ angular.module('scribe')
             var att = scope.character.core.charisma - 10
             return Math.floor(att / 2)
           }
-          console.log(scope.character);
         }
 
         scope.ranks = 0;

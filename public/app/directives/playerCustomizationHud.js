@@ -3,7 +3,9 @@ angular.module('scribe')
 return{
   restrict: 'E',
   templateUrl: './app/directives/playerCustomizationHud.html',
-  link: function( scope, element, attributes ) {}
+  link: function( scope, element, attributes ) {
+
+  }
 };
 
 });

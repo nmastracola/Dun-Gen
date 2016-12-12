@@ -24,6 +24,11 @@ z-index: 2;
   background-color: $blk;
 }
 
+.playerPortrait{
+  width: 120px;
+  height: 175px;
+}
+
 .playerCoreContentHolder{
   display: flex;
   flex-direction: column;
