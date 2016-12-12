@@ -3,7 +3,7 @@
   <div class="diceResultHolder">
     <div class="diceIncrementer" >
       <div class="incrementerUp" ng-click="dbIncrementer(1)"></div>
-        <input class="diceIncIndicator" type="number" name="" value="{{dBiterator}}">
+        <input class="diceIncIndicator" type="number" name="" ng-model="dBiterator">
       <div class="incrementerDown" ng-click="dbIncrementer(-1)"></div>
     </div>
     <h4 class="diceRollerD">d</h4>
@@ -34,5 +34,5 @@
 <div class="dieHolder">
   <img ng-click="dieRoll('#diceBagd20'); dieReturn(dbD20)" class="diePic" id="diceBagd20" src="./images/D20BLK.svg" alt="percentage">
 </div>
-  
+
 </div>

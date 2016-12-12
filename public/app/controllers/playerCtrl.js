@@ -1,7 +1,7 @@
-angular.module('scribe').controller('playerCtrl', function($scope, sService, character){
+angular.module('scribe').controller('playerCtrl', function($scope, sService, character, feats){
 
 
-
+$scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
 // ===================================   MENU TOGGLERS  ===================================
@@ -35,7 +35,6 @@ $scope.togglePlayerSpellDirectives = function(x){
 $scope.calcCurrentLevel = function(){
   $scope.currentTotalLevel = 0
   for (i = 0; i < $scope.character.static.classes.length; i++){
-    console.log($scope.currentTotalLevel);
     $scope.currentTotalLevel += $scope.character.static.classes[i].level * 1
   }
 }
@@ -116,7 +115,7 @@ $scope.playerNaturalArmor = 99;
 $scope.playerDeflectionBonus = 99;
 $scope.playerMiscArmorMod = 99;
 
-$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1) 
+$scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
 + ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
 
 
@@ -194,6 +193,11 @@ $scope.playerChangeHP = function(x){
     $scope.playerHP += x;
   }
 }
+
+$scope.logger=function () {
+  console.log($scope.character);
+}
+
 
 // ===========   STR MODIFIER =============
 
