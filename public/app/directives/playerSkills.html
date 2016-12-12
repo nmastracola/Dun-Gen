@@ -72,13 +72,13 @@
 
     <div class="skillClassSkillIndicator">
         <!-- ng hide or show this div, toggler is located in directive js -->
-      <div class="skillClassSkillIndicated" ng-show="skillClassToggler"></div>
+      <div class="skillClassSkillIndicated" ng-show="{{skillClassTogglerFun(skill)}}"></div>
     </div>
     <div class="skillStatBox ltgreyBkg">
       <h3 class="dkSkillTxt">{{skill.ranks}}</h3>
     </div>
     <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">skillModFun(skill)</h3>
+        <h3 class="dkSkillTxt">{{skillModFun(skill)}}</h3>
     </div>
     <!-- input box misc mod -->
     <div class="skillStatBox dkgreyBkg">
@@ -94,7 +94,7 @@
     </div>
     <!-- incrementer box -->
     <div class="skillIncrementerArrowHolder">
-      <div class="skillUpArrow"></div>
+      <div class="skillUpArrow"ng-click=""></div>
       <div class="skillDownArrow"></div>
     </div>
     <!-- dice icon -->
