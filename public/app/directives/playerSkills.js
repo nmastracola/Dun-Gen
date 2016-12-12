@@ -7,38 +7,39 @@ angular.module('scribe')
         scope.customSkillToggler = true;
         scope.skillClassToggler = true;
         scope.skillModFun = function(skill) {
-          if (skill.primaryAttribute = "Str") {
+          if (skill.primaryAttribute === "Str") {
             return scope.playerAttTmpMod.tmSTR
-          } else if (skill.primaryAttribute = "Dex") {
+          } else if (skill.primaryAttribute === "Dex") {
             return scope.playerAttTmpMod.tmDEX
-          } else if (skill.primaryAttribute = "Con") {
+          } else if (skill.primaryAttribute === "Con") {
             return scope.playerAttTmpMod.tmCON
-          } else if (skill.primaryAttribute = "Int") {
+          } else if (skill.primaryAttribute === "Int") {
             return scope.playerAttTmpMod.tmINT
-          } else if (skill.primaryAttribute = "Wis") {
+          } else if (skill.primaryAttribute === "Wis") {
             return scope.playerAttTmpMod.tmWIS
-          } else if (skill.primaryAttribute = "Cha") {
+          } else if (skill.primaryAttribute === "Cha") {
             return scope.playerAttTmpMod.tmCHA
           }
         }
 
         scope.rollForSkill = function (skill) {
-         return skill.total
+          var roll = (Math.floor((Math.random() * 20) + 1)) + skill.total
+          return roll
         }
 
         scope.skillTotalCalc = function (skill) {
           var skillAbility = 0
-          if (skill.primaryAttribute = "Str") {
+          if (skill.primaryAttribute === "Str") {
             skillAbility = scope.playerAttTmpMod.tmSTR
-          } else if (skill.primaryAttribute = "Dex") {
+          } else if (skill.primaryAttribute === "Dex") {
             skillAbility = scope.playerAttTmpMod.tmDEX
-          } else if (skill.primaryAttribute = "Con") {
+          } else if (skill.primaryAttribute === "Con") {
             skillAbility = scope.playerAttTmpMod.tmCON
-          } else if (skill.primaryAttribute = "Int") {
+          } else if (skill.primaryAttribute === "Int") {
             skillAbility = scope.playerAttTmpMod.tmINT
-          } else if (skill.primaryAttribute = "Wis") {
+          } else if (skill.primaryAttribute === "Wis") {
             skillAbility = scope.playerAttTmpMod.tmWIS
-          } else if (skill.primaryAttribute = "Cha") {
+          } else if (skill.primaryAttribute === "Cha") {
             skillAbility = scope.playerAttTmpMod.tmCHA
           }
           for (var i = 0; i < scope.character.skills.length; i++) {
@@ -49,6 +50,7 @@ angular.module('scribe')
           }
           return skill.total
         }
+
         scope.skillModifierSetter = function (skill, numToAdd) {
           for (var i = 0; i < scope.character.skills.length; i++) {
             if (scope.character.skills[i] === skill) {
