@@ -1,0 +1,178 @@
+.pmsOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: $wht;
+  opacity: .9;
+  z-index: 4;
+  &:hover{
+    opacity: .8;
+    cursor: pointer;
+  }
+}
+
+.pmsStoreBox{
+  height: 600px;
+  width: 600px;
+  background: $wht;
+  opacity: 1;
+  z-index: 5;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -300px;
+  box-shadow: 10px 10px 5px darkgrey;
+}
+
+.pmsStoreTitleBox{
+  height: 50px;
+  width: 600px;
+  padding: 12px;
+  background: $blk;
+}
+
+.pmsStatBox{
+  width: 600px;
+  height: 50px;
+  margin: 10px 0 0 0;
+  justify-content: space-around;
+}
+
+.pmsAvailableFunds{
+  width: 430px;
+  height: 50px;
+  justify-content: flex-end;
+}
+
+.pmsStatBoxHeaders{
+  padding: 14px 0 0 0;
+}
+
+.pmsStatBoxStatBox{
+  height: 50px;
+  width: 250px;
+  margin: 0 0 0 5px;
+}
+
+.pmsWeight{
+  height: 50px;
+  width: 150px;
+  justify-content: flex-end;
+}
+
+.pmsWeightBox{
+  height: 50px;
+  width: 80px;
+  margin: 0 0 0 5px;
+}
+
+.pmsCheckout{
+  height: 50px;
+  width: 600px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  
+}
+.pmsCheckoutTitle{
+  padding: 14px 0 0 0;
+  width: 150px;
+}
+
+
+.pmsCheckoutBttn{
+  height: 40px;
+  width: 40px;
+  background: $wht;
+  margin: 5px 10px 0 10px;
+  position: relative;
+}
+
+.pmsCheckoutBttnIndicator{
+  height: 36px;
+  width: 36px;
+  background: darkgrey; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -18px -18px;
+  &:hover{
+    background: crimson; 
+    cursor: pointer;
+  }
+}
+
+.pmsContentHolder{
+  width: 600px;
+  overflow-y: scroll;
+}
+.pmsRowHolder{
+  width: 580px;
+  height: 60px;
+  margin: 10px 0 0 0;
+}
+
+.pmsRow{
+  width: 580px;
+  height: 30px;
+}
+
+.pmsMoneyIcon{
+  height: 30px;
+  width: 30px;
+}
+
+.pmsMoneyHolder{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: $wht;
+  margin: 0 5px 0 5px ;
+  &:hover{
+    background: lightgrey;
+    cursor: pointer;
+  }
+}
+
+.pmsWeaponTitle{
+  width: 250px;
+  font-size: 1em;
+  padding: 8px 0 0 5px;;
+}
+
+.pmsWeaponDescription{
+  width: 350px;
+  font-size: .8em;
+  padding: 9px 0 0 10px;
+}
+
+.pmsWeaponContent{
+  font-size: .8em;
+  padding: 9px 0 0 0;
+}
+
+.pmsWeaponDescriptor{
+  width: 100px;
+  font-size: 1em;
+  padding: 9px 10px 0 10px;
+}
+
+.pmsWeaponStats{
+  width: 80px;
+  height: 30px;
+  font-size: 1em;
+  padding: 9px 10px 0 10px;
+}
+.pmsMoneyHolder{
+  width: 30px;
+  height: 30px;
+}
+
+.pmsMoneyDiv{
+  width: 250px;
+  height: 30px;
+  justify-content: flex-end;
+}
