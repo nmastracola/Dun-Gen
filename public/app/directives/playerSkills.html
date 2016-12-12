@@ -86,19 +86,19 @@
     </div>
     <!-- total box  -->
     <div class="skillStatBox dkgreyBkg">
-        <h3 class="dkSkillTxt">{{skill.total}}</h3>
+        <h3 class="dkSkillTxt">{{skillTotalCalc(skill)}}</h3>
     </div>
     <!-- roll box -->
     <div class="skillStatBox blkBkg">
-        <h3 class="ltSkillTxt">0</h3>
+        <h3 class="ltSkillTxt">{{skillRollResult || 0}}</h3>
     </div>
     <!-- incrementer box -->
     <div class="skillIncrementerArrowHolder">
-      <div class="skillUpArrow"ng-click=""></div>
-      <div class="skillDownArrow"></div>
+      <div class="skillUpArrow" ng-click="skillModifierSetter(skill, 1)"></div>
+      <div class="skillDownArrow" ng-click="skillModifierSetter(skill, -1)"></div>
     </div>
     <!-- dice icon -->
-    <div class="skillsDiceBox">
+    <div class="skillsDiceBox" ng-click="skillRollResult=rollForSkill(skill)">
       <img class="skillDice" src="/images/D20BLK.svg" alt="skill roll">
     </div>
   </div>

@@ -101,20 +101,15 @@ $scope.playerAttTmpMod={
   'tmSTR': Math.floor((($scope.playerAtt.STR + $scope.playerAttTmpAdj.taSTR)-10)/2),
   'tmDEX': Math.floor((($scope.playerAtt.DEX + $scope.playerAttTmpAdj.taDEX)-10)/2),
   'tmCON': Math.floor((($scope.playerAtt.CON + $scope.playerAttTmpAdj.taCON)-10)/2),
-  'tmWIS': Math.floor((($scope.playerAtt.WIS + $scope.playerAttTmpAdj.taWIS)-10)/2),
   'tmINT': Math.floor((($scope.playerAtt.INT + $scope.playerAttTmpAdj.taINT)-10)/2),
+  'tmWIS': Math.floor((($scope.playerAtt.WIS + $scope.playerAttTmpAdj.taWIS)-10)/2),
   'tmCHA': Math.floor((($scope.playerAtt.CHA + $scope.playerAttTmpAdj.taCHA)-10)/2)
 };
 
 //ARMOR CLASS
 
-<<<<<<< HEAD
-$scope.playerArmorBonus = 4;
-$scope.playerShieldBonus = 1;
-=======
 $scope.playerArmorBonus = 99;
 $scope.playerShieldBonus = 99;
->>>>>>> master
 //DEX MOD IS $scope.playerAttTmpMod.tmDEX
 $scope.playerSizeBonus = 99;
 $scope.playerNaturalArmor = 99;
