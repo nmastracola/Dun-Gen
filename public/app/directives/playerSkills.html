@@ -65,8 +65,8 @@
       <h5>{{skill.name}}</h5>
       <!-- ng hide or show this div, toggler is located in directive js -->
       <div class="skillPlusMinus" ng-show="customSkillToggler">
-        <h5 class="customSkill">+</h5>
-        <h5 class="customSkill">-</h5>
+        <h5 class="customSkill" ng-click="customSkillToggler=true">+</h5>
+        <h5 class="customSkill" ng-click="customSkillToggler=false">-</h5>
       </div>
     </div>
 

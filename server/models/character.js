@@ -423,7 +423,7 @@ var characterSchema = mongoose.Schema({
       homeland: {
           type: String
       },
-      diety: {
+      deity: {
           type: String
       },
       age: {
