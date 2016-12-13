@@ -50,6 +50,8 @@ $scope.aggregateClasses = function(){
   }
 }
 
+$scope.aggregateClasses();
+
 $scope.playerName = $scope.character.static.characterName;
 $scope.playerAlignment = $scope.character.static.alignment;
 $scope.playerRace = $scope.character.static.race;

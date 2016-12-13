@@ -235,15 +235,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 
+.classAbilitiesWrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .classAbilitiesShower{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 300px;
+  height: 50px;
   cursor: pointer;
   &:hover{
-      color: #A51E36;
-      transition: color 1s;
+      background-color: darkgrey;
+      transition: background-color 0.5s;
   }
   // Below disables highlighting.  Great for anything you click a lot
   -webkit-touch-callout: none;
