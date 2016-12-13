@@ -1,6 +1,6 @@
-angular.module('scribe').controller('playerCtrl', function($scope, sService, character, feats, skills){
+angular.module('scribe').controller('playerCtrl', function($scope, sService, character, feats, skills, weapons){
 
-
+$scope.weapons = weapons
 $scope.skills = skills
 $scope.feats = feats
 $scope.test = sService.test;
@@ -271,5 +271,32 @@ $scope.playerChangeATT = function(x, att){
   // ===================================   DICE ROLLER STUFF  ===================================
 
 
+
+
+  // ===================================   WEAPONS AND EQUIPMENT  ===================================
+  $scope.equiptmentWealth = {
+    platinum: 0,
+    gold: 0,
+    silver: 0,
+    copper: 0
+  }
+$scope.moneyConverter = function () {
+  var newMoney = this.character.equipment[0].wealth.toString().split("")
+  $scope.equiptmentWealth.copper=newMoney[0] *1
+  newMoney.splice(0,1)
+  $scope.equiptmentWealth.silver=newMoney[0] *1
+  newMoney.splice(0,1)
+  $scope.equiptmentWealth.gold=newMoney[0] *1
+  newMoney.splice(0,1)
+  var platMoney = ""
+  for (var i = 0; i < newMoney.length; i++) {
+
+    platMoney += newMoney[i]
+  }
+  $scope.equiptmentWealth.platinum=platMoney *1
+  console.log($scope.equiptmentWealth);
+  console.log(newMoney);
+}
+$scope.moneyConverter()
 
 });

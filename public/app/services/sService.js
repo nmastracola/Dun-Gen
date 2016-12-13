@@ -45,4 +45,15 @@ angular.module('scribe').service('sService', function($http){
     });
   };
 
+  this.weapon = function(id) {
+    var query = "";
+    if (id) query = '?_id=' + id;
+    return $http({
+      method: 'GET',
+      url: '/api/weapons' + query
+    }).then(function(response) {
+      return response.data;
+    });
+  };
+
 });
