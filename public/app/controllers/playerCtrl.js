@@ -1,7 +1,8 @@
-angular.module('scribe').controller('playerCtrl', function($scope, sService, character){
+angular.module('scribe').controller('playerCtrl', function($scope, sService, character, feats, skills){
 
 
-
+$scope.skills = skills
+$scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
 // ===================================   MENU TOGGLERS  ===================================
@@ -117,10 +118,11 @@ $scope.playerNaturalArmor = 99;
 $scope.playerDeflectionBonus = 99;
 $scope.playerMiscArmorMod = 99;
 
+
 $scope.playerACCalc = function(){
-  $scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1) 
-  + ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));  
-  
+  $scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
+  + ($scope.playerSizeBonus * 1) + ($scope.playerNaturalArmor * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerMiscArmorMod * 1) + ($scope.playerAttTmpMod.tmDEX * 1));
+
   return $scope.playerAC
 }
 
@@ -135,7 +137,7 @@ $scope.playerInitiativeMiscMod = 0;
 
 $scope.playerInitiativeCalc = function(){
   $scope.playerInitiative = ($scope.playerAttTmpMod.tmDEX) + ($scope.playerInitiativeMiscMod);
-  
+
   return $scope.playerInitiative
 }
 
@@ -251,6 +253,11 @@ $scope.playerChangeHP = function(x){
     $scope.playerHP += x;
   }
 }
+
+$scope.logger=function () {
+  console.log($scope.character);
+}
+
 
 // ===========   STR MODIFIER =============
 

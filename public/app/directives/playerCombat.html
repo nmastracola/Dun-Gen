@@ -136,7 +136,7 @@
           </div>
           <!-- add or remove weapon toggler -->
           <div class="combatWeaponsAddRemove flexRow">
-            <h3 class="addRemoveWeapon" ng-click="">+</h3>
+            <h3 class="addRemoveWeapon" ng-click="openPmsStore()">+</h3>
             <h3 class="addRemoveWeapon" ng-click="">-</h3>
           </div>
               </div>
@@ -269,6 +269,77 @@
 
 
 </div>
-  
+  <!-- end second half -->
 
 </div>
+
+
+
+<!-- start purchase modal store -->
+
+<div class="pmsOverlay" ng-show="pmsStore" ng-click="pmsStore =!pmsStore"></div>
+<div class="pmsStoreBox flexColumn" ng-show="pmsStore">
+  <!-- title -->
+  <div class="pmsStoreTitleBox centerTxt">
+    <h2 class="whtTxt">BLACKSMITH'S SHOP</h2>
+  </div>
+<!-- statbox   -->
+<div class="pmsStatBox flexRow">
+  <div class="pmsAvailableFunds flexRow">
+    <h4 class="pmsStatBoxHeaders ">Available Funds</h4>
+    <div class="pmsStatBoxStatBox blkBkg">
+      <h4 class="whtTxt centerTxt pmsStatBoxHeaders">4p / 56g / 5s / 9c</h4>
+    </div>
+  </div>
+  <div class="pmsWeight flexRow">
+    <h4 class="pmsStatBoxHeaders">Weight</h4>
+    <div class="pmsWeightBox blkBkg ">
+      <h4 class="whtTxt centerTxt pmsStatBoxHeaders">43lbs</h4>
+    </div>
+  </div>
+</div>
+<!-- ITEMS CONTENT -->
+<div class="pmsContentHolder flexColumn">
+  
+  <div class="pmsRowHolder flexColumn">
+    <div class="pmsRow flexRow">
+      <h5 class="pmsWeaponTitle ltgreyBkg">Petrified Kraken Dong</h5>
+      <p class="pmsWeaponDescription">Petefried Kraken Dong, Greatclub, +2, Blunt</p>
+    </div>
+    <div class="pmsRow flexRow">
+      <h5 class="pmsWeaponDescriptor">DAMAGE:</h5>
+      <p class="pmsWeaponStats ltgreyBkg">1D6 +2</p>
+      <h5 class="pmsWeaponDescriptor">WEIGHT:</h5>
+      <p class="pmsWeaponStats ltgreyBkg">4 lbs</p>
+      <div class="pmsMoneyDiv flexRow">
+        <div class="pmsMoneyHolder">
+          <img class="pmsMoneyIcon" src="./images/moneyYes.svg" alt="purchase">
+        </div>
+        <div class="pmsMoneyHolder flexRow">
+          <img class="pmsMoneyIcon" src="./images/moneyNo.svg" alt="take">
+        </div>
+      </div>
+      
+    </div>
+  
+  </div>
+</div>
+
+<!-- TOTAL / CHECKOUT -->
+<div class="pmsCheckout blkBkg flexRow">
+  <h4 class="whtTxt pmsCheckoutTitle rightTxt">SETTLE TAB</h4>
+  <div class="pmsCheckoutBttn">
+    <div class="pmsCheckoutBttnIndicator"></div>
+  </div>
+  <!-- cancel -->
+  <h4 class="whtTxt pmsCheckoutTitle rightTxt">CANCEL</h4>
+  <div class="pmsCheckoutBttn">
+    <div class="pmsCheckoutBttnIndicator"></div>
+  </div>
+
+</div>
+</div>
+
+
+
+
