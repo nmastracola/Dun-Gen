@@ -56,6 +56,9 @@ angular.module('scribe', ['ui.router'])
           character: function($stateParams, characterService){
             return characterService.getCharObject($stateParams.charId);
           },
+          classes: function(sService) {
+              return sService.class();
+          },
           skills: function(sService) {
               return sService.skill();
           }
