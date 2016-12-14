@@ -467,3 +467,64 @@
 
 
 </div>
+
+<!-- PORTRAIT SELECTOR MODAL -->
+<div class="pmsOverlay" ng-show="portraitChooser" ng-click="portraitChooser =!portraitChooser"></div>
+<div class="pmsStoreBox flexColumn" ng-show="portraitChooser">
+  <!-- title -->
+  <div class="pmsStoreTitleBox centerTxt">
+    <h2 class="whtTxt">CHOOSE AN IMAGE</h2>
+  </div>
+  <!-- choose from stock -->
+  <div class="stockImageChooser blkBkg flexRow">
+    <div class="stockImageLeftArrow"></div>
+    <div class="stockImageBox flexColumn">
+      <!-- content -->
+      <div class="stockImagePicker flexRow">
+        
+        <div class="stockImg">
+          <div class="stockImageBlocker"></div>
+          <img class="stockImageImg" src="./images/charM1.jpg" alt="img 1">
+        </div>
+        
+        <div class="stockImg">
+          <img class="stockImageImg" src="./images/charM2.jpg" alt="img 2">
+        </div>
+        
+        <div class="stockImg">
+          <div class="stockImageBlocker"></div>
+          <img class="stockImageImg" src="./images/charM3.jpg" alt="img 3">
+        </div>
+        
+      </div>
+      
+      <div class="stockImageGenderToggler ltgreyBkg">
+        <div class="stockImageGenderPicker">
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="stockImageRightArrow "></div>
+  </div>
+    <!-- or enter a url -->
+    <h3 class="centerTxt">OR ENTER A URL</h3>
+    <input class="stockImageURL" type="text" name="image url" value="www.whatever.com">
+    
+    <!-- CONFIRM -->
+    <div class="pmsCheckout blkBkg flexRow">
+      <h4 class="whtTxt pmsCheckoutTitle rightTxt">CONFIRM</h4>
+      <div class="pmsCheckoutBttn">
+        <div class="pmsCheckoutBttnIndicator"></div>
+      </div>
+      <!-- cancel -->
+      <h4 class="whtTxt pmsCheckoutTitle rightTxt">CANCEL</h4>
+      <div class="pmsCheckoutBttn">
+        <div class="pmsCheckoutBttnIndicator"></div>
+      </div>
+
+    </div>
+</div>
+
+
+
