@@ -1,0 +1,115 @@
+// STOCK IMAGE CHOOSER HTML IS IN PLAYER VIEW
+// =============================  STOCK IMAGE CHOOSER =============================
+.stockImageChooser{
+  width: 600px;
+  height: 300px;
+  margin: 20px 0 20px 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,292331+15,292331+85,ffffff+100 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(41,35,49,1) 15%, rgba(41,35,49,1) 85%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(41,35,49,1) 15%,rgba(41,35,49,1) 85%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(41,35,49,1) 15%,rgba(41,35,49,1) 85%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+}
+
+.stockImageLeftArrow{
+  width: 0; 
+  height: 0; 
+  margin: 100px 0 0 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent; 
+  border-right:30px solid $wht; 
+  &:hover{
+    border-right: 30px solid $blk;
+    cursor: pointer;
+  }
+}
+
+.stockImageRightArrow{
+  width: 0; 
+  height: 0; 
+  margin: 120px 0 0 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent; 
+  border-left:30px solid $wht; 
+  &:hover{
+    border-left: 30px solid grey;
+    cursor: pointer;
+  }
+}
+
+.stockImageBox{
+  width: 540px;
+  height: 300px;
+  background: $wht;
+}
+
+
+
+.stockImageURL{
+  width: 500px;
+  height: 40px;
+  margin: 10px auto;
+  background-color: $blk;
+  text-align: center;
+  color: $wht;
+  letter-spacing: .1em;
+  font-size: .8em;
+  border: 0;
+  &:hover{
+    color: lightgrey;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 5px 5px 5px lightgrey;
+  }
+}
+
+.stockImagePicker{
+  width: 540px;
+  height: 260px;
+  justify-content: center;
+}
+
+.stockImageGenderToggler{
+  width: 540px;
+  height: 40px;
+}
+
+.stockImageGenderPicker{
+  width: 200px;
+  height: 40px;
+}
+
+.stockImageImg{
+  width: 120px;
+  height: 175px;
+}
+
+.stockImg{
+  width: 120px;
+  height: 175px;
+  position: relative;
+  margin: 50px 20px 0 20px;
+  justify-content: space-around;
+}
+
+.stockImageBlocker{
+  width: 120px;
+  height: 175px;
+  background: $wht;
+  z-index: 10;
+  opacity: .8;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+
+
+
+
