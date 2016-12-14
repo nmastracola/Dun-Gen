@@ -72,6 +72,9 @@ app.post('/api/goodsAndServices', serverMFPopulateCtrl.addGoodsAndServices);
 app.post('/api/bonusSpells', serverMFPopulateCtrl.addBonusSpells);
 app.put('/api/feats', serverMFPopulateCtrl.editFeat);
 
+// CHARACTER UPDATE ENDPOINT
+app.put('/api/character/:charId', serverMFPopulateCtrl.editCharacter)
+
 // GETS //
 app.get('/api/feats', serverMFPopulateCtrl.getFeat);
 app.get('/api/spells', serverMFPopulateCtrl.getSpells);

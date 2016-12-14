@@ -125,6 +125,9 @@ var characterSchema = mongoose.Schema({
       fortitudeMiscellaneousModifier: {
           type: Number
       },
+      fortitudeTempModifier: {
+          type: Number
+      },
       reflexBaseSave: {
           type: Number,
           required: true
@@ -135,6 +138,9 @@ var characterSchema = mongoose.Schema({
       reflexMiscellaneousModifier: {
           type: Number
       },
+      reflexTempModifier: {
+          type: Number
+      },
       willBaseSave: {
           type: Number,
           required: true
@@ -143,6 +149,9 @@ var characterSchema = mongoose.Schema({
           type: Number
       },
       willMiscellaneousModifier: {
+          type: Number
+      },
+      willTempModifier: {
           type: Number
       },
       currentHitPoints: {

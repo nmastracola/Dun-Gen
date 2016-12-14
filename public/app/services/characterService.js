@@ -209,9 +209,12 @@ angular.module("scribe").service("characterService", function($http) {
   this.editCharacter = function(id, characterData) {
     return $http({
       method: 'PUT',
-      url: "/character/" + id,
+      url: "/api/character/" + id,
       data: characterData
     }).then(function(response) {
+      if(response){
+        alert("Player saved successfully!");
+      }
       return response;
     });
   };
