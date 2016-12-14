@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="acEquipmentAddRemove flexRow">
-        <h3 class="addRemoveArmor" ng-click="">+</h3>
+        <h3 class="addRemoveArmor" ng-click="openArmorStore()">+</h3>
         <h3 class="addRemoveArmor" ng-click="">-</h3>
       </div>
     </div>
@@ -96,7 +96,7 @@
           <h5 class=" ">5 lbs</h5>
       </div>
       <div class="acEquipmentAddRemove flexRow">
-        <h3 class="addRemoveArmor" ng-click="">+</h3>
+        <h3 class="addRemoveArmor" ng-click="openArmorStore()">+</h3>
         <h3 class="addRemoveArmor" ng-click="">-</h3>
       </div>
     </div>
@@ -107,3 +107,81 @@
   <!-- END MISCELANEOUS EQUIPMENT -->
 
 </div>
+
+
+<!-- EQUIPMENT STORE -->
+
+<div class="pmsOverlay" ng-show="armorStore" ng-click="armorStore =!armorStore"></div>
+<div class="pmsStoreBox flexColumn" ng-show="armorStore">
+  <!-- title -->
+  <div class="pmsStoreTitleBox centerTxt">
+    <h2 class="whtTxt">ARMORER'S STORE</h2>
+  </div>
+<!-- statbox   -->
+<div class="pmsStatBox flexRow">
+  <div class="pmsAvailableFunds flexRow">
+    <h4 class="pmsStatBoxHeaders ">Available Funds</h4>
+    <div class="pmsStatBoxStatBox blkBkg">
+      <h4 class="whtTxt centerTxt pmsStatBoxHeaders">{{equiptmentWealth.platinum}} p  {{equiptmentWealth.gold}} g {{equiptmentWealth.silver}} s {{equiptmentWealth.copper}} c</h4>
+    </div>
+  </div>
+  <div class="pmsWeight flexRow">
+    <h4 class="pmsStatBoxHeaders">Weight</h4>
+    <div class="pmsWeightBox blkBkg ">
+      <h4 class="whtTxt centerTxt pmsStatBoxHeaders">43lbs</h4>
+    </div>
+  </div>
+</div>
+<!-- ITEMS CONTENT -->
+<div class="pmsContentHolder flexColumn">
+
+  <div class="pmsRowHolder " ng-repeat="">
+    
+    <div class="pmsRow flexRow flexBetween ltBorderBottom">
+      <h5 class="pmsWeaponTitle ltgreyBkg ">x</h5>
+      <h5 class="pmsWeaponDescriptor">WEIGHT:</h5>
+      <p class="pmsWeaponStats ltgreyBkg">x LBS</p>
+      <!-- purchase buttons -->
+      <div class="pmsMoneyDiv flexRow">
+        <div class="pmsMoneyHolder">
+          <img class="pmsMoneyIcon" src="./images/moneyYes.svg" alt="purchase">
+        </div>
+        <div class="pmsMoneyHolder flexRow">
+          <img class="pmsMoneyIcon" src="./images/moneyNo.svg" alt="take">
+        </div>
+      </div>
+    </div>
+    
+    <div class="pmsRow flexRow">
+      <h5 class="pmsWeaponDescriptor">AC:</h5>
+      <p class="pmsWeaponStats  ltBorderRight">x</p>
+      <h5 class="pmsWeaponDescriptor">PRICE:</h5>
+      <p class="pmsWeaponStats  ltBorderRight"> x g </p>
+      <p class="pmsWeaponDescriptor pmsWeaponDescToggler" ng-click="weaponDescription=!weaponDescription">DESCRIPTION</p>
+      
+
+    </div>
+    <!-- DESCRIPTION -->
+    <div class="pmsWeaponDescHolder" ng-show="weaponDescription">
+      <p>x</p>
+    </div>
+<!-- end row -->
+  </div>
+</div>
+
+<!-- TOTAL / CHECKOUT -->
+<div class="pmsCheckout blkBkg flexRow">
+  <h4 class="whtTxt pmsCheckoutTitle rightTxt">SETTLE TAB</h4>
+  <div class="pmsCheckoutBttn">
+    <div class="pmsCheckoutBttnIndicator"></div>
+  </div>
+  <!-- cancel -->
+  <h4 class="whtTxt pmsCheckoutTitle rightTxt">CANCEL</h4>
+  <div class="pmsCheckoutBttn">
+    <div class="pmsCheckoutBttnIndicator" ng-click="pmsStore =!pmsStore"></div>
+  </div>
+
+</div>
+</div>
+
+<!-- end modal store -->

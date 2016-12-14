@@ -1,7 +1,7 @@
 <div class="combatHolder flexColumn">
-  
+
   <!-- weapons section -->
-<div class="combatWeaponsHolder flexColumn">
+<div class="combatWeaponsHolder flexColumn" ng-repeat="weapon in character.equipment[0].weapons">
     <div class="combatWeaponsHeaderBar">
       <div class="combatWeaponsTitle flexRow">
         <img class="horizontalWeaponIcon"src="./images/weaponIcon.svg" alt="WEAPONS">
@@ -34,27 +34,27 @@
     </div>
     <!-- SINGLE WEAPONS NG-REPEAT -->
     <div class="combatSingleWeapon flexRow">
-      
+
       <div class="combatWeaponsRowHolder flexColumn">
-        
-    
+
+
         <!-- top row -->
         <div class="combatSingleWeaponRow1 flexRow">
           <div class="combatWeaponsTitle flexRow leftTxt dkgreyBkg wBPadding">
             <!-- insert weapon name here -->
-            <h5>Smackhammer of Flame +3</h5>
+            <h5>{{weapon.name}}</h5>
           </div>
           <div class="combatWeaponsType centerTxt ltgreyBkg wBPadding">
             <!-- insert type here -->
-            <h5>SLASHING</h5>
+            <h5>MVP+</h5>
           </div>
           <div class="combatWeaponsRange centerTxt dkgreyBkg wBPadding">
             <!-- two way bind in the number, and the ft will stay -->
-            <h5>5ft</h5>
+            <h5>{{weapon.range}}ft</h5>
           </div>
           <div class="combatWeaponsToHit flexRow ltgreyBkg ">
             <div class="combatWeaponsToHitActual centerTxt wBPadding">
-              <h5>+5</h5>
+              <h5>+0</h5>
               <!-- two way bind the number, and the plus will stay -->
             </div>
             <div class="combatWeaponsToHitRollResult centerTxt wBPadding ">
@@ -63,14 +63,15 @@
             </div>
           </div>
           <div class="combatWeaponsCrit centerTxt dkgreyBkg wBPadding">
-            <h5>19-20 x2</h5>
+            <h5>{{weapon.threshold}}-20 x{{weapon.multiplier}}</h5>
           </div>
-          
+
           <!-- first weapon damage -->
           <div class="combatWeaponsDamage flexRow ltgreyBkg">
             <div class="combatWeaponsDamageActual wBPadding centerTxt" >
               <!-- two way bind the damage roll and the bonus seperately, and leave the + -->
-              <h5>1d6 +5</h5>
+              <h5 class="pmsWeaponStats ltgreyBkg">{{weapon.damage.number[0]}}d{{weapon.damage.die[0]}}</h5>
+              <h5 class="pmsWeaponStats ltgreyBkg" ng-show="weapon.damage.number[1]">{{weapon.damage.number[1]}}d{{weapon.damage.die[1]}}</h5>
             </div>
             <div class="combatWeaponsDamageResult wBPadding centerTxt">
                 <h5 class="whtTxt">9</h5>
@@ -79,7 +80,7 @@
           <div class="combatWeaponsDamage flexRow ltgreyBkg">
             <div class="combatWeaponsDamageActual wBPadding centerTxt" >
               <!-- two way bind the damage roll and the bonus seperately, and leave the + -->
-              <h5>1d6 fire</h5>
+              <h5>MVP+</h5>
             </div>
             <div class="combatWeaponsDamageResult wBPadding centerTxt">
                 <h5 class="whtTxt">9</h5>
@@ -92,11 +93,11 @@
             </div>
           </div>
         </div>
-        
-        
+
+
         <!-- SECOND row Melee-->
-        
-        
+
+
         <div class="combatSingleWeaponRow2Melee flexRow" ng-hide="">
           <div class="combatWeaponsAttacksPerRound flexRow">
             <h5 class="wBPadding">ATTACKS PER ROUND:</h5>
@@ -141,7 +142,7 @@
           </div>
               </div>
   <!-- end second row melee -->
-  
+
   <!-- SECOND row Ranged-->
       <div class="combatSingleWeaponRow2Ranged flexRow" ng-show="">
         <div class="combatWeaponsAttacksPerRound flexRow">
@@ -173,12 +174,12 @@
         </div>
           <!-- add or remove weapon toggler -->
         <div class="combatWeaponsAddRemove flexRow">
-          <h3 class="addRemoveWeapon" ng-click="">+</h3>
+          <h3 class="addRemoveWeapon" ng-click="openPmsStore()">+</h3>
           <h3 class="addRemoveWeapon" ng-click="">-</h3>
         </div>
       </div>
     <!-- end second row ranged -->
-    
+
       </div>
       <!-- dice roller -->
       <div class="combatWeaponsDiceRoller">
@@ -195,7 +196,7 @@
       <img class="horizontalWeaponIcon"src="./images/weaponIcon.svg" alt="WEAPONS">
       <h3 class="combatWeaponsTitleTxt">COMBAT FEATS</h3>
     </div>
-    
+
     <!-- ng-repeat feats here -->
     <div class="combatFeatPicker flexRow">
       <!-- feat CHOOSER.  NG CLICK TO PICK NEXT FEAT IN ARRAY -->
@@ -205,10 +206,12 @@
       <!-- MAIN BODY OF FEAT CONTENT -->
       <div class="combatFeatHolder">
         <div class="combatFeatHeader centerTxt">
-          <h4>WEAPON FOCUS</h4>
+          <h4>{{abilityToShowArrs[abilityToShow].name}}</h4>
+
         </div>
         <div class="featMainBodyText leftTxt">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum sem eu sapien tristique ullamcorper. Aenean vehicula mauris vel eros auctor rhoncus. Fusce elementum, augue ac accumsan lacinia, risus justo consectetur nulla, euismod efficitur lorem nulla in metus. Mauris feugiat interdum ante, in gravida urna efficitur eu.</p>
+          <p>{{abilityToShowArrs[abilityToShow].description}}</p>
+
         </div>
         <div class="combatFeatSelecterHolder flexRow">
           <h4 class="wBPadding">SELECT FEAT </h4>
@@ -223,10 +226,10 @@
       </div>
       <!-- end feat chooser -->
     </div>
-    
+
   </div>
-  
-  
+
+
   <!-- divider -->
   <div class="combatFeatDivider borderRight"></div>
   <!-- right half -->
@@ -236,20 +239,20 @@
       <img class="horizontalWeaponIcon"src="./images/weaponIcon.svg" alt="WEAPONS">
       <h3 class="combatWeaponsTitleTxt">COMBAT ABILITIES</h3>
     </div>
-    
+
     <!-- ng-repeat abilities here -->
     <div class="combatFeatPicker flexRow">
       <!-- abilities CHOOSER.  NG CLICK TO PICK NEXT abilities IN ARRAY -->
       <div class="combatFeatArrow">
-        <div class="cfLeftArrow" ng-click=""></div>
+        <div class="cfLeftArrow" ng-click="showNextFeat(-1); showFeatsInHud()"></div>
       </div>
       <!-- MAIN BODY OF abilities CONTENT -->
       <div class="combatFeatHolder">
         <div class="combatFeatHeader centerTxt">
-          <h4>WEAPON FOCUS</h4>
+          <h4>{{abilityToShowArrs[abilityToShow].name}}</h4>
         </div>
         <div class="featMainBodyText leftTxt">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum sem eu sapien tristique ullamcorper. Aenean vehicula mauris vel eros auctor rhoncus. Fusce elementum, augue ac accumsan lacinia, risus justo consectetur nulla, euismod efficitur lorem nulla in metus. Mauris feugiat interdum ante, in gravida urna efficitur eu.</p>
+          <p>{{abilityToShowArrs[abilityToShow].description}}</p>
         </div>
         <div class="combatFeatSelecterHolder flexRow">
           <h4 class="wBPadding">SELECT FEAT </h4>
@@ -260,11 +263,11 @@
       </div>
       <!-- abilities CHOOSER.  NG CLICK TO PICK NEXT abilities IN ARRAY -->
       <div class="combatFeatArrow">
-        <div class="cfRightArrow" ng-click=""></div>
+        <div class="cfRightArrow" ng-click="showNextFeat(-1); showFeatsInHud()"></div>
       </div>
       <!-- end abilities chooser -->
     </div>
-    
+
   </div>
 
 
@@ -288,7 +291,7 @@
   <div class="pmsAvailableFunds flexRow">
     <h4 class="pmsStatBoxHeaders ">Available Funds</h4>
     <div class="pmsStatBoxStatBox blkBkg">
-      <h4 class="whtTxt centerTxt pmsStatBoxHeaders">4p / 56g / 5s / 9c</h4>
+      <h4 class="whtTxt centerTxt pmsStatBoxHeaders">{{equiptmentWealth.platinum}} p  {{equiptmentWealth.gold}} g {{equiptmentWealth.silver}} s {{equiptmentWealth.copper}} c</h4>
     </div>
   </div>
   <div class="pmsWeight flexRow">
@@ -300,17 +303,14 @@
 </div>
 <!-- ITEMS CONTENT -->
 <div class="pmsContentHolder flexColumn">
-  
-  <div class="pmsRowHolder flexColumn">
-    <div class="pmsRow flexRow">
-      <h5 class="pmsWeaponTitle ltgreyBkg">Petrified Kraken Dong</h5>
-      <p class="pmsWeaponDescription">Petefried Kraken Dong, Greatclub, +2, Blunt</p>
-    </div>
-    <div class="pmsRow flexRow">
-      <h5 class="pmsWeaponDescriptor">DAMAGE:</h5>
-      <p class="pmsWeaponStats ltgreyBkg">1D6 +2</p>
+
+  <div class="pmsRowHolder " ng-repeat="weapon in weapons">
+    
+    <div class="pmsRow flexRow flexBetween ltBorderBottom">
+      <h5 class="pmsWeaponTitle ltgreyBkg ">{{weapon.name}}</h5>
       <h5 class="pmsWeaponDescriptor">WEIGHT:</h5>
-      <p class="pmsWeaponStats ltgreyBkg">4 lbs</p>
+      <p class="pmsWeaponStats ltgreyBkg">{{weapon.weight}}LBS</p>
+      <!-- purchase buttons -->
       <div class="pmsMoneyDiv flexRow">
         <div class="pmsMoneyHolder">
           <img class="pmsMoneyIcon" src="./images/moneyYes.svg" alt="purchase">
@@ -319,9 +319,23 @@
           <img class="pmsMoneyIcon" src="./images/moneyNo.svg" alt="take">
         </div>
       </div>
-      
+      <!-- <p class="pmsWeaponDescription">{{weapon.description}}</p> -->
     </div>
-  
+    
+    <div class="pmsRow flexRow">
+      <h5 class="pmsWeaponDescriptor">DAMAGE:</h5>
+      <p class="pmsWeaponStats  ltBorderRight">{{weapon.damage.number[0]}}d{{weapon.damage.die[0]}}</p>
+      <p class="pmsWeaponStats  ltBorderRight" ng-show="weapon.damage.number[1]">{{weapon.damage.number[1]}}d{{weapon.damage.die[1]}}</p>
+      <h5 class="pmsWeaponDescriptor">PRICE:</h5>
+      <p class="pmsWeaponStats  ltBorderRight">{{weapon.cost}}g </p>
+      <p class="pmsWeaponDescriptor pmsWeaponDescToggler" ng-click="weaponDescription=!weaponDescription">DESCRIPTION</p>
+      
+
+    </div>
+    <div class="pmsWeaponDescHolder" ng-show="weaponDescription">
+      <p>{{weapon.description}}</p>
+    </div>
+<!-- end row -->
   </div>
 </div>
 
@@ -334,12 +348,10 @@
   <!-- cancel -->
   <h4 class="whtTxt pmsCheckoutTitle rightTxt">CANCEL</h4>
   <div class="pmsCheckoutBttn">
-    <div class="pmsCheckoutBttnIndicator"></div>
+    <div class="pmsCheckoutBttnIndicator" ng-click="pmsStore =!pmsStore"></div>
   </div>
 
 </div>
 </div>
 
-
-
-
+<!-- end modal store -->

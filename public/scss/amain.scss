@@ -206,6 +206,10 @@ $w9: #2F1A45;
   color: #f1efeb;
 }
 
+.ltGreyTxt{
+  color: lightgrey;
+}
+
 .whtTxt{
   color: $wht;
 }
@@ -290,8 +294,16 @@ h6{
   border-bottom: 2px solid grey;
 }
 
+.ltBorderBottom{
+  border-bottom: 2px solid lightgrey;
+}
+
 .borderRight{
   border-right: 2px solid grey;
+}
+
+.ltBorderRight{
+  border-right: 2px solid lightgrey;
 }
 
 .borderTop{

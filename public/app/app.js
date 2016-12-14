@@ -61,6 +61,9 @@ angular.module('scribe', ['ui.router'])
           },
           skills: function(sService) {
               return sService.skill();
+          },
+          weapons: function(sService) {
+              return sService.weapon();
           }
         }
       })

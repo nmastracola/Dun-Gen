@@ -1,10 +1,12 @@
-angular.module('scribe').controller('playerCtrl', function($scope, sService, character, feats, skills, classes){
+angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons){
 
 $scope.classes = classes;
+$scope.weapons = weapons
 $scope.skills = skills
 $scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
+$scope.savedCharacter = $scope.character;
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
@@ -51,6 +53,8 @@ $scope.aggregateClasses = function(){
   }
 }
 
+$scope.aggregateClasses();
+
 $scope.playerName = $scope.character.static.characterName;
 $scope.playerAlignment = $scope.character.static.alignment;
 $scope.playerRace = $scope.character.static.race;
@@ -58,12 +62,12 @@ $scope.playerLevel = $scope.currentTotalLevel;
 $scope.playerClass = $scope.classHolderArr;
 $scope.playerClassLevel = $scope.classLevelHolderArr;
 $scope.playerMaxHP = $scope.character.core.maxHitPoints;
-$scope.playerHP = $scope.character.core.currentHitPoints;
+$scope.playerBaseMaxHP = $scope.playerMaxHP;
+$scope.playerBaseHP = $scope.character.core.currentHitPoints;
+$scope.playerHP = $scope.playerBaseHP;
 //PLAYER AC IS IN AC SECTION OF CORE
 $scope.playerXP = $scope.character.static.experience;
 //PLAYER INITIATIVE IS LOCATED IN AC SECTION OF CORE
-
-
 
 
 // ===================================   CORE DIRECTIVE ===================================
@@ -89,12 +93,12 @@ $scope.playerAttMod={
 };
 
 $scope.playerAttTmpAdj={
-  'taSTR': 0,
-  'taDEX': 0,
-  'taCON': 0,
-  'taWIS': 0,
-  'taINT': 0,
-  'taCHA': 0
+  'taSTR': $scope.character.core.tempStrength || 0,
+  'taDEX': $scope.character.core.tempDexterity || 0,
+  'taCON': $scope.character.core.tempConstitution || 0,
+  'taWIS': $scope.character.core.tempWisdom || 0,
+  'taINT': $scope.character.core.tempIntelligence || 0,
+  'taCHA': $scope.character.core.tempCharisma || 0
 };
 
 $scope.playerAttTmpMod={
@@ -114,8 +118,14 @@ $scope.playerShieldBonus = 99;
 $scope.playerSizeBonus = 99;
 $scope.playerNaturalArmor = 99;
 $scope.playerDeflectionBonus = 99;
-$scope.playerMiscArmorMod = 99;
+$scope.playerMiscArmorMod = $scope.character.core.miscArmorClass || 0;
 
+$scope.calcMaxHP = function(){
+  $scope.playerMaxHP = $scope.playerBaseMaxHP + ($scope.playerAttTmpMod.tmCON - $scope.playerAttMod.mCON)
+  return $scope.playerMaxHP
+}
+
+$scope.calcMaxHP();
 
 $scope.playerACCalc = function(){
   $scope.playerAC = ((10) + ($scope.playerArmorBonus * 1 ) + ($scope.playerShieldBonus * 1)
@@ -196,9 +206,9 @@ $scope.playerSavesMiscMod={
 }
 
 $scope.playerSavesTempMod={
-  "FORTITUDE": 0,
-  "REFLEX": 0,
-  "WILL": 0
+  "FORTITUDE": $scope.character.core.fortitudeTempModifier || 0,
+  "REFLEX": $scope.character.core.reflexTempModifier || 0,
+  "WILL": $scope.character.core.willTempModifier || 0
 }
 
 $scope.playerSaves={
@@ -243,18 +253,30 @@ $scope.playerWillSaveCalc();
 // ===========   HIT POINTS  =============
 
 $scope.playerChangeHP = function(x){
-  if (($scope.playerHP < $scope.playerMaxHP) && ($scope.playerHP > (-$scope.playerAtt.CON))){
+  $scope.calcMaxHP();
+  if (($scope.playerHP < $scope.playerMaxHP) && ($scope.playerHP > (-$scope.playerAttTmpMod.tmCON))){
     $scope.playerHP += x;
-  }else if($scope.playerHP == (-$scope.playerAtt.CON) && x === 1){
+  }else if($scope.playerHP == (-$scope.playerAttTmpMod.tmCON) && x === 1){
     $scope.playerHP += x;
   }else if($scope.playerHP == $scope.playerMaxHP && x === -1){
     $scope.playerHP += x;
   }
 }
 
-$scope.logger=function () {
-  console.log($scope.character);
+$scope.playerModHP = function(x){
+  // if (($scope.playerHP < $scope.playerMaxHP) && ($scope.playerHP > (-$scope.playerAtt.CON))){
+  //   $scope.playerHP += x;
+  // }else if($scope.playerHP == (-$scope.playerAtt.CON) && x === 1){
+  //   $scope.playerHP += x;
+  // }else if($scope.playerHP == $scope.playerMaxHP && x === -1){
+  //   $scope.playerHP += x;
+  // }
 }
+
+$scope.logger=function () {
+
+}
+$scope.logger()
 
 
 // ===========   STR MODIFIER =============
@@ -268,6 +290,51 @@ $scope.playerChangeATT = function(x, att){
 
   // ===================================   DICE ROLLER STUFF  ===================================
 
+
+
+
+  // ===================================   WEAPONS AND EQUIPMENT  ===================================
+  $scope.equiptmentWealth = {
+    platinum: 0,
+    gold: 0,
+    silver: 0,
+    copper: 0
+  }
+$scope.moneyConverter = function () {
+  var newMoney = this.character.equipment[0].wealth.toString().split("")
+  $scope.equiptmentWealth.copper=newMoney[0] *1
+  newMoney.splice(0,1)
+  $scope.equiptmentWealth.silver=newMoney[0] *1
+  newMoney.splice(0,1)
+  $scope.equiptmentWealth.gold=newMoney[0] *1
+  newMoney.splice(0,1)
+  var platMoney = ""
+  for (var i = 0; i < newMoney.length; i++) {
+
+    platMoney += newMoney[i]
+  }
+  $scope.equiptmentWealth.platinum=platMoney *1
+}
+$scope.moneyConverter()
+
+$scope.savePlayerCharacter = function(){
+  $scope.savedCharacter.static.experience = $scope.playerXP;
+  $scope.savedCharacter.core.tempStrength = $scope.playerAttTmpAdj.taSTR;
+  $scope.savedCharacter.core.tempDexterity = $scope.playerAttTmpAdj.taDEX;
+  $scope.savedCharacter.core.tempConstitution = $scope.playerAttTmpAdj.taCON;
+  $scope.savedCharacter.core.tempIntelligence = $scope.playerAttTmpAdj.taINT;
+  $scope.savedCharacter.core.tempWisdom = $scope.playerAttTmpAdj.taWIS;
+  $scope.savedCharacter.core.tempCharisma = $scope.playerAttTmpAdj.taCHR;
+  $scope.savedCharacter.core.fortitudeTempModifier = $scope.playerSavesTempMod.FORTITUDE;
+  $scope.savedCharacter.core.reflexTempModifier = $scope.playerSavesTempMod.REFLEX;
+  $scope.savedCharacter.core.willTempModifier = $scope.playerSavesTempMod.WILL;
+  $scope.savedCharacter.core.miscArmorClass = $scope.playerMiscArmorMod;
+  $scope.savedCharacter.core.miscInitiative = $scope.playerInitiativeMiscMod;
+  $scope.savedCharacter.core.currentHitPoints = $scope.playerHP;
+
+  characterService.editCharacter($scope.savedCharacter._id, $scope.savedCharacter);
+
+}
 
 
 });
