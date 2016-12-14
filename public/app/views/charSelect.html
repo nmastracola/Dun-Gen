@@ -9,12 +9,24 @@
     
     <!-- ng-show if there are saved characters -->
     <div class="charSelectBottomWrapper" >
-      <div class="charSelectCreateChar centerTxt">
+      <div class="charSelectSavedChar centerTxt">
         <h3 class="charSelectCreateCharText offWhtTxt">SAVED CHARACTERS</h3>  
       </div>
       <div class="charSelectCharListWrapper flexColumn">
             <!-- individual character starts here -->
-        <div ng-click="(displayChar(char._id))" class="charSelectCharRow flexRow" ng-repeat="char in userChars">
+      <div class="charHolder offWhtBkg flexRow">
+        <div class="charBox flexColumn" ng-repeat="char in userChars" ng-click="(displayChar(char._id))">
+          <img class="charImg whtBkg" src="{{char.portraitURL}}" alt="character portrait">
+          <h5 class="offWhtTxt centerTxt"> {{char.static.characterName}} </h5>
+          <div ng-repeat="class in char.static.classes" class="">
+            
+        
+          <p class="ltGreyTxt centerTxt charLevelTxt">Level {{class.level}} {{class.class}}</p>
+          </div>
+        </div>
+      </div>    
+            
+        <!-- <div ng-click="(displayChar(char._id))" class="charSelectCharRow flexRow" ng-repeat="char in userChars">
 
             <h4 class="charSelectCharName leftTxt">{{char.static.characterName}}</h4>
             <div class="charSelectCharClassesWrapper" ng-repeat="class in char.static.classes">
@@ -24,7 +36,7 @@
         </div>
         
       </div>
-    </div>
+    </div> -->
     
     
     

@@ -1,14 +1,15 @@
 .charSelectBkgrd {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   background-image: url("../images/characterSelectionBkg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center; 
   background-size: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   right:0
+
 }
 
 .charSelectFullWrapper{
@@ -22,10 +23,11 @@
 }
 
 .charSelectCreateChar{
-  width: 100%;
+  width: 80%;
   height: 50px;
   cursor: pointer;
   padding: 15px 0 0 0;
+  margin: 0 auto;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+8,292331+40,292331+60,ffffff+92&0+8,1+40,1+60,0+92 */
 background: -moz-linear-gradient(left,  rgba(255,255,255,0) 8%, rgba(41,35,49,1) 40%, rgba(41,35,49,1) 60%, rgba(255,255,255,0) 92%); /* FF3.6-15 */
 background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 8%,rgba(41,35,49,1) 40%,rgba(41,35,49,1) 60%,rgba(255,255,255,0) 92%); /* Chrome10-25,Safari5.1-6 */
@@ -44,13 +46,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   }
 }
 
-.charSelectCreateCharText{
-
+.charSelectSavedChar{
+  width: 80%;
+  height: 50px;
+  padding: 15px 0 0 0;
+  margin: 0 auto;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+8,292331+40,292331+60,ffffff+92&0+8,1+40,1+60,0+92 */
+background: -moz-linear-gradient(left,  rgba(255,255,255,0) 8%, rgba(41,35,49,1) 40%, rgba(41,35,49,1) 60%, rgba(255,255,255,0) 92%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 8%,rgba(41,35,49,1) 40%,rgba(41,35,49,1) 60%,rgba(255,255,255,0) 92%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(255,255,255,0) 8%,rgba(41,35,49,1) 40%,rgba(41,35,49,1) 60%,rgba(255,255,255,0) 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 }
 
 .charSelectBottomWrapper{
     width: 100%;
     margin: 20px 0 0 0;
+    overflow: hidden;
 }
 
 .charSelectCharListWrapper{
@@ -58,27 +69,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   margin: 20px 0 0;
 }
 
-.charSelectCharRow{
-  background: $blk;
-  height:40px;
-  width: 720px;
-  margin: 10px 5px 10px 5px;
-  cursor: pointer;
-}
+// .charSelectCharRow{
+//   background: $blk;
+//   height:40px;
+//   width: 720px;
+//   margin: 10px 5px 10px 5px;
+//   cursor: pointer;
+// }
 
-.charSelectCharName{
-  color: #f1efeb;
-  width: 300px;
-  padding: 10px 0 0 10px;
-  &:hover{
-    cursor: pointer;
-    color: crimson;
-  }
-}
+// .charSelectCharName{
+//   color: #f1efeb;
+//   width: 300px;
+//   padding: 10px 0 0 10px;
+//   &:hover{
+//     cursor: pointer;
+//     color: crimson;
+//   }
+// }
 
-.charSelectClassesWrapperWrapper{
-    margin: 10px 0 20px 0;
-}
+// .charSelectClassesWrapperWrapper{
+//     margin: 10px 0 20px 0;
+// }
 
 .charSelectCharClassesWrapper{
 
@@ -86,5 +97,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .charSelectCharClass{
   margin: 10px 10px 0 0;
+  
+}
 
+.charHolder{
+  width: 90%;
+  height: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.charBox{
+  width: 200px;
+  height: 280px;
+  background: $blk;
+  margin: 5px;
+}
+
+.charImg{
+  height: 175px;
+  width: 120px;
+  margin: 20px auto 5px;
+}
+
+.charLevelTxt{
+  font-size: .8em;
+  margin: 5px 0 0 0;
 }
