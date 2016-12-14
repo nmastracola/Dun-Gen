@@ -9,7 +9,6 @@ angular.module("scribe").controller("charSelectCtrl", function($scope, character
   // ============================================================
   
   $scope.userChars = userChars;
-  
   $scope.displayChar = function(charId){
     characterService.getCharObject(charId)
     .then(function(response){
