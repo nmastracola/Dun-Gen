@@ -256,8 +256,11 @@ $scope.playerChangeHP = function(x){
 }
 
 $scope.logger=function () {
-  console.log($scope.character);
+  console.log(this.character);
+  console.log(this.character.equipment[0].weapons);
+
 }
+$scope.logger()
 
 
 // ===========   STR MODIFIER =============
