@@ -5,6 +5,7 @@ $scope.skills = skills
 $scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
+$scope.savedCharacter = $scope.character;
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
