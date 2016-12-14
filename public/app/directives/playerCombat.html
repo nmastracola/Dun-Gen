@@ -1,7 +1,7 @@
 <div class="combatHolder flexColumn">
 
   <!-- weapons section -->
-<div class="combatWeaponsHolder flexColumn">
+<div class="combatWeaponsHolder flexColumn" ng-repeat="weapon in character.equipment[0].weapons">
     <div class="combatWeaponsHeaderBar">
       <div class="combatWeaponsTitle flexRow">
         <img class="horizontalWeaponIcon"src="./images/weaponIcon.svg" alt="WEAPONS">
@@ -42,19 +42,19 @@
         <div class="combatSingleWeaponRow1 flexRow">
           <div class="combatWeaponsTitle flexRow leftTxt dkgreyBkg wBPadding">
             <!-- insert weapon name here -->
-            <h5>Smackhammer of Flame +3</h5>
+            <h5>{{weapon.name}}</h5>
           </div>
           <div class="combatWeaponsType centerTxt ltgreyBkg wBPadding">
             <!-- insert type here -->
-            <h5>SLASHING</h5>
+            <h5>MVP+</h5>
           </div>
           <div class="combatWeaponsRange centerTxt dkgreyBkg wBPadding">
             <!-- two way bind in the number, and the ft will stay -->
-            <h5>5ft</h5>
+            <h5>{{weapon.range}}ft</h5>
           </div>
           <div class="combatWeaponsToHit flexRow ltgreyBkg ">
             <div class="combatWeaponsToHitActual centerTxt wBPadding">
-              <h5>+5</h5>
+              <h5>+0</h5>
               <!-- two way bind the number, and the plus will stay -->
             </div>
             <div class="combatWeaponsToHitRollResult centerTxt wBPadding ">
@@ -63,14 +63,15 @@
             </div>
           </div>
           <div class="combatWeaponsCrit centerTxt dkgreyBkg wBPadding">
-            <h5>19-20 x2</h5>
+            <h5>{{weapon.threshold}}-20 x{{weapon.multiplier}}</h5>
           </div>
 
           <!-- first weapon damage -->
           <div class="combatWeaponsDamage flexRow ltgreyBkg">
             <div class="combatWeaponsDamageActual wBPadding centerTxt" >
               <!-- two way bind the damage roll and the bonus seperately, and leave the + -->
-              <h5>1d6 +5</h5>
+              <h5 class="pmsWeaponStats ltgreyBkg">{{weapon.damage.number[0]}}d{{weapon.damage.die[0]}}</h5>
+              <h5 class="pmsWeaponStats ltgreyBkg" ng-show="weapon.damage.number[1]">{{weapon.damage.number[1]}}d{{weapon.damage.die[1]}}</h5>
             </div>
             <div class="combatWeaponsDamageResult wBPadding centerTxt">
                 <h5 class="whtTxt">9</h5>
@@ -79,7 +80,7 @@
           <div class="combatWeaponsDamage flexRow ltgreyBkg">
             <div class="combatWeaponsDamageActual wBPadding centerTxt" >
               <!-- two way bind the damage roll and the bonus seperately, and leave the + -->
-              <h5>1d6 fire</h5>
+              <h5>MVP+</h5>
             </div>
             <div class="combatWeaponsDamageResult wBPadding centerTxt">
                 <h5 class="whtTxt">9</h5>
@@ -205,10 +206,12 @@
       <!-- MAIN BODY OF FEAT CONTENT -->
       <div class="combatFeatHolder">
         <div class="combatFeatHeader centerTxt">
-          <h4>WEAPON FOCUS</h4>
+          <h4>{{abilityToShowArrs[abilityToShow].name}}</h4>
+
         </div>
         <div class="featMainBodyText leftTxt">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum sem eu sapien tristique ullamcorper. Aenean vehicula mauris vel eros auctor rhoncus. Fusce elementum, augue ac accumsan lacinia, risus justo consectetur nulla, euismod efficitur lorem nulla in metus. Mauris feugiat interdum ante, in gravida urna efficitur eu.</p>
+          <p>{{abilityToShowArrs[abilityToShow].description}}</p>
+
         </div>
         <div class="combatFeatSelecterHolder flexRow">
           <h4 class="wBPadding">SELECT FEAT </h4>
@@ -241,15 +244,15 @@
     <div class="combatFeatPicker flexRow">
       <!-- abilities CHOOSER.  NG CLICK TO PICK NEXT abilities IN ARRAY -->
       <div class="combatFeatArrow">
-        <div class="cfLeftArrow" ng-click=""></div>
+        <div class="cfLeftArrow" ng-click="showNextFeat(-1); showFeatsInHud()"></div>
       </div>
       <!-- MAIN BODY OF abilities CONTENT -->
       <div class="combatFeatHolder">
         <div class="combatFeatHeader centerTxt">
-          <h4>WEAPON FOCUS</h4>
+          <h4>{{abilityToShowArrs[abilityToShow].name}}</h4>
         </div>
         <div class="featMainBodyText leftTxt">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum sem eu sapien tristique ullamcorper. Aenean vehicula mauris vel eros auctor rhoncus. Fusce elementum, augue ac accumsan lacinia, risus justo consectetur nulla, euismod efficitur lorem nulla in metus. Mauris feugiat interdum ante, in gravida urna efficitur eu.</p>
+          <p>{{abilityToShowArrs[abilityToShow].description}}</p>
         </div>
         <div class="combatFeatSelecterHolder flexRow">
           <h4 class="wBPadding">SELECT FEAT </h4>
@@ -260,7 +263,7 @@
       </div>
       <!-- abilities CHOOSER.  NG CLICK TO PICK NEXT abilities IN ARRAY -->
       <div class="combatFeatArrow">
-        <div class="cfRightArrow" ng-click=""></div>
+        <div class="cfRightArrow" ng-click="showNextFeat(-1); showFeatsInHud()"></div>
       </div>
       <!-- end abilities chooser -->
     </div>
