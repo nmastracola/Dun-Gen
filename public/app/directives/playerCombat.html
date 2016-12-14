@@ -304,17 +304,13 @@
 <!-- ITEMS CONTENT -->
 <div class="pmsContentHolder flexColumn">
 
-  <div class="pmsRowHolder flexColumn" ng-repeat="weapon in weapons">
-    <div class="pmsRow flexRow">
-      <h5 class="pmsWeaponTitle ltgreyBkg">{{weapon.name}}</h5>
-      <p class="pmsWeaponDescription">{{weapon.description}}</p>
-    </div>
-    <div class="pmsRow flexRow">
-      <h5 class="pmsWeaponDescriptor">DAMAGE:</h5>
-      <p class="pmsWeaponStats ltgreyBkg">{{weapon.damage.number[0]}}d{{weapon.damage.die[0]}}</p>
-      <p class="pmsWeaponStats ltgreyBkg" ng-show="weapon.damage.number[1]">{{weapon.damage.number[1]}}d{{weapon.damage.die[1]}}</p>
+  <div class="pmsRowHolder " ng-repeat="weapon in weapons">
+    
+    <div class="pmsRow flexRow flexBetween ltBorderBottom">
+      <h5 class="pmsWeaponTitle ltgreyBkg ">{{weapon.name}}</h5>
       <h5 class="pmsWeaponDescriptor">WEIGHT:</h5>
       <p class="pmsWeaponStats ltgreyBkg">{{weapon.weight}}LBS</p>
+      <!-- purchase buttons -->
       <div class="pmsMoneyDiv flexRow">
         <div class="pmsMoneyHolder">
           <img class="pmsMoneyIcon" src="./images/moneyYes.svg" alt="purchase">
@@ -323,9 +319,23 @@
           <img class="pmsMoneyIcon" src="./images/moneyNo.svg" alt="take">
         </div>
       </div>
+      <!-- <p class="pmsWeaponDescription">{{weapon.description}}</p> -->
+    </div>
+    
+    <div class="pmsRow flexRow">
+      <h5 class="pmsWeaponDescriptor">DAMAGE:</h5>
+      <p class="pmsWeaponStats  ltBorderRight">{{weapon.damage.number[0]}}d{{weapon.damage.die[0]}}</p>
+      <p class="pmsWeaponStats  ltBorderRight" ng-show="weapon.damage.number[1]">{{weapon.damage.number[1]}}d{{weapon.damage.die[1]}}</p>
+      <h5 class="pmsWeaponDescriptor">PRICE:</h5>
+      <p class="pmsWeaponStats  ltBorderRight">{{weapon.cost}}g </p>
+      <p class="pmsWeaponDescriptor pmsWeaponDescToggler" ng-click="weaponDescription=!weaponDescription">DESCRIPTION</p>
+      
 
     </div>
-
+    <div class="pmsWeaponDescHolder" ng-show="weaponDescription">
+      <p>{{weapon.description}}</p>
+    </div>
+<!-- end row -->
   </div>
 </div>
 
@@ -338,8 +348,10 @@
   <!-- cancel -->
   <h4 class="whtTxt pmsCheckoutTitle rightTxt">CANCEL</h4>
   <div class="pmsCheckoutBttn">
-    <div class="pmsCheckoutBttnIndicator"></div>
+    <div class="pmsCheckoutBttnIndicator" ng-click="pmsStore =!pmsStore"></div>
   </div>
 
 </div>
 </div>
+
+<!-- end modal store -->

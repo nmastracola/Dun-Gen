@@ -8,18 +8,16 @@ return{
     
     ///togglers
     
-    
     scope.pmsStore = false;
-    
+    scope.weaponDescription = false;
     
     //store functions
     
-    
     scope.openPmsStore = function(){
       scope.pmsStore = !scope.pmsStore;
-
+      
     } 
-  
+
   
   // end link
    }
