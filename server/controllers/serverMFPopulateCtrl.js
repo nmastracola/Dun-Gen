@@ -240,6 +240,14 @@ module.exports = {
      }
      res.status(200).send(user);
    })
+ },
+ editCharacter: function(req, res, next){
+   Character.findByIdAndUpdate(req.params.charId, req.body, function(err, newCharInfo) {
+     if (err) {
+       return res.status(500).send(err);
+     }
+     res.status(200).send(newCharInfo);
+   });
  }
 
 
