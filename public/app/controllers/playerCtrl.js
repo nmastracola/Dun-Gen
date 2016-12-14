@@ -6,6 +6,7 @@ $scope.skills = skills
 $scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
+$scope.savedCharacter = $scope.character;
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
@@ -256,8 +257,11 @@ $scope.playerChangeHP = function(x){
 }
 
 $scope.logger=function () {
-  console.log($scope.character);
+  console.log(this.character);
+  console.log(this.character.equipment[0].weapons);
+
 }
+$scope.logger()
 
 
 // ===========   STR MODIFIER =============
