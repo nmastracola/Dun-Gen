@@ -1,8 +1,9 @@
-angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, gear, armor){
+angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, gear, armor, classes){
 
 
 $scope.gear = gear
 $scope.armor = armor
+$scope.classes = classes
 $scope.weapons = weapons
 $scope.skills = skills
 $scope.feats = feats
