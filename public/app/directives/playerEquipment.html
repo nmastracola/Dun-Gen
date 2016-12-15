@@ -64,9 +64,9 @@
       <div class="acEquipmentProperties ltgreyBkg eqPadding leftTxt">
         <p class=" ">MVP +</p>
       </div>
-      <div class="acEquipmentEquipped ">
-        <div class="combatWeaponsEquipIndicator" ng-click="">
-          <div class="combatWeaponsEquipCheckbox" ng-click="" ng-hide=""></div>
+      <div class="acEquipmentEquipped" ng-click="armorEquip=!armorEquip; equipArmor(armor)">
+        <div class="combatWeaponsEquipIndicator" >
+          <div class="combatWeaponsEquipCheckbox" ng-click="" ng-show="armorEquip"></div>
         </div>
       </div>
       <div class="acEquipmentAddRemove flexRow">

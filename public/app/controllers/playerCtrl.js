@@ -1,7 +1,8 @@
-angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, gear, armor, classes){
+angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, gear, armor, classes, races){
 
 
 $scope.gear = gear
+$scope.races = races
 $scope.armor = armor
 $scope.classes = classes
 $scope.weapons = weapons
@@ -113,14 +114,38 @@ $scope.playerAttTmpMod={
   'tmCHA': Math.floor((($scope.playerAtt.CHA + $scope.playerAttTmpAdj.taCHA)-10)/2)
 };
 
-//ARMOR CLASS
 
-$scope.playerArmorBonus = 99;
-$scope.playerShieldBonus = 99;
+//ARMOR CLASS
+$scope.setPlayerNaturalArmor = function () {
+  if (this.character.core.naturalArmorClass) {
+    $scope.playerNaturalArmor = this.character.core.naturalArmorClass
+  }else {
+    $scope.playerNaturalArmor = 0
+  }
+  this.character.core.naturalArmorClass = $scope.playerNaturalArmor
+  return $scope.playerNaturalArmor
+}
+$scope.setPlayerNaturalArmor()
+
+$scope.setPlayerSizeBonus = function () {
+  for (var i = 0; i < this.races.length; i++) {
+    if (this.character.static.race === this.races[i] && this.races[i].size === "Small") {
+      $scope.playerSizeBonus = 1
+      return $scope.playerSizeBonus
+    }
+  }
+  $scope.playerSizeBonus = 0
+  return $scope.playerSizeBonus
+}
+$scope.setPlayerSizeBonus()
+
+
+$scope.playerArmorBonus = 0;
+$scope.playerShieldBonus = 0;
 //DEX MOD IS $scope.playerAttTmpMod.tmDEX
 $scope.playerSizeBonus = 99;
 $scope.playerNaturalArmor = 99;
-$scope.playerDeflectionBonus = 99;
+$scope.playerDeflectionBonus = 0;
 $scope.playerMiscArmorMod = $scope.character.core.miscArmorClass || 0;
 
 $scope.calcMaxHP = function(){
@@ -277,7 +302,7 @@ $scope.playerModHP = function(x){
 }
 
 $scope.logger=function () {
-// console.log(gear);
+console.log(this.character);
 }
 $scope.logger()
 
@@ -321,6 +346,7 @@ $scope.moneyConverter = function () {
 $scope.moneyConverter()
 
 $scope.savePlayerCharacter = function(){
+  $scope.savedCharacter = $scope.character;
   $scope.savedCharacter.static.experience = $scope.playerXP;
   $scope.savedCharacter.core.tempStrength = $scope.playerAttTmpAdj.taSTR;
   $scope.savedCharacter.core.tempDexterity = $scope.playerAttTmpAdj.taDEX;
@@ -336,7 +362,7 @@ $scope.savePlayerCharacter = function(){
   $scope.savedCharacter.core.currentHitPoints = $scope.playerHP;
 
   characterService.editCharacter($scope.savedCharacter._id, $scope.savedCharacter);
-
+  console.log($scope.savedCharacter);
 }
 
 

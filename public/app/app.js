@@ -50,6 +50,9 @@ angular.module('scribe', ['ui.router'])
         templateUrl: './app/views/player.html',
         controller: 'playerCtrl',
         resolve: {
+          races: function(sService) {
+              return sService.races();
+          },
           feats: function(sService) {
               return sService.feats();
           },
