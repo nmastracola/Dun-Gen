@@ -305,23 +305,23 @@
 <div class="pmsContentHolder flexColumn">
 
   <div class="pmsRowHolder " ng-repeat="weapon in weapons">
-    
+
     <div class="pmsRow flexRow flexBetween ltBorderBottom">
       <h5 class="pmsWeaponTitle ltgreyBkg ">{{weapon.name}}</h5>
       <h5 class="pmsWeaponDescriptor">WEIGHT:</h5>
       <p class="pmsWeaponStats ltgreyBkg">{{weapon.weight}}LBS</p>
       <!-- purchase buttons -->
       <div class="pmsMoneyDiv flexRow">
-        <div class="pmsMoneyHolder">
+        <div class="pmsMoneyHolder" ng-click="purchaseWeapon(weapon)">
           <img class="pmsMoneyIcon" src="./images/moneyYes.svg" alt="purchase">
         </div>
-        <div class="pmsMoneyHolder flexRow">
+        <div class="pmsMoneyHolder flexRow" ng-click="takeWeapon(weapon)">
           <img class="pmsMoneyIcon" src="./images/moneyNo.svg" alt="take">
         </div>
       </div>
       <!-- <p class="pmsWeaponDescription">{{weapon.description}}</p> -->
     </div>
-    
+
     <div class="pmsRow flexRow">
       <h5 class="pmsWeaponDescriptor">DAMAGE:</h5>
       <p class="pmsWeaponStats  ltBorderRight">{{weapon.damage.number[0]}}d{{weapon.damage.die[0]}}</p>
@@ -329,7 +329,7 @@
       <h5 class="pmsWeaponDescriptor">PRICE:</h5>
       <p class="pmsWeaponStats  ltBorderRight">{{weapon.cost}}g </p>
       <p class="pmsWeaponDescriptor pmsWeaponDescToggler" ng-click="weaponDescription=!weaponDescription">DESCRIPTION</p>
-      
+
 
     </div>
     <div class="pmsWeaponDescHolder" ng-show="weaponDescription">

@@ -1,13 +1,14 @@
-angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons){
+angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, gear, armor){
 
+
+$scope.gear = gear
+$scope.armor = armor
 $scope.weapons = weapons
-console.log($scope.weapons);
 $scope.skills = skills
 $scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
 $scope.savedCharacter = $scope.character;
-console.log($scope.savedCharacter);
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
@@ -275,7 +276,7 @@ $scope.playerModHP = function(x){
 }
 
 $scope.logger=function () {
-
+console.log(gear);
 }
 $scope.logger()
 
@@ -302,7 +303,7 @@ $scope.playerChangeATT = function(x, att){
     copper: 0
   }
 $scope.moneyConverter = function () {
-  var newMoney = this.character.equipment[0].wealth.toString().split("")
+  var newMoney = this.character.equipment[0].wealth.toString().split("").reverse()
   $scope.equiptmentWealth.copper=newMoney[0] *1
   newMoney.splice(0,1)
   $scope.equiptmentWealth.silver=newMoney[0] *1
@@ -310,7 +311,7 @@ $scope.moneyConverter = function () {
   $scope.equiptmentWealth.gold=newMoney[0] *1
   newMoney.splice(0,1)
   var platMoney = ""
-  for (var i = 0; i < newMoney.length; i++) {
+  for (var i = newMoney.length -1; i >= 0; i--) {
 
     platMoney += newMoney[i]
   }
@@ -332,11 +333,10 @@ $scope.savePlayerCharacter = function(){
   $scope.savedCharacter.core.miscArmorClass = $scope.playerMiscArmorMod;
   $scope.savedCharacter.core.miscInitiative = $scope.playerInitiativeMiscMod;
   $scope.savedCharacter.core.currentHitPoints = $scope.playerHP;
-  
+
   characterService.editCharacter($scope.savedCharacter._id, $scope.savedCharacter);
-  
+
 }
 
 
 });
-

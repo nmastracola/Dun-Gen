@@ -34,34 +34,35 @@
 
 
     </div>
+    <h3 ng-hide="character.equipment[0].armorClassItems[0]" ng-click="openArmorStore()">Click to add armor.</h3>
 
     <!-- AC ITEMS -->
 
-    <div class="acEquipmentRow flexRow" ng-repeat="key in equipment">
+    <div class="acEquipmentRow flexRow" ng-repeat="armor in character.equipment[0].armorClassItems track by $index">
       <!-- ng-repeat here -->
       <div class="acEquipmentName dkgreyBkg eqPadding leftTxt">
-        <h5 class=" ">Taco Shell Armor +1</h5>
+        <h5 class=" ">{{armor.Name}}</h5>
       </div>
       <div class="acEquipmentBonus ltgreyBkg eqPadding centerTxt">
-        <h5 class=" ">+1</h5>
+        <h5 class=" ">{{armor.ArmorShieldBonus}}</h5>
       </div>
       <div class="acEquipmentType dkgreyBkg eqPadding centerTxt">
-        <h5 class=" ">LIGHT</h5>
+        <h5 class=" ">{{armor.type}}</h5>
       </div>
       <div class="acEquipmentCheck ltgreyBkg eqPadding centerTxt">
-        <h5 class=" ">-2</h5>
+        <h5 class=" ">{{armor.ArmorCheckPenalty}}</h5>
       </div>
       <div class="acEquipmentSpellFailure dkgreyBkg eqPadding centerTxt">
-        <h5 class=" ">20%</h5>
+        <h5 class=" ">{{armor.ArcanespellFailureChance}}%</h5>
       </div>
       <div class="acEquipmentWeight ltgreyBkg eqPadding centerTxt">
-        <h5 class=" ">50lbs</h5>
+        <h5 class=" ">{{armor.Weight}}lbs</h5>
       </div>
       <div class="acEquipmentDex dkgreyBkg eqPadding centerTxt">
-        <h5 class=" ">+1</h5>
+        <h5 class=" ">{{armor.MaximumDexBonus}}</h5>
       </div>
       <div class="acEquipmentProperties ltgreyBkg eqPadding leftTxt">
-        <p class=" ">Armor ruined when wet.</p>
+        <p class=" ">MVP +</p>
       </div>
       <div class="acEquipmentEquipped ">
         <div class="combatWeaponsEquipIndicator" ng-click="">
@@ -87,16 +88,18 @@
         <img class="shieldIcon" src="./images/campfireIcon.svg" alt="equipment">
         <h2 class="eqBigTitlePadding">GEAR</h2>
     </div>
+    <h3 ng-hide="character.equipment[0].gear[0]" ng-click="openGeneralStore()">Click to add goods and services.</h3>
+
     <!-- content -->
-    <div class="eqMiscBar flexRow">
+    <div class="eqMiscBar flexRow" ng-repeat="gear in character.equipment[0].gear track by $index">
       <div class="eqMiscName dkgreyBkg eqPadding leftTxt">
-        <h5 class=" ">Kevin's Green Lantern Comics</h5>
+        <h5 class=" ">{{gear.Item}}</h5>
       </div>
       <div class="eqMiscWeight ltgreyBkg eqPadding centerTxt">
-          <h5 class=" ">5 lbs</h5>
+          <h5 class=" ">{{gear.Weight}} lbs</h5>
       </div>
       <div class="acEquipmentAddRemove flexRow">
-        <h3 class="addRemoveArmor" ng-click="openArmorStore()">+</h3>
+        <h3 class="addRemoveArmor" ng-click="openGeneralStore()">+</h3>
         <h3 class="addRemoveArmor" ng-click="">-</h3>
       </div>
     </div>
@@ -107,7 +110,87 @@
   <!-- END MISCELANEOUS EQUIPMENT -->
 
 </div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
+
+<div class="pmsOverlay" ng-show="generalStore" ng-click="generalStore =!generalStore"></div>
+<div class="pmsStoreBox flexColumn" ng-show="generalStore">
+  <!-- title -->
+  <div class="pmsStoreTitleBox centerTxt">
+    <h2 class="whtTxt">ARMORER'S STORE</h2>
+  </div>
+<!-- statbox   -->
+<div class="pmsStatBox flexRow">
+  <div class="pmsAvailableFunds flexRow">
+    <h4 class="pmsStatBoxHeaders ">Available Funds</h4>
+    <div class="pmsStatBoxStatBox blkBkg">
+      <h4 class="whtTxt centerTxt pmsStatBoxHeaders">{{equiptmentWealth.platinum}} p  {{equiptmentWealth.gold}} g {{equiptmentWealth.silver}} s {{equiptmentWealth.copper}} c</h4>
+    </div>
+  </div>
+  <div class="pmsWeight flexRow">
+    <h4 class="pmsStatBoxHeaders">Weight</h4>
+    <div class="pmsWeightBox blkBkg ">
+      <h4 class="whtTxt centerTxt pmsStatBoxHeaders">43lbs</h4>
+    </div>
+  </div>
+</div>
+<!-- ITEMS CONTENT -->
+<div class="pmsContentHolder flexColumn">
+
+  <div class="pmsRowHolder " ng-repeat="gear in gear">
+
+    <div class="pmsRow flexRow flexBetween ltBorderBottom">
+      <h5 class="pmsWeaponTitle ltgreyBkg ">{{gear.Item}}</h5>
+      <h5 class="pmsWeaponDescriptor">WEIGHT:</h5>
+      <p class="pmsWeaponStats ltgreyBkg">{{gear.Weight}}LBS</p>
+      <!-- purchase buttons -->
+      <div class="pmsMoneyDiv flexRow">
+        <div class="pmsMoneyHolder" ng-click="purchaseGear(gear)">
+          <img class="pmsMoneyIcon" src="./images/moneyYes.svg" alt="purchase">
+        </div>
+        <div class="pmsMoneyHolder flexRow" ng-click="takeGear(gear)">
+          <img class="pmsMoneyIcon" src="./images/moneyNo.svg" alt="take">
+        </div>
+      </div>
+    </div>
+
+    <div class="pmsRow flexRow">
+      <h5 class="pmsWeaponDescriptor">Catagory</h5>
+      <p class="pmsWeaponStats  ltBorderRight">{{gear.category}}</p>
+      <h5 class="pmsWeaponDescriptor">PRICE:</h5>
+      <p class="pmsWeaponStats  ltBorderRight">{{gear.Cost}}</p>
+      <p class="pmsWeaponDescriptor pmsWeaponDescToggler" ng-click="weaponDescription=!weaponDescription">DESCRIPTION</p>
+
+
+    </div>
+    <!-- DESCRIPTION -->
+    <div class="pmsWeaponDescHolder" ng-show="weaponDescription">
+      <p>{{gear.description}}</p>
+    </div>
+<!-- end row -->
+  </div>
+</div>
+
+<!-- TOTAL / CHECKOUT -->
+<div class="pmsCheckout blkBkg flexRow">
+  <h4 class="whtTxt pmsCheckoutTitle rightTxt">SETTLE TAB</h4>
+  <div class="pmsCheckoutBttn">
+    <div class="pmsCheckoutBttnIndicator"></div>
+  </div>
+  <!-- cancel -->
+  <h4 class="whtTxt pmsCheckoutTitle rightTxt">CANCEL</h4>
+  <div class="pmsCheckoutBttn">
+    <div class="pmsCheckoutBttnIndicator" ng-click="generalStore =!generalStore"></div>
+  </div>
+
+</div>
+</div>
+
+<!-- end modal store -->
+
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 <!-- EQUIPMENT STORE -->
 
@@ -135,35 +218,35 @@
 <!-- ITEMS CONTENT -->
 <div class="pmsContentHolder flexColumn">
 
-  <div class="pmsRowHolder " ng-repeat="">
-    
+  <div class="pmsRowHolder " ng-repeat="armor in armor">
+
     <div class="pmsRow flexRow flexBetween ltBorderBottom">
-      <h5 class="pmsWeaponTitle ltgreyBkg ">x</h5>
+      <h5 class="pmsWeaponTitle ltgreyBkg ">{{armor.Name}}</h5>
       <h5 class="pmsWeaponDescriptor">WEIGHT:</h5>
-      <p class="pmsWeaponStats ltgreyBkg">x LBS</p>
+      <p class="pmsWeaponStats ltgreyBkg">{{armor.Weight}} LBS</p>
       <!-- purchase buttons -->
       <div class="pmsMoneyDiv flexRow">
-        <div class="pmsMoneyHolder">
+        <div class="pmsMoneyHolder" ng-click="purchaseArmor(armor)">
           <img class="pmsMoneyIcon" src="./images/moneyYes.svg" alt="purchase">
         </div>
-        <div class="pmsMoneyHolder flexRow">
+        <div class="pmsMoneyHolder flexRow" ng-click="takeArmor(armor)">
           <img class="pmsMoneyIcon" src="./images/moneyNo.svg" alt="take">
         </div>
       </div>
     </div>
-    
+
     <div class="pmsRow flexRow">
       <h5 class="pmsWeaponDescriptor">AC:</h5>
-      <p class="pmsWeaponStats  ltBorderRight">x</p>
+      <p class="pmsWeaponStats  ltBorderRight">{{armor.ArmorShieldBonus}}</p>
       <h5 class="pmsWeaponDescriptor">PRICE:</h5>
-      <p class="pmsWeaponStats  ltBorderRight"> x g </p>
+      <p class="pmsWeaponStats  ltBorderRight">{{armor.Cost}}</p>
       <p class="pmsWeaponDescriptor pmsWeaponDescToggler" ng-click="weaponDescription=!weaponDescription">DESCRIPTION</p>
-      
+
 
     </div>
     <!-- DESCRIPTION -->
     <div class="pmsWeaponDescHolder" ng-show="weaponDescription">
-      <p>x</p>
+      <p>{{armor.description}}</p>
     </div>
 <!-- end row -->
   </div>
@@ -178,7 +261,7 @@
   <!-- cancel -->
   <h4 class="whtTxt pmsCheckoutTitle rightTxt">CANCEL</h4>
   <div class="pmsCheckoutBttn">
-    <div class="pmsCheckoutBttnIndicator" ng-click="pmsStore =!pmsStore"></div>
+    <div class="pmsCheckoutBttnIndicator" ng-click="armorStore =!armorStore"></div>
   </div>
 
 </div>
