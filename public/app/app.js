@@ -50,17 +50,29 @@ angular.module('scribe', ['ui.router'])
         templateUrl: './app/views/player.html',
         controller: 'playerCtrl',
         resolve: {
+          races: function(sService) {
+              return sService.races();
+          },
           feats: function(sService) {
               return sService.feats();
           },
           character: function($stateParams, characterService){
             return characterService.getCharObject($stateParams.charId);
           },
+          classes: function(sService) {
+              return sService.class();
+          },
           skills: function(sService) {
               return sService.skill();
           },
           weapons: function(sService) {
               return sService.weapon();
+          },
+          gear: function(sService) {
+              return sService.gear();
+          },
+          armor: function(sService) {
+              return sService.armor();
           }
         }
       })

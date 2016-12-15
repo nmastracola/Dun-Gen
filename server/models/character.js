@@ -207,103 +207,6 @@ var characterSchema = mongoose.Schema({
           }
       }
   },
-  weapons: [{
-      name: {
-          type: String
-      },
-      type: {
-          type: String
-      },
-      subtype: {
-          type: String
-      },
-      cost: {
-          type: Number
-      },
-      damage: {
-          die: [{
-              type: Number
-          }],
-          number: [{
-              type: Number
-          }]
-      },
-      critical: {
-          threshold: {
-              type: Number
-          },
-          multiplier: {
-              type: Number
-          }
-      },
-      range: {
-          type: Number
-      },
-      weight: {
-          type: Number
-      },
-      damageType: {
-          blunt: {
-              type: Boolean
-          },
-          piercing: {
-              type: Boolean
-          },
-          slashing: {
-              type: Boolean
-          },
-          other: {
-              type: String
-          }
-      },
-      special: {
-          brace: {
-              type: Boolean
-          },
-          disarm: {
-              type: Boolean
-          },
-          double: {
-              type: Boolean
-          },
-          monk: {
-              type: Boolean
-          },
-          nonlethal: {
-              type: Boolean
-          },
-          reach: {
-              type: Boolean
-          },
-          trip: {
-              type: Boolean
-          }
-      },
-      description: {
-          type: String
-      },
-      equipped: {
-          type: Boolean
-      },
-      primary: {
-          type: Boolean
-      },
-      offhand: {
-          type: Boolean
-      },
-      ammunition: {
-          type: Number
-      },
-      weaponAttackBonus: {
-          type: Number
-      },
-      weaponDamageBonus: {
-          type: Number
-      },
-      notes: {
-          type: String
-      }
-  }],
   skills: [{
       name: {
           type: String,
@@ -370,31 +273,31 @@ var characterSchema = mongoose.Schema({
   }],
   equipment: [{
       armorClassItems: [{
-          name: {
+          Name: {
               type: String
           },
-          cost: {
+          Cost: {
               type: Number
           },
-          armorShieldBonus: {
+          ArmorShieldBonus: {
               type: Number
           },
-          maxDexBonus: {
+          MaximumDexBonus: {
               type: Number
           },
-          armorCheckPenalty: {
+          ArmorCheckPenalty: {
               type: Number
           },
-          arcaneSpellFailureChance: {
+          ArcanespellFailureChance: {
               type: Number
           },
-          equipSpeed30: {
+          EquipSpeed30: {
               type: Number
           },
-          equipSpeed20: {
+          EquipSpeed20: {
               type: Number
           },
-          weight: {
+          Weight: {
               type: Number
           },
           type: {
@@ -404,14 +307,14 @@ var characterSchema = mongoose.Schema({
               type: String
           }
       }],
-      gear: {
-          item: {
+      gear: [{
+          Item: {
               type: String
           },
-          cost: {
+          Cost: {
               type: Number
           },
-          weight: {
+          Weight: {
               type: Number
           },
           category: {
@@ -420,10 +323,107 @@ var characterSchema = mongoose.Schema({
           description: {
               type: String
           }
-      },
+      }],
       wealth: {
           type: Number
-      }
+      },
+      weapons: [{
+          name: {
+              type: String
+          },
+          type: {
+              type: String
+          },
+          subtype: {
+              type: String
+          },
+          cost: {
+              type: Number
+          },
+          damage: {
+              die: [{
+                  type: Number
+              }],
+              number: [{
+                  type: Number
+              }]
+          },
+          critical: {
+              threshold: {
+                  type: Number
+              },
+              multiplier: {
+                  type: Number
+              }
+          },
+          range: {
+              type: Number
+          },
+          weight: {
+              type: Number
+          },
+          damageType: {
+              blunt: {
+                  type: Boolean
+              },
+              piercing: {
+                  type: Boolean
+              },
+              slashing: {
+                  type: Boolean
+              },
+              other: {
+                  type: String
+              }
+          },
+          special: {
+              brace: {
+                  type: Boolean
+              },
+              disarm: {
+                  type: Boolean
+              },
+              double: {
+                  type: Boolean
+              },
+              monk: {
+                  type: Boolean
+              },
+              nonlethal: {
+                  type: Boolean
+              },
+              reach: {
+                  type: Boolean
+              },
+              trip: {
+                  type: Boolean
+              }
+          },
+          description: {
+              type: String
+          },
+          equipped: {
+              type: Boolean
+          },
+          primary: {
+              type: Boolean
+          },
+          offhand: {
+              type: Boolean
+          },
+          ammunition: {
+              type: Number
+          },
+          weaponAttackBonus: {
+              type: Number
+          },
+          weaponDamageBonus: {
+              type: Number
+          },
+          notes: {
+              type: String
+          }
+      }],
   }],
   customization: {
       name: {

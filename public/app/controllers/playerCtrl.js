@@ -1,13 +1,16 @@
-angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons){
+angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, gear, armor, classes, races){
 
+
+$scope.gear = gear
+$scope.races = races
+$scope.armor = armor
+$scope.classes = classes
 $scope.weapons = weapons
-console.log($scope.weapons);
 $scope.skills = skills
 $scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
 $scope.savedCharacter = $scope.character;
-console.log($scope.savedCharacter);
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
@@ -111,14 +114,38 @@ $scope.playerAttTmpMod={
   'tmCHA': Math.floor((($scope.playerAtt.CHA + $scope.playerAttTmpAdj.taCHA)-10)/2)
 };
 
-//ARMOR CLASS
 
-$scope.playerArmorBonus = 99;
-$scope.playerShieldBonus = 99;
+//ARMOR CLASS
+$scope.setPlayerNaturalArmor = function () {
+  if (this.character.core.naturalArmorClass) {
+    $scope.playerNaturalArmor = this.character.core.naturalArmorClass
+  }else {
+    $scope.playerNaturalArmor = 0
+  }
+  this.character.core.naturalArmorClass = $scope.playerNaturalArmor
+  return $scope.playerNaturalArmor
+}
+$scope.setPlayerNaturalArmor()
+
+$scope.setPlayerSizeBonus = function () {
+  for (var i = 0; i < this.races.length; i++) {
+    if (this.character.static.race === this.races[i] && this.races[i].size === "Small") {
+      $scope.playerSizeBonus = 1
+      return $scope.playerSizeBonus
+    }
+  }
+  $scope.playerSizeBonus = 0
+  return $scope.playerSizeBonus
+}
+$scope.setPlayerSizeBonus()
+
+
+$scope.playerArmorBonus = 0;
+$scope.playerShieldBonus = 0;
 //DEX MOD IS $scope.playerAttTmpMod.tmDEX
 $scope.playerSizeBonus = 99;
 $scope.playerNaturalArmor = 99;
-$scope.playerDeflectionBonus = 99;
+$scope.playerDeflectionBonus = 0;
 $scope.playerMiscArmorMod = $scope.character.core.miscArmorClass || 0;
 
 $scope.calcMaxHP = function(){
@@ -275,7 +302,7 @@ $scope.playerModHP = function(x){
 }
 
 $scope.logger=function () {
-
+console.log(this.character);
 }
 $scope.logger()
 
@@ -302,7 +329,7 @@ $scope.playerChangeATT = function(x, att){
     copper: 0
   }
 $scope.moneyConverter = function () {
-  var newMoney = this.character.equipment[0].wealth.toString().split("")
+  var newMoney = this.character.equipment[0].wealth.toString().split("").reverse()
   $scope.equiptmentWealth.copper=newMoney[0] *1
   newMoney.splice(0,1)
   $scope.equiptmentWealth.silver=newMoney[0] *1
@@ -310,7 +337,7 @@ $scope.moneyConverter = function () {
   $scope.equiptmentWealth.gold=newMoney[0] *1
   newMoney.splice(0,1)
   var platMoney = ""
-  for (var i = 0; i < newMoney.length; i++) {
+  for (var i = newMoney.length -1; i >= 0; i--) {
 
     platMoney += newMoney[i]
   }
@@ -423,6 +450,7 @@ $scope.portraitShifter = function(x){
 }
 
 $scope.savePlayerCharacter = function(){
+  $scope.savedCharacter = $scope.character;
   $scope.savedCharacter.static.experience = $scope.playerXP;
   $scope.savedCharacter.core.tempStrength = $scope.playerAttTmpAdj.taSTR;
   $scope.savedCharacter.core.tempDexterity = $scope.playerAttTmpAdj.taDEX;
@@ -436,11 +464,10 @@ $scope.savePlayerCharacter = function(){
   $scope.savedCharacter.core.miscArmorClass = $scope.playerMiscArmorMod;
   $scope.savedCharacter.core.miscInitiative = $scope.playerInitiativeMiscMod;
   $scope.savedCharacter.core.currentHitPoints = $scope.playerHP;
-  
+
   characterService.editCharacter($scope.savedCharacter._id, $scope.savedCharacter);
-  
+  console.log($scope.savedCharacter);
 }
 
 
 });
-
