@@ -316,7 +316,111 @@ $scope.moneyConverter = function () {
   }
   $scope.equiptmentWealth.platinum=platMoney *1
 }
-$scope.moneyConverter()
+$scope.moneyConverter();
+
+$scope.portraitArrayMale = ["./images/charM1.jpg", "./images/charM2.jpg", "./images/charM3.jpg", "./images/charM4.jpg", "./images/charM5.jpg", "./images/charM6.jpg"]
+$scope.portraitArrayFemale = ["./images/charF1.jpg", "./images/charF2.jpg", "./images/charF3.jpg", "./images/charF4.jpg", "./images/charF5.jpg", "./images/charF6.jpg"]
+
+$scope.portraitArray = $scope.portraitArrayMale
+
+$scope.playerPortraitIsMale = true;
+$scope.playerPortraitIsFemale = false;
+
+$scope.playerPortraitGenderSetter = function(){
+  if($scope.character.static.gender == "Male"){
+    $scope.playerPortraitIsMale = true;
+    $scope.playerPortraitIsFemale = false;
+    $scope.portraitArray = $scope.portraitArrayMale
+  }
+  else if($scope.character.static.gender == "Female"){
+    $scope.playerPortraitIsMale = false;
+    $scope.playerPortraitIsFemale = true;
+    $scope.portraitArray = $scope.portraitArrayFemale
+  }
+}
+
+
+$scope.playerPortraitGenderSetter();
+
+$scope.portraitCounter = 0
+$scope.portraitCounter1 = 0
+$scope.portraitCounter2 = 1
+$scope.portraitCounter3 = 2
+
+
+
+
+
+
+
+$scope.displayedPortraitArray = [$scope.portraitArray[0], $scope.portraitArray[1], $scope.portraitArray[2]]
+
+$scope.portraitGenderSelector = function(gender){
+  if(gender == 'Male'){
+    $scope.playerPortraitIsMale = true;
+    $scope.playerPortraitIsFemale = false;
+    $scope.portraitArray = $scope.portraitArrayMale;
+    // $scope.displayedPortraitArray = [$scope.portraitArray[0], $scope.portraitArray[1], $scope.portraitArray[2]]
+  }
+  else if(gender == 'Female'){
+    $scope.playerPortraitIsMale = false;
+    $scope.playerPortraitIsFemale = true;
+    $scope.portraitArray = $scope.portraitArrayFemale;
+    // $scope.displayedPortraitArray = [$scope.portraitArray[0], $scope.portraitArray[1], $scope.portraitArray[2]]
+  }
+}
+
+
+$scope.portraitShifter = function(x){
+  if ((x == -1) && ($scope.portraitCounter == 0)){
+    $scope.portraitCounter = $scope.portraitArray.length - 1
+    $scope.portraitCounter1 = $scope.portraitCounter
+    $scope.portraitCounter2 = 0
+    $scope.portraitCounter3 = 1
+  }
+  else if ((x == -1) && ($scope.portraitCounter == ($scope.portraitArray.length - 1))){
+    $scope.portraitCounter = $scope.portraitArray.length - 2
+    $scope.portraitCounter1 = $scope.portraitCounter
+    $scope.portraitCounter2 = $scope.portraitArray.length - 1
+    $scope.portraitCounter3 = 0
+  }
+  else if ((x == -1) && ($scope.portraitCounter == ($scope.portraitArray.length - 2))){
+    $scope.portraitCounter = $scope.portraitArray.length - 3
+    $scope.portraitCounter1 = $scope.portraitCounter
+    $scope.portraitCounter2 = $scope.portraitCounter + 1
+    $scope.portraitCounter3 = $scope.portraitCounter + 2
+  }
+  else if ((x == 1) && ($scope.portraitCounter == ($scope.portraitArray.length - 3))){
+    $scope.portraitCounter = $scope.portraitArray.length - 2
+    $scope.portraitCounter1 = $scope.portraitCounter
+    $scope.portraitCounter2 = $scope.portraitArray.length - 1
+    $scope.portraitCounter3 = 0  
+  }
+  else if ((x == 1) && ($scope.portraitCounter == ($scope.portraitArray.length - 2))){
+    $scope.portraitCounter = $scope.portraitArray.length - 1
+    $scope.portraitCounter1 = $scope.portraitCounter
+    $scope.portraitCounter2 = 0
+    $scope.portraitCounter3 = 1  
+  }
+  else if ((x == 1) && ($scope.portraitCounter == ($scope.portraitArray.length - 1))){
+    $scope.portraitCounter = 0
+    $scope.portraitCounter1 = $scope.portraitCounter
+    $scope.portraitCounter2 = 1
+    $scope.portraitCounter3 = 2 
+  }
+  else if(x == 1){
+    $scope.portraitCounter += 1
+    $scope.portraitCounter1 = $scope.portraitCounter
+    $scope.portraitCounter2 = $scope.portraitCounter + 1
+    $scope.portraitCounter3 = $scope.portraitCounter + 2 
+  }
+  else if(x == -1){
+    $scope.portraitCounter -= 1
+    $scope.portraitCounter1 = $scope.portraitCounter
+    $scope.portraitCounter2 = $scope.portraitCounter + 1
+    $scope.portraitCounter3 = $scope.portraitCounter + 2 
+  }
+}
 
 $scope.savePlayerCharacter = function(){
   $scope.savedCharacter.static.experience = $scope.playerXP;

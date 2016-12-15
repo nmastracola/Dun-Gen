@@ -477,23 +477,23 @@
   </div>
   <!-- choose from stock -->
   <div class="stockImageChooser blkBkg flexRow">
-    <div class="stockImageLeftArrow"></div>
+    <div class="stockImageLeftArrow" ng-click="portraitShifter(-1)"></div>
     <div class="stockImageBox flexColumn">
       <!-- content -->
       <div class="stockImagePicker flexRow">
         
         <div class="stockImg">
           <div class="stockImageBlocker"></div>
-          <img class="stockImageImg" src="./images/charM1.jpg" alt="img 1">
+          <img class="stockImageImg" ng-src="{{portraitArray[portraitCounter1]}}" alt="img 1">
         </div>
         
         <div class="stockImg">
-          <img class="stockImageImg" src="./images/charM2.jpg" alt="img 2">
+          <img class="stockImageImg" ng-src="{{portraitArray[portraitCounter2]}}" alt="img 2">
         </div>
         
         <div class="stockImg">
           <div class="stockImageBlocker"></div>
-          <img class="stockImageImg" src="./images/charM3.jpg" alt="img 3">
+          <img class="stockImageImg" ng-src="{{portraitArray[portraitCounter3]}}" alt="img 3">
         </div>
         
       </div>
@@ -503,14 +503,14 @@
 
           <div class="stockGender flexRow ">
             <h4 class="pmsCheckoutTitle rightTxt">MALE</h4>
-            <div class="genderBttn">
-              <div class="genderBttnIndicator"></div>
+            <div class="genderBttn" ng-click="portraitGenderSelector('Male')">
+              <div class="genderBttnIndicator" ng-show="playerPortraitIsMale"></div>
             </div>
           </div>
           
           <div class="stockGender flexRow ">
-            <div class="genderBttn">
-              <div class="genderBttnIndicator"></div>
+            <div class="genderBttn" ng-click="portraitGenderSelector('Female')">
+              <div class="genderBttnIndicator" ng-show="playerPortraitIsFemale"></div>
             </div>
             <h4 class="pmsCheckoutTitle leftTxt">FEMALE</h4>
           
@@ -520,7 +520,7 @@
       </div>
       
     </div>
-    <div class="stockImageRightArrow "></div>
+    <div class="stockImageRightArrow" ng-click="portraitShifter(1)"></div>
   </div>
     <!-- or enter a url -->
     <h3 class="centerTxt">OR ENTER A URL</h3>
