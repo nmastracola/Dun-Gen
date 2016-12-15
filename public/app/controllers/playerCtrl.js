@@ -1,5 +1,8 @@
-angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, classes){
+angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, gear, armor, classes){
 
+
+$scope.gear = gear
+$scope.armor = armor
 $scope.classes = classes
 $scope.weapons = weapons
 $scope.skills = skills
@@ -274,7 +277,7 @@ $scope.playerModHP = function(x){
 }
 
 $scope.logger=function () {
-
+// console.log(gear);
 }
 $scope.logger()
 
@@ -301,7 +304,7 @@ $scope.playerChangeATT = function(x, att){
     copper: 0
   }
 $scope.moneyConverter = function () {
-  var newMoney = this.character.equipment[0].wealth.toString().split("")
+  var newMoney = this.character.equipment[0].wealth.toString().split("").reverse()
   $scope.equiptmentWealth.copper=newMoney[0] *1
   newMoney.splice(0,1)
   $scope.equiptmentWealth.silver=newMoney[0] *1
@@ -309,7 +312,7 @@ $scope.moneyConverter = function () {
   $scope.equiptmentWealth.gold=newMoney[0] *1
   newMoney.splice(0,1)
   var platMoney = ""
-  for (var i = 0; i < newMoney.length; i++) {
+  for (var i = newMoney.length -1; i >= 0; i--) {
 
     platMoney += newMoney[i]
   }

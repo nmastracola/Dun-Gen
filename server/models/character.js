@@ -404,7 +404,7 @@ var characterSchema = mongoose.Schema({
               type: String
           }
       }],
-      gear: {
+      gear: [{
           item: {
               type: String
           },
@@ -420,7 +420,7 @@ var characterSchema = mongoose.Schema({
           description: {
               type: String
           }
-      },
+      }],
       wealth: {
           type: Number
       }
