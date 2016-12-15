@@ -1,13 +1,12 @@
-angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons){
+angular.module('scribe').controller('playerCtrl', function($scope, characterService, sService, character, feats, skills, weapons, classes){
 
+$scope.classes = classes
 $scope.weapons = weapons
-console.log($scope.weapons);
 $scope.skills = skills
 $scope.feats = feats
 $scope.test = sService.test;
 $scope.character = character[0];
 $scope.savedCharacter = $scope.character;
-console.log($scope.savedCharacter);
 // ===================================   MENU TOGGLERS  ===================================
 
 $scope.playerMenuToggler = [true, false, false, false, false, false, false, false, false]
@@ -332,11 +331,10 @@ $scope.savePlayerCharacter = function(){
   $scope.savedCharacter.core.miscArmorClass = $scope.playerMiscArmorMod;
   $scope.savedCharacter.core.miscInitiative = $scope.playerInitiativeMiscMod;
   $scope.savedCharacter.core.currentHitPoints = $scope.playerHP;
-  
+
   characterService.editCharacter($scope.savedCharacter._id, $scope.savedCharacter);
-  
+
 }
 
 
 });
-
