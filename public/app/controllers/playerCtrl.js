@@ -276,7 +276,7 @@ $scope.playerModHP = function(x){
 }
 
 $scope.logger=function () {
-console.log(gear);
+// console.log(gear);
 }
 $scope.logger()
 
