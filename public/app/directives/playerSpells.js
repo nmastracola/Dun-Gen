@@ -1,5 +1,4 @@
-angular.module('scribe')
-.directive('playerSpells', function(){
+angular.module('scribe').directive('playerSpells', function(){
 return{
   restrict: 'E',
   templateUrl: './app/directives/playerSpells.html',
