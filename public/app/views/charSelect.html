@@ -16,7 +16,7 @@
             <!-- individual character starts here -->
       <div class="charHolder offWhtBkg flexRow">
         <div class="charBox flexColumn" ng-repeat="char in userChars" ng-click="(displayChar(char._id))">
-          <img class="charImg whtBkg" src="{{char.portraitURL}}" alt="character portrait">
+          <img class="charImg whtBkg" src="{{char.static.portraitURL}}" alt="character portrait">
           <h5 class="offWhtTxt centerTxt"> {{char.static.characterName}} </h5>
           <div ng-repeat="class in char.static.classes" class="">
             
