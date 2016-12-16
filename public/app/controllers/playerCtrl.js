@@ -139,14 +139,56 @@ $scope.setPlayerSizeBonus = function () {
 }
 $scope.setPlayerSizeBonus()
 
+$scope.calcPlayerArmorBonus = function(){
+  if($scope.equippedArmors){
+    $scope.playerArmorBonus = $scope.equippedArmors[0].armorShieldBonus;
+  }
+  else{
+    $scope.playerArmorBonus = 0;
+  }
+}
 
-$scope.playerArmorBonus = 0;
-$scope.playerShieldBonus = 0;
+$scope.calcPlayerArmorBonus();
+
+$scope.calcPlayerShieldBonus = function(){
+  if($scope.equippedShields){
+    $scope.playerShieldBonus = $scope.equippedShields[0].armorShieldBonus;
+  }
+  else{
+    $scope.playerShieldBonus = 0;
+  }
+}
+
+$scope.calcPlayerShieldBonus();
+
 //DEX MOD IS $scope.playerAttTmpMod.tmDEX
-$scope.playerSizeBonus = 99;
-$scope.playerNaturalArmor = 99;
 $scope.playerDeflectionBonus = 0;
 $scope.playerMiscArmorMod = $scope.character.core.miscArmorClass || 0;
+
+$scope.playerSpeedWiArmor = 0
+
+$scope.calcPlayerSpeedWithArmor = function(){
+  if($scope.character.core.speeds.baseSpeed == 30){
+    if($scope.equippedArmors){
+      $scope.playerSpeedWiArmor = $scope.equippedArmors[0].EquiptSpeed30;
+    }
+    else{
+      $scope.playerSpeedWiArmor = 30;
+    }
+  }
+  else if($scope.character.core.speeds.baseSpeed == 20){
+    if($scope.equippedArmors){
+      $scope.playerSpeedWiArmor = $scope.equippedArmors[0].EquiptSpeed20;
+    }
+    else{
+      $scope.playerSpeedWiArmor = 20;
+    }
+  }
+}
+
+$scope.calcPlayerSpeedWithArmor();
+
+
 
 $scope.calcMaxHP = function(){
   $scope.playerMaxHP = $scope.playerBaseMaxHP + ($scope.playerAttTmpMod.tmCON - $scope.playerAttMod.mCON)
@@ -182,8 +224,6 @@ $scope.playerInitiativeCalc();
 //SPEED
 
 $scope.playerSpeed = $scope.character.core.speeds.baseSpeed;
-
-$scope.playerSpeedWiArmor = 99;
 
 //=======================  SAVES  =======================
 
@@ -345,8 +385,8 @@ $scope.moneyConverter = function () {
 }
 $scope.moneyConverter();
 
-$scope.portraitArrayMale = ["./images/charM1.jpg", "./images/charM2.jpg", "./images/charM3.jpg", "./images/charM4.jpg", "./images/charM5.jpg", "./images/charM6.jpg"]
-$scope.portraitArrayFemale = ["./images/charF1.jpg", "./images/charF2.jpg", "./images/charF3.jpg", "./images/charF4.jpg", "./images/charF5.jpg", "./images/charF6.jpg"]
+$scope.portraitArrayMale = ["./images/charM1.jpg", "./images/charM2.jpg", "./images/charM3.jpg", "./images/charM4.jpg", "./images/charM5.jpg", "./images/charM6.jpg", "./images/charM7.jpg", "./images/charM8.jpg"]
+$scope.portraitArrayFemale = ["./images/charF1.jpg", "./images/charF2.jpg", "./images/charF3.jpg", "./images/charF4.jpg", "./images/charF5.jpg", "./images/charF6.jpg", "./images/charF7.jpg"]
 
 $scope.portraitArray = $scope.portraitArrayMale
 
@@ -374,26 +414,16 @@ $scope.portraitCounter1 = 0
 $scope.portraitCounter2 = 1
 $scope.portraitCounter3 = 2
 
-
-
-
-
-
-
-$scope.displayedPortraitArray = [$scope.portraitArray[0], $scope.portraitArray[1], $scope.portraitArray[2]]
-
 $scope.portraitGenderSelector = function(gender){
   if(gender == 'Male'){
     $scope.playerPortraitIsMale = true;
     $scope.playerPortraitIsFemale = false;
     $scope.portraitArray = $scope.portraitArrayMale;
-    // $scope.displayedPortraitArray = [$scope.portraitArray[0], $scope.portraitArray[1], $scope.portraitArray[2]]
   }
   else if(gender == 'Female'){
     $scope.playerPortraitIsMale = false;
     $scope.playerPortraitIsFemale = true;
     $scope.portraitArray = $scope.portraitArrayFemale;
-    // $scope.displayedPortraitArray = [$scope.portraitArray[0], $scope.portraitArray[1], $scope.portraitArray[2]]
   }
 }
 
@@ -449,8 +479,19 @@ $scope.portraitShifter = function(x){
   }
 }
 
+$scope.portraitSetter = function(){
+  if($scope.charPortraitSelectorURL){
+    $scope.character.static.portraitURL = $scope.charPortraitSelectorURL
+    $scope.charPortraitSelectorURL = "";
+  }
+  else{
+    $scope.character.static.portraitURL = $scope.portraitArray[$scope.portraitCounter2]
+  }
+}
+
 $scope.savePlayerCharacter = function(){
   $scope.savedCharacter = $scope.character;
+  $scope.savedCharacter.static.portraitURL = $scope.character.static.portraitURL
   $scope.savedCharacter.static.experience = $scope.playerXP;
   $scope.savedCharacter.core.tempStrength = $scope.playerAttTmpAdj.taSTR;
   $scope.savedCharacter.core.tempDexterity = $scope.playerAttTmpAdj.taDEX;
@@ -466,7 +507,6 @@ $scope.savePlayerCharacter = function(){
   $scope.savedCharacter.core.currentHitPoints = $scope.playerHP;
 
   characterService.editCharacter($scope.savedCharacter._id, $scope.savedCharacter);
-  console.log($scope.savedCharacter);
 }
 
 
