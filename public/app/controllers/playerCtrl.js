@@ -164,7 +164,10 @@ $scope.playerACCalc = function(){
 
 $scope.playerACCalc();
 
-$scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
+$scope.playerTouchAC = function () {
+var touchAc =  (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
+  return touchAc
+}
 
 
 //INITIATIVE
@@ -302,7 +305,7 @@ $scope.playerModHP = function(x){
 }
 
 $scope.logger=function () {
-console.log(this.character);
+console.log(weapons);
 }
 $scope.logger()
 
@@ -421,31 +424,31 @@ $scope.portraitShifter = function(x){
     $scope.portraitCounter = $scope.portraitArray.length - 2
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = $scope.portraitArray.length - 1
-    $scope.portraitCounter3 = 0  
+    $scope.portraitCounter3 = 0
   }
   else if ((x == 1) && ($scope.portraitCounter == ($scope.portraitArray.length - 2))){
     $scope.portraitCounter = $scope.portraitArray.length - 1
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = 0
-    $scope.portraitCounter3 = 1  
+    $scope.portraitCounter3 = 1
   }
   else if ((x == 1) && ($scope.portraitCounter == ($scope.portraitArray.length - 1))){
     $scope.portraitCounter = 0
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = 1
-    $scope.portraitCounter3 = 2 
+    $scope.portraitCounter3 = 2
   }
   else if(x == 1){
     $scope.portraitCounter += 1
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = $scope.portraitCounter + 1
-    $scope.portraitCounter3 = $scope.portraitCounter + 2 
+    $scope.portraitCounter3 = $scope.portraitCounter + 2
   }
   else if(x == -1){
     $scope.portraitCounter -= 1
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = $scope.portraitCounter + 1
-    $scope.portraitCounter3 = $scope.portraitCounter + 2 
+    $scope.portraitCounter3 = $scope.portraitCounter + 2
   }
 }
 

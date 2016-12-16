@@ -59,11 +59,11 @@
             </div>
             <div class="combatWeaponsToHitRollResult centerTxt wBPadding ">
               <!-- logic: to hit roll plus modifers goes here -->
-              <h5 class="whtTxt">12</h5>
+              <h5 class="whtTxt">{{attRoll || 0}}</h5>
             </div>
           </div>
           <div class="combatWeaponsCrit centerTxt dkgreyBkg wBPadding">
-            <h5>{{weapon.threshold}}-20 x{{weapon.multiplier}}</h5>
+            <h5>{{weapon.critical.threshold}}-20 x{{weapon.critical.multiplier}}</h5>
           </div>
 
           <!-- first weapon damage -->
@@ -74,7 +74,7 @@
               <h5 class="pmsWeaponStats ltgreyBkg" ng-show="weapon.damage.number[1]">{{weapon.damage.number[1]}}d{{weapon.damage.die[1]}}</h5>
             </div>
             <div class="combatWeaponsDamageResult wBPadding centerTxt">
-                <h5 class="whtTxt">9</h5>
+                <h5 class="whtTxt">{{attDam || 0}}</h5>
             </div>
           </div>
           <div class="combatWeaponsDamage flexRow ltgreyBkg">
@@ -83,7 +83,7 @@
               <h5>MVP+</h5>
             </div>
             <div class="combatWeaponsDamageResult wBPadding centerTxt">
-                <h5 class="whtTxt">9</h5>
+                <h5 class="whtTxt">MVP+</h5>
             </div>
           </div>
           <div class="combatWeaponsEquip" ng-click="wepEquip=!wepEquip">
@@ -182,7 +182,7 @@
 
       </div>
       <!-- dice roller -->
-      <div class="combatWeaponsDiceRoller">
+      <div class="combatWeaponsDiceRoller" ng-click="attRoll=rollWep(weapon); attDam=rollDam(weapon)">
         <img class="weaponDie"src="./images/D20BLK.svg" alt="roll">
       </div>
     </div>
