@@ -524,17 +524,17 @@
   </div>
     <!-- or enter a url -->
     <h3 class="centerTxt">OR ENTER A URL</h3>
-    <input class="stockImageURL" type="text" name="image url" value="reccomended size 120px X 175px">
+    <input class="stockImageURL" type="text" name="image url" ng-model="charPortraitSelectorURL" placeholder="reccomended size 120px X 175px">
 
     <!-- CONFIRM -->
     <div class="pmsCheckout blkBkg flexRow">
       <h4 class="whtTxt pmsCheckoutTitle rightTxt">CONFIRM</h4>
-      <div class="pmsCheckoutBttn">
+      <div class="pmsCheckoutBttn" ng-click="portraitSetter(); portraitChooser = !portraitChooser">
         <div class="pmsCheckoutBttnIndicator"></div>
       </div>
       <!-- cancel -->
       <h4 class="whtTxt pmsCheckoutTitle rightTxt">CANCEL</h4>
-      <div class="pmsCheckoutBttn">
+      <div class="pmsCheckoutBttn" ng-click="portraitChooser = !portraitChooser">
         <div class="pmsCheckoutBttnIndicator"></div>
       </div>
 

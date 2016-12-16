@@ -34,7 +34,7 @@
 
 
     </div>
-    <h5 ng-hide="character.equipment[0].armorClassItems[0]" ng-click="openArmorStore()">Click to add armor.</h5>
+    <h5 class = "pointerClicky" ng-hide="character.equipment[0].armorClassItems[0]" ng-click="openArmorStore()">Click to add armor.</h5>
 
     <!-- AC ITEMS -->
 
@@ -88,7 +88,7 @@
         <img class="shieldIcon" src="./images/campfireIcon.svg" alt="equipment">
         <h2 class="eqBigTitlePadding">GEAR</h2>
     </div>
-    <h5 ng-hide="character.equipment[0].gear[0]" ng-click="openGeneralStore()">Click to add goods and services.</h5>
+    <h5 class="pointerClicky" ng-hide="character.equipment[0].gear[0]" ng-click="openGeneralStore()">Click to add goods and services.</h5>
 
     <!-- content -->
     <div class="eqMiscBar flexRow" ng-repeat="gear in character.equipment[0].gear track by $index">
