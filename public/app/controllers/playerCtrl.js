@@ -206,7 +206,10 @@ $scope.playerACCalc = function(){
 
 $scope.playerACCalc();
 
-$scope.playerTouchAC = (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
+$scope.playerTouchAC = function () {
+var touchAc =  (10 + ($scope.playerAttTmpMod.tmDEX * 1) + ($scope.playerDeflectionBonus * 1) + ($scope.playerSizeBonus * 1) + ($scope.playerMiscArmorMod * 1))
+  return touchAc
+}
 
 
 //INITIATIVE
@@ -342,7 +345,7 @@ $scope.playerModHP = function(x){
 }
 
 $scope.logger=function () {
-console.log(this.character);
+console.log(weapons);
 }
 $scope.logger()
 
@@ -370,18 +373,18 @@ $scope.playerChangeATT = function(x, att){
   }
 $scope.moneyConverter = function () {
   var newMoney = this.character.equipment[0].wealth.toString().split("").reverse()
-  $scope.equiptmentWealth.copper=newMoney[0] *1
+  $scope.equiptmentWealth.copper=((newMoney[0] *1) || 0)
   newMoney.splice(0,1)
-  $scope.equiptmentWealth.silver=newMoney[0] *1
+  $scope.equiptmentWealth.silver=((newMoney[0] *1) ||0)
   newMoney.splice(0,1)
-  $scope.equiptmentWealth.gold=newMoney[0] *1
+  $scope.equiptmentWealth.gold=((newMoney[0] *1) ||0)
   newMoney.splice(0,1)
   var platMoney = ""
   for (var i = newMoney.length -1; i >= 0; i--) {
 
     platMoney += newMoney[i]
   }
-  $scope.equiptmentWealth.platinum=platMoney *1
+  $scope.equiptmentWealth.platinum=((platMoney *1) ||0)
 }
 $scope.moneyConverter();
 
@@ -451,31 +454,31 @@ $scope.portraitShifter = function(x){
     $scope.portraitCounter = $scope.portraitArray.length - 2
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = $scope.portraitArray.length - 1
-    $scope.portraitCounter3 = 0  
+    $scope.portraitCounter3 = 0
   }
   else if ((x == 1) && ($scope.portraitCounter == ($scope.portraitArray.length - 2))){
     $scope.portraitCounter = $scope.portraitArray.length - 1
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = 0
-    $scope.portraitCounter3 = 1  
+    $scope.portraitCounter3 = 1
   }
   else if ((x == 1) && ($scope.portraitCounter == ($scope.portraitArray.length - 1))){
     $scope.portraitCounter = 0
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = 1
-    $scope.portraitCounter3 = 2 
+    $scope.portraitCounter3 = 2
   }
   else if(x == 1){
     $scope.portraitCounter += 1
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = $scope.portraitCounter + 1
-    $scope.portraitCounter3 = $scope.portraitCounter + 2 
+    $scope.portraitCounter3 = $scope.portraitCounter + 2
   }
   else if(x == -1){
     $scope.portraitCounter -= 1
     $scope.portraitCounter1 = $scope.portraitCounter
     $scope.portraitCounter2 = $scope.portraitCounter + 1
-    $scope.portraitCounter3 = $scope.portraitCounter + 2 
+    $scope.portraitCounter3 = $scope.portraitCounter + 2
   }
 }
 
