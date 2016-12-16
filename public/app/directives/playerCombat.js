@@ -14,6 +14,16 @@ return{
       scope.moneyConverter()
     }
 
+    scope.rollDam = function (weapon) {
+      var rollToHit = Math.floor((Math.random() * weapon.damage.die[0]) + weapon.damage.number[0]);
+      return rollToHit;
+    }
+
+    scope.rollWep = function (weapon) {
+      var rollToHit = Math.floor((Math.random() * 20) + 1);
+      return rollToHit;
+    }
+
     ///togglers
 
     scope.pmsStore = false;
