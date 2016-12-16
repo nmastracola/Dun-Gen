@@ -77,7 +77,7 @@
   bottom: 0;
   left: 0;
   justify-content: center;
-  
+
 }
 .pmsCheckoutTitle{
   padding: 14px 0 0 0;
@@ -96,13 +96,13 @@
 .pmsCheckoutBttnIndicator{
   height: 36px;
   width: 36px;
-  background: darkgrey; 
+  background: darkgrey;
   position: absolute;
   top: 50%;
   left: 50%;
   margin: -18px -18px;
   &:hover{
-    background: crimson; 
+    background: crimson;
     cursor: pointer;
   }
 }
@@ -175,6 +175,11 @@
   height: 30px;
   font-size: 1em;
   padding: 9px 10px 0 10px;
+  margin-top: -8px;
+}
+.pmsDualWep{
+  display: flex;
+  flex-flow: row;
 }
 
 .pmsGearType{
@@ -203,5 +208,3 @@
   width: 600px;
   padding: 20px;
 }
-
-
