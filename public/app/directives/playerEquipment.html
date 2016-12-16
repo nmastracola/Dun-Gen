@@ -34,7 +34,7 @@
 
 
     </div>
-    <h3 ng-hide="character.equipment[0].armorClassItems[0]" ng-click="openArmorStore()">Click to add armor.</h3>
+    <h5 ng-hide="character.equipment[0].armorClassItems[0]" ng-click="openArmorStore()">Click to add armor.</h5>
 
     <!-- AC ITEMS -->
 
@@ -88,7 +88,7 @@
         <img class="shieldIcon" src="./images/campfireIcon.svg" alt="equipment">
         <h2 class="eqBigTitlePadding">GEAR</h2>
     </div>
-    <h3 ng-hide="character.equipment[0].gear[0]" ng-click="openGeneralStore()">Click to add goods and services.</h3>
+    <h5 ng-hide="character.equipment[0].gear[0]" ng-click="openGeneralStore()">Click to add goods and services.</h5>
 
     <!-- content -->
     <div class="eqMiscBar flexRow" ng-repeat="gear in character.equipment[0].gear track by $index">
@@ -155,8 +155,8 @@
     </div>
 
     <div class="pmsRow flexRow">
-      <h5 class="pmsWeaponDescriptor">Catagory</h5>
-      <p class="pmsWeaponStats  ltBorderRight">{{gear.category}}</p>
+      
+      <p class="pmsGearType  ltBorderRight">{{gear.category}}</p>
       <h5 class="pmsWeaponDescriptor">PRICE:</h5>
       <p class="pmsWeaponStats  ltBorderRight">{{gear.Cost}}</p>
       <p class="pmsWeaponDescriptor pmsWeaponDescToggler" ng-click="weaponDescription=!weaponDescription">DESCRIPTION</p>

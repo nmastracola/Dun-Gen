@@ -333,18 +333,18 @@ $scope.playerChangeATT = function(x, att){
   }
 $scope.moneyConverter = function () {
   var newMoney = this.character.equipment[0].wealth.toString().split("").reverse()
-  $scope.equiptmentWealth.copper=newMoney[0] *1
+  $scope.equiptmentWealth.copper=((newMoney[0] *1) || 0)
   newMoney.splice(0,1)
-  $scope.equiptmentWealth.silver=newMoney[0] *1
+  $scope.equiptmentWealth.silver=((newMoney[0] *1) ||0)
   newMoney.splice(0,1)
-  $scope.equiptmentWealth.gold=newMoney[0] *1
+  $scope.equiptmentWealth.gold=((newMoney[0] *1) ||0)
   newMoney.splice(0,1)
   var platMoney = ""
   for (var i = newMoney.length -1; i >= 0; i--) {
 
     platMoney += newMoney[i]
   }
-  $scope.equiptmentWealth.platinum=platMoney *1
+  $scope.equiptmentWealth.platinum=((platMoney *1) ||0)
 }
 $scope.moneyConverter();
 
